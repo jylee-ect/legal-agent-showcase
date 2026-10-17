@@ -1,0 +1,4 @@
+# 백엔드(FastAPI 에이전트)와 프런트엔드(Streamlit) 라이브러리를 한 번에 설치합니다.
+#   python -m pip install -r requirements.txt
+-r backend/requirements.txt
+-r frontend/requirements.txt

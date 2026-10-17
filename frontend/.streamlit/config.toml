@@ -1,0 +1,11 @@
+[server]
+address = "0.0.0.0"
+port = 3000
+headless = true
+maxUploadSize = 2
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#1f4e9e"
