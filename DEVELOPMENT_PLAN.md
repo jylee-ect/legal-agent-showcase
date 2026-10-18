@@ -42,42 +42,98 @@ The request carries `question`, the last few turns of `history`, and the optiona
 
 ---
 
-## 3. Agent graph
+## 3. Agent loop (updated 2026-10-18: full, general agent loop)
+
+The demo teaches how agents work, so the graph follows the complete, general loop rather than a simplified pipeline:
 
 ```
-START → analyze ─┬─ direct ──→ direct_answer → END          (off-topic / chit-chat)
-                 └─ research → plan → research ⇄ tools
-                                         └──→ write → verify → END
+🔔 trigger (question / file arrived / schedule)
+ → define_goal ─┬─ direct → direct_answer → END                       (off-topic chit-chat only)
+                └─ plan → pick_step → act ⇄ tools → check ─┬─ continue / retry step / revise plan → pick_step
+                                                            └─ all completion criteria met → write
+                   write → verify ─┬─ citation problems → write again with feedback   (max 1 retry)
+                                   └─ pass → evaluate ─┬─ goal not met + fixable → add steps → pick_step   (max 1 retry)
+                                                       └─ met, or limits reached → end of agent
+ → 🛡️ guardrail (outside the agent, code): strip any fake citations still left
 ```
 
 | Node | What it does | What the audience sees |
 |---|---|---|
-| `analyze` | Sees the question, history, `llms.txt`, and **only the outline** of the attachment. Decides the question type, the issues, whether to read the attachment (with a reason), candidate standard contracts, and the route | "📥 에이전트가 받은 정보", the verdict, "💭 판단 근거", "🔀 분기 결정" |
-| `plan` | 2–6 step plan within the tool budget | A checklist whose items turn ⏳ → ✅ / ⏭️ (skipped) live |
-| `research` | LLM with tools bound decides the next action. Parallel tool calls are allowed. Stops when it has enough evidence and writes a research memo | 💭 thoughts, optional reasoning summary, 📝 memo |
-| `tools` | Runs the tool calls concurrently, registers sources, and enforces the budget (`MAX_TOOL_CALLS`) | One card per call: label, args, **reason**, then 👀 observation + source badges |
-| `write` | Streams the answer, citing registry IDs only | Answer typing out, with colored `[C1]` badges |
-| `verify` | **Code-based** check: removes unknown IDs, warns if nothing is cited, lists collected-but-unused sources | "인용 N개 모두 실제 자료와 일치" |
-| `direct_answer` | Short answer without tools | Shows the agent choosing *not* to use tools |
+| `define_goal` | Reads the trigger, history, `llms.txt`, and **only the outline** of the attachment. Writes a one-line **goal** and 2–5 checkable **completion criteria**, plus route, issues, whether to read the attachment, and candidate docs. Non-question triggers always route to work | 🔔 trigger, 🎯 goal, ✅ completion criteria, "💭 판단 근거", "🔀 분기" |
+| `plan` | 2–6 tool-using steps; each step lists which criteria it serves. No "종합/답변" steps | "처음 세운 계획" + live plan in the 📌 panel |
+| `pick_step` | Code: picks the next pending step; closes execution when none are left or limits are hit | ▶ 단계 N, 🔁 루프 N회차 |
+| `act` | LLM decides the tool calls for **the current step only** (max 4 in parallel). It sees the 작업 메모 and recent tool results from earlier steps (memory) | 💭 thought, tool cards with **reason** |
+| `tools` | Runs the calls concurrently, registers sources, enforces the budget, appends to `tool_log` | 👀 observation + source badges |
+| `check` | Observes the step result → writes a **작업 메모** (memory) → updates criteria status → decides `continue` / `retry_step` / `revise` (drop/add steps) / `finish`. If every criterion is met, code forces `finish` | 🔎 점검 box, 🔄 계획 수정 box (🚫 cancelled, 🆕 added), live criteria checklist |
+| `write` | Streams the answer from the 작업 메모 + collected sources, citing registry IDs only | answer typing out with `[C1]` badges |
+| `verify` | **Code-based** citation check **inside the agent**. On problems (unknown IDs, no citations) it routes back to `write` with feedback (`verify_feedback`), max 1 retry | ✅ 근거 검증 box: problems, "↩️ 피드백과 함께 돌려보냄", the returned draft |
+| `guardrail` (in `_finish`) | **Outside the agent**: after the agent ends, removes any fake citations still left. Never asks the agent to fix anything | 🛡️ 최종 안전장치 stage |
+| `evaluate` | Judges the **answer** against the completion criteria. If not met and fixable, adds up to 2 steps and loops back (once). Otherwise ends and appends "확인하지 못한 부분" to the answer | 🏁 목표 달성 / 미달 + next action |
+| `direct_answer` | Short answer without tools | the agent choosing *not* to work |
 
-**Irrelevant questions:** if a contract is attached but the question has nothing to do with it (e.g. "점심 메뉴 추천"), `analyze` routes to `direct_answer`. If the question is legal but unrelated to the attachment, it sets `use_attachment=false`, and the plan won't read the attachment.
+Limits (in `graph.py`): `MAX_STEP_RUNS=10`, `MAX_STEP_ROUNDS=2` (tries per step), `MAX_REVISIONS=4`, `MAX_EVAL_RETRIES=1`, plus the tool budget `MAX_TOOL_CALLS` (default 15).
+
+**Triggers:** `ChatRequest.trigger = {type: question|file|schedule, detail}`. The UI simulates two non-question triggers: "📂 계약서 파일 도착" (attaches a sample contract, no question) and "⏰ 정기 점검 일정".
+
+**Live results (gpt-6-luna, 2026-10-18):**
+- cafe contract + 교육비 question: 77 s, 5 loops, 16 LLM calls, $0.0070, goal met. This was after the memory fix; the first run took 127 s with 9 loops and 4 plan revisions caused by a lost precedent ID.
+- 📂 file trigger: the goal was derived from the event alone. The tool budget ran out because one step made 7 parallel calls, and the run honestly ended with "목표 미달: 판례 미확인". After that run the per-step limit was set to 4 and the budget raised to 15.
+- ⏰ schedule trigger: 128 s, 6 loops, 1 plan revision, goal met.
+
+### 3.0 Second mode: 실전형 ReAct (LangChain `create_agent`) — added 2026-10-18
+
+The sidebar switches between **🎓 교과서형 루프** (the LangGraph graph above) and **⚡ 실전형 ReAct** (`backend/app/agent/react_agent.py`). `ChatRequest.mode` is `loop` or `react`.
+
+```
+trigger → [ model ⇄ tools → (answer attempt) → VerifyMiddleware.after_model ─problems→ jump_to model ] → 🛡️ guardrail (outside, code)
+           middleware: ObserverMiddleware · VerifyMiddleware · TodoListMiddleware (write_todos) · ModelCallLimitMiddleware
+```
+
+- **Same tools, sources, citation check and cost tracking** as the loop. Only the control flow differs: there's no goal, plan, check or evaluate node. The model plans with `write_todos`, decides each next action, and decides when to stop.
+- **Seeing inside the ReAct agent:**
+  - `ObserverMiddleware.awrap_model_call` emits `react_model_start`/`react_model_end` per model call. The events carry the decision (tool names or final answer), any text written before tool calls, the reasoning summary, and tokens/cost.
+  - `awrap_tool_call` emits `tool_call`/`tool_result` (with `reason`), turns `write_todos` calls into `todos` events, and enforces the tool budget.
+  - Token streaming comes from `agent.astream(stream_mode=["messages","values"])`.
+  - Raw chain-of-thought is not exposed by the API, so only the reasoning summary is visible.
+- **Live comparison** (same cafe question, gpt-6-luna):
+
+| | 교과서형 루프 | 실전형 ReAct |
+|---|---|---|
+| time | 77 s | 20.6 s |
+| LLM calls | 16 | 5 |
+| cost | $0.0070 | $0.0013 |
+| precedent | searched **and read**, cited | found 6, **read none**, not cited |
+| guarantee | goal/criteria checked by code and an evaluator | depends on the model's own judgment |
+
+Teaching point: the explicit loop trades speed and cost for guaranteed checks. Production agents mostly use the ReAct form and push planning into tools.
+
+### 3.0.1 Verification inside vs. guardrail outside (updated 2026-10-18)
+
+| | Inside the agent: 근거 검증 | Outside the agent: 🛡️ 최종 안전장치 |
+|---|---|---|
+| when | every answer attempt | once, after the agent has finished |
+| what | code checks citations (unknown IDs, no citations); ReAct also flags "precedents searched but none read" | strips fake citations still left |
+| on failure | **feedback goes back to the agent**, which rewrites (loop: `verify → write`; ReAct: `after_model` → `jump_to: model`), max 1 retry | removes them; the agent is never asked to fix anything |
+| code | `agent/verification.py: check_grounding, check_research, feedback_message` | `agent/verification.py: guardrail` (called from `graph._finish`) |
+
+Live ReAct run after the change (same cafe question): 23.5 s, 6 model calls, $0.0017. This time the model read 3 precedents on its own, so verification passed first time. The retry paths are covered by tests (`[L7]`/`[L9]` sent back and fixed; failure to fix stripped by the guardrail; precedents searched but not read).
 
 ### 3.1 Tools
 
-Every tool's first two arguments are `reason` (one plain-Korean sentence) and `plan_step`. This is how the "why" becomes visible without exposing hidden chain-of-thought.
+Every tool's first argument is `reason` (one plain-Korean sentence). That makes the "why" visible without exposing hidden chain-of-thought. Code knows the current step, so there's no `plan_step` argument.
 
 | Tool | Label | Source ID |
 |---|---|---|
 | `read_uploaded_contract(sections)` | 📎 첨부 계약서 읽기 | `U#` |
-| `read_standard_contract_outline(contract_id)` | 📚 표준계약서 목차 보기 | — |
-| `read_standard_contract_articles(contract_id, articles)` | 📄 표준계약서 조항 읽기 | `C#` |
+| `read_reference_outline(doc_id)` | 📚 참고 문서 목차 보기 | — |
+| `read_reference_sections(doc_id, sections)` | 📄 참고 문서 조항 읽기 | `C#` (표준계약서) / `K#` (회사 문서) |
 | `search_laws(query)` | 🏛️ 법령 찾기 | — |
 | `get_law_article(law_name, article)` | 📜 법조문 원문 확인 (`lawService.do?target=law&JO=`) | `L#` |
 | `search_precedents(query)` | ⚖️ 판례 검색 (body-text search) | — (a list alone can't be cited) |
-| `read_precedent(precedent_id)` | 📖 판례 읽기 (판시사항/판결요지/참조조문) | `P#` |
+| `read_precedent(precedent_id)` | 📖 판례 읽기 (numeric 판례ID only) | `P#` |
 | `web_search(query)` | 🌐 웹 검색 (OpenAI `web_search`, KR location, `url_citation`s) | `W#` |
 
-Law tools are only offered when a `law` key exists. Public law.go.kr URLs are rebuilt, so the OC key never reaches the UI.
+Law tools are only offered when a `law` key exists. Public law.go.kr URLs are rebuilt, so the OC key never reaches the UI. Section IDs copied with their titles (`제13조(위약 예정의 금지)`) are accepted.
 
 ### 3.2 Sources and citations
 
@@ -91,7 +147,9 @@ Law tools are only offered when a `law` key exists. Public law.go.kr URLs are re
 
 Every event carries `t` (ms since the run started) and `ts` (wall-clock ISO time with ms and timezone).
 
-`run_start{…,pricing}` · `stage{stage,status}` · `context{items}` · `analysis{data}` · `route{path,label}` · `plan{strategy,steps}` · `plan_update{step_no,status}` · `loop{n}` · `llm_call{call_no,stage,purpose,model,usage,web_search_calls,cost_usd,elapsed_ms,total_usage,total_cost_usd}` · `reasoning{stage,text}` · `thought{text}` · `tool_call{id,tool,label,args,reason,plan_step}` · `tool_result{id,ok,summary,source_ids,preview,elapsed_ms}` · `research_note{text}` · `token{text}` · `verify{ok,cited,unknown,unused,problems}` · `sources{items}` · `final{answer_md,cited_ids,stats}` · `error{message}` · `done`
+`run_start{question,trigger,mode,mode_label,middleware,…,pricing}` · `stage{stage,status}` (goal/plan/execute/write/verify/evaluate/direct; execute/write/verify/evaluate can repeat) · `context{items}` · `goal{data,criteria}` · `route{path,label}` · `plan{strategy,steps[no,goal,tool,criteria,status,added_by]}` · `loop{n}` · `step_start{no,goal,tool,criteria}` · `thought{text}` · `tool_call{id,tool,label,args,reason,step}` · `tool_result{id,ok,summary,source_ids,preview,elapsed_ms}` · `check_start{step}` · `check{step,observation,step_done,decision,reason,criteria,source_ids}` · `plan_revised{by,reason,dropped,added,steps}` · `plan_update{step_no,status}` (pending/in_progress/done/skipped/dropped) · `llm_call{…}` · `reasoning{stage,text}` · `token{text}` · `verify{ok,cited,unknown,unused,problems}` · `evaluate{goal_met,criteria,missing,feedback,retry,attempt}` · `sources{items}` · `verify{ok,cited,unknown,unused,problems,retry,attempt,where[,turn]}` · `guardrail{removed,cited}` · ReAct only: `react_model_start{n,messages}` · `react_model_end{n,tool_calls,final,text}` · `todos{turn,todos}` · `final{answer_md,cited_ids,goal_met,criteria,stats}` · `error{message}` · `done`
+
+Old recordings (`analysis`, `research`, `research_note`) still replay.
 
 ### 4.1 Token usage and cost
 
@@ -106,9 +164,9 @@ Every event carries `t` (ms since the run started) and `ts` (wall-clock ISO time
 | Term | Meaning | Live run example |
 |---|---|---|
 | 대화 턴 (conversation turn) | one user question → one answer | 1 |
-| 에이전트 루프 (agent loop / step; called a "turn" in some agent SDKs) | one "decide next action" LLM call + the tools it triggers + observing results | 4 |
-| LLM 호출 | every model API call: analyze, plan, each loop, write, plus hidden web-search calls | 8 = 1+1+4+1+1 |
-| 도구 호출 | individual tool executions; one loop can issue several in parallel | 8 |
+| 에이전트 루프 (agent loop; called a "turn" in some agent SDKs) | one plan step: act (decide tools) → tools → check (observe, update memory/criteria, decide next) | 5 (cafe run) |
+| LLM 호출 | every model API call: goal, plan, act + check per loop (+ retries), write, evaluate, plus hidden web-search calls | 16 (cafe run) |
+| 도구 호출 | individual tool executions; one loop can issue several in parallel (max 4) | 7 (cafe run) |
 
 Live runs, history re-rendering and recorded replays all use the same renderer (`frontend/render.py`).
 
@@ -210,7 +268,28 @@ agent_showcase/
 - Live test on a scratch copy: a company checklist was registered in 7.8 s for $0.00068. The model also rewrote the software-service description to separate "contract clauses" from "internal procedure".
 - Both servers bind 0.0.0.0. There is **no authentication**, so restrict the ports to the demo network.
 
-## 10. Multi-agent extension (design)
+## 10. Multi-agent mode — implemented 2026-10-18 (`backend/app/agent/multi_agent.py`)
+
+Third mode in the sidebar: **👥 멀티 에이전트** (`ChatRequest.mode = "multi"`). It is built only on `create_agent` (no extra packages), using the **agent-as-tool supervisor** pattern:
+
+- 🧑‍💼 **Supervisor** (`create_agent`). Tools: `ask_law`, `ask_precedent`, `ask_contract`, `ask_company` (args `reason`, `task`) plus `write_todos`. It never reads sources directly. Middleware: Observer (`agent="supervisor"`), VerifyMiddleware (in-agent verification of the final answer), TodoList, and ModelCallLimit 12.
+- **Specialists**, each its own `create_agent` with its own prompt (`SPECIALIST_SYSTEM` + `SPECIALIST_ROLES`), tool subset, `ModelCallLimit 6` and a 5-tool limit:
+
+| key | agent | tools |
+|---|---|---|
+| `law` | 📜 법령조사 | search_laws, get_law_article, web_search |
+| `precedent` | ⚖️ 판례조사 | search_precedents, read_precedent (web_search if no law key) |
+| `contract` | 📑 계약서분석 | read_uploaded_contract, read_reference_outline/sections (standard contracts) |
+| `company` | 🏢 회사기준 | read_reference_outline/sections (company docs; reports "none" if no company doc) |
+
+- **Parallelism:** independent `ask_*` calls in one supervisor turn run concurrently. Each specialist runs in a fresh `contextvars.Context`, so its tokens don't leak into the supervisor's stream.
+- **Shared source registry:** specialists' `[U*]/[C*]/[K*]/[L*]/[P*]` are cited by the supervisor. Verification inside the agent and the guardrail outside it work unchanged.
+- **Events:** every event is tagged `agent` (who) and `run` (which `ask_*` call). New events: `team`, `handoff{run,to,task,reason,turn}`, `agent_start`, `agent_report{agent,run,report,source_ids,model_calls,tool_calls,elapsed_ms}`, `handoff_done`. `llm_call` carries `agent`, and `final.stats.by_agent` holds per-agent calls, tokens and cost.
+- **UI:** 👥 team panel (live status per agent). For each supervisor turn that delegates, one **lane per specialist side by side** shows the instruction, the specialist's thinking and tools, and its 📋 report. The flow diagram puts the supervisor at the centre with ⇄ edges to the 4 specialists. There is a per-agent usage table, and the downloadable report gets a multi-agent section.
+- **Live run** (📂 file trigger, freelancer contract, test copy of `data/` with the company doc; `DATA_DIR` env override added for this): 51.7 s, $0.0038. The supervisor wrote todos and delegated **contract + company in parallel**: company read the 사내 기준 (K1–K7), contract compared the attachment with the standard contract (U1–U12, C1–C10). It chose **not** to call law/precedent. Per agent: supervisor $0.0021, contract $0.0012, company $0.0006.
+- Tests: `tests/test_multi_agent.py`. A role-routing fake model checks parallel delegation, agent/run tags, per-agent stats, and the company agent citing `[K1]`.
+
+## 10-old. Multi-agent extension (original design)
 
 ### 10.1 Target architecture: supervisor + specialists
 

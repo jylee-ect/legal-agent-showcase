@@ -93,10 +93,14 @@ def _local_event(type_: str, **data) -> dict:
     return {"type": type_, "t": 0, "ts": datetime.now().astimezone().isoformat(timespec="milliseconds"), **data}
 
 
-def stream_chat(question: str, history: list[dict], attachment: dict | None) -> Iterator[dict]:
+def stream_chat(question: str, history: list[dict], attachment: dict | None,
+                trigger: dict | None = None, mode: str = "loop") -> Iterator[dict]:
     payload = {"question": question, "history": history,
                "attachment": {"filename": attachment["filename"], "content": attachment["content"]}
-               if attachment else None}
+               if attachment else None,
+               "trigger": {"type": trigger["type"], "detail": trigger.get("detail", "")} if trigger else
+               {"type": "question"},
+               "mode": mode}
     try:
         with httpx.stream("POST", BACKEND_URL + "/api/chat/stream", json=payload,
                           timeout=httpx.Timeout(10.0, read=300.0)) as r:

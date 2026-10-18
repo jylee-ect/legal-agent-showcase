@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
-DATA_DIR = ROOT_DIR / "data"
+DATA_DIR = Path(os.getenv("DATA_DIR", ROOT_DIR / "data"))  # 시험용 다른 문서 폴더를 쓸 때만 바꾼다
 KEY_FILE = Path(os.getenv("API_KEYS_FILE", ROOT_DIR / "api_keys.txt"))
 
 
@@ -68,5 +68,5 @@ def get_settings() -> Settings:
         model=model,
         web_search_model=os.getenv("WEB_SEARCH_MODEL", model),
         reasoning_effort=effort,
-        max_tool_calls=int(os.getenv("MAX_TOOL_CALLS", "10")),
+        max_tool_calls=int(os.getenv("MAX_TOOL_CALLS", "15")),
     )

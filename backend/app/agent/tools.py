@@ -1,6 +1,6 @@
 """에이전트가 쓸 수 있는 도구들.
 
-모든 도구는 `reason`(왜 이 도구를 쓰는지)과 `plan_step`(계획의 몇 번째 단계인지)을 먼저 받는다.
+모든 도구는 `reason`(왜 이 도구를 쓰는지)을 가장 먼저 받는다. (어느 계획 단계인지는 코드가 알고 있다)
 모델이 행동하기 전에 이유를 말하게 하고, 그 이유를 화면에 그대로 보여주기 위해서다.
 """
 
@@ -20,7 +20,6 @@ from .web_search import web_search
 
 class ToolArgs(BaseModel):
     reason: str = Field(description="이 도구를 왜 사용하는지 사용자에게 보여줄 한 문장 (쉬운 한국어)")
-    plan_step: int = Field(description="이 호출이 해당하는 조사 계획의 단계 번호")
 
 
 class ReadUploadedArgs(ToolArgs):
@@ -179,6 +178,7 @@ async def get_law_article(ctx: RunContext, a: LawArticleArgs) -> ToolOutput:
 
 
 async def search_precedents(ctx: RunContext, a: QueryArgs) -> ToolOutput:
+    ctx.precedent_searches += 1
     items = await law_api.search_precedents(ctx.settings.law_api_oc, a.query)
     if not items:
         return ToolOutput("판례 검색 결과가 없습니다. 더 짧은 핵심 키워드로 다시 검색하세요.", "판례 검색 결과 없음")
@@ -189,6 +189,10 @@ async def search_precedents(ctx: RunContext, a: QueryArgs) -> ToolOutput:
 
 
 async def read_precedent(ctx: RunContext, a: PrecedentArgs) -> ToolOutput:
+    if not a.precedent_id.strip().isdigit():
+        return ToolOutput(f"판례ID 는 search_precedents 결과에 나온 숫자입니다 (예: 118858). "
+                          f"'{a.precedent_id}' 는 판례ID 가 아닙니다. [P1] 같은 출처 ID 와 다릅니다.",
+                          "판례ID 형식 오류", ok=False)
     p = await law_api.get_precedent(ctx.settings.law_api_oc, a.precedent_id)
     title = f"{p['court']} {p['date']} 선고 {p['case_no']} 판결 ({p['case_name']})"
     gist = p["summary"] or p["holding"] or p["body_excerpt"][:600]

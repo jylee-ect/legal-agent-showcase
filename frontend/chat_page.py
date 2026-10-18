@@ -8,7 +8,7 @@ from pathlib import Path
 import streamlit as st
 
 import client
-from labels import AGENT_EXPLAINER, DETAIL_LEVELS, EXAMPLES
+from labels import AGENT_EXPLAINER, DETAIL_LEVELS, EXAMPLES, MODES, TRIGGER_EXAMPLES
 from render import TurnRenderer, flow_dot
 
 ss = st.session_state
@@ -16,11 +16,24 @@ ss.setdefault("messages", [])  # {"role": "user", "content", "attachment"} | {"r
 ss.setdefault("attachment", None)  # {"filename", "content", "outline"}
 ss.setdefault("pending", None)  # 예시 버튼으로 들어온 질문
 ss.setdefault("replay", None)  # 재생할 녹화 파일 경로
+ss.setdefault("pending_trigger", None)  # 트리거 시뮬레이션 버튼으로 들어온 사건
 
 
 def attach(filename: str, content: str) -> None:
     info = client.attachment_outline(filename, content) or {}
     ss.attachment = {"filename": filename, "content": content, "outline": info.get("outline", [])}
+
+
+def fire_trigger(tr: dict) -> None:
+    """질문이 아닌 사건(파일 도착·정기 일정)으로 에이전트를 깨운다."""
+    if tr["sample"]:
+        attach_sample(tr["sample"])
+    else:
+        ss.attachment = None
+    labels = {"file": "📂 파일 도착", "schedule": "⏰ 정기 일정"}
+    ss.pending_trigger = {"type": tr["type"], "label": labels[tr["type"]],
+                          "detail": tr["detail"].format(sample=tr["sample"] or "")}
+    st.rerun()
 
 
 def attach_sample(name: str) -> None:
@@ -43,9 +56,19 @@ with st.sidebar:
     else:
         st.error(f"백엔드({client.BACKEND_URL})에 연결할 수 없습니다. 녹화 재생만 가능합니다.")
 
+    st.markdown("#### 🤖 에이전트 방식")
+    agent_mode = st.segmented_control("에이전트 방식", list(MODES), format_func=lambda m: MODES[m]["label"],
+                                      default="loop", key="agent_mode", label_visibility="collapsed") or "loop"
+    st.caption(f"`{MODES[agent_mode]['engine']}`  \n{MODES[agent_mode]['desc']}")
+
     st.markdown("#### 🗺️ 에이전트 흐름")
     flow_ph = st.empty()
-    flow_ph.graphviz_chart(flow_dot({}), width="stretch")
+    flow_ph.graphviz_chart(flow_dot({}, agent_mode), width="stretch")
+
+    with st.expander("🔔 트리거 시뮬레이션 (질문이 아닌 사건)"):
+        for tr in TRIGGER_EXAMPLES:
+            if st.button(f"{tr['icon']} {tr['title']}", key=f"side_tr_{tr['type']}", width="stretch"):
+                fire_trigger(tr)
 
     with st.expander("🧠 AI 에이전트란?"):
         st.markdown(AGENT_EXPLAINER)
@@ -115,20 +138,42 @@ if not ss.messages and not ss.replay:
                     attach_sample(ex["sample"])
                 ss.pending = ex["question"]
                 st.rerun()
+    st.markdown("##### 🔔 질문이 아닌 트리거로 시작하기 :gray[(시뮬레이션)]")
+    st.caption("에이전트는 질문뿐 아니라 '파일이 도착했다', '점검 일정이 됐다' 같은 사건으로도 일을 시작합니다.")
+    cols = st.columns(len(TRIGGER_EXAMPLES) + 1)
+    for col, tr in zip(cols, TRIGGER_EXAMPLES):
+        with col.container(border=True, height="stretch"):
+            detail = tr["detail"].format(sample=tr["sample"] or "")
+            st.markdown(f"**{tr['icon']} {tr['title']}**")
+            st.caption(detail)
+            if st.button("트리거 발생", key=f"tr_{tr['type']}", width="stretch"):
+                fire_trigger(tr)
     with st.expander("📎 샘플 계약서 첨부하기"):
         for p in client.list_samples():
             if st.button(f"{p.name} 첨부", key=f"sample_{p.name}"):
                 attach_sample(p.name)
                 st.rerun()
 
+def show_request(content: str, attachment_name: str | None, trigger: dict | None) -> None:
+    """사용자 질문이면 말풍선, 질문이 아닌 트리거면 🔔 사건으로 보여준다."""
+    if trigger and trigger.get("type", "question") != "question":
+        with st.chat_message("user", avatar="🔔"):
+            st.markdown(f"**{trigger.get('label', '트리거')}** :gray[(시뮬레이션)]  \n{trigger.get('detail', '')}")
+            if attachment_name:
+                st.caption(f"📎 {attachment_name}")
+        return
+    with st.chat_message("user"):
+        st.markdown(content)
+        if attachment_name:
+            st.caption(f"📎 {attachment_name}")
+
+
 # 지난 대화 다시 그리기
 for turn_no, msg in enumerate(ss.messages):
-    with st.chat_message(msg["role"]):
-        if msg["role"] == "user":
-            st.markdown(msg["content"])
-            if msg.get("attachment"):
-                st.caption(f"📎 {msg['attachment']}")
-        else:
+    if msg["role"] == "user":
+        show_request(msg["content"], msg.get("attachment"), msg.get("trigger"))
+    else:
+        with st.chat_message("assistant"):
             r = TurnRenderer(detail_level, titles, auto_collapse=auto_collapse, key=f"turn{turn_no}")
             for ev in msg["events"]:
                 r.handle(ev)
@@ -137,23 +182,24 @@ for turn_no, msg in enumerate(ss.messages):
 def history_payload() -> list[dict]:
     out = []
     for m in ss.messages[-6:]:
-        out.append({"role": m["role"], "content": m["content"] if m["role"] == "user" else m.get("answer", "")})
+        if m["role"] == "user":
+            content = m["content"] or (m.get("trigger") or {}).get("detail", "")
+        else:
+            content = m.get("answer", "")
+        out.append({"role": m["role"], "content": content})
     return out
 
 
-def play(question: str, attachment_name: str | None, events) -> list[dict]:
-    """질문 하나를 실행(또는 재생)하며 화면에 그린다."""
-    with st.chat_message("user"):
-        st.markdown(question)
-        if attachment_name:
-            st.caption(f"📎 {attachment_name}")
+def play(question: str, attachment_name: str | None, events, trigger: dict | None = None) -> list[dict]:
+    """요청 하나를 실행(또는 재생)하며 화면에 그린다."""
+    show_request(question, attachment_name, trigger)
     with st.chat_message("assistant"):
         r = TurnRenderer(detail_level, titles, flow_ph, auto_collapse=auto_collapse, key=f"turn{len(ss.messages) + 1}")
         for ev in events:
             r.handle(ev)
-            if delay and ev["type"] not in ("token", "plan_update"):
+            if delay and ev["type"] not in ("token", "plan_update", "llm_call"):
                 time.sleep(delay)
-    ss.messages.append({"role": "user", "content": question, "attachment": attachment_name})
+    ss.messages.append({"role": "user", "content": question, "attachment": attachment_name, "trigger": trigger})
     ss.messages.append({"role": "assistant", "events": r.events, "answer": r.answer})
     return r.events
 
@@ -179,15 +225,25 @@ if submitted:
 elif ss.pending:
     question, ss.pending = ss.pending, None
 
+trigger = None
+if ss.pending_trigger:
+    trigger, ss.pending_trigger = ss.pending_trigger, None
+    question = ""
+
 if ss.replay:
     path, ss.replay = Path(ss.replay), None
     recorded = client.load_recording(path)
     start = next((e for e in recorded if e["type"] == "run_start"), {})
-    play(f"🎬 (녹화 재생) {start.get('question', path.stem)}", start.get("attachment"), replay_events(recorded))
-elif question:
+    rec_trigger = start.get("trigger")
+    if rec_trigger and rec_trigger.get("type") != "question":
+        rec_trigger = rec_trigger | {"detail": "🎬 (녹화 재생) " + rec_trigger.get("detail", "")}
+    play(f"🎬 (녹화 재생) {start.get('question') or path.stem}", start.get("attachment"), replay_events(recorded),
+         rec_trigger)
+elif question is not None and (question or trigger):
     att = ss.attachment
     history = history_payload()
-    events = play(question, att["filename"] if att else None, client.stream_chat(question, history, att))
+    events = play(question, att["filename"] if att else None, client.stream_chat(question, history, att, trigger, agent_mode),
+                  trigger)
     if record and any(e["type"] == "final" for e in events):
         saved = client.save_recording(events)
         st.toast(f"녹화 저장됨: {saved.name}")

@@ -6,8 +6,9 @@ import asyncio
 from typing import AsyncIterator
 
 from ..config import get_settings
-from ..schemas import ChatRequest
+from ..schemas import MODE_LABELS, TRIGGER_LABELS, ChatRequest
 from . import graph as agent_graph
+from . import multi_agent, react_agent
 from .context import RunContext
 from .documents import load_library, parse_document
 from .usage import pricing_summary
@@ -19,16 +20,24 @@ async def run_agent(req: ChatRequest) -> AsyncIterator[dict]:
         if req.attachment else None
     ctx = RunContext(settings, load_library(settings.data_dir), attachment, asyncio.Queue())
 
-    ctx.emit("run_start", question=req.question, model=settings.model, law_api=settings.has_law_api,
-             attachment=attachment.title if attachment else None,
+    trigger = {"type": req.trigger.type, "label": TRIGGER_LABELS[req.trigger.type], "detail": req.trigger.detail}
+    ctx.emit("run_start", question=req.question, trigger=trigger, mode=req.mode, mode_label=MODE_LABELS[req.mode],
+             middleware={"react": react_agent.MIDDLEWARE_INFO, "multi": multi_agent.MIDDLEWARE_INFO}.get(req.mode, []),
+             model=settings.model,
+             law_api=settings.has_law_api, attachment=attachment.title if attachment else None,
              pricing=pricing_summary(ctx.pricing, settings.model))
 
     async def _run() -> None:
         try:
             if not settings.has_openai:
                 raise RuntimeError("OpenAI API 키가 없습니다. 백엔드를 실행한 터미널에 환경변수 GPT_API 를 설정한 뒤 백엔드를 다시 실행하세요.")
-            state = {"question": req.question, "history": [h.model_dump() for h in req.history]}
-            await agent_graph.GRAPH.ainvoke(state, config={"configurable": {"ctx": ctx}, "recursion_limit": 60})
+            state = {"question": req.question, "trigger": trigger, "history": [h.model_dump() for h in req.history]}
+            if req.mode == "react":
+                await react_agent.run_react(ctx, state)
+            elif req.mode == "multi":
+                await multi_agent.run_multi(ctx, state)
+            else:
+                await agent_graph.GRAPH.ainvoke(state, config={"configurable": {"ctx": ctx}, "recursion_limit": 150})
         except asyncio.CancelledError:
             raise
         except Exception as e:

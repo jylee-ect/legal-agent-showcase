@@ -20,6 +20,8 @@ def test_normalize_section_id():
     assert normalize_section_id("5") == "제5조"
     assert normalize_section_id("제 3 조의 2") == "제3조의2"
     assert normalize_section_id("섹션2") == "섹션2"
+    assert normalize_section_id("제13조(위약 예정의 금지)") == "제13조"
+    assert normalize_section_id("제3조의2（임차권등기명령）") == "제3조의2"
 
 
 def test_inline_article_reference_is_not_a_new_section():
