@@ -1,0 +1,506 @@
+{"type": "run_start", "t": 0, "question": "수습기간 3개월 동안 월급을 최저임금의 80%만 준다고 하는데 괜찮은가요?", "model": "gpt-6-luna", "law_api": true, "attachment": null}
+{"type": "stage", "t": 0, "stage": "analyze", "status": "start"}
+{"type": "context", "t": 0, "items": [{"label": "사용자 질문", "detail": "수습기간 3개월 동안 월급을 최저임금의 80%만 준다고 하는데 괜찮은가요?"}, {"label": "이전 대화", "detail": "0개 메시지"}, {"label": "표준계약서 목록 (llms.txt)", "detail": "표준근로계약서, 주택임대차 표준계약서, 소프트웨어 개발 용역 표준계약서, 비밀유지계약서"}]}
+{"type": "analysis", "t": 4719, "data": {"question_type": "legal_question", "summary": "수습기간 3개월 동안 최저임금의 80%만 지급하는 것이 법적으로 가능한지 묻고 있습니다.", "issues": ["수습기간 중 최저임금 감액이 허용되는 요건과 감액 가능한 비율", "근로계약기간, 업무의 종류 등 감액 적용의 예외 요건"], "use_attachment": false, "attachment_reason": "", "candidate_contracts": ["labor_standard"], "needs_law": true, "needs_precedent": false, "needs_web": true, "route": "research", "thought": "수습기간에도 최저임금은 원칙적으로 적용되며, 감액은 법에서 정한 요건과 한도에 해당해야 합니다. 현재 적용되는 법령과 예외 요건을 확인할 필요가 있습니다."}}
+{"type": "route", "t": 4719, "path": "research", "label": "자료 조사가 필요한 질문 → 계획 수립"}
+{"type": "stage", "t": 4719, "stage": "analyze", "status": "end"}
+{"type": "stage", "t": 4719, "stage": "plan", "status": "start"}
+{"type": "reasoning", "t": 10141, "stage": "plan", "text": "**Planning output for Korean schema**\n\nI’m focusing on outputting a Korean JSON schema and determining whether we need 2-6. There's no attachment, but a standard contract might be useful for comparison. However, I feel that could be beside the point since the question is general. I need to identify relevant labor standards and check the Minimum Wage Act Article 5(2) to ensure compliance. I plan to verify the law and government interpretations, breaking the process into steps. Let's organize this clearly.\n**Considering labor contract clauses**\n\nI’m thinking about looking at the standard labor contract clauses, but I’m questioning if they’re really relevant to the legal issue at hand. It might be better to avoid them altogether since they could complicate things unnecessarily. Instead, I should focus on the specific legal aspects needed to address the user’s concern directly. Keeping things straightforward seems like the best approach here! Let's simplify the plan moving forward."}
+{"type": "plan", "t": 10141, "strategy": "수습기간 중 최저임금 감액이 가능한 법정 요건과 감액 한도를 현행 법령 원문으로 확인하고, 정부 기관의 최신 안내로 적용상 유의점을 보완합니다.", "steps": [{"no": 1, "goal": "최저임금법과 관련 시행령에서 수습근로자의 최저임금 감액 요건·기간·한도 및 적용 제외 대상을 확인합니다.", "tool": "get_law_article"}, {"no": 2, "goal": "정부 기관의 최신 안내를 검색해 수습기간 중 감액 적용의 실무상 유의점과 예외 사례를 확인합니다.", "tool": "web_search"}]}
+{"type": "stage", "t": 10141, "stage": "plan", "status": "end"}
+{"type": "stage", "t": 10141, "stage": "research", "status": "start"}
+{"type": "plan_update", "t": 12922, "step_no": 1, "status": "in_progress"}
+{"type": "tool_call", "t": 12922, "id": "call_cbfK7RgQirzzhFze9rH6S8P5", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "최저임금법", "article": "제5조"}, "reason": "수습근로자 최저임금 감액이 허용되는 법정 요건과 적용 제외를 확인합니다.", "plan_step": 1}
+{"type": "tool_call", "t": 12922, "id": "call_QPsOR1vfZ0KP02twkDsuLCpJ", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "최저임금법 시행령", "article": "제3조"}, "reason": "수습근로자 감액 가능 기간과 단순노무직 제외 기준을 확인합니다.", "plan_step": 1}
+{"type": "plan_update", "t": 12922, "step_no": 1, "status": "done"}
+{"type": "plan_update", "t": 12922, "step_no": 2, "status": "in_progress"}
+{"type": "tool_call", "t": 12922, "id": "call_Yrdsgp5br2MAfCh8ygbNVQTU", "tool": "web_search", "label": "🌐 웹 검색", "args": {"query": "site:moel.go.kr 수습기간 최저임금 90% 1년 미만 단순노무"}, "reason": "정부 기관의 최신 안내에서 수습기간 최저임금 감액의 실무 유의점을 확인합니다.", "plan_step": 2}
+{"type": "tool_result", "t": 14031, "id": "call_cbfK7RgQirzzhFze9rH6S8P5", "tool": "get_law_article", "ok": true, "summary": "최저임금법 제5조(최저임금액) 원문 확인", "source_ids": ["L1"], "preview": "[L1] 최저임금법 제5조(최저임금액) (시행 20200526)\n제5조(최저임금액)\n① 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)은 시간ㆍ일(日)ㆍ주(週) 또는 월(月)을 단위로 하여 정한다. 이 경우 일ㆍ주 또는 월을 단위로 하여 최저임금액을 정할 때에는 시간급(時間給)으로도 표시하여야 한다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대하여는 대통령령으로 정하는 바에 따라 제1항에 따른 최저임금액과 다른 금액으로 최저임금액을 정할 수 있다. 다만, 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 근로자는 제외한다. <개정 2017.9.19, 2020.5.26>\n③ 임금이 통상적으로 도급제나 그 밖에 이와 비슷한 형태로 정하여져 있는 경우로서 제1항에 따라 최저임금액을 정하는 것이 적당하지 아니하다고 인정되면 대통령령으로 정하는 바에 따라 최저임금액을 따로 정할 수 있다.", "elapsed_ms": 1108}
+{"type": "tool_result", "t": 14047, "id": "call_QPsOR1vfZ0KP02twkDsuLCpJ", "tool": "get_law_article", "ok": true, "summary": "최저임금법 시행령 제3조(수습 중에 있는 근로자에 대한 최저임금액) 원문 확인", "source_ids": ["L2"], "preview": "[L2] 최저임금법 시행령 제3조(수습 중에 있는 근로자에 대한 최저임금액) (시행 20190101)\n제3조(수습 중에 있는 근로자에 대한 최저임금액) 「최저임금법」(이하 \"법\"이라 한다) 제5조제2항 본문에 따라 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대해서는 같은 조 제1항 후단에 따른 시간급 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)에서 100분의 10을 뺀 금액을 그 근로자의 시간급 최저임금액으로 한다.", "elapsed_ms": 969}
+{"type": "tool_result", "t": 19156, "id": "call_Yrdsgp5br2MAfCh8ygbNVQTU", "tool": "web_search", "ok": true, "summary": "웹 자료 3건 (검색어: site:moel.go.kr 수습기간 최저임금 90% 1년 미만 단순노무, site:law.go.kr 최저임금법 제5조 수습 90% 단순노무 1년 미만)", "source_ids": ["W1", "W2", "W3"], "preview": "실제 검색어: site:moel.go.kr 수습기간 최저임금 90% 1년 미만 단순노무, site:law.go.kr 최저임금법 제5조 수습 90% 단순노무 1년 미만\n\n요약:\n- **최저임금의 90% 지급은 예외적으로만 가능합니다.** 근로계약기간을 **1년 이상**으로 정한 수습근로자에게, 수습 시작일부터 **3개월 이내**에 한해 적용할 수 있습니다. ([1350.moel.go.kr](https://1350.moel.go.kr/home/hp/data/faqView.do?faq_idx=1000001053&utm_source=openai))\n- **근로계약기간이 1년 미만이면** 수습기간에도 최저임금의 **100%**를 지급해야 합니다. ([1350.moel.go.kr](https://1350.moel.go.kr/home/hp/data/faqView.do?faq_idx=1000001053&utm_source=openai))\n- **단순노무업무 종사자는 계약기간이나 수습 여부와 관계없이** 최저임금을 감액할 수 없습니다. 고용노동부는 이를 한국표준직업분류 **대분류 9(단순노무 종사자)**에 해당하는 직종으로 안내합니다. ([1350.moel.go.kr](https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai))\n- 따라서 **1년 이상 계약이라도 단순노무직이면 100%**, 단순노무직이 아니더라도 **1년 미만 계약이면 100%**가 기준입니다. 90% 적용은 두 조건을 모두 충족해야 합니다. ([1350.moel.go.kr](https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai))\n- 직종 해당 여부는 직함만으로 단정하기보다 실제 업무와 한국표준직업분류를 확인해야 합니다. 고용노동부 최저임금 모의계산기나 **1350** 상담을 이용할 수 있습니다. ([moel.go.kr](https://www.moel.go.kr/miniWageMain.do?utm_source=openai))\n\n출처:\n[W1] 고용노동부 고객상담센터 FAQ 상세 페이지 - https://1350.moel.go.kr/home/hp/data/faqView.do?faq_idx=1000001053&utm_source=openai\n[W2] :: 고용노동부 모바일페이지 고객센터 :: - https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai\n[W3] 고용노동부 - 최저임금 모의계산기 - https://www.moel.go.kr/miniWageMain.do?utm_source=openai", "elapsed_ms": 5921}
+{"type": "research_note", "t": 23875, "text": "## 조사 메모\n\n- **결론:** 수습기간 3개월이라고 해서 최저임금의 80%만 지급할 수 있는 것은 아닙니다. 법에서 허용하는 감액은 요건을 갖춘 경우에도 **최저임금의 90%까지**입니다. 따라서 최저임금의 80% 지급은 그 요건을 충족하더라도 허용되는 감액 범위를 넘습니다. [L1][L2]\n- **감액이 가능한 조건:** 근로계약기간을 **1년 이상**으로 정했고, 수습을 시작한 날부터 **3개월 이내**이며, 해당 근로자가 단순노무업무 종사자가 아니어야 합니다. 세 조건 중 하나라도 해당하지 않으면 최저임금 전액을 지급해야 합니다. [L1][L2][W1][W2]\n- **단순노무업무:** 고용노동부 안내는 한국표준직업분류 대분류 9에 해당하는 직종은 감액 대상에서 제외한다고 설명합니다. 직함만으로 판단하기보다 실제 업무를 확인해야 합니다. [W2]\n- **확인할 사항:** 근로계약서의 계약기간과 실제 담당 업무를 확인해 보세요. 1년 미만 계약이거나 단순노무업무라면 수습기간에도 최저임금의 100%가 기준입니다. [L1][W1][W2]\n\n**확인하지 못한 부분:** 계약기간과 실제 업무 내용을 알 수 없어, 질문하신 근로자가 감액 예외 요건에 해당하는지는 판단할 수 없습니다. 다만 어느 경우든 최저임금의 80% 지급은 허용된 감액 한도(90%)보다 낮습니다. 고용노동부 상담은 1350에서 받을 수 있습니다. [W2]"}
+{"type": "plan_update", "t": 23875, "step_no": 2, "status": "done"}
+{"type": "stage", "t": 23875, "stage": "research", "status": "end"}
+{"type": "stage", "t": 23875, "stage": "write", "status": "start"}
+{"type": "token", "t": 24734, "text": "##"}
+{"type": "token", "t": 24734, "text": " 한"}
+{"type": "token", "t": 24734, "text": "눈"}
+{"type": "token", "t": 24750, "text": "에"}
+{"type": "token", "t": 24750, "text": " 보기"}
+{"type": "token", "t": 24750, "text": "\n"}
+{"type": "token", "t": 24766, "text": "수"}
+{"type": "token", "t": 24766, "text": "습"}
+{"type": "token", "t": 24859, "text": "기간"}
+{"type": "token", "t": 24859, "text": "이"}
+{"type": "token", "t": 24859, "text": " "}
+{"type": "token", "t": 24859, "text": "3"}
+{"type": "token", "t": 24859, "text": "개월"}
+{"type": "token", "t": 24859, "text": "이어"}
+{"type": "token", "t": 24859, "text": "도"}
+{"type": "token", "t": 24859, "text": " 최"}
+{"type": "token", "t": 24859, "text": "저"}
+{"type": "token", "t": 24859, "text": "임"}
+{"type": "token", "t": 24859, "text": "금"}
+{"type": "token", "t": 24859, "text": "의"}
+{"type": "token", "t": 24859, "text": " "}
+{"type": "token", "t": 24859, "text": "80"}
+{"type": "token", "t": 24875, "text": "%"}
+{"type": "token", "t": 24875, "text": "만"}
+{"type": "token", "t": 24875, "text": " 지급"}
+{"type": "token", "t": 24891, "text": "하는"}
+{"type": "token", "t": 24906, "text": " 것은"}
+{"type": "token", "t": 24906, "text": " 허"}
+{"type": "token", "t": 24906, "text": "용"}
+{"type": "token", "t": 24906, "text": "되지"}
+{"type": "token", "t": 24922, "text": " 않습니다"}
+{"type": "token", "t": 24922, "text": "."}
+{"type": "token", "t": 24922, "text": " 법"}
+{"type": "token", "t": 24953, "text": "에서"}
+{"type": "token", "t": 24969, "text": " 정"}
+{"type": "token", "t": 24984, "text": "한"}
+{"type": "token", "t": 25000, "text": " 요"}
+{"type": "token", "t": 25016, "text": "건"}
+{"type": "token", "t": 25016, "text": "을"}
+{"type": "token", "t": 25016, "text": " 모두"}
+{"type": "token", "t": 25031, "text": " 충"}
+{"type": "token", "t": 25031, "text": "족"}
+{"type": "token", "t": 25031, "text": "하는"}
+{"type": "token", "t": 25047, "text": " 경우"}
+{"type": "token", "t": 25062, "text": "에도"}
+{"type": "token", "t": 25062, "text": " 수"}
+{"type": "token", "t": 25062, "text": "습"}
+{"type": "token", "t": 25062, "text": " 시작"}
+{"type": "token", "t": 25094, "text": "일부터"}
+{"type": "token", "t": 25094, "text": " "}
+{"type": "token", "t": 25094, "text": "3"}
+{"type": "token", "t": 25094, "text": "개월"}
+{"type": "token", "t": 25109, "text": " 이"}
+{"type": "token", "t": 25109, "text": "내"}
+{"type": "token", "t": 25109, "text": "에"}
+{"type": "token", "t": 25125, "text": " 최"}
+{"type": "token", "t": 25141, "text": "저"}
+{"type": "token", "t": 25141, "text": "임"}
+{"type": "token", "t": 25141, "text": "금"}
+{"type": "token", "t": 25141, "text": "의"}
+{"type": "token", "t": 25156, "text": " "}
+{"type": "token", "t": 25172, "text": "90"}
+{"type": "token", "t": 25172, "text": "%"}
+{"type": "token", "t": 25187, "text": "까지"}
+{"type": "token", "t": 25203, "text": " 지급"}
+{"type": "token", "t": 25203, "text": "할"}
+{"type": "token", "t": 25203, "text": " 수"}
+{"type": "token", "t": 25203, "text": " 있습니다"}
+{"type": "token", "t": 25234, "text": "."}
+{"type": "token", "t": 25234, "text": " ["}
+{"type": "token", "t": 25234, "text": "L"}
+{"type": "token", "t": 25234, "text": "1"}
+{"type": "token", "t": 25234, "text": "]["}
+{"type": "token", "t": 25250, "text": "L"}
+{"type": "token", "t": 25250, "text": "2"}
+{"type": "token", "t": 25250, "text": "]\n\n"}
+{"type": "token", "t": 25250, "text": "##"}
+{"type": "token", "t": 25266, "text": " 검"}
+{"type": "token", "t": 25266, "text": "토"}
+{"type": "token", "t": 25266, "text": " 결과"}
+{"type": "token", "t": 25297, "text": "\n\n"}
+{"type": "token", "t": 25297, "text": "###"}
+{"type": "token", "t": 25312, "text": " 🔴"}
+{"type": "token", "t": 25312, "text": " 최"}
+{"type": "token", "t": 25328, "text": "저"}
+{"type": "token", "t": 25344, "text": "임"}
+{"type": "token", "t": 25344, "text": "금"}
+{"type": "token", "t": 25344, "text": "의"}
+{"type": "token", "t": 25359, "text": " "}
+{"type": "token", "t": 25359, "text": "80"}
+{"type": "token", "t": 25359, "text": "%"}
+{"type": "token", "t": 25359, "text": " 지급"}
+{"type": "token", "t": 25375, "text": "은"}
+{"type": "token", "t": 25391, "text": " 기준"}
+{"type": "token", "t": 25406, "text": "에"}
+{"type": "token", "t": 25437, "text": " 못"}
+{"type": "token", "t": 25437, "text": " 미"}
+{"type": "token", "t": 25437, "text": "칩니다"}
+{"type": "token", "t": 25453, "text": "\n"}
+{"type": "token", "t": 25469, "text": "수"}
+{"type": "token", "t": 25469, "text": "습"}
+{"type": "token", "t": 25469, "text": "근"}
+{"type": "token", "t": 25609, "text": "로"}
+{"type": "token", "t": 25609, "text": "자의"}
+{"type": "token", "t": 25609, "text": " 최"}
+{"type": "token", "t": 25609, "text": "저"}
+{"type": "token", "t": 25609, "text": "임"}
+{"type": "token", "t": 25609, "text": "금을"}
+{"type": "token", "t": 25609, "text": " 낮"}
+{"type": "token", "t": 25609, "text": "출"}
+{"type": "token", "t": 25609, "text": " 수"}
+{"type": "token", "t": 25609, "text": " 있는"}
+{"type": "token", "t": 25609, "text": " 경우"}
+{"type": "token", "t": 25609, "text": "에도"}
+{"type": "token", "t": 25609, "text": " 법"}
+{"type": "token", "t": 25625, "text": "에서"}
+{"type": "token", "t": 25625, "text": " 정"}
+{"type": "token", "t": 25641, "text": "한"}
+{"type": "token", "t": 25641, "text": " 금"}
+{"type": "token", "t": 25641, "text": "액"}
+{"type": "token", "t": 25656, "text": "은"}
+{"type": "token", "t": 25656, "text": " 최"}
+{"type": "token", "t": 25656, "text": "저"}
+{"type": "token", "t": 25672, "text": "임"}
+{"type": "token", "t": 25672, "text": "금"}
+{"type": "token", "t": 25687, "text": "에서"}
+{"type": "token", "t": 25703, "text": " "}
+{"type": "token", "t": 25703, "text": "10"}
+{"type": "token", "t": 25719, "text": "%"}
+{"type": "token", "t": 25719, "text": "를"}
+{"type": "token", "t": 25719, "text": " 뺀"}
+{"type": "token", "t": 25719, "text": " 금"}
+{"type": "token", "t": 25750, "text": "액"}
+{"type": "token", "t": 25750, "text": ","}
+{"type": "token", "t": 25750, "text": " 즉"}
+{"type": "token", "t": 25750, "text": " 최"}
+{"type": "token", "t": 25766, "text": "저"}
+{"type": "token", "t": 25766, "text": "임"}
+{"type": "token", "t": 25781, "text": "금"}
+{"type": "token", "t": 25781, "text": "의"}
+{"type": "token", "t": 25797, "text": " "}
+{"type": "token", "t": 25797, "text": "90"}
+{"type": "token", "t": 25797, "text": "%"}
+{"type": "token", "t": 25797, "text": "입니다"}
+{"type": "token", "t": 25812, "text": "."}
+{"type": "token", "t": 25828, "text": " 따라서"}
+{"type": "token", "t": 25844, "text": " 다른"}
+{"type": "token", "t": 25875, "text": " 감"}
+{"type": "token", "t": 25875, "text": "액"}
+{"type": "token", "t": 25891, "text": " 요"}
+{"type": "token", "t": 25891, "text": "건"}
+{"type": "token", "t": 25891, "text": "을"}
+{"type": "token", "t": 25922, "text": " 갖"}
+{"type": "token", "t": 25937, "text": "췄"}
+{"type": "token", "t": 25937, "text": "더"}
+{"type": "token", "t": 25969, "text": "라도"}
+{"type": "token", "t": 25984, "text": " "}
+{"type": "token", "t": 25984, "text": "80"}
+{"type": "token", "t": 25984, "text": "%"}
+{"type": "token", "t": 25984, "text": "만"}
+{"type": "token", "t": 26000, "text": " 지급"}
+{"type": "token", "t": 26000, "text": "하는"}
+{"type": "token", "t": 26016, "text": " 것은"}
+{"type": "token", "t": 26016, "text": " 허"}
+{"type": "token", "t": 26016, "text": "용"}
+{"type": "token", "t": 26031, "text": "된"}
+{"type": "token", "t": 26031, "text": " 범"}
+{"type": "token", "t": 26031, "text": "위를"}
+{"type": "token", "t": 26047, "text": " 넘"}
+{"type": "token", "t": 26047, "text": "습니다"}
+{"type": "token", "t": 26062, "text": "."}
+{"type": "token", "t": 26078, "text": " ["}
+{"type": "token", "t": 26078, "text": "L"}
+{"type": "token", "t": 26078, "text": "2"}
+{"type": "token", "t": 26094, "text": "]\n\n"}
+{"type": "token", "t": 26094, "text": "###"}
+{"type": "token", "t": 26094, "text": " 🟡"}
+{"type": "token", "t": 26094, "text": " "}
+{"type": "token", "t": 26141, "text": "90"}
+{"type": "token", "t": 26141, "text": "%"}
+{"type": "token", "t": 26141, "text": " 지급"}
+{"type": "token", "t": 26141, "text": "도"}
+{"type": "token", "t": 26156, "text": " 조건"}
+{"type": "token", "t": 26156, "text": "을"}
+{"type": "token", "t": 26156, "text": " 모두"}
+{"type": "token", "t": 26172, "text": " 갖"}
+{"type": "token", "t": 26187, "text": "춰"}
+{"type": "token", "t": 26187, "text": "야"}
+{"type": "token", "t": 26187, "text": " 합니다"}
+{"type": "token", "t": 26203, "text": "\n"}
+{"type": "token", "t": 26219, "text": "감"}
+{"type": "token", "t": 26234, "text": "액"}
+{"type": "token", "t": 26234, "text": "이"}
+{"type": "token", "t": 26234, "text": " 가능"}
+{"type": "token", "t": 26250, "text": "하려"}
+{"type": "token", "t": 26250, "text": "면"}
+{"type": "token", "t": 26250, "text": " 근"}
+{"type": "token", "t": 26266, "text": "로"}
+{"type": "token", "t": 26281, "text": "계"}
+{"type": "token", "t": 26281, "text": "약"}
+{"type": "token", "t": 26281, "text": "기간"}
+{"type": "token", "t": 26281, "text": "이"}
+{"type": "token", "t": 26312, "text": " "}
+{"type": "token", "t": 26328, "text": "1"}
+{"type": "token", "t": 26328, "text": "년"}
+{"type": "token", "t": 26328, "text": " 이상"}
+{"type": "token", "t": 26328, "text": "이고"}
+{"type": "token", "t": 26344, "text": ","}
+{"type": "token", "t": 26359, "text": " 수"}
+{"type": "token", "t": 26359, "text": "습"}
+{"type": "token", "t": 26359, "text": "을"}
+{"type": "token", "t": 26375, "text": " 시작"}
+{"type": "token", "t": 26375, "text": "한"}
+{"type": "token", "t": 26375, "text": " 날"}
+{"type": "token", "t": 26375, "text": "부터"}
+{"type": "token", "t": 26391, "text": " "}
+{"type": "token", "t": 26391, "text": "3"}
+{"type": "token", "t": 26391, "text": "개월"}
+{"type": "token", "t": 26391, "text": " 이"}
+{"type": "token", "t": 26406, "text": "내"}
+{"type": "token", "t": 26406, "text": "이며"}
+{"type": "token", "t": 26422, "text": ","}
+{"type": "token", "t": 26422, "text": " 단"}
+{"type": "token", "t": 26437, "text": "순"}
+{"type": "token", "t": 26437, "text": "노"}
+{"type": "token", "t": 26437, "text": "무"}
+{"type": "token", "t": 26453, "text": "업"}
+{"type": "token", "t": 26453, "text": "무"}
+{"type": "token", "t": 26469, "text": " 종"}
+{"type": "token", "t": 26469, "text": "사"}
+{"type": "token", "t": 26484, "text": "자가"}
+{"type": "token", "t": 26484, "text": " 아니"}
+{"type": "token", "t": 26484, "text": "어"}
+{"type": "token", "t": 26516, "text": "야"}
+{"type": "token", "t": 26516, "text": " 합니다"}
+{"type": "token", "t": 26516, "text": "."}
+{"type": "token", "t": 26531, "text": " 이"}
+{"type": "token", "t": 26547, "text": " 중"}
+{"type": "token", "t": 26547, "text": " 하나"}
+{"type": "token", "t": 26547, "text": "라도"}
+{"type": "token", "t": 26547, "text": " 충"}
+{"type": "token", "t": 26562, "text": "족"}
+{"type": "token", "t": 26562, "text": "하지"}
+{"type": "token", "t": 26578, "text": " 않"}
+{"type": "token", "t": 26578, "text": "으면"}
+{"type": "token", "t": 26594, "text": " 최"}
+{"type": "token", "t": 26594, "text": "저"}
+{"type": "token", "t": 26594, "text": "임"}
+{"type": "token", "t": 26594, "text": "금"}
+{"type": "token", "t": 26594, "text": " 전"}
+{"type": "token", "t": 26594, "text": "액"}
+{"type": "token", "t": 26594, "text": "을"}
+{"type": "token", "t": 26609, "text": " 지급"}
+{"type": "token", "t": 26625, "text": "해야"}
+{"type": "token", "t": 26625, "text": " 합니다"}
+{"type": "token", "t": 26625, "text": "."}
+{"type": "token", "t": 26625, "text": " ["}
+{"type": "token", "t": 26641, "text": "L"}
+{"type": "token", "t": 26656, "text": "1"}
+{"type": "token", "t": 26656, "text": "]["}
+{"type": "token", "t": 26656, "text": "L"}
+{"type": "token", "t": 26656, "text": "2"}
+{"type": "token", "t": 26672, "text": "]["}
+{"type": "token", "t": 26672, "text": "W"}
+{"type": "token", "t": 26672, "text": "1"}
+{"type": "token", "t": 26687, "text": "]["}
+{"type": "token", "t": 26703, "text": "W"}
+{"type": "token", "t": 26703, "text": "2"}
+{"type": "token", "t": 26703, "text": "]\n\n"}
+{"type": "token", "t": 26703, "text": "단"}
+{"type": "token", "t": 26719, "text": "순"}
+{"type": "token", "t": 26719, "text": "노"}
+{"type": "token", "t": 26719, "text": "무"}
+{"type": "token", "t": 26734, "text": "업"}
+{"type": "token", "t": 26734, "text": "무"}
+{"type": "token", "t": 26750, "text": "는"}
+{"type": "token", "t": 26750, "text": " 한국"}
+{"type": "token", "t": 26750, "text": "표"}
+{"type": "token", "t": 26750, "text": "준"}
+{"type": "token", "t": 26766, "text": "직"}
+{"type": "token", "t": 26766, "text": "업"}
+{"type": "token", "t": 26781, "text": "분"}
+{"type": "token", "t": 26781, "text": "류"}
+{"type": "token", "t": 26797, "text": " 대"}
+{"type": "token", "t": 26797, "text": "분"}
+{"type": "token", "t": 26812, "text": "류"}
+{"type": "token", "t": 26812, "text": " "}
+{"type": "token", "t": 26812, "text": "9"}
+{"type": "token", "t": 26812, "text": "에"}
+{"type": "token", "t": 26828, "text": " 해당"}
+{"type": "token", "t": 26828, "text": "하는"}
+{"type": "token", "t": 26828, "text": " 직"}
+{"type": "token", "t": 26844, "text": "종"}
+{"type": "token", "t": 26844, "text": "을"}
+{"type": "token", "t": 26844, "text": " 말"}
+{"type": "token", "t": 26875, "text": "하며"}
+{"type": "token", "t": 26891, "text": ","}
+{"type": "token", "t": 26891, "text": " 직"}
+{"type": "token", "t": 26891, "text": "함"}
+{"type": "token", "t": 26891, "text": "만"}
+{"type": "token", "t": 26906, "text": "으로"}
+{"type": "token", "t": 26922, "text": " 단"}
+{"type": "token", "t": 26937, "text": "정"}
+{"type": "token", "t": 26937, "text": "하기"}
+{"type": "token", "t": 26937, "text": "보다"}
+{"type": "token", "t": 26937, "text": " 실제"}
+{"type": "token", "t": 26969, "text": " 담당"}
+{"type": "token", "t": 26984, "text": " 업무"}
+{"type": "token", "t": 26984, "text": "를"}
+{"type": "token", "t": 26984, "text": " 확인"}
+{"type": "token", "t": 27000, "text": "해야"}
+{"type": "token", "t": 27000, "text": " 합니다"}
+{"type": "token", "t": 27000, "text": "."}
+{"type": "token", "t": 27000, "text": " ["}
+{"type": "token", "t": 27016, "text": "W"}
+{"type": "token", "t": 27031, "text": "2"}
+{"type": "token", "t": 27031, "text": "]["}
+{"type": "token", "t": 27047, "text": "W"}
+{"type": "token", "t": 27047, "text": "3"}
+{"type": "token", "t": 27047, "text": "]\n\n"}
+{"type": "token", "t": 27062, "text": "##"}
+{"type": "token", "t": 27094, "text": " 이렇게"}
+{"type": "token", "t": 27094, "text": " 해"}
+{"type": "token", "t": 27094, "text": "보"}
+{"type": "token", "t": 27094, "text": "세요"}
+{"type": "token", "t": 27141, "text": "\n"}
+{"type": "token", "t": 27141, "text": "-"}
+{"type": "token", "t": 27172, "text": " 근"}
+{"type": "token", "t": 27172, "text": "로"}
+{"type": "token", "t": 27172, "text": "계"}
+{"type": "token", "t": 27187, "text": "약"}
+{"type": "token", "t": 27203, "text": "서"}
+{"type": "token", "t": 27219, "text": "에서"}
+{"type": "token", "t": 27234, "text": " 계약"}
+{"type": "token", "t": 27234, "text": "기간"}
+{"type": "token", "t": 27234, "text": "과"}
+{"type": "token", "t": 27266, "text": " 수"}
+{"type": "token", "t": 27281, "text": "습"}
+{"type": "token", "t": 27281, "text": "기간"}
+{"type": "token", "t": 27281, "text": "을"}
+{"type": "token", "t": 27297, "text": " 확인"}
+{"type": "token", "t": 27328, "text": "하고"}
+{"type": "token", "t": 27344, "text": ","}
+{"type": "token", "t": 27344, "text": " 실제"}
+{"type": "token", "t": 27359, "text": " 맡"}
+{"type": "token", "t": 27375, "text": "은"}
+{"type": "token", "t": 27375, "text": " 업무"}
+{"type": "token", "t": 27375, "text": "가"}
+{"type": "token", "t": 27391, "text": " 단"}
+{"type": "token", "t": 27406, "text": "순"}
+{"type": "token", "t": 27406, "text": "노"}
+{"type": "token", "t": 27406, "text": "무"}
+{"type": "token", "t": 27422, "text": "업"}
+{"type": "token", "t": 27437, "text": "무"}
+{"type": "token", "t": 27437, "text": "에"}
+{"type": "token", "t": 27437, "text": " 해당"}
+{"type": "token", "t": 27453, "text": "하는"}
+{"type": "token", "t": 27469, "text": "지도"}
+{"type": "token", "t": 27484, "text": " 살"}
+{"type": "token", "t": 27500, "text": "펴"}
+{"type": "token", "t": 27500, "text": "보"}
+{"type": "token", "t": 27500, "text": "세요"}
+{"type": "token", "t": 27531, "text": "."}
+{"type": "token", "t": 27531, "text": " ["}
+{"type": "token", "t": 27531, "text": "L"}
+{"type": "token", "t": 27531, "text": "1"}
+{"type": "token", "t": 27562, "text": "]["}
+{"type": "token", "t": 27562, "text": "W"}
+{"type": "token", "t": 27578, "text": "2"}
+{"type": "token", "t": 27578, "text": "]["}
+{"type": "token", "t": 27594, "text": "W"}
+{"type": "token", "t": 27609, "text": "3"}
+{"type": "token", "t": 27609, "text": "]\n"}
+{"type": "token", "t": 27609, "text": "-"}
+{"type": "token", "t": 27625, "text": " 회사"}
+{"type": "token", "t": 27641, "text": "에"}
+{"type": "token", "t": 27656, "text": " 최"}
+{"type": "token", "t": 27672, "text": "저"}
+{"type": "token", "t": 27672, "text": "임"}
+{"type": "token", "t": 27672, "text": "금"}
+{"type": "token", "t": 27687, "text": "의"}
+{"type": "token", "t": 27703, "text": " "}
+{"type": "token", "t": 27719, "text": "80"}
+{"type": "token", "t": 27734, "text": "%"}
+{"type": "token", "t": 27734, "text": " 지급"}
+{"type": "token", "t": 27750, "text": " 근"}
+{"type": "token", "t": 27766, "text": "거"}
+{"type": "token", "t": 27766, "text": "를"}
+{"type": "token", "t": 27797, "text": " 서"}
+{"type": "token", "t": 27797, "text": "면"}
+{"type": "token", "t": 27812, "text": "으로"}
+{"type": "token", "t": 27812, "text": " 요청"}
+{"type": "token", "t": 27828, "text": "하고"}
+{"type": "token", "t": 27844, "text": ","}
+{"type": "token", "t": 27844, "text": " "}
+{"type": "token", "t": 27844, "text": "80"}
+{"type": "token", "t": 27859, "text": "%"}
+{"type": "token", "t": 27859, "text": "가"}
+{"type": "token", "t": 27859, "text": " 아니라"}
+{"type": "token", "t": 27875, "text": " 법"}
+{"type": "token", "t": 27891, "text": "정"}
+{"type": "token", "t": 27922, "text": " 기준"}
+{"type": "token", "t": 27922, "text": "에"}
+{"type": "token", "t": 27937, "text": " 맞"}
+{"type": "token", "t": 27969, "text": "춰"}
+{"type": "token", "t": 28000, "text": " 임"}
+{"type": "token", "t": 28016, "text": "금을"}
+{"type": "token", "t": 28016, "text": " 정"}
+{"type": "token", "t": 28016, "text": "정"}
+{"type": "token", "t": 28016, "text": "해"}
+{"type": "token", "t": 28031, "text": " 달"}
+{"type": "token", "t": 28031, "text": "라고"}
+{"type": "token", "t": 28047, "text": " 요구"}
+{"type": "token", "t": 28062, "text": "해"}
+{"type": "token", "t": 28078, "text": " 보"}
+{"type": "token", "t": 28078, "text": "세요"}
+{"type": "token", "t": 28078, "text": "."}
+{"type": "token", "t": 28094, "text": " "}
+{"type": "token", "t": 28109, "text": "90"}
+{"type": "token", "t": 28109, "text": "%"}
+{"type": "token", "t": 28109, "text": " 감"}
+{"type": "token", "t": 28125, "text": "액"}
+{"type": "token", "t": 28141, "text": "도"}
+{"type": "token", "t": 28172, "text": " 위"}
+{"type": "token", "t": 28187, "text": " 요"}
+{"type": "token", "t": 28203, "text": "건"}
+{"type": "token", "t": 28203, "text": "을"}
+{"type": "token", "t": 28219, "text": " 모두"}
+{"type": "token", "t": 28219, "text": " 충"}
+{"type": "token", "t": 28234, "text": "족"}
+{"type": "token", "t": 28234, "text": "하는"}
+{"type": "token", "t": 28234, "text": " 경우"}
+{"type": "token", "t": 28250, "text": "에"}
+{"type": "token", "t": 28266, "text": "만"}
+{"type": "token", "t": 28266, "text": " 가능합니다"}
+{"type": "token", "t": 28266, "text": "."}
+{"type": "token", "t": 28266, "text": " ["}
+{"type": "token", "t": 28281, "text": "L"}
+{"type": "token", "t": 28281, "text": "1"}
+{"type": "token", "t": 28281, "text": "]["}
+{"type": "token", "t": 28297, "text": "L"}
+{"type": "token", "t": 28297, "text": "2"}
+{"type": "token", "t": 28297, "text": "]\n"}
+{"type": "token", "t": 28312, "text": "-"}
+{"type": "token", "t": 28359, "text": " 업무"}
+{"type": "token", "t": 28375, "text": "가"}
+{"type": "token", "t": 28375, "text": " 단"}
+{"type": "token", "t": 28375, "text": "순"}
+{"type": "token", "t": 28375, "text": "노"}
+{"type": "token", "t": 28391, "text": "무"}
+{"type": "token", "t": 28391, "text": "업"}
+{"type": "token", "t": 28391, "text": "무"}
+{"type": "token", "t": 28406, "text": "인지"}
+{"type": "token", "t": 28422, "text": " 판단"}
+{"type": "token", "t": 28437, "text": "하기"}
+{"type": "token", "t": 28453, "text": " 어렵"}
+{"type": "token", "t": 28469, "text": "다면"}
+{"type": "token", "t": 28469, "text": " 고"}
+{"type": "token", "t": 28469, "text": "용"}
+{"type": "token", "t": 28469, "text": "노"}
+{"type": "token", "t": 28484, "text": "동"}
+{"type": "token", "t": 28484, "text": "부"}
+{"type": "token", "t": 28500, "text": " "}
+{"type": "token", "t": 28516, "text": "135"}
+{"type": "token", "t": 28516, "text": "0"}
+{"type": "token", "t": 28531, "text": "에"}
+{"type": "token", "t": 28547, "text": " 문의"}
+{"type": "token", "t": 28578, "text": "할"}
+{"type": "token", "t": 28594, "text": " 수"}
+{"type": "token", "t": 28594, "text": " 있습니다"}
+{"type": "token", "t": 28594, "text": "."}
+{"type": "token", "t": 28609, "text": " ["}
+{"type": "token", "t": 28625, "text": "W"}
+{"type": "token", "t": 28625, "text": "3"}
+{"type": "token", "t": 28656, "text": "]"}
+{"type": "stage", "t": 28875, "stage": "write", "status": "end"}
+{"type": "stage", "t": 28875, "stage": "verify", "status": "start"}
+{"type": "verify", "t": 28875, "ok": true, "cited": ["L1", "L2", "W1", "W2", "W3"], "unknown": [], "unused": [], "problems": []}
+{"type": "stage", "t": 28875, "stage": "verify", "status": "end"}
+{"type": "sources", "t": 28875, "items": [{"id": "L1", "kind": "law", "title": "최저임금법 제5조(최저임금액)", "excerpt": "제5조(최저임금액)\n① 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)은 시간ㆍ일(日)ㆍ주(週) 또는 월(月)을 단위로 하여 정한다. 이 경우 일ㆍ주 또는 월을 단위로 하여 최저임금액을 정할 때에는 시간급(時間給)으로도 표시하여야 한다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대하여는 대통령령으로 정하는 바에 따라 제1항에 따른 최저임금액과 다른 금액으로 최저임금액을 정할 수 있다. 다만, 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 근로자는 제외한다. <개정 2017.9.19, 2020.5.26>\n③ 임금이 통상적으로 도급제나 그 밖에 이와 비슷한 형태로 정하여져 있는 경우로서 제1항에 따라 최저임금액을 정하는 것이 적당하지 아니하다고 인정되면 대통령령으로 정하는 바에 따라 최저임금액을 따로 정할 수 있다.", "url": "https://www.law.go.kr/법령/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88%EB%B2%95/%EC%A0%9C5%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "L2", "kind": "law", "title": "최저임금법 시행령 제3조(수습 중에 있는 근로자에 대한 최저임금액)", "excerpt": "제3조(수습 중에 있는 근로자에 대한 최저임금액) 「최저임금법」(이하 \"법\"이라 한다) 제5조제2항 본문에 따라 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대해서는 같은 조 제1항 후단에 따른 시간급 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)에서 100분의 10을 뺀 금액을 그 근로자의 시간급 최저임금액으로 한다.", "url": "https://www.law.go.kr/법령/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C3%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "W1", "kind": "web", "title": "고용노동부 고객상담센터 FAQ 상세 페이지", "excerpt": "- **최저임금의 90% 지급은 예외적으로만 가능합니다.** 근로계약기간을 **1년 이상**으로 정한 수습근로자에게, 수습 시작일부터 **3개월 이내**에 한해 적용할 수 있습니다.", "url": "https://1350.moel.go.kr/home/hp/data/faqView.do?faq_idx=1000001053&utm_source=openai", "locator": null, "kind_label": "웹 자료", "cited": true}, {"id": "W2", "kind": "web", "title": ":: 고용노동부 모바일페이지 고객센터 ::", "excerpt": "- **단순노무업무 종사자는 계약기간이나 수습 여부와 관계없이** 최저임금을 감액할 수 없습니다. 고용노동부는 이를 한국표준직업분류 **대분류 9(단순노무 종사자)**에 해당하는 직종으로 안내합니다.", "url": "https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai", "locator": null, "kind_label": "웹 자료", "cited": true}, {"id": "W3", "kind": "web", "title": "고용노동부 - 최저임금 모의계산기", "excerpt": "- 직종 해당 여부는 직함만으로 단정하기보다 실제 업무와 한국표준직업분류를 확인해야 합니다. 고용노동부 최저임금 모의계산기나 **1350** 상담을 이용할 수 있습니다.", "url": "https://www.moel.go.kr/miniWageMain.do?utm_source=openai", "locator": null, "kind_label": "웹 자료", "cited": true}]}
+{"type": "final", "t": 28875, "answer_md": "## 한눈에 보기\n수습기간이 3개월이어도 최저임금의 80%만 지급하는 것은 허용되지 않습니다. 법에서 정한 요건을 모두 충족하는 경우에도 수습 시작일부터 3개월 이내에 최저임금의 90%까지 지급할 수 있습니다. [L1][L2]\n\n## 검토 결과\n\n### 🔴 최저임금의 80% 지급은 기준에 못 미칩니다\n수습근로자의 최저임금을 낮출 수 있는 경우에도 법에서 정한 금액은 최저임금에서 10%를 뺀 금액, 즉 최저임금의 90%입니다. 따라서 다른 감액 요건을 갖췄더라도 80%만 지급하는 것은 허용된 범위를 넘습니다. [L2]\n\n### 🟡 90% 지급도 조건을 모두 갖춰야 합니다\n감액이 가능하려면 근로계약기간이 1년 이상이고, 수습을 시작한 날부터 3개월 이내이며, 단순노무업무 종사자가 아니어야 합니다. 이 중 하나라도 충족하지 않으면 최저임금 전액을 지급해야 합니다. [L1][L2][W1][W2]\n\n단순노무업무는 한국표준직업분류 대분류 9에 해당하는 직종을 말하며, 직함만으로 단정하기보다 실제 담당 업무를 확인해야 합니다. [W2][W3]\n\n## 이렇게 해보세요\n- 근로계약서에서 계약기간과 수습기간을 확인하고, 실제 맡은 업무가 단순노무업무에 해당하는지도 살펴보세요. [L1][W2][W3]\n- 회사에 최저임금의 80% 지급 근거를 서면으로 요청하고, 80%가 아니라 법정 기준에 맞춰 임금을 정정해 달라고 요구해 보세요. 90% 감액도 위 요건을 모두 충족하는 경우에만 가능합니다. [L1][L2]\n- 업무가 단순노무업무인지 판단하기 어렵다면 고용노동부 1350에 문의할 수 있습니다. [W3]", "cited_ids": ["L1", "L2", "W1", "W2", "W3"], "stats": {"elapsed_ms": 28875, "llm_calls": 5, "tool_calls": 3, "sources": 5, "cited": 5}}
+{"type": "done", "t": 28875, "elapsed_ms": 28875}

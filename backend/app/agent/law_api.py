@@ -31,13 +31,20 @@ def _as_list(value) -> list:
 
 
 async def _get(oc: str, endpoint: str, **params) -> dict:
-    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
-        r = await client.get(BASE + endpoint, params={"OC": oc, "type": "JSON", **params})
-    r.raise_for_status()
+    # httpx 오류 메시지에는 요청 URL(OC 인증값 포함)이 들어간다. 그대로 올리면 화면·녹화·모델에게 OC 가 노출되므로
+    # OC 를 뺀 메시지로 바꿔 올린다.
+    try:
+        async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+            r = await client.get(BASE + endpoint, params={"OC": oc, "type": "JSON", **params})
+        r.raise_for_status()
+    except httpx.HTTPStatusError as e:
+        raise LawApiError(f"법령 API 오류 {e.response.status_code} ({endpoint}, {params})") from None
+    except httpx.HTTPError as e:
+        raise LawApiError(f"법령 API 연결 실패: {type(e).__name__} ({endpoint})") from None
     try:
         return r.json()
-    except ValueError as e:
-        raise LawApiError("법령 API 가 JSON 이 아닌 응답을 반환했습니다 (인증값 또는 등록 IP 확인 필요).") from e
+    except ValueError:
+        raise LawApiError("법령 API 가 JSON 이 아닌 응답을 반환했습니다 (인증값 또는 등록 IP 확인 필요).") from None
 
 
 def article_jo(article: str) -> str:

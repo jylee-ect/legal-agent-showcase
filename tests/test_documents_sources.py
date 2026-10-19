@@ -68,3 +68,23 @@ def test_key_file_parsing(tmp_path):
     f = tmp_path / "keys.txt"
     f.write_text("gpt:sk-abc:def\nlaw: myoc \n\nbroken line\n", encoding="utf-8")
     assert load_key_file(f) == {"gpt": "sk-abc:def", "law": "myoc"}
+
+
+def test_law_api_errors_do_not_leak_oc(monkeypatch):
+    import asyncio
+
+    import httpx
+    import pytest
+
+    from app.agent import law_api
+
+    def handler(request):
+        return httpx.Response(500, request=request)
+
+    real_client = httpx.AsyncClient
+    monkeypatch.setattr(law_api.httpx, "AsyncClient",
+                        lambda **kw: real_client(transport=httpx.MockTransport(handler), **kw))
+    with pytest.raises(law_api.LawApiError) as err:
+        asyncio.run(law_api._get("SECRET-OC", "lawService.do", target="prec", ID="1"))
+    assert "SECRET-OC" not in str(err.value) and "500" in str(err.value)
+    assert err.value.__cause__ is None and err.value.__suppress_context__

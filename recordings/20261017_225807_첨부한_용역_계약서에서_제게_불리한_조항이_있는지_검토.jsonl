@@ -1,0 +1,1932 @@
+{"type": "run_start", "t": 0, "question": "첨부한 용역 계약서에서 제게 불리한 조항이 있는지 검토해 주세요.", "model": "gpt-6-luna", "law_api": true, "attachment": "프리랜서_앱개발_용역계약서.md"}
+{"type": "stage", "t": 0, "stage": "analyze", "status": "start"}
+{"type": "context", "t": 0, "items": [{"label": "사용자 질문", "detail": "첨부한 용역 계약서에서 제게 불리한 조항이 있는지 검토해 주세요."}, {"label": "이전 대화", "detail": "0개 메시지"}, {"label": "표준계약서 목록 (llms.txt)", "detail": "표준근로계약서, 주택임대차 표준계약서, 소프트웨어 개발 용역 표준계약서, 비밀유지계약서"}, {"label": "첨부 계약서 목차 (본문은 아직 안 읽음)", "detail": "프리랜서_앱개발_용역계약서.md · 12개 조항"}]}
+{"type": "reasoning", "t": 5406, "stage": "analyze", "text": "**Classifying contract reviews**\n\nI’m focusing on outputting JSON that matches the schema for Korean. It seems I need to classify attachments for contract reviews and identify potential issues based on the terms of the contract. I can’t assert exact unfair terms but can mention areas that might need examining, like payment terms, scope, delay penalties, warranties, IP rights, and confidentiality clauses. Also, I need to consider software service candidates and look into legal precedents and research routes."}
+{"type": "analysis", "t": 5406, "data": {"question_type": "contract_review", "summary": "첨부한 프리랜서 앱 개발 용역계약서에서 본인에게 불리할 수 있는 조항을 검토해 달라는 요청입니다.", "issues": ["계약금액·지급 시기와 추가 작업 대가", "과업 범위 변경 및 검수 기준·기한", "지체상금의 발생 요건과 금액", "하자보수의 범위·기간", "지식재산권의 귀속과 이용 범위", "계약 해지 요건 및 정산", "비밀유지와 경업금지의 범위·기간", "손해배상 책임의 범위·한도", "관할 법원의 지정"], "use_attachment": true, "attachment_reason": "사용자가 첨부 계약서 자체의 불리한 조항을 검토해 달라고 요청했습니다. 목차상 관련 조항을 확인할 수 있지만, 실제 불리 여부를 판단하려면 계약서 본문을 읽어야 합니다.", "candidate_contracts": ["software_service"], "needs_law": true, "needs_precedent": false, "needs_web": false, "route": "research", "thought": "프리랜서 앱 개발 용역계약서의 조항별 위험을 살펴봐야 하므로 첨부 본문과 소프트웨어 개발 용역 표준계약서를 비교하는 검토가 필요합니다. 현재는 목차만 확인한 상태라 구체적인 불리한 내용은 본문을 확인한 뒤 판단해야 합니다."}}
+{"type": "route", "t": 5406, "path": "research", "label": "자료 조사가 필요한 질문 → 계획 수립"}
+{"type": "stage", "t": 5406, "stage": "analyze", "status": "end"}
+{"type": "stage", "t": 5406, "stage": "plan", "status": "start"}
+{"type": "plan", "t": 11531, "strategy": "먼저 첨부 계약서의 실제 문구를 확인하고, 소프트웨어 개발 용역 표준계약서와 같은 주제 조항을 비교하겠습니다. 그다음 판단에 필요한 관련 법 조문을 확인해 조항별 위험을 살펴보겠습니다.", "steps": [{"no": 1, "goal": "첨부 계약서 전체를 읽어 대금, 과업·검수, 지체상금, 하자보수, 지식재산권, 해지, 비밀유지·경업금지, 손해배상 및 관할 조항의 구체적인 문구를 확인한다.", "tool": "read_uploaded_contract"}, {"no": 2, "goal": "소프트웨어 개발 용역 표준계약서의 조항 목차를 확인해 첨부 계약서와 비교할 관련 조항을 선정한다.", "tool": "read_standard_contract_outline"}, {"no": 3, "goal": "표준계약서에서 대금·과업 변경·검수·지체상금·하자보수·지식재산권·해지에 관한 조항을 읽고 첨부 계약서와 비교한다.", "tool": "read_standard_contract_articles"}, {"no": 4, "goal": "계약상 손해배상·해지 및 저작권 귀속 판단에 필요한 현행 민법과 저작권법의 관련 조문 원문을 확인한다.", "tool": "get_law_article"}]}
+{"type": "stage", "t": 11531, "stage": "plan", "status": "end"}
+{"type": "stage", "t": 11531, "stage": "research", "status": "start"}
+{"type": "plan_update", "t": 13625, "step_no": 1, "status": "in_progress"}
+{"type": "tool_call", "t": 13625, "id": "call_x94Sk1q2MzeqMo7afJ2x8fHy", "tool": "read_uploaded_contract", "label": "📎 첨부 계약서 읽기", "args": {"sections": ["전체"]}, "reason": "계약서의 실제 문구를 확인해 불리할 수 있는 조항을 판단하겠습니다.", "plan_step": 1}
+{"type": "plan_update", "t": 13625, "step_no": 1, "status": "done"}
+{"type": "plan_update", "t": 13625, "step_no": 2, "status": "in_progress"}
+{"type": "tool_call", "t": 13625, "id": "call_BqkKUUEQbYnr1EEn16zpEIDW", "tool": "read_standard_contract_outline", "label": "📚 표준계약서 목차 보기", "args": {"contract_id": "software_service"}, "reason": "표준계약서의 목차를 확인해 비교할 조항을 고르겠습니다.", "plan_step": 2}
+{"type": "tool_result", "t": 13625, "id": "call_x94Sk1q2MzeqMo7afJ2x8fHy", "tool": "read_uploaded_contract", "ok": true, "summary": "첨부 계약서 12개 조항 읽음: 제1조(목적), 제2조(계약 금액), 제3조(계약 기간), 제4조(과업의 범위), 제5조(검수), 제6조(지체상금) 외 6개", "source_ids": ["U1", "U2", "U3", "U4", "U5", "U6", "U7", "U8", "U9", "U10", "U11", "U12"], "preview": "[U1] ## 제1조(목적)\n본 계약은 갑의 쇼핑몰 모바일 앱(iOS/Android) 개발 용역에 관한 사항을 정함을 목적으로 한다.\n\n[U2] ## 제2조(계약 금액)\n① 계약 금액은 금 이천만원(20,000,000원, 부가세 별도)으로 한다.\n② 대금은 최종 검수 완료 후 일시에 지급한다.\n\n[U3] ## 제3조(계약 기간)\n계약 기간은 2026년 11월 1일부터 2027년 2월 28일까지로 한다.\n\n[U4] ## 제4조(과업의 범위)\n① 과업의 범위는 별첨 기획서에 따른다.\n② 갑은 개발 진행 중 필요하다고 판단하는 경우 기능을 추가하거나 변경할 수 있으며, 을은 이에 따라야 한다. 이 경우 계약 금액 및 기간은 변경하지 않는다.\n\n[U5] ## 제5조(검수)\n을이 결과물을 제출하면 갑은 자체 기준에 따라 검수하며, 검수 기간에는 제한을 두지 않는다. 갑이 만족할 때까지 을은 수정하여야 한다.\n\n[U6] ## 제6조(지체상금)\n을이 계약 기간 내에 과업을 완료하지 못한 경우 지체일수 1일당 계약 금액의 100분의 1을 지체상금으로 갑에게 지급한다.\n\n[U7] ## 제7조(하자보수)\n을은 앱 출시 이후 기간의 제한 없이 모든 오류에 대하여 무상으로 수정하여야 한다.\n\n[U8] ## 제8조(지식재산권)\n본 계약과 관련하여 을이 작성한 모든 산출물 및 을이 기존에 보유하고 있던 소스코드, 라이브러리, 노하우를 포함한 일체의 지식재산권은 계약 체결과 동시에 갑에게 귀속된다.\n\n[U9] ## 제9조(계약 해지)\n① 갑은 사업상 필요에 따라 언제든지 서면 통보로 본 계약을 해지할 수 있다.\n② 제1항에 따라 계약이 해지되는 경우 갑은 을에게 해지 시점까지 수행된 과업에 대한 대가를 지급하지 않는다.\n\n[U10] ## 제10조(비밀유지 및 경업금지)\n① 을은 본 계약과 관련하여 알게 된 갑의 모든 정보를 영구히 비밀로 유지하여야 한다.\n② 을은 계약 종료 후 3년간 갑과 동종 업계의 회사로부터 앱 개발 용역을 수주할 수 없다.\n\n[U11] ## 제11조(손해배상)\n을의 귀책사유로 갑에게 손해가 발생한 경우 을은 그 손해 전액(간접손해 및 영업이익 손실 포함)을 배상한다.\n\n[U12] ## 제12조(관할)\n본 계약에 관한 분쟁은 갑의 본점 소재지 관할 법원을 전속 관할로 한다.", "elapsed_ms": 0}
+{"type": "tool_result", "t": 13625, "id": "call_BqkKUUEQbYnr1EEn16zpEIDW", "tool": "read_standard_contract_outline", "ok": true, "summary": "'소프트웨어 개발 용역 표준계약서' 목차 15개 조항 확인", "source_ids": [], "preview": "- 제1조(목적)\n- 제2조(정의)\n- 제3조(과업 범위 및 변경)\n- 제4조(계약 기간)\n- 제5조(계약 금액 및 지급)\n- 제6조(을의 의무)\n- 제7조(갑의 협력 의무)\n- 제8조(검수)\n- 제9조(지체상금)\n- 제10조(하자보수)\n- 제11조(지식재산권의 귀속)\n- 제12조(비밀유지)\n- 제13조(계약의 해제·해지)\n- 제14조(손해배상)\n- 제15조(분쟁의 해결)", "elapsed_ms": 0}
+{"type": "plan_update", "t": 15563, "step_no": 2, "status": "done"}
+{"type": "plan_update", "t": 15563, "step_no": 3, "status": "in_progress"}
+{"type": "tool_call", "t": 15563, "id": "call_6oafUXngd9xfyjgDKCHMhOLi", "tool": "read_standard_contract_articles", "label": "📄 표준계약서 조항 읽기", "args": {"contract_id": "software_service", "articles": ["제3조", "제5조", "제8조", "제9조", "제10조", "제11조", "제12조", "제13조", "제14조", "제15조"]}, "reason": "계약서의 핵심 조건을 표준 조항과 대조하겠습니다.", "plan_step": 3}
+{"type": "tool_result", "t": 15563, "id": "call_6oafUXngd9xfyjgDKCHMhOLi", "tool": "read_standard_contract_articles", "ok": true, "summary": "'소프트웨어 개발 용역 표준계약서' 제3조(과업 범위 및 변경), 제5조(계약 금액 및 지급), 제8조(검수), 제9조(지체상금), 제10조(하자보수), 제11조(지식재산권의 귀속) 외 4개 읽음", "source_ids": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"], "preview": "[C1] ## 제3조(과업 범위 및 변경)\n① 과업의 범위는 별첨 과업내용서(요구사항 명세서)에 따른다.\n② 갑이 과업 범위를 변경하거나 추가하려는 경우 서면으로 요청하여야 하며, 이로 인하여 계약 금액 또는 기간의 조정이 필요한 경우 갑과 을은 상호 협의하여 이를 조정한다.\n③ 갑은 과업 변경으로 인하여 을에게 추가 비용이 발생한 경우 이를 보전하여야 한다.\n\n[C2] ## 제5조(계약 금액 및 지급)\n① 계약 금액: 금 ________원 (부가가치세 별도)\n② 대금은 선급금 __%, 중도금 __%, 잔금 __%로 나누어 지급하며, 잔금은 검수 완료 후 __일 이내에 지급한다.\n③ 갑은 정당한 사유 없이 대금 지급을 지연할 수 없으며, 지연 시 지연일수에 대하여 법정 지연이자를 지급한다.\n\n[C3] ## 제8조(검수)\n① 을이 산출물을 인도하면 갑은 인도일로부터 14일 이내에 과업내용서에 정한 기준에 따라 검수를 실시하고 그 결과를 서면으로 통지하여야 한다.\n② 갑이 제1항의 기간 내에 검수 결과를 통지하지 아니한 경우 검수에 합격한 것으로 본다.\n③ 검수 기준은 사전에 합의한 과업내용서에 근거하여야 하며, 갑이 임의로 새로운 기준을 추가할 수 없다.\n\n[C4] ## 제9조(지체상금)\n① 을이 정당한 사유 없이 계약 기간 내에 과업을 완료하지 못한 경우, 지체일수 1일당 계약 금액의 1천분의 1.25에 해당하는 지체상금을 갑에게 지급한다.\n② 지체상금의 총액은 계약 금액의 100분의 10을 초과할 수 없다.\n③ 천재지변, 갑의 책임 있는 사유 등으로 인한 지체는 지체일수에 산입하지 아니한다.\n\n[C5] ## 제10조(하자보수)\n① 을은 검수 완료일로부터 1년간 산출물의 하자에 대하여 무상으로 보수한다.\n② 갑의 임의 변경, 운영 환경의 변경, 갑의 귀책사유로 발생한 결함은 하자보수 대상에서 제외한다.\n③ 하자보수 기간 경과 후의 유지보수는 별도 계약으로 정한다.\n\n[C6] ## 제11조(지식재산권의 귀속)\n① 이 계약에 따라 개발된 산출물의 지식재산권은 갑과 을이 공동으로 소유하는 것을 원칙으로 하되, 당사자 간 합의로 그 귀속을 달리 정할 수 있다.\n② 제1항에도 불구하고 을의 기존 보유 기술에 대한 권리는 을에게 귀속되며, 갑은 산출물의 이용에 필요한 범위 내에서 이를 무상으로 사용할 수 있다.\n③ 산출물의 권리를 갑에게 전부 귀속시키는 경우 그 대가를 계약 금액에 반영하여야 한다.\n\n[C7] ## 제12조(비밀유지)\n갑과 을은 과업 수행 중 알게 된 상대방의 비밀정보를 계약 기간 중 및 계약 종료 후 2년간 제3자에게 누설하여서는 아니 된다.\n\n[C8] ## 제13조(계약의 해제·해지)\n① 갑 또는 을은 상대방이 계약상 의무를 위반하고 14일 이상의 기간을 정한 서면 최고에도 이를 시정하지 아니하는 경우 계약을 해제 또는 해지할 수 있다.\n② 갑이 자신의 사정으로 계약을 해지하는 경우 을이 해지 시점까지 수행한 과업에 대한 대가와 해지로 인하여 을이 입은 손해를 지급하여야 한다.\n\n[C9] ## 제14조(손해배상)\n갑 또는 을은 고의 또는 과실로 상대방에게 손해를 입힌 경우 이를 배상하여야 한다. 다만, 손해배상의 총액은 특별한 사정이 없는 한 계약 금액을 한도로 한다.\n\n[C10] ## 제15조(분쟁의 해결)\n이 계약과 관련하여 분쟁이 발생한 경우 당사자 간 협의로 해결하며, 협의가 이루어지지 않는 경우 소프트웨어사업 분쟁조정위원회의 조정 또는 관할 법원의 판결에 따른다.", "elapsed_ms": 0}
+{"type": "plan_update", "t": 18328, "step_no": 3, "status": "done"}
+{"type": "plan_update", "t": 18328, "step_no": 4, "status": "in_progress"}
+{"type": "tool_call", "t": 18328, "id": "call_9EjlPPtBqRY0UVUXBwpaEQfU", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "민법", "article": "제673조"}, "reason": "계약 해지 때 이미 한 일의 보수를 청구할 법적 기준을 확인하겠습니다.", "plan_step": 4}
+{"type": "tool_call", "t": 18328, "id": "call_OS76mqHLQp5kquJWvLFALphv", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "저작권법", "article": "제2조"}, "reason": "용역 결과물의 저작권 귀속은 저작권법 기준도 함께 살펴보겠습니다.", "plan_step": 4}
+{"type": "tool_call", "t": 18328, "id": "call_xJhooh0YfsQKLdR4ZjujFhyi", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "저작권법", "article": "제45조"}, "reason": "저작재산권 양도 범위와 계약 문구의 영향을 확인하겠습니다.", "plan_step": 4}
+{"type": "tool_result", "t": 19813, "id": "call_9EjlPPtBqRY0UVUXBwpaEQfU", "tool": "get_law_article", "ok": true, "summary": "민법 제673조(완성전의 도급인의 해제권) 원문 확인", "source_ids": ["L1"], "preview": "[L1] 민법 제673조(완성전의 도급인의 해제권) (시행 20260317)\n제673조(완성전의 도급인의 해제권) 수급인이 일을 완성하기 전에는 도급인은 손해를 배상하고 계약을 해제할 수 있다.", "elapsed_ms": 1485}
+{"type": "tool_result", "t": 19813, "id": "call_OS76mqHLQp5kquJWvLFALphv", "tool": "get_law_article", "ok": true, "summary": "저작권법 제2조(정의) 원문 확인", "source_ids": ["L2"], "preview": "[L2] 저작권법 제2조(정의) (시행 20260811)\n제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. <개정 2009.4.22, 2011.6.30, 2011.12.2, 2016.3.22, 2021.5.18, 2023.8.8, 2026.2.10>\n1. \"저작물\"은 인간의 사상 또는 감정을 표현한 창작물을 말한다.\n2. \"저작자\"는 저작물을 창작한 자를 말한다.\n3. \"공연\"은 저작물 또는 실연(實演)ㆍ음반ㆍ방송을 상연ㆍ연주ㆍ가창ㆍ구연ㆍ낭독ㆍ상영ㆍ재생 그 밖의 방법으로 공중에게 공개하는 것을 말하며, 동일인의 점유에 속하는 연결된 장소 안에서 이루어지는 송신(전송은 제외한다)을 포함한다.\n4. \"실연자\"는 저작물을 연기ㆍ무용ㆍ연주ㆍ가창ㆍ구연ㆍ낭독 그 밖의 예능적 방법으로 표현하거나 저작물이 아닌 것을 이와 유사한 방법으로 표현하는 실연을 하는 자를 말하며, 실연을 지휘, 연출 또는 감독하는 자를 포함한다.\n5. \"음반\"은 음(음성ㆍ음향을 말한다. 이하 같다)이 유형물에 고정된 것(음을 디지털화한 것을 포함한다)을 말한다. 다만, 음이 영상과 함께 고정된 것은 제외한다.\n6. \"음반제작자\"는 음반을 최초로 제작하는 데 있어 전체적으로 기획하고 책임을 지는 자를 말한다.\n7. \"공중송신\"은 저작물, 실연ㆍ음반ㆍ방송 또는 데이터베이스(이하 \"저작물등\"이라 한다)를 공중이 수신하거나 접근하게 할 목적으로 무선 또는 유선통신의 방법에 의하여 송신하거나 이용에 제공하는 것을 말한다.\n8. \"방송\"은 공중송신 중 공중이 동시에 수신하게 할 목적으로 음ㆍ영상 또는 음과 영상 등을 송신하는 것을 말한다.\n8의2. \"암호화된 방송 신호\"란 방송사업자나 방송사업자의 동의를 받은 자가 정당한 권한 없이 방송(유선 및 위성 통신의 방법에 의한 방송으로 한정한다)을 수신하는 것을 방지하거나 억제하기 위하여 전자적으로 암호화한 방송 신호를 말한다.\n9. \"방송사업자\"는 방송을 업으로 하는 자를 말한다.\n10. \"전송(傳送)\"은 공중송신 중 공중의 구성원이 개별적으로 선택한 시간과 장소에서 접근할 수 있도록 저작물등을 이용에 제공하는 것을 말하며, 그에 따라 이루어지는 송신을 포함한다.\n11. \"디지털음성송신\"은 공중송신 중 공중으로 하여금 동시에 수신하게 할 목적으로 공중의 구성원의 요청에 의하여 개시되는 디지털 방식의 음의 송신을 말하며, 전송은 제외한다.\n12. \"디지털음성송신사업자\"는 디지털음성송신을 업으로 하는 자를 말한다.\n13. \"영상저작물\"은 연속적인 영상(음의 수반여부는 가리지 아니한다)이 수록된 창작물로서 그 영상을 기계 또는 전자장치에 의하여 재생하여 볼 수 있거나 보고 들을 수 있는 것을 말한다.\n14. \"영상제작자\"는 영상저작물의 제작에 있어 그 전체를 기획하고 책임을 지는 자를 말한다.\n15. \"응용미술저작물\"은 물품에 동일한 형상으로 복제될 수 있는 미술저작물로서 그 이용된 물품과 구분되어 독자성을 인정할 수 있는 것을 말하며, 디자인 등을 포함한다.\n16. \"컴퓨터프로그램저작물\"은 특정한 결과를 얻기 위하여 컴퓨터 등 정보처리능력을 가진 장치(이하 \"컴퓨터\"라 한다) 내에서 직접 또는 간접으로 사용되는 일련의 지시ㆍ명령으로 표현된 창작물을 말한다.\n17. \"편집물\"은 저작물이나 부호ㆍ문자ㆍ음ㆍ영상 그 밖의 형태의 자료(이하 \"소재\"라 한다)의 집합물을 말하며, 데이터베이스를 포함한다.\n18. \"편집저작물\"은 편집물로서 그 소재의 선택ㆍ배열 또는 구성에 창작성이 있는 것을 말한다.\n19. \"데이터베이스\"는 소재를 체계적으로 배열 또는 구성한 편집물로서 개별적으로 그 소재에 접근하거나 그 소재를 검색할 수 있도록 한 것을 말한다.\n20. \"데이터베이스제작자\"는 데이터베이스의 제작 또는 그 소재의 갱신ㆍ검증 또는 보충(이하 \"갱신등\"이라 한다)에 인적 또는 물적으로 상당한 투자를 한 자를 말한다.\n21. \"공동저작물\"은 2명 이상이 공동으로 창작한 저작물로서 각자의 이바지한 부분을 분리하여 이용할 수 없는 것을 말한다.\n22. \"복제\"는 인쇄ㆍ사진촬영ㆍ복사ㆍ녹음ㆍ녹화 그 밖의 방법으로 일시적 또는 영구적으로 유형물에 고정하거나 다시 제작하는 것을 말하며, 건축물의 경우에는 그 건축을 위한 모형 또는 설계도서에 따라 이를 시공하는 것을 포함한다.\n23. \"배포\"는 저작물등의 원본 또는 그 복제물을 공중에게 대가를 받거나 받지 아니하고 양도 또는 대여하는 것을 말한다.\n24. \"발행\"은 저작물 또는 음반을 공중의 수요를 충족시키기 위하여 복제ㆍ배포하는 것을 말한다.\n25. \"공표\"는 저작물을 공연, 공중송신 또는 전시 그 밖의 방법으로 공중에게 공개하는 경우와 저작물을 발행하는 경우를 말한다.\n26. \"저작권신탁관리업\"은 저작재산권자, 배타적발행권자, 출판권자, 저작인접권자 또는 데이터베이스제작자의 권리를 가진 자를 위하여 그 권리를 신탁받아 이를 지속적으로 관리하는 업을 말하며, 저작물등의 이용과 관련하여 포괄적으로 대리하는 경우를 포함한다.\n27. \"저작권대리중개업\"은 저작재산권자, 배타적발행권자, 출판권자, 저작인접권자 또는 데이터베이스제작자의 권리를 가진 자를 위하여 그 권리의 이용에 관한 대리 또는 중개행위를 하는 업을 말한다.\n28. \"기술적 보호조치\"란 다음 각 목의 어느 하나에 해당하는 조치를 말한다.\n가. 저작권, 그 밖에 이 법에 따라 보호되는 권리의 행사와 관련하여 이 법에 따라 보호되는 저작물등에 대한 접근을 효과적으로 방지하거나 억제하기 위하여 그 권리자나 권리자의 동의를 받은 자가 적용하는 기술적 조치\n나. 저작권, 그 밖에 이 법에 따라 보호되는 권리에 대한 침해 행위를 효과적으로 방지하거나 억제하기 위하여 그 권리자나 권리자의 동의를 받은 자가 적용하는 기술적 조치\n29. \"권리관리정보\"는 다음 각 목의 어느 하나에 해당하는 정보나 그 정보를 나타내는 숫자 또는 부호로서 각 정보가 저작권, 그 밖에 이 법에 따라 보호되는 권리에 의하여 보호되는 저작물등의 원본이나 그 복제물에 붙여지거나 그 공연ㆍ실행 또는 공중송신에 수반되는 것을 말한다.\n가. 저작물등을 식별하기 위한 정보\n나. 저작권, 그 밖에 이 법에 따라 보호되는 권리를 가진 자를 식별하기 위한 정보\n다. 저작물등의 이용 방법 및 조건에 관한 정보\n30. \"온라인서비스제공자\"란 다음 각 목의 어느 하나에 해당하는 자를 말한다.\n가. 이용자가 선택한 저작물등을 그 내용의 수정 없이 이용자가 지정한 지점 사이에서 정보통신망(「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제2조제1항제1호의 정보통신망을 말한다. 이하 같다)을 통하여 전달하기 위하여 송신하거나 경로를 지정하거나 연결을 제공하는 자(「전기통신사업법」 제2조제8호의 전기통신사업자를 포함한다)\n나. 이용자들이 정보통신망에 접속하거나 정보통신망을 통하여 저작물등을 복제ㆍ전송할 수 있도록 서비스를 제공하거나 그를 위한 설비를 제공 또는 운영하는 자\n31. \"업무상저작물\"은 법인ㆍ단체 그 밖의 사용자(이하 \"법인등\"이라 한다)의 기획하에 법인등의 업무에 종사하는 자가 업무상 작성하는 저작물을 말한다.\n32. \"공중\"은 불특정 다수인(특정 다수인을 포함한다)을 말한다.\n33. \"인증\"은 저작물등의 이용허락 등을 위하여 정당한 권리자임을 증명하는 것을 말한다.\n34. \"프로그램코드역분석\"은 독립적으로 창작된 컴퓨터프로그램저작물과 다른 컴퓨터프로그램과의 호환에 필요한 정보를 얻기 위하여 컴퓨터프로그램저작물코드를 복제 또는 변환하는 것을 말한다.\n35. \"라벨\"이란 그 복제물이 정당한 권한에 따라 제작된 것임을 나타내기 위하여 저작물등의 유형적 복제물ㆍ포장 또는 문서에 부착ㆍ동봉 또는 첨부되거나 그러한 목적으로 고안된 표지를 말한다.\n36. \"영화상영관등\"이란 영화상영관, 시사회장, 그 밖에 공중에게 영상저작물을 상영하는 장소로서 상영자에 의하여 입장이 통제되는 장소를 말한다.\n37. \"불법복제물\"이란 저작권, 그 밖에 이 법에 따라 보호되는 권리를 침해하는 복제물을 말한다.", "elapsed_ms": 1313}
+{"type": "tool_result", "t": 20296, "id": "call_xJhooh0YfsQKLdR4ZjujFhyi", "tool": "get_law_article", "ok": true, "summary": "저작권법 제45조(저작재산권의 양도) 원문 확인", "source_ids": ["L3"], "preview": "[L3] 저작권법 제45조(저작재산권의 양도) (시행 20260811)\n제45조(저작재산권의 양도)\n①저작재산권은 전부 또는 일부를 양도할 수 있다.\n②저작재산권의 전부를 양도하는 경우에 특약이 없는 때에는 제22조에 따른 2차적저작물을 작성하여 이용할 권리는 포함되지 아니한 것으로 추정한다. 다만, 프로그램의 경우 특약이 없으면 2차적저작물작성권도 함께 양도된 것으로 추정한다. <개정 2009.4.22, 2023.8.8>", "elapsed_ms": 1639}
+{"type": "research_note", "t": 35546, "text": "## 조사 메모\n\n### 확인된 사실과 쟁점\n\n- **대금 지급 — 불리한 위험이 큼**  \n  계약금 2,000만 원(부가세 별도)을 **최종 검수 후 한 번에 지급**하도록 되어 있습니다. 검수 완료 전까지 대금을 받지 못하고, 검수가 지연되면 지급도 함께 늦어질 수 있습니다. 표준계약서는 선급금·중도금·잔금으로 나누어 지급하고 잔금은 검수 후 정해진 기간 안에 지급하도록 제시합니다. **[U2, C2]**\n\n- **과업 추가·변경 — 매우 불리**  \n  갑이 필요하다고 판단하면 기능을 추가·변경할 수 있고, 을은 이를 따라야 하지만 **대금과 기간은 그대로**입니다. 추가 작업의 범위나 비용을 두고 분쟁이 생길 수 있습니다. 표준계약서는 과업 변경을 서면으로 요청하고, 필요하면 금액·기간을 협의 조정하며 추가 비용을 보전하도록 합니다. **[U4, C1]**\n\n- **검수 — 매우 불리**  \n  검수 기간에 제한이 없고, 갑의 자체 기준으로 검수하며 “만족할 때까지” 수정해야 합니다. 기준이 불명확하고 수정 횟수·기간도 정해져 있지 않아, 검수 완료와 대금 지급이 무기한 늦어질 위험이 있습니다. 표준계약서는 과업내용서에 정한 기준을 적용하고, 14일 내 결과 통지 및 미통지 시 합격 간주를 두고 있습니다. **[U5, C3]**\n\n- **지체상금 — 불리**  \n  지체 1일마다 계약금액의 1%(20만 원)를 부과합니다. 100일이면 계약금액과 같은 액수가 되지만, 총액 한도나 갑의 책임으로 인한 지연의 제외 규정은 없습니다. 표준계약서에는 하루 1.25‰(0.125%)와 총액 10% 한도, 갑의 책임 등으로 인한 지연의 제외가 규정돼 있습니다. **[U6, C4]**\n\n- **하자보수 — 매우 불리**  \n  앱 출시 후 기간 제한 없이 모든 오류를 무상으로 수정하도록 되어 있습니다. 하자의 범위, 을의 책임이 아닌 원인, 보수기간이 정해져 있지 않아 장기간 무상 대응 부담이 생길 수 있습니다. 표준계약서는 검수 완료 후 1년으로 기간을 정하고, 갑의 변경·운영환경 변경 등으로 생긴 결함은 제외하며 이후 유지보수는 별도 계약으로 정합니다. **[U7, C5]**\n\n- **지식재산권 — 매우 불리**  \n  새로 만든 산출물뿐 아니라 을이 이미 보유한 소스코드·라이브러리·노하우까지 계약 체결과 동시에 갑에게 귀속된다고 되어 있습니다. 기존 기술을 다른 프로젝트에서 재사용하거나 보유하는 데 문제가 생길 수 있고, 권리 이전 대가도 별도로 정해져 있지 않습니다. 표준계약서는 을의 기존 기술 권리를 을에게 남기고, 갑에게 필요한 이용 범위만 허용하는 방식을 제시합니다. 저작권법상 저작재산권은 양도할 수 있고, 프로그램은 특약이 없으면 2차적저작물 작성·이용 권리도 양도된 것으로 추정될 수 있으므로 권리 범위를 구체적으로 정할 필요가 있습니다. **[U8, C6, L3]**\n\n- **갑의 임의 해지와 정산 — 매우 불리**  \n  갑은 사업상 필요만으로 언제든 계약을 해지할 수 있고, 해지 시점까지 수행한 과업의 대가도 지급하지 않는다고 되어 있습니다. 이미 한 일에 대한 보수를 잃을 위험이 있습니다. 표준계약서는 갑이 자기 사정으로 해지하면 수행분 대가와 해지로 인한 손해를 지급하도록 합니다. 민법 제673조도 일이 완성되기 전 도급인이 손해를 배상하고 해제할 수 있다고 정합니다. 따라서 계약서의 **수행분 대가 미지급 문구는 특히 수정이 필요**합니다. **[U9, C8, L1]**\n\n- **비밀유지·경업금지 — 불리**  \n  비밀유지는 갑의 “모든 정보”를 대상으로 기간 제한 없이 적용됩니다. 비밀정보의 범위와 예외가 없어 통상적인 업무정보까지 장기간 제한될 수 있습니다. 별도로 계약 종료 후 3년간 동종 업계 회사의 앱 개발 용역을 수주할 수 없도록 해, 생계와 영업활동을 크게 제한할 수 있습니다. 표준계약서는 비밀유지를 양 당사자에게 적용하고 계약 종료 후 2년으로 정하지만, 경업금지는 두지 않습니다. **[U10, C7]**\n\n- **손해배상 — 매우 불리**  \n  을의 귀책사유로 손해가 발생하면 간접손해와 영업이익 손실까지 포함해 전액 배상하도록 되어 있습니다. 책임 상한이나 손해 범위 제한이 없습니다. 표준계약서는 원칙적으로 손해배상 총액을 계약금액 한도로 정하는 예시를 둡니다. **[U11, C9]**\n\n- **관할 — 불편할 수 있음**  \n  갑 본점 소재지 법원만 전속 관할로 정해져 있어, 을이 다른 지역에 있다면 분쟁 대응에 시간·비용이 더 들 수 있습니다. 표준계약서는 협의, 분쟁조정 또는 관할 법원 판결을 제시합니다. **[U12, C10]**\n\n### 우선 협의할 수정 사항\n\n특히 **과업 변경 시 대금·기간 조정, 객관적인 검수 기준과 검수 기한, 지체상금 한도와 면책 사유, 하자보수 기간·범위, 기존 지식재산권의 을 보유, 해지 시 수행분 대가 정산, 경업금지 삭제 또는 대폭 축소, 손해배상 한도**를 서면으로 명확히 하는 것이 중요합니다. 대금도 단계별 지급과 지급기한을 정하는 편이 안전합니다.\n\n### 확인하지 못한 부분\n\n별첨 기획서의 구체적인 내용, 실제 프로젝트 진행 방식, 당사자의 협상 경위는 확인하지 못했습니다. 지체상금·경업금지·관할 조항의 구체적 효력이나 분쟁 시 적용 결과도 별도로 판단하지 않았습니다. 표준계약서는 비교 기준일 뿐, 이 계약에 자동으로 적용되는 것은 아닙니다. ※ 이 메모는 제공된 문구를 기준으로 한 위험 검토이며, 서명 전에는 전체 계약과 별첨을 함께 확인하는 것이 좋습니다."}
+{"type": "plan_update", "t": 35546, "step_no": 4, "status": "done"}
+{"type": "stage", "t": 35546, "stage": "research", "status": "end"}
+{"type": "stage", "t": 35546, "stage": "write", "status": "start"}
+{"type": "token", "t": 38000, "text": "##"}
+{"type": "token", "t": 38000, "text": " 한"}
+{"type": "token", "t": 38015, "text": "눈"}
+{"type": "token", "t": 38015, "text": "에"}
+{"type": "token", "t": 38015, "text": " 보기"}
+{"type": "token", "t": 38015, "text": "\n"}
+{"type": "token", "t": 38015, "text": "계"}
+{"type": "token", "t": 38125, "text": "약"}
+{"type": "token", "t": 38125, "text": "서"}
+{"type": "token", "t": 38125, "text": "에는"}
+{"type": "token", "t": 38125, "text": " 대"}
+{"type": "token", "t": 38125, "text": "금"}
+{"type": "token", "t": 38125, "text": " 지급"}
+{"type": "token", "t": 38125, "text": "을"}
+{"type": "token", "t": 38125, "text": " 최"}
+{"type": "token", "t": 38125, "text": "종"}
+{"type": "token", "t": 38125, "text": " 검"}
+{"type": "token", "t": 38125, "text": "수"}
+{"type": "token", "t": 38125, "text": " 뒤"}
+{"type": "token", "t": 38125, "text": "로"}
+{"type": "token", "t": 38125, "text": " 미"}
+{"type": "token", "t": 38125, "text": "루"}
+{"type": "token", "t": 38125, "text": "고"}
+{"type": "token", "t": 38125, "text": ","}
+{"type": "token", "t": 38125, "text": " 추가"}
+{"type": "token", "t": 38125, "text": " 작업"}
+{"type": "token", "t": 38125, "text": "은"}
+{"type": "token", "t": 38125, "text": " 비용"}
+{"type": "token", "t": 38125, "text": "·"}
+{"type": "token", "t": 38125, "text": "기간"}
+{"type": "token", "t": 38125, "text": " 조"}
+{"type": "token", "t": 38125, "text": "정"}
+{"type": "token", "t": 38125, "text": " 없이"}
+{"type": "token", "t": 38125, "text": " 하"}
+{"type": "token", "t": 38125, "text": "도록"}
+{"type": "token", "t": 38125, "text": " 하"}
+{"type": "token", "t": 38125, "text": "며"}
+{"type": "token", "t": 38125, "text": ","}
+{"type": "token", "t": 38125, "text": " 검"}
+{"type": "token", "t": 38125, "text": "수"}
+{"type": "token", "t": 38125, "text": "와"}
+{"type": "token", "t": 38125, "text": " 무"}
+{"type": "token", "t": 38125, "text": "상"}
+{"type": "token", "t": 38125, "text": " 하"}
+{"type": "token", "t": 38125, "text": "자"}
+{"type": "token", "t": 38125, "text": "수"}
+{"type": "token", "t": 38140, "text": "정을"}
+{"type": "token", "t": 38140, "text": " 제한"}
+{"type": "token", "t": 38140, "text": " 없이"}
+{"type": "token", "t": 38140, "text": " 요구"}
+{"type": "token", "t": 38156, "text": "할"}
+{"type": "token", "t": 38156, "text": " 수"}
+{"type": "token", "t": 38156, "text": " 있는"}
+{"type": "token", "t": 38156, "text": " 조"}
+{"type": "token", "t": 38156, "text": "항"}
+{"type": "token", "t": 38250, "text": "이"}
+{"type": "token", "t": 38250, "text": " 있습니다"}
+{"type": "token", "t": 38250, "text": "."}
+{"type": "token", "t": 38250, "text": " 특히"}
+{"type": "token", "t": 38250, "text": " **"}
+{"type": "token", "t": 38250, "text": "과"}
+{"type": "token", "t": 38250, "text": "업"}
+{"type": "token", "t": 38250, "text": " 변경"}
+{"type": "token", "t": 38250, "text": ","}
+{"type": "token", "t": 38250, "text": " 검"}
+{"type": "token", "t": 38250, "text": "수"}
+{"type": "token", "t": 38250, "text": ","}
+{"type": "token", "t": 38250, "text": " 해"}
+{"type": "token", "t": 38250, "text": "지"}
+{"type": "token", "t": 38250, "text": " 정"}
+{"type": "token", "t": 38250, "text": "산"}
+{"type": "token", "t": 38250, "text": ","}
+{"type": "token", "t": 38250, "text": " 기존"}
+{"type": "token", "t": 38250, "text": " 지"}
+{"type": "token", "t": 38250, "text": "식"}
+{"type": "token", "t": 38250, "text": "재"}
+{"type": "token", "t": 38250, "text": "산"}
+{"type": "token", "t": 38250, "text": "권"}
+{"type": "token", "t": 38250, "text": ","}
+{"type": "token", "t": 38250, "text": " 경"}
+{"type": "token", "t": 38250, "text": "업"}
+{"type": "token", "t": 38250, "text": "금"}
+{"type": "token", "t": 38250, "text": "지"}
+{"type": "token", "t": 38250, "text": ","}
+{"type": "token", "t": 38250, "text": " 손"}
+{"type": "token", "t": 38250, "text": "해"}
+{"type": "token", "t": 38250, "text": "배"}
+{"type": "token", "t": 38250, "text": "상"}
+{"type": "token", "t": 38250, "text": "**"}
+{"type": "token", "t": 38250, "text": "은"}
+{"type": "token", "t": 38250, "text": " 서"}
+{"type": "token", "t": 38250, "text": "명"}
+{"type": "token", "t": 38250, "text": " 전에"}
+{"type": "token", "t": 38250, "text": " 우"}
+{"type": "token", "t": 38250, "text": "선"}
+{"type": "token", "t": 38250, "text": " 수정"}
+{"type": "token", "t": 38250, "text": "·"}
+{"type": "token", "t": 38250, "text": "협"}
+{"type": "token", "t": 38265, "text": "의"}
+{"type": "token", "t": 38265, "text": "하는"}
+{"type": "token", "t": 38265, "text": " 것이"}
+{"type": "token", "t": 38265, "text": " 좋"}
+{"type": "token", "t": 38265, "text": "습니다"}
+{"type": "token", "t": 38265, "text": "."}
+{"type": "token", "t": 38265, "text": " ["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "2"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "4"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "5"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "7"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "8"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "9"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "10"}
+{"type": "token", "t": 38265, "text": "]["}
+{"type": "token", "t": 38265, "text": "U"}
+{"type": "token", "t": 38265, "text": "11"}
+{"type": "token", "t": 38265, "text": "]\n\n"}
+{"type": "token", "t": 38265, "text": "##"}
+{"type": "token", "t": 38265, "text": " 검"}
+{"type": "token", "t": 38281, "text": "토"}
+{"type": "token", "t": 38281, "text": " 결과"}
+{"type": "token", "t": 38281, "text": "\n\n"}
+{"type": "token", "t": 38296, "text": "###"}
+{"type": "token", "t": 38296, "text": " 🔴"}
+{"type": "token", "t": 38313, "text": " 대"}
+{"type": "token", "t": 38328, "text": "금"}
+{"type": "token", "t": 38343, "text": " 지급"}
+{"type": "token", "t": 38360, "text": "과"}
+{"type": "token", "t": 38375, "text": " 과"}
+{"type": "token", "t": 38390, "text": "업"}
+{"type": "token", "t": 38406, "text": " 변경"}
+{"type": "token", "t": 38406, "text": "\n"}
+{"type": "token", "t": 38406, "text": "계"}
+{"type": "token", "t": 38406, "text": "약"}
+{"type": "token", "t": 38406, "text": "금"}
+{"type": "token", "t": 38421, "text": " "}
+{"type": "token", "t": 38421, "text": "2"}
+{"type": "token", "t": 38421, "text": ","}
+{"type": "token", "t": 38438, "text": "000"}
+{"type": "token", "t": 38438, "text": "만"}
+{"type": "token", "t": 38453, "text": " 원"}
+{"type": "token", "t": 38453, "text": "("}
+{"type": "token", "t": 38468, "text": "부"}
+{"type": "token", "t": 38468, "text": "가"}
+{"type": "token", "t": 38485, "text": "세"}
+{"type": "token", "t": 38485, "text": " 별"}
+{"type": "token", "t": 38485, "text": "도"}
+{"type": "token", "t": 38485, "text": ")은"}
+{"type": "token", "t": 38500, "text": " 최"}
+{"type": "token", "t": 38515, "text": "종"}
+{"type": "token", "t": 38515, "text": " 검"}
+{"type": "token", "t": 38515, "text": "수"}
+{"type": "token", "t": 38531, "text": " 후"}
+{"type": "token", "t": 38546, "text": " 한"}
+{"type": "token", "t": 38546, "text": " 번"}
+{"type": "token", "t": 38546, "text": "에"}
+{"type": "token", "t": 38546, "text": " 지급"}
+{"type": "token", "t": 38578, "text": "하게"}
+{"type": "token", "t": 38593, "text": " 되어"}
+{"type": "token", "t": 38610, "text": " 있어"}
+{"type": "token", "t": 38625, "text": ","}
+{"type": "token", "t": 38640, "text": " 검"}
+{"type": "token", "t": 38656, "text": "수가"}
+{"type": "token", "t": 38671, "text": " 늦"}
+{"type": "token", "t": 38671, "text": "어"}
+{"type": "token", "t": 38703, "text": "지"}
+{"type": "token", "t": 38703, "text": "면"}
+{"type": "token", "t": 38703, "text": " 대"}
+{"type": "token", "t": 38703, "text": "금"}
+{"type": "token", "t": 38735, "text": " 수"}
+{"type": "token", "t": 38735, "text": "령"}
+{"type": "token", "t": 38735, "text": "도"}
+{"type": "token", "t": 38765, "text": " 늦"}
+{"type": "token", "t": 38765, "text": "어"}
+{"type": "token", "t": 38765, "text": "질"}
+{"type": "token", "t": 38765, "text": " 수"}
+{"type": "token", "t": 38781, "text": " 있습니다"}
+{"type": "token", "t": 38796, "text": "."}
+{"type": "token", "t": 38796, "text": " ["}
+{"type": "token", "t": 38796, "text": "U"}
+{"type": "token", "t": 38813, "text": "2"}
+{"type": "token", "t": 38813, "text": "]"}
+{"type": "token", "t": 38828, "text": " 표"}
+{"type": "token", "t": 38828, "text": "준"}
+{"type": "token", "t": 38828, "text": "계"}
+{"type": "token", "t": 38860, "text": "약"}
+{"type": "token", "t": 38860, "text": "서"}
+{"type": "token", "t": 38860, "text": " 예"}
+{"type": "token", "t": 38875, "text": "시는"}
+{"type": "token", "t": 38875, "text": " 선"}
+{"type": "token", "t": 38875, "text": "급"}
+{"type": "token", "t": 38890, "text": "금"}
+{"type": "token", "t": 38906, "text": "·"}
+{"type": "token", "t": 38906, "text": "중"}
+{"type": "token", "t": 38906, "text": "도"}
+{"type": "token", "t": 38906, "text": "금"}
+{"type": "token", "t": 38921, "text": "·"}
+{"type": "token", "t": 38921, "text": "잔"}
+{"type": "token", "t": 38921, "text": "금"}
+{"type": "token", "t": 38938, "text": "으로"}
+{"type": "token", "t": 38968, "text": " 나"}
+{"type": "token", "t": 38968, "text": "누"}
+{"type": "token", "t": 38968, "text": "고"}
+{"type": "token", "t": 38968, "text": ","}
+{"type": "token", "t": 38968, "text": " 잔"}
+{"type": "token", "t": 38985, "text": "금"}
+{"type": "token", "t": 38985, "text": "은"}
+{"type": "token", "t": 39000, "text": " 검"}
+{"type": "token", "t": 39000, "text": "수"}
+{"type": "token", "t": 39031, "text": " 후"}
+{"type": "token", "t": 39031, "text": " 정"}
+{"type": "token", "t": 39031, "text": "해"}
+{"type": "token", "t": 39031, "text": "진"}
+{"type": "token", "t": 39046, "text": " 기간"}
+{"type": "token", "t": 39063, "text": " 안"}
+{"type": "token", "t": 39063, "text": "에"}
+{"type": "token", "t": 39063, "text": " 지급"}
+{"type": "token", "t": 39078, "text": "하도록"}
+{"type": "token", "t": 39093, "text": " 합니다"}
+{"type": "token", "t": 39110, "text": "."}
+{"type": "token", "t": 39110, "text": " ["}
+{"type": "token", "t": 39110, "text": "C"}
+{"type": "token", "t": 39125, "text": "2"}
+{"type": "token", "t": 39140, "text": "]\n\n"}
+{"type": "token", "t": 39156, "text": "갑"}
+{"type": "token", "t": 39156, "text": "은"}
+{"type": "token", "t": 39171, "text": " 필요"}
+{"type": "token", "t": 39188, "text": "하"}
+{"type": "token", "t": 39188, "text": "다고"}
+{"type": "token", "t": 39188, "text": " 판단"}
+{"type": "token", "t": 39203, "text": "하면"}
+{"type": "token", "t": 39218, "text": " 기능"}
+{"type": "token", "t": 39218, "text": "을"}
+{"type": "token", "t": 39218, "text": " 추가"}
+{"type": "token", "t": 39235, "text": "하거나"}
+{"type": "token", "t": 39250, "text": " 변경"}
+{"type": "token", "t": 39250, "text": "할"}
+{"type": "token", "t": 39250, "text": " 수"}
+{"type": "token", "t": 39265, "text": " 있고"}
+{"type": "token", "t": 39265, "text": ","}
+{"type": "token", "t": 39281, "text": " 을"}
+{"type": "token", "t": 39281, "text": "은"}
+{"type": "token", "t": 39281, "text": " 이에"}
+{"type": "token", "t": 39296, "text": " 따라"}
+{"type": "token", "t": 39296, "text": "야"}
+{"type": "token", "t": 39313, "text": " 하지만"}
+{"type": "token", "t": 39313, "text": " 계약"}
+{"type": "token", "t": 39328, "text": "금"}
+{"type": "token", "t": 39360, "text": "액"}
+{"type": "token", "t": 39375, "text": "과"}
+{"type": "token", "t": 39375, "text": " 기간"}
+{"type": "token", "t": 39375, "text": "은"}
+{"type": "token", "t": 39390, "text": " 그대로"}
+{"type": "token", "t": 39390, "text": "입니다"}
+{"type": "token", "t": 39406, "text": "."}
+{"type": "token", "t": 39421, "text": " ["}
+{"type": "token", "t": 39421, "text": "U"}
+{"type": "token", "t": 39421, "text": "4"}
+{"type": "token", "t": 39421, "text": "]"}
+{"type": "token", "t": 39453, "text": " 표"}
+{"type": "token", "t": 39453, "text": "준"}
+{"type": "token", "t": 39453, "text": "계"}
+{"type": "token", "t": 39453, "text": "약"}
+{"type": "token", "t": 39468, "text": "서는"}
+{"type": "token", "t": 39485, "text": " 과"}
+{"type": "token", "t": 39485, "text": "업"}
+{"type": "token", "t": 39485, "text": " 변경"}
+{"type": "token", "t": 39500, "text": "을"}
+{"type": "token", "t": 39500, "text": " 서"}
+{"type": "token", "t": 39500, "text": "면"}
+{"type": "token", "t": 39515, "text": "으로"}
+{"type": "token", "t": 39546, "text": " 요청"}
+{"type": "token", "t": 39546, "text": "하고"}
+{"type": "token", "t": 39546, "text": ","}
+{"type": "token", "t": 39546, "text": " 금"}
+{"type": "token", "t": 39563, "text": "액"}
+{"type": "token", "t": 39563, "text": "·"}
+{"type": "token", "t": 39563, "text": "기간"}
+{"type": "token", "t": 39578, "text": " 조"}
+{"type": "token", "t": 39578, "text": "정"}
+{"type": "token", "t": 39578, "text": "이"}
+{"type": "token", "t": 39610, "text": " 필요"}
+{"type": "token", "t": 39610, "text": "하면"}
+{"type": "token", "t": 39625, "text": " 협"}
+{"type": "token", "t": 39625, "text": "의"}
+{"type": "token", "t": 39625, "text": "하며"}
+{"type": "token", "t": 39625, "text": ","}
+{"type": "token", "t": 39640, "text": " 추가"}
+{"type": "token", "t": 39656, "text": " 비용"}
+{"type": "token", "t": 39671, "text": "을"}
+{"type": "token", "t": 39688, "text": " 보"}
+{"type": "token", "t": 39688, "text": "전"}
+{"type": "token", "t": 39688, "text": "하도록"}
+{"type": "token", "t": 39688, "text": " 제"}
+{"type": "token", "t": 39703, "text": "시"}
+{"type": "token", "t": 39703, "text": "합니다"}
+{"type": "token", "t": 39718, "text": "."}
+{"type": "token", "t": 39718, "text": " ["}
+{"type": "token", "t": 39735, "text": "C"}
+{"type": "token", "t": 39735, "text": "1"}
+{"type": "token", "t": 39750, "text": "]\n\n"}
+{"type": "token", "t": 39750, "text": "###"}
+{"type": "token", "t": 39765, "text": " 🔴"}
+{"type": "token", "t": 39781, "text": " 검"}
+{"type": "token", "t": 39781, "text": "수"}
+{"type": "token", "t": 39796, "text": " 기준"}
+{"type": "token", "t": 39813, "text": "과"}
+{"type": "token", "t": 39813, "text": " 기"}
+{"type": "token", "t": 39813, "text": "한"}
+{"type": "token", "t": 39828, "text": "\n"}
+{"type": "token", "t": 39843, "text": "검"}
+{"type": "token", "t": 39843, "text": "수"}
+{"type": "token", "t": 39843, "text": " 기간"}
+{"type": "token", "t": 39843, "text": "에"}
+{"type": "token", "t": 39860, "text": " 제한"}
+{"type": "token", "t": 39860, "text": "이"}
+{"type": "token", "t": 39860, "text": " 없"}
+{"type": "token", "t": 39875, "text": "고"}
+{"type": "token", "t": 39890, "text": ","}
+{"type": "token", "t": 39890, "text": " 갑"}
+{"type": "token", "t": 39890, "text": "의"}
+{"type": "token", "t": 39906, "text": " 자체"}
+{"type": "token", "t": 39906, "text": " 기준"}
+{"type": "token", "t": 39921, "text": "으로"}
+{"type": "token", "t": 39938, "text": " 만족"}
+{"type": "token", "t": 39938, "text": "할"}
+{"type": "token", "t": 39938, "text": " 때"}
+{"type": "token", "t": 39938, "text": "까지"}
+{"type": "token", "t": 39953, "text": " 수정"}
+{"type": "token", "t": 39985, "text": "하도록"}
+{"type": "token", "t": 39985, "text": " 되어"}
+{"type": "token", "t": 40000, "text": " 있습니다"}
+{"type": "token", "t": 40015, "text": "."}
+{"type": "token", "t": 40015, "text": " ["}
+{"type": "token", "t": 40015, "text": "U"}
+{"type": "token", "t": 40031, "text": "5"}
+{"type": "token", "t": 40046, "text": "]"}
+{"type": "token", "t": 40046, "text": " 검"}
+{"type": "token", "t": 40046, "text": "수"}
+{"type": "token", "t": 40063, "text": " 완료"}
+{"type": "token", "t": 40093, "text": " 시"}
+{"type": "token", "t": 40093, "text": "점"}
+{"type": "token", "t": 40110, "text": "과"}
+{"type": "token", "t": 40110, "text": " 수정"}
+{"type": "token", "t": 40125, "text": " 범"}
+{"type": "token", "t": 40156, "text": "위"}
+{"type": "token", "t": 40171, "text": "가"}
+{"type": "token", "t": 40171, "text": " 불"}
+{"type": "token", "t": 40171, "text": "명"}
+{"type": "token", "t": 40188, "text": "확"}
+{"type": "token", "t": 40188, "text": "해"}
+{"type": "token", "t": 40203, "text": " 대"}
+{"type": "token", "t": 40203, "text": "금"}
+{"type": "token", "t": 40203, "text": " 지급"}
+{"type": "token", "t": 40203, "text": "이"}
+{"type": "token", "t": 40218, "text": " 늦"}
+{"type": "token", "t": 40250, "text": "어"}
+{"type": "token", "t": 40265, "text": "지"}
+{"type": "token", "t": 40265, "text": "거나"}
+{"type": "token", "t": 40265, "text": " 수정"}
+{"type": "token", "t": 40296, "text": " 작업"}
+{"type": "token", "t": 40313, "text": "이"}
+{"type": "token", "t": 40328, "text": " 계속"}
+{"type": "token", "t": 40328, "text": "될"}
+{"type": "token", "t": 40360, "text": " 위험"}
+{"type": "token", "t": 40375, "text": "이"}
+{"type": "token", "t": 40375, "text": " 있습니다"}
+{"type": "token", "t": 40375, "text": "."}
+{"type": "token", "t": 40390, "text": " ["}
+{"type": "token", "t": 40390, "text": "U"}
+{"type": "token", "t": 40390, "text": "2"}
+{"type": "token", "t": 40406, "text": "]["}
+{"type": "token", "t": 40406, "text": "U"}
+{"type": "token", "t": 40406, "text": "5"}
+{"type": "token", "t": 40421, "text": "]"}
+{"type": "token", "t": 40438, "text": " 표"}
+{"type": "token", "t": 40438, "text": "준"}
+{"type": "token", "t": 40438, "text": "계"}
+{"type": "token", "t": 40453, "text": "약"}
+{"type": "token", "t": 40468, "text": "서"}
+{"type": "token", "t": 40485, "text": " 예"}
+{"type": "token", "t": 40485, "text": "시는"}
+{"type": "token", "t": 40500, "text": " 합"}
+{"type": "token", "t": 40515, "text": "의"}
+{"type": "token", "t": 40515, "text": "한"}
+{"type": "token", "t": 40515, "text": " 과"}
+{"type": "token", "t": 40515, "text": "업"}
+{"type": "token", "t": 40546, "text": " 기준"}
+{"type": "token", "t": 40563, "text": "으로"}
+{"type": "token", "t": 40563, "text": " 검"}
+{"type": "token", "t": 40563, "text": "수"}
+{"type": "token", "t": 40578, "text": "하고"}
+{"type": "token", "t": 40578, "text": ","}
+{"type": "token", "t": 40593, "text": " 결과"}
+{"type": "token", "t": 40625, "text": "를"}
+{"type": "token", "t": 40640, "text": " "}
+{"type": "token", "t": 40640, "text": "14"}
+{"type": "token", "t": 40640, "text": "일"}
+{"type": "token", "t": 40640, "text": " 안"}
+{"type": "token", "t": 40656, "text": "에"}
+{"type": "token", "t": 40656, "text": " 통"}
+{"type": "token", "t": 40656, "text": "지"}
+{"type": "token", "t": 40671, "text": "하며"}
+{"type": "token", "t": 40688, "text": ","}
+{"type": "token", "t": 40703, "text": " 기간"}
+{"type": "token", "t": 40703, "text": " 내"}
+{"type": "token", "t": 40703, "text": " 통"}
+{"type": "token", "t": 40735, "text": "지가"}
+{"type": "token", "t": 40735, "text": " 없"}
+{"type": "token", "t": 40735, "text": "으면"}
+{"type": "token", "t": 40735, "text": " 합"}
+{"type": "token", "t": 40750, "text": "격"}
+{"type": "token", "t": 40781, "text": "한"}
+{"type": "token", "t": 40781, "text": " 것으로"}
+{"type": "token", "t": 40796, "text": " 봅니다"}
+{"type": "token", "t": 40796, "text": "."}
+{"type": "token", "t": 40796, "text": " ["}
+{"type": "token", "t": 40813, "text": "C"}
+{"type": "token", "t": 40813, "text": "3"}
+{"type": "token", "t": 40828, "text": "]\n\n"}
+{"type": "token", "t": 40828, "text": "###"}
+{"type": "token", "t": 40828, "text": " 🔴"}
+{"type": "token", "t": 40843, "text": " 지"}
+{"type": "token", "t": 40860, "text": "체"}
+{"type": "token", "t": 40860, "text": "상"}
+{"type": "token", "t": 40860, "text": "금"}
+{"type": "token", "t": 40875, "text": "\n"}
+{"type": "token", "t": 40890, "text": "계"}
+{"type": "token", "t": 40921, "text": "약"}
+{"type": "token", "t": 40921, "text": " 기간"}
+{"type": "token", "t": 40921, "text": " 안"}
+{"type": "token", "t": 40921, "text": "에"}
+{"type": "token", "t": 40938, "text": " 과"}
+{"type": "token", "t": 40953, "text": "업"}
+{"type": "token", "t": 40953, "text": "을"}
+{"type": "token", "t": 40953, "text": " 완료"}
+{"type": "token", "t": 40968, "text": "하지"}
+{"type": "token", "t": 40985, "text": " 못"}
+{"type": "token", "t": 40985, "text": "하면"}
+{"type": "token", "t": 40985, "text": " 하루"}
+{"type": "token", "t": 41015, "text": "마다"}
+{"type": "token", "t": 41031, "text": " 계약"}
+{"type": "token", "t": 41031, "text": "금"}
+{"type": "token", "t": 41046, "text": "액"}
+{"type": "token", "t": 41046, "text": "의"}
+{"type": "token", "t": 41063, "text": " "}
+{"type": "token", "t": 41063, "text": "1"}
+{"type": "token", "t": 41063, "text": "%"}
+{"type": "token", "t": 41063, "text": "를"}
+{"type": "token", "t": 41078, "text": " 지"}
+{"type": "token", "t": 41078, "text": "체"}
+{"type": "token", "t": 41078, "text": "상"}
+{"type": "token", "t": 41093, "text": "금"}
+{"type": "token", "t": 41110, "text": "으로"}
+{"type": "token", "t": 41110, "text": " 내"}
+{"type": "token", "t": 41140, "text": "도록"}
+{"type": "token", "t": 41156, "text": " 되어"}
+{"type": "token", "t": 41156, "text": " 있습니다"}
+{"type": "token", "t": 41156, "text": "."}
+{"type": "token", "t": 41171, "text": " ["}
+{"type": "token", "t": 41171, "text": "U"}
+{"type": "token", "t": 41188, "text": "6"}
+{"type": "token", "t": 41188, "text": "]"}
+{"type": "token", "t": 41188, "text": " 계약"}
+{"type": "token", "t": 41203, "text": "금"}
+{"type": "token", "t": 41203, "text": "액"}
+{"type": "token", "t": 41203, "text": "이"}
+{"type": "token", "t": 41218, "text": " "}
+{"type": "token", "t": 41218, "text": "2"}
+{"type": "token", "t": 41218, "text": ","}
+{"type": "token", "t": 41218, "text": "000"}
+{"type": "token", "t": 41235, "text": "만"}
+{"type": "token", "t": 41250, "text": " 원"}
+{"type": "token", "t": 41265, "text": "이"}
+{"type": "token", "t": 41281, "text": "므로"}
+{"type": "token", "t": 41281, "text": " 하루"}
+{"type": "token", "t": 41281, "text": " "}
+{"type": "token", "t": 41296, "text": "20"}
+{"type": "token", "t": 41296, "text": "만"}
+{"type": "token", "t": 41296, "text": " 원"}
+{"type": "token", "t": 41296, "text": "이며"}
+{"type": "token", "t": 41313, "text": ","}
+{"type": "token", "t": 41343, "text": " 계약"}
+{"type": "token", "t": 41360, "text": "서"}
+{"type": "token", "t": 41375, "text": "에는"}
+{"type": "token", "t": 41375, "text": " 총"}
+{"type": "token", "t": 41375, "text": "액"}
+{"type": "token", "t": 41390, "text": " 한"}
+{"type": "token", "t": 41406, "text": "도"}
+{"type": "token", "t": 41406, "text": "나"}
+{"type": "token", "t": 41406, "text": " 갑"}
+{"type": "token", "t": 41421, "text": "의"}
+{"type": "token", "t": 41421, "text": " 책임"}
+{"type": "token", "t": 41421, "text": "으로"}
+{"type": "token", "t": 41421, "text": " 인"}
+{"type": "token", "t": 41438, "text": "한"}
+{"type": "token", "t": 41453, "text": " 지"}
+{"type": "token", "t": 41453, "text": "연"}
+{"type": "token", "t": 41453, "text": "을"}
+{"type": "token", "t": 41468, "text": " 제외"}
+{"type": "token", "t": 41468, "text": "하는"}
+{"type": "token", "t": 41500, "text": " 내용"}
+{"type": "token", "t": 41500, "text": "이"}
+{"type": "token", "t": 41500, "text": " 없습니다"}
+{"type": "token", "t": 41500, "text": "."}
+{"type": "token", "t": 41515, "text": " ["}
+{"type": "token", "t": 41515, "text": "U"}
+{"type": "token", "t": 41531, "text": "2"}
+{"type": "token", "t": 41546, "text": "]["}
+{"type": "token", "t": 41546, "text": "U"}
+{"type": "token", "t": 41546, "text": "6"}
+{"type": "token", "t": 41563, "text": "]"}
+{"type": "token", "t": 41578, "text": " 표"}
+{"type": "token", "t": 41578, "text": "준"}
+{"type": "token", "t": 41593, "text": "계"}
+{"type": "token", "t": 41593, "text": "약"}
+{"type": "token", "t": 41593, "text": "서"}
+{"type": "token", "t": 41593, "text": " 예"}
+{"type": "token", "t": 41593, "text": "시는"}
+{"type": "token", "t": 41610, "text": " 하루"}
+{"type": "token", "t": 41625, "text": " "}
+{"type": "token", "t": 41625, "text": "0"}
+{"type": "token", "t": 41625, "text": "."}
+{"type": "token", "t": 41625, "text": "125"}
+{"type": "token", "t": 41656, "text": "%,"}
+{"type": "token", "t": 41656, "text": " 총"}
+{"type": "token", "t": 41656, "text": "액"}
+{"type": "token", "t": 41656, "text": "은"}
+{"type": "token", "t": 41688, "text": " 계약"}
+{"type": "token", "t": 41688, "text": "금"}
+{"type": "token", "t": 41688, "text": "액"}
+{"type": "token", "t": 41688, "text": "의"}
+{"type": "token", "t": 41703, "text": " "}
+{"type": "token", "t": 41703, "text": "10"}
+{"type": "token", "t": 41703, "text": "%"}
+{"type": "token", "t": 41703, "text": " 이"}
+{"type": "token", "t": 41718, "text": "내"}
+{"type": "token", "t": 41718, "text": "로"}
+{"type": "token", "t": 41718, "text": " 하고"}
+{"type": "token", "t": 41735, "text": ","}
+{"type": "token", "t": 41750, "text": " 갑"}
+{"type": "token", "t": 41750, "text": "의"}
+{"type": "token", "t": 41750, "text": " 책임"}
+{"type": "token", "t": 41750, "text": " 등"}
+{"type": "token", "t": 41765, "text": "으로"}
+{"type": "token", "t": 41765, "text": " 지"}
+{"type": "token", "t": 41765, "text": "연"}
+{"type": "token", "t": 41781, "text": "된"}
+{"type": "token", "t": 41813, "text": " 기간"}
+{"type": "token", "t": 41813, "text": "은"}
+{"type": "token", "t": 41813, "text": " 제외"}
+{"type": "token", "t": 41828, "text": "합니다"}
+{"type": "token", "t": 41843, "text": "."}
+{"type": "token", "t": 41843, "text": " ["}
+{"type": "token", "t": 41843, "text": "C"}
+{"type": "token", "t": 41860, "text": "4"}
+{"type": "token", "t": 41860, "text": "]\n\n"}
+{"type": "token", "t": 41860, "text": "###"}
+{"type": "token", "t": 41875, "text": " 🔴"}
+{"type": "token", "t": 41890, "text": " 하"}
+{"type": "token", "t": 41906, "text": "자"}
+{"type": "token", "t": 41906, "text": "보"}
+{"type": "token", "t": 41906, "text": "수"}
+{"type": "token", "t": 41938, "text": "\n"}
+{"type": "token", "t": 41953, "text": "앱"}
+{"type": "token", "t": 41953, "text": " 출시"}
+{"type": "token", "t": 41953, "text": " 후"}
+{"type": "token", "t": 41968, "text": " 기간"}
+{"type": "token", "t": 41985, "text": " 제한"}
+{"type": "token", "t": 42000, "text": " 없이"}
+{"type": "token", "t": 42000, "text": " 모든"}
+{"type": "token", "t": 42000, "text": " 오류"}
+{"type": "token", "t": 42015, "text": "를"}
+{"type": "token", "t": 42015, "text": " 무"}
+{"type": "token", "t": 42015, "text": "상"}
+{"type": "token", "t": 42015, "text": "으로"}
+{"type": "token", "t": 42031, "text": " 수정"}
+{"type": "token", "t": 42063, "text": "하도록"}
+{"type": "token", "t": 42078, "text": " 되어"}
+{"type": "token", "t": 42078, "text": " 있습니다"}
+{"type": "token", "t": 42078, "text": "."}
+{"type": "token", "t": 42078, "text": " ["}
+{"type": "token", "t": 42093, "text": "U"}
+{"type": "token", "t": 42093, "text": "7"}
+{"type": "token", "t": 42093, "text": "]"}
+{"type": "token", "t": 42110, "text": " 표"}
+{"type": "token", "t": 42125, "text": "준"}
+{"type": "token", "t": 42125, "text": "계"}
+{"type": "token", "t": 42125, "text": "약"}
+{"type": "token", "t": 42125, "text": "서"}
+{"type": "token", "t": 42140, "text": " 예"}
+{"type": "token", "t": 42140, "text": "시는"}
+{"type": "token", "t": 42140, "text": " 검"}
+{"type": "token", "t": 42156, "text": "수"}
+{"type": "token", "t": 42171, "text": " 완료"}
+{"type": "token", "t": 42171, "text": "일부터"}
+{"type": "token", "t": 42188, "text": " "}
+{"type": "token", "t": 42188, "text": "1"}
+{"type": "token", "t": 42188, "text": "년"}
+{"type": "token", "t": 42203, "text": "으로"}
+{"type": "token", "t": 42235, "text": " 기간"}
+{"type": "token", "t": 42235, "text": "을"}
+{"type": "token", "t": 42250, "text": " 정"}
+{"type": "token", "t": 42250, "text": "하고"}
+{"type": "token", "t": 42250, "text": ","}
+{"type": "token", "t": 42265, "text": " 갑"}
+{"type": "token", "t": 42265, "text": "의"}
+{"type": "token", "t": 42265, "text": " 임"}
+{"type": "token", "t": 42281, "text": "의"}
+{"type": "token", "t": 42296, "text": " 변경"}
+{"type": "token", "t": 42296, "text": "이나"}
+{"type": "token", "t": 42296, "text": " 운영"}
+{"type": "token", "t": 42296, "text": "환경"}
+{"type": "token", "t": 42328, "text": " 변경"}
+{"type": "token", "t": 42328, "text": " 등"}
+{"type": "token", "t": 42360, "text": "으로"}
+{"type": "token", "t": 42360, "text": " 생"}
+{"type": "token", "t": 42360, "text": "긴"}
+{"type": "token", "t": 42360, "text": " 결"}
+{"type": "token", "t": 42375, "text": "함"}
+{"type": "token", "t": 42375, "text": "은"}
+{"type": "token", "t": 42375, "text": " 제외"}
+{"type": "token", "t": 42390, "text": "하며"}
+{"type": "token", "t": 42406, "text": ","}
+{"type": "token", "t": 42421, "text": " 그"}
+{"type": "token", "t": 42421, "text": " 이후"}
+{"type": "token", "t": 42421, "text": " 유지"}
+{"type": "token", "t": 42421, "text": "보"}
+{"type": "token", "t": 42438, "text": "수"}
+{"type": "token", "t": 42438, "text": "는"}
+{"type": "token", "t": 42438, "text": " 별"}
+{"type": "token", "t": 42438, "text": "도"}
+{"type": "token", "t": 42453, "text": " 계약"}
+{"type": "token", "t": 42468, "text": "으로"}
+{"type": "token", "t": 42468, "text": " 정"}
+{"type": "token", "t": 42468, "text": "합니다"}
+{"type": "token", "t": 42485, "text": "."}
+{"type": "token", "t": 42485, "text": " ["}
+{"type": "token", "t": 42485, "text": "C"}
+{"type": "token", "t": 42485, "text": "5"}
+{"type": "token", "t": 42500, "text": "]\n\n"}
+{"type": "token", "t": 42500, "text": "###"}
+{"type": "token", "t": 42500, "text": " 🔴"}
+{"type": "token", "t": 42531, "text": " 지"}
+{"type": "token", "t": 42546, "text": "식"}
+{"type": "token", "t": 42546, "text": "재"}
+{"type": "token", "t": 42546, "text": "산"}
+{"type": "token", "t": 42546, "text": "권"}
+{"type": "token", "t": 42563, "text": "\n"}
+{"type": "token", "t": 42563, "text": "새"}
+{"type": "token", "t": 42578, "text": "로"}
+{"type": "token", "t": 42578, "text": " 만든"}
+{"type": "token", "t": 42610, "text": " 결과"}
+{"type": "token", "t": 42610, "text": "물"}
+{"type": "token", "t": 42625, "text": "뿐"}
+{"type": "token", "t": 42625, "text": " 아니라"}
+{"type": "token", "t": 42625, "text": " 을"}
+{"type": "token", "t": 42640, "text": "이"}
+{"type": "token", "t": 42640, "text": " 기존"}
+{"type": "token", "t": 42640, "text": "에"}
+{"type": "token", "t": 42656, "text": " 보"}
+{"type": "token", "t": 42671, "text": "유"}
+{"type": "token", "t": 42671, "text": "한"}
+{"type": "token", "t": 42671, "text": " 소"}
+{"type": "token", "t": 42671, "text": "스"}
+{"type": "token", "t": 42703, "text": "코"}
+{"type": "token", "t": 42703, "text": "드"}
+{"type": "token", "t": 42703, "text": "·"}
+{"type": "token", "t": 42703, "text": "라이"}
+{"type": "token", "t": 42718, "text": "브"}
+{"type": "token", "t": 42718, "text": "러"}
+{"type": "token", "t": 42718, "text": "리"}
+{"type": "token", "t": 42735, "text": "·"}
+{"type": "token", "t": 42735, "text": "노"}
+{"type": "token", "t": 42735, "text": "하"}
+{"type": "token", "t": 42735, "text": "우"}
+{"type": "token", "t": 42750, "text": "까지"}
+{"type": "token", "t": 42765, "text": " 계약"}
+{"type": "token", "t": 42765, "text": " 체"}
+{"type": "token", "t": 42765, "text": "결"}
+{"type": "token", "t": 42781, "text": "과"}
+{"type": "token", "t": 42796, "text": " 동시에"}
+{"type": "token", "t": 42796, "text": " 갑"}
+{"type": "token", "t": 42796, "text": "에게"}
+{"type": "token", "t": 42813, "text": " 귀"}
+{"type": "token", "t": 42813, "text": "속"}
+{"type": "token", "t": 42813, "text": "된"}
+{"type": "token", "t": 42813, "text": "다고"}
+{"type": "token", "t": 42828, "text": " 되어"}
+{"type": "token", "t": 42860, "text": " 있습니다"}
+{"type": "token", "t": 42860, "text": "."}
+{"type": "token", "t": 42860, "text": " ["}
+{"type": "token", "t": 42860, "text": "U"}
+{"type": "token", "t": 42860, "text": "8"}
+{"type": "token", "t": 42860, "text": "]"}
+{"type": "token", "t": 42875, "text": " 표"}
+{"type": "token", "t": 42890, "text": "준"}
+{"type": "token", "t": 42890, "text": "계"}
+{"type": "token", "t": 42890, "text": "약"}
+{"type": "token", "t": 42906, "text": "서"}
+{"type": "token", "t": 42921, "text": " 예"}
+{"type": "token", "t": 42921, "text": "시는"}
+{"type": "token", "t": 42921, "text": " 을"}
+{"type": "token", "t": 42938, "text": "의"}
+{"type": "token", "t": 42938, "text": " 기존"}
+{"type": "token", "t": 42938, "text": " 기술"}
+{"type": "token", "t": 42953, "text": " 권"}
+{"type": "token", "t": 42968, "text": "리는"}
+{"type": "token", "t": 42968, "text": " 을"}
+{"type": "token", "t": 42968, "text": "에게"}
+{"type": "token", "t": 42968, "text": " 남"}
+{"type": "token", "t": 42985, "text": "기"}
+{"type": "token", "t": 42985, "text": "고"}
+{"type": "token", "t": 42985, "text": ","}
+{"type": "token", "t": 43000, "text": " 갑"}
+{"type": "token", "t": 43015, "text": "에게"}
+{"type": "token", "t": 43031, "text": "는"}
+{"type": "token", "t": 43031, "text": " 산"}
+{"type": "token", "t": 43046, "text": "출"}
+{"type": "token", "t": 43046, "text": "물"}
+{"type": "token", "t": 43046, "text": " 이용"}
+{"type": "token", "t": 43078, "text": "에"}
+{"type": "token", "t": 43078, "text": " 필요한"}
+{"type": "token", "t": 43078, "text": " 범"}
+{"type": "token", "t": 43093, "text": "위"}
+{"type": "token", "t": 43093, "text": "에서"}
+{"type": "token", "t": 43093, "text": " 사용"}
+{"type": "token", "t": 43125, "text": "을"}
+{"type": "token", "t": 43140, "text": " 허"}
+{"type": "token", "t": 43140, "text": "용"}
+{"type": "token", "t": 43140, "text": "하는"}
+{"type": "token", "t": 43156, "text": " 방"}
+{"type": "token", "t": 43171, "text": "식을"}
+{"type": "token", "t": 43171, "text": " 제"}
+{"type": "token", "t": 43171, "text": "시"}
+{"type": "token", "t": 43171, "text": "합니다"}
+{"type": "token", "t": 43188, "text": "."}
+{"type": "token", "t": 43188, "text": " ["}
+{"type": "token", "t": 43188, "text": "C"}
+{"type": "token", "t": 43203, "text": "6"}
+{"type": "token", "t": 43218, "text": "]"}
+{"type": "token", "t": 43218, "text": " 저"}
+{"type": "token", "t": 43218, "text": "작"}
+{"type": "token", "t": 43218, "text": "재"}
+{"type": "token", "t": 43235, "text": "산"}
+{"type": "token", "t": 43235, "text": "권"}
+{"type": "token", "t": 43235, "text": "은"}
+{"type": "token", "t": 43250, "text": " 전"}
+{"type": "token", "t": 43265, "text": "부"}
+{"type": "token", "t": 43265, "text": " 또는"}
+{"type": "token", "t": 43265, "text": " 일부"}
+{"type": "token", "t": 43281, "text": " 양"}
+{"type": "token", "t": 43296, "text": "도"}
+{"type": "token", "t": 43296, "text": "할"}
+{"type": "token", "t": 43296, "text": " 수"}
+{"type": "token", "t": 43296, "text": " 있고"}
+{"type": "token", "t": 43313, "text": ","}
+{"type": "token", "t": 43328, "text": " 컴"}
+{"type": "token", "t": 43343, "text": "퓨터"}
+{"type": "token", "t": 43343, "text": "프로"}
+{"type": "token", "t": 43343, "text": "그램"}
+{"type": "token", "t": 43343, "text": "은"}
+{"type": "token", "t": 43390, "text": " 별"}
+{"type": "token", "t": 43390, "text": "도"}
+{"type": "token", "t": 43390, "text": " 특"}
+{"type": "token", "t": 43390, "text": "약"}
+{"type": "token", "t": 43406, "text": "이"}
+{"type": "token", "t": 43421, "text": " 없"}
+{"type": "token", "t": 43421, "text": "으면"}
+{"type": "token", "t": 43421, "text": " "}
+{"type": "token", "t": 43421, "text": "2"}
+{"type": "token", "t": 43438, "text": "차"}
+{"type": "token", "t": 43438, "text": "적"}
+{"type": "token", "t": 43438, "text": "저"}
+{"type": "token", "t": 43453, "text": "작"}
+{"type": "token", "t": 43468, "text": "물"}
+{"type": "token", "t": 43468, "text": " 작성"}
+{"type": "token", "t": 43468, "text": "·"}
+{"type": "token", "t": 43485, "text": "이"}
+{"type": "token", "t": 43500, "text": "용"}
+{"type": "token", "t": 43500, "text": " 권"}
+{"type": "token", "t": 43500, "text": "리"}
+{"type": "token", "t": 43531, "text": "도"}
+{"type": "token", "t": 43531, "text": " 함께"}
+{"type": "token", "t": 43546, "text": " 양"}
+{"type": "token", "t": 43546, "text": "도"}
+{"type": "token", "t": 43546, "text": "된"}
+{"type": "token", "t": 43546, "text": " 것으로"}
+{"type": "token", "t": 43563, "text": " 추"}
+{"type": "token", "t": 43563, "text": "정"}
+{"type": "token", "t": 43563, "text": "될"}
+{"type": "token", "t": 43578, "text": " 수"}
+{"type": "token", "t": 43593, "text": " 있습니다"}
+{"type": "token", "t": 43593, "text": "."}
+{"type": "token", "t": 43593, "text": " ["}
+{"type": "token", "t": 43610, "text": "L"}
+{"type": "token", "t": 43610, "text": "3"}
+{"type": "token", "t": 43610, "text": "]\n\n"}
+{"type": "token", "t": 43610, "text": "###"}
+{"type": "token", "t": 43640, "text": " 🔴"}
+{"type": "token", "t": 43656, "text": " 갑"}
+{"type": "token", "t": 43671, "text": "의"}
+{"type": "token", "t": 43671, "text": " 임"}
+{"type": "token", "t": 43671, "text": "의"}
+{"type": "token", "t": 43688, "text": " 해"}
+{"type": "token", "t": 43718, "text": "지"}
+{"type": "token", "t": 43718, "text": "와"}
+{"type": "token", "t": 43718, "text": " 수행"}
+{"type": "token", "t": 43718, "text": "분"}
+{"type": "token", "t": 43735, "text": " 대"}
+{"type": "token", "t": 43750, "text": "가"}
+{"type": "token", "t": 43750, "text": "\n"}
+{"type": "token", "t": 43750, "text": "갑"}
+{"type": "token", "t": 43750, "text": "은"}
+{"type": "token", "t": 43750, "text": " 사업"}
+{"type": "token", "t": 43781, "text": "상"}
+{"type": "token", "t": 43781, "text": " 필요"}
+{"type": "token", "t": 43796, "text": "에"}
+{"type": "token", "t": 43796, "text": " 따라"}
+{"type": "token", "t": 43796, "text": " 언제"}
+{"type": "token", "t": 43813, "text": "든"}
+{"type": "token", "t": 43813, "text": " 계약"}
+{"type": "token", "t": 43813, "text": "을"}
+{"type": "token", "t": 43813, "text": " 해"}
+{"type": "token", "t": 43828, "text": "지"}
+{"type": "token", "t": 43828, "text": "할"}
+{"type": "token", "t": 43828, "text": " 수"}
+{"type": "token", "t": 43843, "text": " 있고"}
+{"type": "token", "t": 43860, "text": ","}
+{"type": "token", "t": 43860, "text": " 해"}
+{"type": "token", "t": 43860, "text": "지"}
+{"type": "token", "t": 43860, "text": " 시"}
+{"type": "token", "t": 43890, "text": "점"}
+{"type": "token", "t": 43906, "text": "까지"}
+{"type": "token", "t": 43906, "text": " 수행"}
+{"type": "token", "t": 43921, "text": "한"}
+{"type": "token", "t": 43921, "text": " 과"}
+{"type": "token", "t": 43921, "text": "업"}
+{"type": "token", "t": 43938, "text": "의"}
+{"type": "token", "t": 43953, "text": " 대"}
+{"type": "token", "t": 43953, "text": "가"}
+{"type": "token", "t": 43953, "text": "도"}
+{"type": "token", "t": 43968, "text": " 지급"}
+{"type": "token", "t": 43985, "text": "하지"}
+{"type": "token", "t": 43985, "text": " 않는"}
+{"type": "token", "t": 43985, "text": "다고"}
+{"type": "token", "t": 43985, "text": " 되어"}
+{"type": "token", "t": 44000, "text": " 있습니다"}
+{"type": "token", "t": 44000, "text": "."}
+{"type": "token", "t": 44000, "text": " ["}
+{"type": "token", "t": 44015, "text": "U"}
+{"type": "token", "t": 44031, "text": "9"}
+{"type": "token", "t": 44031, "text": "]"}
+{"type": "token", "t": 44031, "text": " 표"}
+{"type": "token", "t": 44046, "text": "준"}
+{"type": "token", "t": 44046, "text": "계"}
+{"type": "token", "t": 44046, "text": "약"}
+{"type": "token", "t": 44063, "text": "서"}
+{"type": "token", "t": 44093, "text": " 예"}
+{"type": "token", "t": 44093, "text": "시는"}
+{"type": "token", "t": 44093, "text": " 갑"}
+{"type": "token", "t": 44093, "text": "의"}
+{"type": "token", "t": 44093, "text": " 사"}
+{"type": "token", "t": 44093, "text": "정"}
+{"type": "token", "t": 44093, "text": "으로"}
+{"type": "token", "t": 44110, "text": " 해"}
+{"type": "token", "t": 44125, "text": "지"}
+{"type": "token", "t": 44125, "text": "하면"}
+{"type": "token", "t": 44125, "text": " 수행"}
+{"type": "token", "t": 44140, "text": "분"}
+{"type": "token", "t": 44156, "text": " 대"}
+{"type": "token", "t": 44156, "text": "가"}
+{"type": "token", "t": 44156, "text": "와"}
+{"type": "token", "t": 44156, "text": " 해"}
+{"type": "token", "t": 44171, "text": "지"}
+{"type": "token", "t": 44171, "text": "로"}
+{"type": "token", "t": 44188, "text": " 발생"}
+{"type": "token", "t": 44203, "text": "한"}
+{"type": "token", "t": 44203, "text": " 손"}
+{"type": "token", "t": 44203, "text": "해"}
+{"type": "token", "t": 44218, "text": "를"}
+{"type": "token", "t": 44218, "text": " 지급"}
+{"type": "token", "t": 44235, "text": "하도록"}
+{"type": "token", "t": 44235, "text": " 합니다"}
+{"type": "token", "t": 44235, "text": "."}
+{"type": "token", "t": 44235, "text": " ["}
+{"type": "token", "t": 44250, "text": "C"}
+{"type": "token", "t": 44250, "text": "8"}
+{"type": "token", "t": 44265, "text": "]"}
+{"type": "token", "t": 44265, "text": " 민"}
+{"type": "token", "t": 44281, "text": "법"}
+{"type": "token", "t": 44281, "text": " 제"}
+{"type": "token", "t": 44281, "text": "673"}
+{"type": "token", "t": 44296, "text": "조"}
+{"type": "token", "t": 44296, "text": "는"}
+{"type": "token", "t": 44313, "text": " 일이"}
+{"type": "token", "t": 44328, "text": " 완"}
+{"type": "token", "t": 44328, "text": "성"}
+{"type": "token", "t": 44328, "text": "되"}
+{"type": "token", "t": 44328, "text": "기"}
+{"type": "token", "t": 44360, "text": " 전에"}
+{"type": "token", "t": 44390, "text": " 도"}
+{"type": "token", "t": 44390, "text": "급"}
+{"type": "token", "t": 44390, "text": "인이"}
+{"type": "token", "t": 44390, "text": " 손"}
+{"type": "token", "t": 44406, "text": "해"}
+{"type": "token", "t": 44406, "text": "를"}
+{"type": "token", "t": 44406, "text": " 배"}
+{"type": "token", "t": 44421, "text": "상"}
+{"type": "token", "t": 44421, "text": "하고"}
+{"type": "token", "t": 44421, "text": " 계약"}
+{"type": "token", "t": 44421, "text": "을"}
+{"type": "token", "t": 44438, "text": " 해"}
+{"type": "token", "t": 44438, "text": "제"}
+{"type": "token", "t": 44453, "text": "할"}
+{"type": "token", "t": 44453, "text": " 수"}
+{"type": "token", "t": 44453, "text": " 있다고"}
+{"type": "token", "t": 44468, "text": " 정"}
+{"type": "token", "t": 44485, "text": "하고"}
+{"type": "token", "t": 44500, "text": " 있어"}
+{"type": "token", "t": 44500, "text": ","}
+{"type": "token", "t": 44500, "text": " 수행"}
+{"type": "token", "t": 44515, "text": "분"}
+{"type": "token", "t": 44531, "text": " 대"}
+{"type": "token", "t": 44546, "text": "가"}
+{"type": "token", "t": 44563, "text": "를"}
+{"type": "token", "t": 44578, "text": " 전"}
+{"type": "token", "t": 44610, "text": "혀"}
+{"type": "token", "t": 44610, "text": " 지급"}
+{"type": "token", "t": 44610, "text": "하지"}
+{"type": "token", "t": 44610, "text": " 않는"}
+{"type": "token", "t": 44625, "text": "다는"}
+{"type": "token", "t": 44625, "text": " 문"}
+{"type": "token", "t": 44625, "text": "구"}
+{"type": "token", "t": 44625, "text": "는"}
+{"type": "token", "t": 44656, "text": " 특히"}
+{"type": "token", "t": 44656, "text": " 수정"}
+{"type": "token", "t": 44656, "text": "할"}
+{"type": "token", "t": 44671, "text": " 필요"}
+{"type": "token", "t": 44671, "text": "가"}
+{"type": "token", "t": 44671, "text": " 있습니다"}
+{"type": "token", "t": 44688, "text": "."}
+{"type": "token", "t": 44688, "text": " ["}
+{"type": "token", "t": 44703, "text": "L"}
+{"type": "token", "t": 44703, "text": "1"}
+{"type": "token", "t": 44718, "text": "]\n\n"}
+{"type": "token", "t": 44718, "text": "###"}
+{"type": "token", "t": 44718, "text": " 🔴"}
+{"type": "token", "t": 44735, "text": " 비"}
+{"type": "token", "t": 44750, "text": "밀"}
+{"type": "token", "t": 44750, "text": "유"}
+{"type": "token", "t": 44750, "text": "지"}
+{"type": "token", "t": 44750, "text": "와"}
+{"type": "token", "t": 44765, "text": " 경"}
+{"type": "token", "t": 44765, "text": "업"}
+{"type": "token", "t": 44765, "text": "금"}
+{"type": "token", "t": 44781, "text": "지"}
+{"type": "token", "t": 44796, "text": "\n"}
+{"type": "token", "t": 44796, "text": "갑"}
+{"type": "token", "t": 44813, "text": "의"}
+{"type": "token", "t": 44813, "text": " 모든"}
+{"type": "token", "t": 44828, "text": " 정보를"}
+{"type": "token", "t": 44860, "text": " 기간"}
+{"type": "token", "t": 44875, "text": " 제한"}
+{"type": "token", "t": 44890, "text": " 없이"}
+{"type": "token", "t": 44890, "text": " 비"}
+{"type": "token", "t": 44906, "text": "밀"}
+{"type": "token", "t": 44906, "text": "로"}
+{"type": "token", "t": 44921, "text": " 유지"}
+{"type": "token", "t": 44921, "text": "하고"}
+{"type": "token", "t": 44938, "text": ","}
+{"type": "token", "t": 44938, "text": " 계약"}
+{"type": "token", "t": 44938, "text": " 종료"}
+{"type": "token", "t": 44953, "text": " 후"}
+{"type": "token", "t": 44968, "text": " "}
+{"type": "token", "t": 44968, "text": "3"}
+{"type": "token", "t": 44968, "text": "년"}
+{"type": "token", "t": 44985, "text": "간"}
+{"type": "token", "t": 45000, "text": " 동"}
+{"type": "token", "t": 45000, "text": "종"}
+{"type": "token", "t": 45000, "text": " 업"}
+{"type": "token", "t": 45000, "text": "계"}
+{"type": "token", "t": 45015, "text": " 회사"}
+{"type": "token", "t": 45015, "text": "의"}
+{"type": "token", "t": 45015, "text": " 앱"}
+{"type": "token", "t": 45015, "text": " 개발"}
+{"type": "token", "t": 45046, "text": " 용"}
+{"type": "token", "t": 45046, "text": "역"}
+{"type": "token", "t": 45046, "text": "을"}
+{"type": "token", "t": 45063, "text": " 수"}
+{"type": "token", "t": 45063, "text": "주"}
+{"type": "token", "t": 45063, "text": "하지"}
+{"type": "token", "t": 45063, "text": " 못"}
+{"type": "token", "t": 45063, "text": "하도록"}
+{"type": "token", "t": 45078, "text": " 되어"}
+{"type": "token", "t": 45078, "text": " 있습니다"}
+{"type": "token", "t": 45078, "text": "."}
+{"type": "token", "t": 45093, "text": " ["}
+{"type": "token", "t": 45110, "text": "U"}
+{"type": "token", "t": 45110, "text": "10"}
+{"type": "token", "t": 45110, "text": "]"}
+{"type": "token", "t": 45125, "text": " 비"}
+{"type": "token", "t": 45125, "text": "밀"}
+{"type": "token", "t": 45140, "text": "정보"}
+{"type": "token", "t": 45156, "text": "의"}
+{"type": "token", "t": 45156, "text": " 범"}
+{"type": "token", "t": 45171, "text": "위"}
+{"type": "token", "t": 45188, "text": "와"}
+{"type": "token", "t": 45188, "text": " 예"}
+{"type": "token", "t": 45188, "text": "외"}
+{"type": "token", "t": 45188, "text": "가"}
+{"type": "token", "t": 45188, "text": " 정"}
+{"type": "token", "t": 45203, "text": "해"}
+{"type": "token", "t": 45235, "text": "져"}
+{"type": "token", "t": 45250, "text": " 있"}
+{"type": "token", "t": 45250, "text": "지"}
+{"type": "token", "t": 45250, "text": " 않고"}
+{"type": "token", "t": 45265, "text": ","}
+{"type": "token", "t": 45281, "text": " 경"}
+{"type": "token", "t": 45281, "text": "업"}
+{"type": "token", "t": 45281, "text": "금"}
+{"type": "token", "t": 45281, "text": "지도"}
+{"type": "token", "t": 45313, "text": " 향"}
+{"type": "token", "t": 45328, "text": "후"}
+{"type": "token", "t": 45328, "text": " 업무"}
+{"type": "token", "t": 45343, "text": " 수"}
+{"type": "token", "t": 45343, "text": "주"}
+{"type": "token", "t": 45343, "text": "를"}
+{"type": "token", "t": 45343, "text": " 제한"}
+{"type": "token", "t": 45360, "text": "할"}
+{"type": "token", "t": 45375, "text": " 수"}
+{"type": "token", "t": 45375, "text": " 있습니다"}
+{"type": "token", "t": 45375, "text": "."}
+{"type": "token", "t": 45390, "text": " 표"}
+{"type": "token", "t": 45390, "text": "준"}
+{"type": "token", "t": 45406, "text": "계"}
+{"type": "token", "t": 45406, "text": "약"}
+{"type": "token", "t": 45406, "text": "서"}
+{"type": "token", "t": 45421, "text": " 예"}
+{"type": "token", "t": 45421, "text": "시는"}
+{"type": "token", "t": 45438, "text": " 양"}
+{"type": "token", "t": 45453, "text": " 당"}
+{"type": "token", "t": 45453, "text": "사"}
+{"type": "token", "t": 45453, "text": "자"}
+{"type": "token", "t": 45453, "text": "에게"}
+{"type": "token", "t": 45468, "text": " 비"}
+{"type": "token", "t": 45468, "text": "밀"}
+{"type": "token", "t": 45468, "text": "유"}
+{"type": "token", "t": 45485, "text": "지"}
+{"type": "token", "t": 45500, "text": " 의"}
+{"type": "token", "t": 45500, "text": "무"}
+{"type": "token", "t": 45500, "text": "를"}
+{"type": "token", "t": 45515, "text": " 두"}
+{"type": "token", "t": 45515, "text": "고"}
+{"type": "token", "t": 45531, "text": " 종료"}
+{"type": "token", "t": 45546, "text": " 후"}
+{"type": "token", "t": 45546, "text": " "}
+{"type": "token", "t": 45546, "text": "2"}
+{"type": "token", "t": 45563, "text": "년"}
+{"type": "token", "t": 45578, "text": "간"}
+{"type": "token", "t": 45593, "text": " 적용"}
+{"type": "token", "t": 45610, "text": "하지만"}
+{"type": "token", "t": 45610, "text": ","}
+{"type": "token", "t": 45625, "text": " 경"}
+{"type": "token", "t": 45625, "text": "업"}
+{"type": "token", "t": 45625, "text": "금"}
+{"type": "token", "t": 45640, "text": "지는"}
+{"type": "token", "t": 45640, "text": " 두"}
+{"type": "token", "t": 45640, "text": "지"}
+{"type": "token", "t": 45656, "text": " 않습니다"}
+{"type": "token", "t": 45656, "text": "."}
+{"type": "token", "t": 45671, "text": " ["}
+{"type": "token", "t": 45671, "text": "C"}
+{"type": "token", "t": 45688, "text": "7"}
+{"type": "token", "t": 45688, "text": "]\n\n"}
+{"type": "token", "t": 45688, "text": "###"}
+{"type": "token", "t": 45703, "text": " 🔴"}
+{"type": "token", "t": 45718, "text": " 손"}
+{"type": "token", "t": 45718, "text": "해"}
+{"type": "token", "t": 45718, "text": "배"}
+{"type": "token", "t": 45718, "text": "상"}
+{"type": "token", "t": 45735, "text": "\n"}
+{"type": "token", "t": 45735, "text": "을"}
+{"type": "token", "t": 45735, "text": "의"}
+{"type": "token", "t": 45750, "text": " 귀"}
+{"type": "token", "t": 45765, "text": "책"}
+{"type": "token", "t": 45765, "text": "사"}
+{"type": "token", "t": 45765, "text": "유"}
+{"type": "token", "t": 45765, "text": "로"}
+{"type": "token", "t": 45781, "text": " 손"}
+{"type": "token", "t": 45796, "text": "해"}
+{"type": "token", "t": 45796, "text": "가"}
+{"type": "token", "t": 45796, "text": " 발생"}
+{"type": "token", "t": 45813, "text": "하면"}
+{"type": "token", "t": 45813, "text": " 간"}
+{"type": "token", "t": 45828, "text": "접"}
+{"type": "token", "t": 45828, "text": "손"}
+{"type": "token", "t": 45843, "text": "해"}
+{"type": "token", "t": 45843, "text": "와"}
+{"type": "token", "t": 45860, "text": " 영"}
+{"type": "token", "t": 45860, "text": "업"}
+{"type": "token", "t": 45860, "text": "이"}
+{"type": "token", "t": 45875, "text": "익"}
+{"type": "token", "t": 45890, "text": " 손"}
+{"type": "token", "t": 45890, "text": "실"}
+{"type": "token", "t": 45906, "text": "까지"}
+{"type": "token", "t": 45921, "text": " 포함"}
+{"type": "token", "t": 45938, "text": "해"}
+{"type": "token", "t": 45938, "text": " 전"}
+{"type": "token", "t": 45938, "text": "액"}
+{"type": "token", "t": 45938, "text": " 배"}
+{"type": "token", "t": 45953, "text": "상"}
+{"type": "token", "t": 45953, "text": "하도록"}
+{"type": "token", "t": 45953, "text": " 되어"}
+{"type": "token", "t": 45968, "text": " 있고"}
+{"type": "token", "t": 45985, "text": ","}
+{"type": "token", "t": 46000, "text": " 배"}
+{"type": "token", "t": 46000, "text": "상"}
+{"type": "token", "t": 46015, "text": " 한"}
+{"type": "token", "t": 46031, "text": "도"}
+{"type": "token", "t": 46031, "text": "는"}
+{"type": "token", "t": 46046, "text": " 정"}
+{"type": "token", "t": 46063, "text": "해"}
+{"type": "token", "t": 46063, "text": "져"}
+{"type": "token", "t": 46063, "text": " 있"}
+{"type": "token", "t": 46063, "text": "지"}
+{"type": "token", "t": 46078, "text": " 않습니다"}
+{"type": "token", "t": 46078, "text": "."}
+{"type": "token", "t": 46078, "text": " ["}
+{"type": "token", "t": 46093, "text": "U"}
+{"type": "token", "t": 46110, "text": "11"}
+{"type": "token", "t": 46110, "text": "]"}
+{"type": "token", "t": 46110, "text": " 표"}
+{"type": "token", "t": 46110, "text": "준"}
+{"type": "token", "t": 46125, "text": "계"}
+{"type": "token", "t": 46125, "text": "약"}
+{"type": "token", "t": 46125, "text": "서"}
+{"type": "token", "t": 46140, "text": " 예"}
+{"type": "token", "t": 46156, "text": "시는"}
+{"type": "token", "t": 46171, "text": " 특별"}
+{"type": "token", "t": 46188, "text": "한"}
+{"type": "token", "t": 46188, "text": " 사"}
+{"type": "token", "t": 46188, "text": "정"}
+{"type": "token", "t": 46188, "text": "이"}
+{"type": "token", "t": 46203, "text": " 없"}
+{"type": "token", "t": 46203, "text": "으면"}
+{"type": "token", "t": 46203, "text": " 손"}
+{"type": "token", "t": 46218, "text": "해"}
+{"type": "token", "t": 46235, "text": "배"}
+{"type": "token", "t": 46235, "text": "상"}
+{"type": "token", "t": 46235, "text": " 총"}
+{"type": "token", "t": 46235, "text": "액"}
+{"type": "token", "t": 46250, "text": "을"}
+{"type": "token", "t": 46250, "text": " 계약"}
+{"type": "token", "t": 46250, "text": "금"}
+{"type": "token", "t": 46265, "text": "액"}
+{"type": "token", "t": 46281, "text": " 한"}
+{"type": "token", "t": 46281, "text": "도로"}
+{"type": "token", "t": 46281, "text": " 정"}
+{"type": "token", "t": 46296, "text": "합니다"}
+{"type": "token", "t": 46296, "text": "."}
+{"type": "token", "t": 46313, "text": " ["}
+{"type": "token", "t": 46313, "text": "C"}
+{"type": "token", "t": 46328, "text": "9"}
+{"type": "token", "t": 46328, "text": "]\n\n"}
+{"type": "token", "t": 46328, "text": "###"}
+{"type": "token", "t": 46360, "text": " 🟡"}
+{"type": "token", "t": 46360, "text": " 관"}
+{"type": "token", "t": 46360, "text": "할"}
+{"type": "token", "t": 46375, "text": " 법"}
+{"type": "token", "t": 46390, "text": "원"}
+{"type": "token", "t": 46390, "text": "\n"}
+{"type": "token", "t": 46390, "text": "분"}
+{"type": "token", "t": 46421, "text": "쟁"}
+{"type": "token", "t": 46421, "text": "은"}
+{"type": "token", "t": 46421, "text": " 갑"}
+{"type": "token", "t": 46421, "text": "의"}
+{"type": "token", "t": 46438, "text": " 본"}
+{"type": "token", "t": 46438, "text": "점"}
+{"type": "token", "t": 46438, "text": " 소재"}
+{"type": "token", "t": 46438, "text": "지"}
+{"type": "token", "t": 46453, "text": " 법"}
+{"type": "token", "t": 46453, "text": "원"}
+{"type": "token", "t": 46468, "text": "에서"}
+{"type": "token", "t": 46468, "text": "만"}
+{"type": "token", "t": 46500, "text": " 다"}
+{"type": "token", "t": 46500, "text": "루"}
+{"type": "token", "t": 46500, "text": "도록"}
+{"type": "token", "t": 46500, "text": " 되어"}
+{"type": "token", "t": 46515, "text": " 있습니다"}
+{"type": "token", "t": 46531, "text": "."}
+{"type": "token", "t": 46531, "text": " ["}
+{"type": "token", "t": 46531, "text": "U"}
+{"type": "token", "t": 46531, "text": "12"}
+{"type": "token", "t": 46546, "text": "]"}
+{"type": "token", "t": 46546, "text": " 을"}
+{"type": "token", "t": 46546, "text": "이"}
+{"type": "token", "t": 46563, "text": " 다른"}
+{"type": "token", "t": 46578, "text": " 지역"}
+{"type": "token", "t": 46578, "text": "에"}
+{"type": "token", "t": 46578, "text": " 있다"}
+{"type": "token", "t": 46593, "text": "면"}
+{"type": "token", "t": 46610, "text": " 분"}
+{"type": "token", "t": 46610, "text": "쟁"}
+{"type": "token", "t": 46610, "text": " 대응"}
+{"type": "token", "t": 46625, "text": "에"}
+{"type": "token", "t": 46625, "text": " 시간"}
+{"type": "token", "t": 46625, "text": "과"}
+{"type": "token", "t": 46625, "text": " 비용"}
+{"type": "token", "t": 46640, "text": "이"}
+{"type": "token", "t": 46656, "text": " 더"}
+{"type": "token", "t": 46656, "text": " 들"}
+{"type": "token", "t": 46656, "text": " 수"}
+{"type": "token", "t": 46656, "text": " 있습니다"}
+{"type": "token", "t": 46671, "text": "."}
+{"type": "token", "t": 46671, "text": " 표"}
+{"type": "token", "t": 46671, "text": "준"}
+{"type": "token", "t": 46688, "text": "계"}
+{"type": "token", "t": 46703, "text": "약"}
+{"type": "token", "t": 46703, "text": "서"}
+{"type": "token", "t": 46703, "text": " 예"}
+{"type": "token", "t": 46718, "text": "시는"}
+{"type": "token", "t": 46718, "text": " 협"}
+{"type": "token", "t": 46735, "text": "의를"}
+{"type": "token", "t": 46765, "text": " 우"}
+{"type": "token", "t": 46765, "text": "선"}
+{"type": "token", "t": 46781, "text": "하고"}
+{"type": "token", "t": 46781, "text": ","}
+{"type": "token", "t": 46781, "text": " 조"}
+{"type": "token", "t": 46796, "text": "정"}
+{"type": "token", "t": 46813, "text": " 또는"}
+{"type": "token", "t": 46828, "text": " 관"}
+{"type": "token", "t": 46828, "text": "할"}
+{"type": "token", "t": 46828, "text": " 법"}
+{"type": "token", "t": 46828, "text": "원의"}
+{"type": "token", "t": 46843, "text": " 판"}
+{"type": "token", "t": 46843, "text": "결"}
+{"type": "token", "t": 46875, "text": "로"}
+{"type": "token", "t": 46875, "text": " 해결"}
+{"type": "token", "t": 46875, "text": "하는"}
+{"type": "token", "t": 46875, "text": " 방"}
+{"type": "token", "t": 46890, "text": "식을"}
+{"type": "token", "t": 46890, "text": " 제"}
+{"type": "token", "t": 46890, "text": "시"}
+{"type": "token", "t": 46906, "text": "합니다"}
+{"type": "token", "t": 46906, "text": "."}
+{"type": "token", "t": 46906, "text": " ["}
+{"type": "token", "t": 46921, "text": "C"}
+{"type": "token", "t": 46921, "text": "10"}
+{"type": "token", "t": 46938, "text": "]\n\n"}
+{"type": "token", "t": 46938, "text": "##"}
+{"type": "token", "t": 46968, "text": " 이렇게"}
+{"type": "token", "t": 46968, "text": " 해"}
+{"type": "token", "t": 46968, "text": "보"}
+{"type": "token", "t": 46985, "text": "세요"}
+{"type": "token", "t": 47015, "text": "\n"}
+{"type": "token", "t": 47031, "text": "아"}
+{"type": "token", "t": 47046, "text": "래"}
+{"type": "token", "t": 47063, "text": " 내용"}
+{"type": "token", "t": 47078, "text": "은"}
+{"type": "token", "t": 47078, "text": " 협"}
+{"type": "token", "t": 47093, "text": "의"}
+{"type": "token", "t": 47110, "text": "할"}
+{"type": "token", "t": 47110, "text": " 때"}
+{"type": "token", "t": 47110, "text": " 넣"}
+{"type": "token", "t": 47140, "text": "어"}
+{"type": "token", "t": 47140, "text": " 볼"}
+{"type": "token", "t": 47140, "text": " 수"}
+{"type": "token", "t": 47140, "text": " 있는"}
+{"type": "token", "t": 47156, "text": " 문"}
+{"type": "token", "t": 47171, "text": "구"}
+{"type": "token", "t": 47171, "text": " 예"}
+{"type": "token", "t": 47171, "text": "시"}
+{"type": "token", "t": 47188, "text": "입니다"}
+{"type": "token", "t": 47203, "text": "."}
+{"type": "token", "t": 47203, "text": " 실제"}
+{"type": "token", "t": 47203, "text": " 문"}
+{"type": "token", "t": 47203, "text": "구"}
+{"type": "token", "t": 47218, "text": "는"}
+{"type": "token", "t": 47235, "text": " 별"}
+{"type": "token", "t": 47250, "text": "첨"}
+{"type": "token", "t": 47250, "text": " 기"}
+{"type": "token", "t": 47250, "text": "획"}
+{"type": "token", "t": 47250, "text": "서"}
+{"type": "token", "t": 47265, "text": "와"}
+{"type": "token", "t": 47281, "text": " 함께"}
+{"type": "token", "t": 47313, "text": " 맞"}
+{"type": "token", "t": 47328, "text": "추"}
+{"type": "token", "t": 47328, "text": "는"}
+{"type": "token", "t": 47328, "text": " 것이"}
+{"type": "token", "t": 47343, "text": " 좋"}
+{"type": "token", "t": 47343, "text": "습니다"}
+{"type": "token", "t": 47343, "text": ".\n\n"}
+{"type": "token", "t": 47343, "text": "-"}
+{"type": "token", "t": 47360, "text": " **"}
+{"type": "token", "t": 47375, "text": "대"}
+{"type": "token", "t": 47375, "text": "금"}
+{"type": "token", "t": 47375, "text": " 지급"}
+{"type": "token", "t": 47390, "text": ":**"}
+{"type": "token", "t": 47390, "text": " “"}
+{"type": "token", "t": 47390, "text": "계"}
+{"type": "token", "t": 47390, "text": "약"}
+{"type": "token", "t": 47421, "text": "금"}
+{"type": "token", "t": 47438, "text": "액"}
+{"type": "token", "t": 47453, "text": "은"}
+{"type": "token", "t": 47453, "text": " 선"}
+{"type": "token", "t": 47453, "text": "급"}
+{"type": "token", "t": 47468, "text": "금"}
+{"type": "token", "t": 47500, "text": "·"}
+{"type": "token", "t": 47500, "text": "중"}
+{"type": "token", "t": 47500, "text": "도"}
+{"type": "token", "t": 47500, "text": "금"}
+{"type": "token", "t": 47515, "text": "·"}
+{"type": "token", "t": 47531, "text": "잔"}
+{"type": "token", "t": 47531, "text": "금"}
+{"type": "token", "t": 47531, "text": "으로"}
+{"type": "token", "t": 47531, "text": " 나"}
+{"type": "token", "t": 47546, "text": "누"}
+{"type": "token", "t": 47546, "text": "어"}
+{"type": "token", "t": 47546, "text": " 지급"}
+{"type": "token", "t": 47578, "text": "하고"}
+{"type": "token", "t": 47578, "text": ","}
+{"type": "token", "t": 47578, "text": " 잔"}
+{"type": "token", "t": 47578, "text": "금"}
+{"type": "token", "t": 47593, "text": "은"}
+{"type": "token", "t": 47593, "text": " 검"}
+{"type": "token", "t": 47593, "text": "수"}
+{"type": "token", "t": 47610, "text": " 완료"}
+{"type": "token", "t": 47625, "text": " 후"}
+{"type": "token", "t": 47640, "text": " ○"}
+{"type": "token", "t": 47656, "text": "일"}
+{"type": "token", "t": 47656, "text": " 이"}
+{"type": "token", "t": 47656, "text": "내"}
+{"type": "token", "t": 47656, "text": " 지급"}
+{"type": "token", "t": 47671, "text": "한다"}
+{"type": "token", "t": 47671, "text": ".”"}
+{"type": "token", "t": 47671, "text": " ["}
+{"type": "token", "t": 47688, "text": "C"}
+{"type": "token", "t": 47703, "text": "2"}
+{"type": "token", "t": 47703, "text": "]\n"}
+{"type": "token", "t": 47703, "text": "-"}
+{"type": "token", "t": 47718, "text": " **"}
+{"type": "token", "t": 47718, "text": "과"}
+{"type": "token", "t": 47735, "text": "업"}
+{"type": "token", "t": 47735, "text": " 변경"}
+{"type": "token", "t": 47735, "text": ":**"}
+{"type": "token", "t": 47735, "text": " “"}
+{"type": "token", "t": 47765, "text": "과"}
+{"type": "token", "t": 47781, "text": "업"}
+{"type": "token", "t": 47781, "text": " 변경"}
+{"type": "token", "t": 47796, "text": "·"}
+{"type": "token", "t": 47796, "text": "추"}
+{"type": "token", "t": 47813, "text": "가는"}
+{"type": "token", "t": 47828, "text": " 서"}
+{"type": "token", "t": 47828, "text": "면"}
+{"type": "token", "t": 47828, "text": "으로"}
+{"type": "token", "t": 47843, "text": " 요청"}
+{"type": "token", "t": 47843, "text": "하며"}
+{"type": "token", "t": 47860, "text": ","}
+{"type": "token", "t": 47860, "text": " 추가"}
+{"type": "token", "t": 47860, "text": " 비용"}
+{"type": "token", "t": 47875, "text": " 또는"}
+{"type": "token", "t": 47890, "text": " 일정"}
+{"type": "token", "t": 47906, "text": " 조"}
+{"type": "token", "t": 47906, "text": "정"}
+{"type": "token", "t": 47906, "text": "이"}
+{"type": "token", "t": 47906, "text": " 필요한"}
+{"type": "token", "t": 47921, "text": " 경우"}
+{"type": "token", "t": 47921, "text": " 갑"}
+{"type": "token", "t": 47921, "text": "과"}
+{"type": "token", "t": 47938, "text": " 을"}
+{"type": "token", "t": 47953, "text": "은"}
+{"type": "token", "t": 47968, "text": " 이를"}
+{"type": "token", "t": 47968, "text": " 협"}
+{"type": "token", "t": 47985, "text": "의"}
+{"type": "token", "t": 47985, "text": "해"}
+{"type": "token", "t": 48015, "text": " 변경"}
+{"type": "token", "t": 48046, "text": "계"}
+{"type": "token", "t": 48046, "text": "약"}
+{"type": "token", "t": 48046, "text": "을"}
+{"type": "token", "t": 48046, "text": " 체"}
+{"type": "token", "t": 48063, "text": "결"}
+{"type": "token", "t": 48078, "text": "한다"}
+{"type": "token", "t": 48078, "text": ".”"}
+{"type": "token", "t": 48078, "text": " ["}
+{"type": "token", "t": 48093, "text": "C"}
+{"type": "token", "t": 48110, "text": "1"}
+{"type": "token", "t": 48110, "text": "]\n"}
+{"type": "token", "t": 48110, "text": "-"}
+{"type": "token", "t": 48110, "text": " **"}
+{"type": "token", "t": 48140, "text": "검"}
+{"type": "token", "t": 48140, "text": "수"}
+{"type": "token", "t": 48140, "text": ":**"}
+{"type": "token", "t": 48140, "text": " “"}
+{"type": "token", "t": 48156, "text": "검"}
+{"type": "token", "t": 48156, "text": "수"}
+{"type": "token", "t": 48156, "text": " 기준"}
+{"type": "token", "t": 48171, "text": "은"}
+{"type": "token", "t": 48171, "text": " 별"}
+{"type": "token", "t": 48188, "text": "첨"}
+{"type": "token", "t": 48188, "text": " 과"}
+{"type": "token", "t": 48188, "text": "업"}
+{"type": "token", "t": 48203, "text": "내용"}
+{"type": "token", "t": 48203, "text": "서"}
+{"type": "token", "t": 48203, "text": "에"}
+{"type": "token", "t": 48218, "text": " 따른"}
+{"type": "token", "t": 48235, "text": "다"}
+{"type": "token", "t": 48235, "text": "."}
+{"type": "token", "t": 48250, "text": " 갑"}
+{"type": "token", "t": 48250, "text": "은"}
+{"type": "token", "t": 48265, "text": " 결과"}
+{"type": "token", "t": 48281, "text": "물"}
+{"type": "token", "t": 48296, "text": " 인"}
+{"type": "token", "t": 48313, "text": "도"}
+{"type": "token", "t": 48313, "text": " 후"}
+{"type": "token", "t": 48313, "text": " "}
+{"type": "token", "t": 48313, "text": "14"}
+{"type": "token", "t": 48343, "text": "일"}
+{"type": "token", "t": 48343, "text": " 이"}
+{"type": "token", "t": 48343, "text": "내"}
+{"type": "token", "t": 48343, "text": " 서"}
+{"type": "token", "t": 48360, "text": "면"}
+{"type": "token", "t": 48360, "text": "으로"}
+{"type": "token", "t": 48360, "text": " 검"}
+{"type": "token", "t": 48375, "text": "수"}
+{"type": "token", "t": 48375, "text": " 결과"}
+{"type": "token", "t": 48375, "text": "를"}
+{"type": "token", "t": 48375, "text": " 통"}
+{"type": "token", "t": 48390, "text": "지"}
+{"type": "token", "t": 48406, "text": "하며"}
+{"type": "token", "t": 48406, "text": ","}
+{"type": "token", "t": 48406, "text": " 기간"}
+{"type": "token", "t": 48438, "text": " 내"}
+{"type": "token", "t": 48438, "text": " 통"}
+{"type": "token", "t": 48453, "text": "지가"}
+{"type": "token", "t": 48468, "text": " 없"}
+{"type": "token", "t": 48468, "text": "으면"}
+{"type": "token", "t": 48468, "text": " 합"}
+{"type": "token", "t": 48468, "text": "격"}
+{"type": "token", "t": 48485, "text": "한"}
+{"type": "token", "t": 48485, "text": " 것으로"}
+{"type": "token", "t": 48485, "text": " 본"}
+{"type": "token", "t": 48500, "text": "다"}
+{"type": "token", "t": 48500, "text": ".”"}
+{"type": "token", "t": 48500, "text": " ["}
+{"type": "token", "t": 48500, "text": "C"}
+{"type": "token", "t": 48515, "text": "3"}
+{"type": "token", "t": 48531, "text": "]\n"}
+{"type": "token", "t": 48531, "text": "-"}
+{"type": "token", "t": 48531, "text": " **"}
+{"type": "token", "t": 48546, "text": "지"}
+{"type": "token", "t": 48563, "text": "체"}
+{"type": "token", "t": 48563, "text": "상"}
+{"type": "token", "t": 48563, "text": "금"}
+{"type": "token", "t": 48563, "text": ":**"}
+{"type": "token", "t": 48593, "text": " 하루"}
+{"type": "token", "t": 48610, "text": " 지"}
+{"type": "token", "t": 48610, "text": "체"}
+{"type": "token", "t": 48610, "text": "상"}
+{"type": "token", "t": 48625, "text": "금"}
+{"type": "token", "t": 48640, "text": " 비"}
+{"type": "token", "t": 48656, "text": "율"}
+{"type": "token", "t": 48656, "text": "과"}
+{"type": "token", "t": 48656, "text": " 총"}
+{"type": "token", "t": 48671, "text": "액"}
+{"type": "token", "t": 48688, "text": " 한"}
+{"type": "token", "t": 48688, "text": "도를"}
+{"type": "token", "t": 48688, "text": " 정"}
+{"type": "token", "t": 48688, "text": "하고"}
+{"type": "token", "t": 48703, "text": ","}
+{"type": "token", "t": 48703, "text": " 갑"}
+{"type": "token", "t": 48703, "text": "의"}
+{"type": "token", "t": 48718, "text": " 책임"}
+{"type": "token", "t": 48735, "text": "이나"}
+{"type": "token", "t": 48735, "text": " 정"}
+{"type": "token", "t": 48735, "text": "당"}
+{"type": "token", "t": 48750, "text": "한"}
+{"type": "token", "t": 48765, "text": " 사"}
+{"type": "token", "t": 48765, "text": "유"}
+{"type": "token", "t": 48765, "text": "로"}
+{"type": "token", "t": 48765, "text": " 인"}
+{"type": "token", "t": 48796, "text": "한"}
+{"type": "token", "t": 48796, "text": " 지"}
+{"type": "token", "t": 48796, "text": "연"}
+{"type": "token", "t": 48796, "text": "은"}
+{"type": "token", "t": 48828, "text": " 지"}
+{"type": "token", "t": 48828, "text": "체"}
+{"type": "token", "t": 48828, "text": "일"}
+{"type": "token", "t": 48828, "text": "수"}
+{"type": "token", "t": 48843, "text": "에서"}
+{"type": "token", "t": 48860, "text": " 제외"}
+{"type": "token", "t": 48875, "text": "하도록"}
+{"type": "token", "t": 48906, "text": " 요청"}
+{"type": "token", "t": 48921, "text": "하세요"}
+{"type": "token", "t": 48921, "text": "."}
+{"type": "token", "t": 48921, "text": " ["}
+{"type": "token", "t": 48938, "text": "C"}
+{"type": "token", "t": 48938, "text": "4"}
+{"type": "token", "t": 48953, "text": "]\n"}
+{"type": "token", "t": 48953, "text": "-"}
+{"type": "token", "t": 48953, "text": " **"}
+{"type": "token", "t": 48968, "text": "하"}
+{"type": "token", "t": 48968, "text": "자"}
+{"type": "token", "t": 48968, "text": "보"}
+{"type": "token", "t": 48968, "text": "수"}
+{"type": "token", "t": 48985, "text": ":**"}
+{"type": "token", "t": 49000, "text": " “"}
+{"type": "token", "t": 49031, "text": "무"}
+{"type": "token", "t": 49031, "text": "상"}
+{"type": "token", "t": 49046, "text": " 하"}
+{"type": "token", "t": 49063, "text": "자"}
+{"type": "token", "t": 49063, "text": "보"}
+{"type": "token", "t": 49063, "text": "수"}
+{"type": "token", "t": 49078, "text": " 기간"}
+{"type": "token", "t": 49093, "text": "은"}
+{"type": "token", "t": 49093, "text": " 검"}
+{"type": "token", "t": 49093, "text": "수"}
+{"type": "token", "t": 49093, "text": " 완료"}
+{"type": "token", "t": 49110, "text": "일부터"}
+{"type": "token", "t": 49110, "text": " "}
+{"type": "token", "t": 49110, "text": "1"}
+{"type": "token", "t": 49125, "text": "년"}
+{"type": "token", "t": 49140, "text": "으로"}
+{"type": "token", "t": 49156, "text": " 한다"}
+{"type": "token", "t": 49171, "text": "."}
+{"type": "token", "t": 49171, "text": " 갑"}
+{"type": "token", "t": 49171, "text": "의"}
+{"type": "token", "t": 49171, "text": " 임"}
+{"type": "token", "t": 49188, "text": "의"}
+{"type": "token", "t": 49188, "text": " 변경"}
+{"type": "token", "t": 49188, "text": ","}
+{"type": "token", "t": 49218, "text": " 운영"}
+{"type": "token", "t": 49218, "text": "환경"}
+{"type": "token", "t": 49218, "text": " 변경"}
+{"type": "token", "t": 49218, "text": " 등"}
+{"type": "token", "t": 49218, "text": " 을"}
+{"type": "token", "t": 49235, "text": "의"}
+{"type": "token", "t": 49250, "text": " 책임"}
+{"type": "token", "t": 49265, "text": "이"}
+{"type": "token", "t": 49265, "text": " 아닌"}
+{"type": "token", "t": 49265, "text": " 원"}
+{"type": "token", "t": 49281, "text": "인"}
+{"type": "token", "t": 49296, "text": "으로"}
+{"type": "token", "t": 49296, "text": " 발생"}
+{"type": "token", "t": 49313, "text": "한"}
+{"type": "token", "t": 49313, "text": " 결"}
+{"type": "token", "t": 49313, "text": "함"}
+{"type": "token", "t": 49328, "text": "은"}
+{"type": "token", "t": 49343, "text": " 제외"}
+{"type": "token", "t": 49360, "text": "하며"}
+{"type": "token", "t": 49360, "text": ","}
+{"type": "token", "t": 49375, "text": " 기간"}
+{"type": "token", "t": 49390, "text": " 이후"}
+{"type": "token", "t": 49390, "text": " 유지"}
+{"type": "token", "t": 49390, "text": "보"}
+{"type": "token", "t": 49406, "text": "수"}
+{"type": "token", "t": 49421, "text": "는"}
+{"type": "token", "t": 49421, "text": " 별"}
+{"type": "token", "t": 49421, "text": "도"}
+{"type": "token", "t": 49438, "text": " 계약"}
+{"type": "token", "t": 49438, "text": "으로"}
+{"type": "token", "t": 49438, "text": " 정"}
+{"type": "token", "t": 49438, "text": "한다"}
+{"type": "token", "t": 49468, "text": ".”"}
+{"type": "token", "t": 49468, "text": " ["}
+{"type": "token", "t": 49468, "text": "C"}
+{"type": "token", "t": 49468, "text": "5"}
+{"type": "token", "t": 49485, "text": "]\n"}
+{"type": "token", "t": 49485, "text": "-"}
+{"type": "token", "t": 49485, "text": " **"}
+{"type": "token", "t": 49500, "text": "지"}
+{"type": "token", "t": 49515, "text": "식"}
+{"type": "token", "t": 49515, "text": "재"}
+{"type": "token", "t": 49515, "text": "산"}
+{"type": "token", "t": 49531, "text": "권"}
+{"type": "token", "t": 49546, "text": ":**"}
+{"type": "token", "t": 49546, "text": " “"}
+{"type": "token", "t": 49563, "text": "을"}
+{"type": "token", "t": 49563, "text": "의"}
+{"type": "token", "t": 49563, "text": " 기존"}
+{"type": "token", "t": 49563, "text": " 소"}
+{"type": "token", "t": 49578, "text": "스"}
+{"type": "token", "t": 49593, "text": "코"}
+{"type": "token", "t": 49610, "text": "드"}
+{"type": "token", "t": 49610, "text": "·"}
+{"type": "token", "t": 49610, "text": "라이"}
+{"type": "token", "t": 49625, "text": "브"}
+{"type": "token", "t": 49625, "text": "러"}
+{"type": "token", "t": 49625, "text": "리"}
+{"type": "token", "t": 49625, "text": "·"}
+{"type": "token", "t": 49640, "text": "노"}
+{"type": "token", "t": 49640, "text": "하"}
+{"type": "token", "t": 49640, "text": "우"}
+{"type": "token", "t": 49656, "text": "에"}
+{"type": "token", "t": 49688, "text": " 관한"}
+{"type": "token", "t": 49703, "text": " 권"}
+{"type": "token", "t": 49703, "text": "리는"}
+{"type": "token", "t": 49703, "text": " 을"}
+{"type": "token", "t": 49703, "text": "에게"}
+{"type": "token", "t": 49735, "text": " 귀"}
+{"type": "token", "t": 49735, "text": "속"}
+{"type": "token", "t": 49735, "text": "한다"}
+{"type": "token", "t": 49735, "text": "."}
+{"type": "token", "t": 49750, "text": " 갑"}
+{"type": "token", "t": 49750, "text": "은"}
+{"type": "token", "t": 49750, "text": " 산"}
+{"type": "token", "t": 49765, "text": "출"}
+{"type": "token", "t": 49781, "text": "물"}
+{"type": "token", "t": 49781, "text": " 이용"}
+{"type": "token", "t": 49781, "text": "에"}
+{"type": "token", "t": 49781, "text": " 필요한"}
+{"type": "token", "t": 49796, "text": " 범"}
+{"type": "token", "t": 49796, "text": "위"}
+{"type": "token", "t": 49796, "text": "에서"}
+{"type": "token", "t": 49813, "text": " 해당"}
+{"type": "token", "t": 49828, "text": " 기술"}
+{"type": "token", "t": 49860, "text": "을"}
+{"type": "token", "t": 49875, "text": " 사용할"}
+{"type": "token", "t": 49875, "text": " 수"}
+{"type": "token", "t": 49875, "text": " 있다"}
+{"type": "token", "t": 49875, "text": ".”"}
+{"type": "token", "t": 49875, "text": " 새"}
+{"type": "token", "t": 49890, "text": "로"}
+{"type": "token", "t": 49890, "text": " 만든"}
+{"type": "token", "t": 49890, "text": " 산"}
+{"type": "token", "t": 49906, "text": "출"}
+{"type": "token", "t": 49921, "text": "물"}
+{"type": "token", "t": 49921, "text": "의"}
+{"type": "token", "t": 49921, "text": " 권"}
+{"type": "token", "t": 49938, "text": "리를"}
+{"type": "token", "t": 49938, "text": " 갑"}
+{"type": "token", "t": 49953, "text": "에게"}
+{"type": "token", "t": 49953, "text": " 전"}
+{"type": "token", "t": 49968, "text": "부"}
+{"type": "token", "t": 49985, "text": " 이전"}
+{"type": "token", "t": 50015, "text": "한다"}
+{"type": "token", "t": 50015, "text": "면"}
+{"type": "token", "t": 50015, "text": " 그"}
+{"type": "token", "t": 50031, "text": " 대상"}
+{"type": "token", "t": 50046, "text": "과"}
+{"type": "token", "t": 50046, "text": " 대"}
+{"type": "token", "t": 50046, "text": "가"}
+{"type": "token", "t": 50063, "text": "도"}
+{"type": "token", "t": 50078, "text": " 구"}
+{"type": "token", "t": 50078, "text": "체"}
+{"type": "token", "t": 50078, "text": "적으로"}
+{"type": "token", "t": 50078, "text": " 정"}
+{"type": "token", "t": 50110, "text": "하세요"}
+{"type": "token", "t": 50125, "text": "."}
+{"type": "token", "t": 50125, "text": " ["}
+{"type": "token", "t": 50125, "text": "C"}
+{"type": "token", "t": 50140, "text": "6"}
+{"type": "token", "t": 50140, "text": "]["}
+{"type": "token", "t": 50140, "text": "L"}
+{"type": "token", "t": 50140, "text": "3"}
+{"type": "token", "t": 50171, "text": "]\n"}
+{"type": "token", "t": 50171, "text": "-"}
+{"type": "token", "t": 50171, "text": " **"}
+{"type": "token", "t": 50171, "text": "해"}
+{"type": "token", "t": 50188, "text": "지"}
+{"type": "token", "t": 50218, "text": " 정"}
+{"type": "token", "t": 50218, "text": "산"}
+{"type": "token", "t": 50218, "text": ":**"}
+{"type": "token", "t": 50250, "text": " “"}
+{"type": "token", "t": 50265, "text": "갑"}
+{"type": "token", "t": 50265, "text": "의"}
+{"type": "token", "t": 50265, "text": " 사"}
+{"type": "token", "t": 50281, "text": "정"}
+{"type": "token", "t": 50281, "text": "으로"}
+{"type": "token", "t": 50296, "text": " 계약"}
+{"type": "token", "t": 50313, "text": "을"}
+{"type": "token", "t": 50313, "text": " 해"}
+{"type": "token", "t": 50313, "text": "지"}
+{"type": "token", "t": 50328, "text": "하는"}
+{"type": "token", "t": 50343, "text": " 경우"}
+{"type": "token", "t": 50343, "text": ","}
+{"type": "token", "t": 50360, "text": " 갑"}
+{"type": "token", "t": 50360, "text": "은"}
+{"type": "token", "t": 50375, "text": " 해"}
+{"type": "token", "t": 50375, "text": "지"}
+{"type": "token", "t": 50375, "text": " 시"}
+{"type": "token", "t": 50390, "text": "점"}
+{"type": "token", "t": 50406, "text": "까지"}
+{"type": "token", "t": 50406, "text": " 수행"}
+{"type": "token", "t": 50438, "text": "한"}
+{"type": "token", "t": 50438, "text": " 과"}
+{"type": "token", "t": 50453, "text": "업"}
+{"type": "token", "t": 50468, "text": "의"}
+{"type": "token", "t": 50485, "text": " 대"}
+{"type": "token", "t": 50485, "text": "가"}
+{"type": "token", "t": 50485, "text": "와"}
+{"type": "token", "t": 50500, "text": " 해"}
+{"type": "token", "t": 50500, "text": "지"}
+{"type": "token", "t": 50515, "text": "로"}
+{"type": "token", "t": 50515, "text": " 인해"}
+{"type": "token", "t": 50531, "text": " 을"}
+{"type": "token", "t": 50546, "text": "이"}
+{"type": "token", "t": 50563, "text": " 입"}
+{"type": "token", "t": 50578, "text": "은"}
+{"type": "token", "t": 50578, "text": " 손"}
+{"type": "token", "t": 50593, "text": "해"}
+{"type": "token", "t": 50593, "text": "를"}
+{"type": "token", "t": 50593, "text": " 지급"}
+{"type": "token", "t": 50610, "text": "한다"}
+{"type": "token", "t": 50625, "text": ".”"}
+{"type": "token", "t": 50640, "text": " ["}
+{"type": "token", "t": 50640, "text": "C"}
+{"type": "token", "t": 50640, "text": "8"}
+{"type": "token", "t": 50640, "text": "]\n"}
+{"type": "token", "t": 50640, "text": "-"}
+{"type": "token", "t": 50656, "text": " **"}
+{"type": "token", "t": 50656, "text": "비"}
+{"type": "token", "t": 50656, "text": "밀"}
+{"type": "token", "t": 50656, "text": "유"}
+{"type": "token", "t": 50656, "text": "지"}
+{"type": "token", "t": 50656, "text": "·"}
+{"type": "token", "t": 50656, "text": "경"}
+{"type": "token", "t": 50656, "text": "업"}
+{"type": "token", "t": 50656, "text": "금"}
+{"type": "token", "t": 50656, "text": "지"}
+{"type": "token", "t": 50656, "text": ":**"}
+{"type": "token", "t": 50656, "text": " 경"}
+{"type": "token", "t": 50656, "text": "업"}
+{"type": "token", "t": 50671, "text": "금"}
+{"type": "token", "t": 50688, "text": "지는"}
+{"type": "token", "t": 50688, "text": " 삭제"}
+{"type": "token", "t": 50688, "text": "를"}
+{"type": "token", "t": 50718, "text": " 우"}
+{"type": "token", "t": 50735, "text": "선"}
+{"type": "token", "t": 50735, "text": " 협"}
+{"type": "token", "t": 50735, "text": "의"}
+{"type": "token", "t": 50750, "text": "하고"}
+{"type": "token", "t": 50765, "text": ","}
+{"type": "token", "t": 50781, "text": " 비"}
+{"type": "token", "t": 50781, "text": "밀"}
+{"type": "token", "t": 50781, "text": "유"}
+{"type": "token", "t": 50796, "text": "지는"}
+{"type": "token", "t": 50813, "text": " 비"}
+{"type": "token", "t": 50813, "text": "밀"}
+{"type": "token", "t": 50813, "text": "정보"}
+{"type": "token", "t": 50828, "text": "의"}
+{"type": "token", "t": 50828, "text": " 범"}
+{"type": "token", "t": 50828, "text": "위"}
+{"type": "token", "t": 50828, "text": "와"}
+{"type": "token", "t": 50843, "text": " 예"}
+{"type": "token", "t": 50860, "text": "외"}
+{"type": "token", "t": 50875, "text": ","}
+{"type": "token", "t": 50906, "text": " 적용"}
+{"type": "token", "t": 50906, "text": " 기간"}
+{"type": "token", "t": 50906, "text": "을"}
+{"type": "token", "t": 50921, "text": " 구"}
+{"type": "token", "t": 50938, "text": "체"}
+{"type": "token", "t": 50938, "text": "적으로"}
+{"type": "token", "t": 50938, "text": " 정"}
+{"type": "token", "t": 50953, "text": "하세요"}
+{"type": "token", "t": 50968, "text": "."}
+{"type": "token", "t": 50968, "text": " ["}
+{"type": "token", "t": 50968, "text": "U"}
+{"type": "token", "t": 50985, "text": "10"}
+{"type": "token", "t": 51000, "text": "]["}
+{"type": "token", "t": 51000, "text": "C"}
+{"type": "token", "t": 51000, "text": "7"}
+{"type": "token", "t": 51015, "text": "]\n"}
+{"type": "token", "t": 51015, "text": "-"}
+{"type": "token", "t": 51015, "text": " **"}
+{"type": "token", "t": 51031, "text": "손"}
+{"type": "token", "t": 51031, "text": "해"}
+{"type": "token", "t": 51046, "text": "배"}
+{"type": "token", "t": 51046, "text": "상"}
+{"type": "token", "t": 51046, "text": ":**"}
+{"type": "token", "t": 51078, "text": " 간"}
+{"type": "token", "t": 51093, "text": "접"}
+{"type": "token", "t": 51093, "text": "손"}
+{"type": "token", "t": 51093, "text": "해"}
+{"type": "token", "t": 51110, "text": "·"}
+{"type": "token", "t": 51125, "text": "영"}
+{"type": "token", "t": 51125, "text": "업"}
+{"type": "token", "t": 51125, "text": "이"}
+{"type": "token", "t": 51125, "text": "익"}
+{"type": "token", "t": 51140, "text": " 손"}
+{"type": "token", "t": 51140, "text": "실"}
+{"type": "token", "t": 51156, "text": "의"}
+{"type": "token", "t": 51188, "text": " 포함"}
+{"type": "token", "t": 51188, "text": " 여부"}
+{"type": "token", "t": 51188, "text": "와"}
+{"type": "token", "t": 51203, "text": " 배"}
+{"type": "token", "t": 51218, "text": "상"}
+{"type": "token", "t": 51218, "text": " 총"}
+{"type": "token", "t": 51218, "text": "액"}
+{"type": "token", "t": 51235, "text": " 한"}
+{"type": "token", "t": 51235, "text": "도를"}
+{"type": "token", "t": 51250, "text": " 협"}
+{"type": "token", "t": 51265, "text": "의"}
+{"type": "token", "t": 51281, "text": "해"}
+{"type": "token", "t": 51296, "text": " 계약"}
+{"type": "token", "t": 51313, "text": "서"}
+{"type": "token", "t": 51328, "text": "에"}
+{"type": "token", "t": 51328, "text": " 명"}
+{"type": "token", "t": 51328, "text": "시"}
+{"type": "token", "t": 51343, "text": "하세요"}
+{"type": "token", "t": 51343, "text": "."}
+{"type": "token", "t": 51343, "text": " ["}
+{"type": "token", "t": 51360, "text": "U"}
+{"type": "token", "t": 51375, "text": "11"}
+{"type": "token", "t": 51375, "text": "]["}
+{"type": "token", "t": 51375, "text": "C"}
+{"type": "token", "t": 51375, "text": "9"}
+{"type": "token", "t": 51406, "text": "]\n\n"}
+{"type": "token", "t": 51438, "text": "표"}
+{"type": "token", "t": 51453, "text": "준"}
+{"type": "token", "t": 51453, "text": "계"}
+{"type": "token", "t": 51453, "text": "약"}
+{"type": "token", "t": 51468, "text": "서는"}
+{"type": "token", "t": 51468, "text": " 비교"}
+{"type": "token", "t": 51468, "text": " 기준"}
+{"type": "token", "t": 51485, "text": "이며"}
+{"type": "token", "t": 51500, "text": ","}
+{"type": "token", "t": 51500, "text": " 이"}
+{"type": "token", "t": 51500, "text": " 계약"}
+{"type": "token", "t": 51531, "text": "에"}
+{"type": "token", "t": 51531, "text": " 자동"}
+{"type": "token", "t": 51531, "text": "으로"}
+{"type": "token", "t": 51531, "text": " 적용"}
+{"type": "token", "t": 51546, "text": "되는"}
+{"type": "token", "t": 51546, "text": " 것은"}
+{"type": "token", "t": 51546, "text": " 아닙"}
+{"type": "token", "t": 51563, "text": "니다"}
+{"type": "token", "t": 51578, "text": "."}
+{"type": "token", "t": 51578, "text": " ["}
+{"type": "token", "t": 51578, "text": "C"}
+{"type": "token", "t": 51593, "text": "1"}
+{"type": "token", "t": 51610, "text": "]["}
+{"type": "token", "t": 51610, "text": "C"}
+{"type": "token", "t": 51610, "text": "2"}
+{"type": "token", "t": 51625, "text": "]"}
+{"type": "token", "t": 51640, "text": " 별"}
+{"type": "token", "t": 51656, "text": "첨"}
+{"type": "token", "t": 51656, "text": " 기"}
+{"type": "token", "t": 51656, "text": "획"}
+{"type": "token", "t": 51671, "text": "서"}
+{"type": "token", "t": 51688, "text": "의"}
+{"type": "token", "t": 51703, "text": " 세"}
+{"type": "token", "t": 51718, "text": "부"}
+{"type": "token", "t": 51718, "text": " 내용"}
+{"type": "token", "t": 51718, "text": "은"}
+{"type": "token", "t": 51735, "text": " 확인"}
+{"type": "token", "t": 51735, "text": "되지"}
+{"type": "token", "t": 51735, "text": " 않았"}
+{"type": "token", "t": 51750, "text": "으"}
+{"type": "token", "t": 51765, "text": "므로"}
+{"type": "token", "t": 51765, "text": ","}
+{"type": "token", "t": 51765, "text": " 서"}
+{"type": "token", "t": 51765, "text": "명"}
+{"type": "token", "t": 51796, "text": " 전"}
+{"type": "token", "t": 51828, "text": " 과"}
+{"type": "token", "t": 51843, "text": "업"}
+{"type": "token", "t": 51843, "text": " 범"}
+{"type": "token", "t": 51843, "text": "위"}
+{"type": "token", "t": 51843, "text": "와"}
+{"type": "token", "t": 51860, "text": " 검"}
+{"type": "token", "t": 51860, "text": "수"}
+{"type": "token", "t": 51860, "text": " 기준"}
+{"type": "token", "t": 51875, "text": "이"}
+{"type": "token", "t": 51906, "text": " 서로"}
+{"type": "token", "t": 51921, "text": " 일"}
+{"type": "token", "t": 51938, "text": "치"}
+{"type": "token", "t": 51938, "text": "하는"}
+{"type": "token", "t": 51953, "text": "지도"}
+{"type": "token", "t": 51968, "text": " 함께"}
+{"type": "token", "t": 51968, "text": " 확인"}
+{"type": "token", "t": 51985, "text": "하세요"}
+{"type": "token", "t": 51985, "text": "."}
+{"type": "token", "t": 51985, "text": " ["}
+{"type": "token", "t": 51985, "text": "U"}
+{"type": "token", "t": 52000, "text": "4"}
+{"type": "token", "t": 52031, "text": "]["}
+{"type": "token", "t": 52031, "text": "U"}
+{"type": "token", "t": 52046, "text": "5"}
+{"type": "token", "t": 52046, "text": "]"}
+{"type": "stage", "t": 52250, "stage": "write", "status": "end"}
+{"type": "stage", "t": 52250, "stage": "verify", "status": "start"}
+{"type": "verify", "t": 52250, "ok": true, "cited": ["U2", "U4", "U5", "U7", "U8", "U9", "U10", "U11", "C2", "C1", "C3", "U6", "C4", "C5", "C6", "L3", "C8", "L1", "C7", "C9", "U12", "C10"], "unknown": [], "unused": ["U1", "U3", "L2"], "problems": []}
+{"type": "stage", "t": 52250, "stage": "verify", "status": "end"}
+{"type": "sources", "t": 52250, "items": [{"id": "U1", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제1조(목적)", "excerpt": "## 제1조(목적)\n본 계약은 갑의 쇼핑몰 모바일 앱(iOS/Android) 개발 용역에 관한 사항을 정함을 목적으로 한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제1조", "kind_label": "첨부 계약서", "cited": false}, {"id": "U2", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제2조(계약 금액)", "excerpt": "## 제2조(계약 금액)\n① 계약 금액은 금 이천만원(20,000,000원, 부가세 별도)으로 한다.\n② 대금은 최종 검수 완료 후 일시에 지급한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제2조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U3", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제3조(계약 기간)", "excerpt": "## 제3조(계약 기간)\n계약 기간은 2026년 11월 1일부터 2027년 2월 28일까지로 한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제3조", "kind_label": "첨부 계약서", "cited": false}, {"id": "U4", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제4조(과업의 범위)", "excerpt": "## 제4조(과업의 범위)\n① 과업의 범위는 별첨 기획서에 따른다.\n② 갑은 개발 진행 중 필요하다고 판단하는 경우 기능을 추가하거나 변경할 수 있으며, 을은 이에 따라야 한다. 이 경우 계약 금액 및 기간은 변경하지 않는다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제4조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U5", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제5조(검수)", "excerpt": "## 제5조(검수)\n을이 결과물을 제출하면 갑은 자체 기준에 따라 검수하며, 검수 기간에는 제한을 두지 않는다. 갑이 만족할 때까지 을은 수정하여야 한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제5조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U6", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제6조(지체상금)", "excerpt": "## 제6조(지체상금)\n을이 계약 기간 내에 과업을 완료하지 못한 경우 지체일수 1일당 계약 금액의 100분의 1을 지체상금으로 갑에게 지급한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제6조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U7", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제7조(하자보수)", "excerpt": "## 제7조(하자보수)\n을은 앱 출시 이후 기간의 제한 없이 모든 오류에 대하여 무상으로 수정하여야 한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제7조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U8", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제8조(지식재산권)", "excerpt": "## 제8조(지식재산권)\n본 계약과 관련하여 을이 작성한 모든 산출물 및 을이 기존에 보유하고 있던 소스코드, 라이브러리, 노하우를 포함한 일체의 지식재산권은 계약 체결과 동시에 갑에게 귀속된다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제8조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U9", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제9조(계약 해지)", "excerpt": "## 제9조(계약 해지)\n① 갑은 사업상 필요에 따라 언제든지 서면 통보로 본 계약을 해지할 수 있다.\n② 제1항에 따라 계약이 해지되는 경우 갑은 을에게 해지 시점까지 수행된 과업에 대한 대가를 지급하지 않는다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제9조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U10", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제10조(비밀유지 및 경업금지)", "excerpt": "## 제10조(비밀유지 및 경업금지)\n① 을은 본 계약과 관련하여 알게 된 갑의 모든 정보를 영구히 비밀로 유지하여야 한다.\n② 을은 계약 종료 후 3년간 갑과 동종 업계의 회사로부터 앱 개발 용역을 수주할 수 없다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제10조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U11", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제11조(손해배상)", "excerpt": "## 제11조(손해배상)\n을의 귀책사유로 갑에게 손해가 발생한 경우 을은 그 손해 전액(간접손해 및 영업이익 손실 포함)을 배상한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제11조", "kind_label": "첨부 계약서", "cited": true}, {"id": "U12", "kind": "uploaded", "title": "첨부 계약서 '프리랜서_앱개발_용역계약서.md' 제12조(관할)", "excerpt": "## 제12조(관할)\n본 계약에 관한 분쟁은 갑의 본점 소재지 관할 법원을 전속 관할로 한다.", "url": null, "locator": "프리랜서_앱개발_용역계약서.md 제12조", "kind_label": "첨부 계약서", "cited": true}, {"id": "C1", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제3조(과업 범위 및 변경)", "excerpt": "## 제3조(과업 범위 및 변경)\n① 과업의 범위는 별첨 과업내용서(요구사항 명세서)에 따른다.\n② 갑이 과업 범위를 변경하거나 추가하려는 경우 서면으로 요청하여야 하며, 이로 인하여 계약 금액 또는 기간의 조정이 필요한 경우 갑과 을은 상호 협의하여 이를 조정한다.\n③ 갑은 과업 변경으로 인하여 을에게 추가 비용이 발생한 경우 이를 보전하여야 한다.", "url": null, "locator": "software_service#제3조", "kind_label": "표준계약서", "cited": true}, {"id": "C2", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제5조(계약 금액 및 지급)", "excerpt": "## 제5조(계약 금액 및 지급)\n① 계약 금액: 금 ________원 (부가가치세 별도)\n② 대금은 선급금 __%, 중도금 __%, 잔금 __%로 나누어 지급하며, 잔금은 검수 완료 후 __일 이내에 지급한다.\n③ 갑은 정당한 사유 없이 대금 지급을 지연할 수 없으며, 지연 시 지연일수에 대하여 법정 지연이자를 지급한다.", "url": null, "locator": "software_service#제5조", "kind_label": "표준계약서", "cited": true}, {"id": "C3", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제8조(검수)", "excerpt": "## 제8조(검수)\n① 을이 산출물을 인도하면 갑은 인도일로부터 14일 이내에 과업내용서에 정한 기준에 따라 검수를 실시하고 그 결과를 서면으로 통지하여야 한다.\n② 갑이 제1항의 기간 내에 검수 결과를 통지하지 아니한 경우 검수에 합격한 것으로 본다.\n③ 검수 기준은 사전에 합의한 과업내용서에 근거하여야 하며, 갑이 임의로 새로운 기준을 추가할 수 없다.", "url": null, "locator": "software_service#제8조", "kind_label": "표준계약서", "cited": true}, {"id": "C4", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제9조(지체상금)", "excerpt": "## 제9조(지체상금)\n① 을이 정당한 사유 없이 계약 기간 내에 과업을 완료하지 못한 경우, 지체일수 1일당 계약 금액의 1천분의 1.25에 해당하는 지체상금을 갑에게 지급한다.\n② 지체상금의 총액은 계약 금액의 100분의 10을 초과할 수 없다.\n③ 천재지변, 갑의 책임 있는 사유 등으로 인한 지체는 지체일수에 산입하지 아니한다.", "url": null, "locator": "software_service#제9조", "kind_label": "표준계약서", "cited": true}, {"id": "C5", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제10조(하자보수)", "excerpt": "## 제10조(하자보수)\n① 을은 검수 완료일로부터 1년간 산출물의 하자에 대하여 무상으로 보수한다.\n② 갑의 임의 변경, 운영 환경의 변경, 갑의 귀책사유로 발생한 결함은 하자보수 대상에서 제외한다.\n③ 하자보수 기간 경과 후의 유지보수는 별도 계약으로 정한다.", "url": null, "locator": "software_service#제10조", "kind_label": "표준계약서", "cited": true}, {"id": "C6", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제11조(지식재산권의 귀속)", "excerpt": "## 제11조(지식재산권의 귀속)\n① 이 계약에 따라 개발된 산출물의 지식재산권은 갑과 을이 공동으로 소유하는 것을 원칙으로 하되, 당사자 간 합의로 그 귀속을 달리 정할 수 있다.\n② 제1항에도 불구하고 을의 기존 보유 기술에 대한 권리는 을에게 귀속되며, 갑은 산출물의 이용에 필요한 범위 내에서 이를 무상으로 사용할 수 있다.\n③ 산출물의 권리를 갑에게 전부 귀속시키는 경우 그 대가를 계약 금액에 반영하여야 한다.", "url": null, "locator": "software_service#제11조", "kind_label": "표준계약서", "cited": true}, {"id": "C7", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제12조(비밀유지)", "excerpt": "## 제12조(비밀유지)\n갑과 을은 과업 수행 중 알게 된 상대방의 비밀정보를 계약 기간 중 및 계약 종료 후 2년간 제3자에게 누설하여서는 아니 된다.", "url": null, "locator": "software_service#제12조", "kind_label": "표준계약서", "cited": true}, {"id": "C8", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제13조(계약의 해제·해지)", "excerpt": "## 제13조(계약의 해제·해지)\n① 갑 또는 을은 상대방이 계약상 의무를 위반하고 14일 이상의 기간을 정한 서면 최고에도 이를 시정하지 아니하는 경우 계약을 해제 또는 해지할 수 있다.\n② 갑이 자신의 사정으로 계약을 해지하는 경우 을이 해지 시점까지 수행한 과업에 대한 대가와 해지로 인하여 을이 입은 손해를 지급하여야 한다.", "url": null, "locator": "software_service#제13조", "kind_label": "표준계약서", "cited": true}, {"id": "C9", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제14조(손해배상)", "excerpt": "## 제14조(손해배상)\n갑 또는 을은 고의 또는 과실로 상대방에게 손해를 입힌 경우 이를 배상하여야 한다. 다만, 손해배상의 총액은 특별한 사정이 없는 한 계약 금액을 한도로 한다.", "url": null, "locator": "software_service#제14조", "kind_label": "표준계약서", "cited": true}, {"id": "C10", "kind": "standard", "title": "소프트웨어 개발 용역 표준계약서 제15조(분쟁의 해결)", "excerpt": "## 제15조(분쟁의 해결)\n이 계약과 관련하여 분쟁이 발생한 경우 당사자 간 협의로 해결하며, 협의가 이루어지지 않는 경우 소프트웨어사업 분쟁조정위원회의 조정 또는 관할 법원의 판결에 따른다.", "url": null, "locator": "software_service#제15조", "kind_label": "표준계약서", "cited": true}, {"id": "L1", "kind": "law", "title": "민법 제673조(완성전의 도급인의 해제권)", "excerpt": "제673조(완성전의 도급인의 해제권) 수급인이 일을 완성하기 전에는 도급인은 손해를 배상하고 계약을 해제할 수 있다.", "url": "https://www.law.go.kr/법령/%EB%AF%BC%EB%B2%95/%EC%A0%9C673%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "L2", "kind": "law", "title": "저작권법 제2조(정의)", "excerpt": "제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. <개정 2009.4.22, 2011.6.30, 2011.12.2, 2016.3.22, 2021.5.18, 2023.8.8, 2026.2.10>\n1. \"저작물\"은 인간의 사상 또는 감정을 표현한 창작물을 말한다.\n2. \"저작자\"는 저작물을 창작한 자를 말한다.\n3. \"공연\"은 저작물 또는 실연(實演)ㆍ음반ㆍ방송을 상연ㆍ연주ㆍ가창ㆍ구연ㆍ낭독ㆍ상영ㆍ재생 그 밖의 방법으로 공중에게 공개하는 것을 말하며, 동일인의 점유에 속하는 연결된 장소 안에서 이루어지는 송신(전송은 제외한다)을 포함한다.\n4. \"실연자\"는 저작물을 연기ㆍ무용ㆍ연주ㆍ가창ㆍ구연ㆍ낭독 그 밖의 예능적 방법으로 표현하거나 저작물이 아닌 것을 이와 유사한 방법으로 표현하는 실연을 하는 자를 말하며, 실연을 지휘, 연출 또는 감독하는 자를 포함한다.\n5. \"음반\"은 음(음성ㆍ음향을 말한다. 이하 같다)이 유형물에 고정된 것(음을 디지털화한 것을 포함한다)을 말한다. 다만, 음이 영상과 함께 고정된 것은 제외한다.\n6. \"음반제작자\"는 음반을 최초로 제작하는 데 있어 전체적으로 기획하고 책임을 지는 자를 말한다.\n7. \"공중송신\"은 저작물, 실연ㆍ", "url": "https://www.law.go.kr/법령/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C2%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": false}, {"id": "L3", "kind": "law", "title": "저작권법 제45조(저작재산권의 양도)", "excerpt": "제45조(저작재산권의 양도)\n①저작재산권은 전부 또는 일부를 양도할 수 있다.\n②저작재산권의 전부를 양도하는 경우에 특약이 없는 때에는 제22조에 따른 2차적저작물을 작성하여 이용할 권리는 포함되지 아니한 것으로 추정한다. 다만, 프로그램의 경우 특약이 없으면 2차적저작물작성권도 함께 양도된 것으로 추정한다. <개정 2009.4.22, 2023.8.8>", "url": "https://www.law.go.kr/법령/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C45%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}]}
+{"type": "final", "t": 52250, "answer_md": "## 한눈에 보기\n계약서에는 대금 지급을 최종 검수 뒤로 미루고, 추가 작업은 비용·기간 조정 없이 하도록 하며, 검수와 무상 하자수정을 제한 없이 요구할 수 있는 조항이 있습니다. 특히 **과업 변경, 검수, 해지 정산, 기존 지식재산권, 경업금지, 손해배상**은 서명 전에 우선 수정·협의하는 것이 좋습니다. [U2][U4][U5][U7][U8][U9][U10][U11]\n\n## 검토 결과\n\n### 🔴 대금 지급과 과업 변경\n계약금 2,000만 원(부가세 별도)은 최종 검수 후 한 번에 지급하게 되어 있어, 검수가 늦어지면 대금 수령도 늦어질 수 있습니다. [U2] 표준계약서 예시는 선급금·중도금·잔금으로 나누고, 잔금은 검수 후 정해진 기간 안에 지급하도록 합니다. [C2]\n\n갑은 필요하다고 판단하면 기능을 추가하거나 변경할 수 있고, 을은 이에 따라야 하지만 계약금액과 기간은 그대로입니다. [U4] 표준계약서는 과업 변경을 서면으로 요청하고, 금액·기간 조정이 필요하면 협의하며, 추가 비용을 보전하도록 제시합니다. [C1]\n\n### 🔴 검수 기준과 기한\n검수 기간에 제한이 없고, 갑의 자체 기준으로 만족할 때까지 수정하도록 되어 있습니다. [U5] 검수 완료 시점과 수정 범위가 불명확해 대금 지급이 늦어지거나 수정 작업이 계속될 위험이 있습니다. [U2][U5] 표준계약서 예시는 합의한 과업 기준으로 검수하고, 결과를 14일 안에 통지하며, 기간 내 통지가 없으면 합격한 것으로 봅니다. [C3]\n\n### 🔴 지체상금\n계약 기간 안에 과업을 완료하지 못하면 하루마다 계약금액의 1%를 지체상금으로 내도록 되어 있습니다. [U6] 계약금액이 2,000만 원이므로 하루 20만 원이며, 계약서에는 총액 한도나 갑의 책임으로 인한 지연을 제외하는 내용이 없습니다. [U2][U6] 표준계약서 예시는 하루 0.125%, 총액은 계약금액의 10% 이내로 하고, 갑의 책임 등으로 지연된 기간은 제외합니다. [C4]\n\n### 🔴 하자보수\n앱 출시 후 기간 제한 없이 모든 오류를 무상으로 수정하도록 되어 있습니다. [U7] 표준계약서 예시는 검수 완료일부터 1년으로 기간을 정하고, 갑의 임의 변경이나 운영환경 변경 등으로 생긴 결함은 제외하며, 그 이후 유지보수는 별도 계약으로 정합니다. [C5]\n\n### 🔴 지식재산권\n새로 만든 결과물뿐 아니라 을이 기존에 보유한 소스코드·라이브러리·노하우까지 계약 체결과 동시에 갑에게 귀속된다고 되어 있습니다. [U8] 표준계약서 예시는 을의 기존 기술 권리는 을에게 남기고, 갑에게는 산출물 이용에 필요한 범위에서 사용을 허용하는 방식을 제시합니다. [C6] 저작재산권은 전부 또는 일부 양도할 수 있고, 컴퓨터프로그램은 별도 특약이 없으면 2차적저작물 작성·이용 권리도 함께 양도된 것으로 추정될 수 있습니다. [L3]\n\n### 🔴 갑의 임의 해지와 수행분 대가\n갑은 사업상 필요에 따라 언제든 계약을 해지할 수 있고, 해지 시점까지 수행한 과업의 대가도 지급하지 않는다고 되어 있습니다. [U9] 표준계약서 예시는 갑의 사정으로 해지하면 수행분 대가와 해지로 발생한 손해를 지급하도록 합니다. [C8] 민법 제673조는 일이 완성되기 전에 도급인이 손해를 배상하고 계약을 해제할 수 있다고 정하고 있어, 수행분 대가를 전혀 지급하지 않는다는 문구는 특히 수정할 필요가 있습니다. [L1]\n\n### 🔴 비밀유지와 경업금지\n갑의 모든 정보를 기간 제한 없이 비밀로 유지하고, 계약 종료 후 3년간 동종 업계 회사의 앱 개발 용역을 수주하지 못하도록 되어 있습니다. [U10] 비밀정보의 범위와 예외가 정해져 있지 않고, 경업금지도 향후 업무 수주를 제한할 수 있습니다. 표준계약서 예시는 양 당사자에게 비밀유지 의무를 두고 종료 후 2년간 적용하지만, 경업금지는 두지 않습니다. [C7]\n\n### 🔴 손해배상\n을의 귀책사유로 손해가 발생하면 간접손해와 영업이익 손실까지 포함해 전액 배상하도록 되어 있고, 배상 한도는 정해져 있지 않습니다. [U11] 표준계약서 예시는 특별한 사정이 없으면 손해배상 총액을 계약금액 한도로 정합니다. [C9]\n\n### 🟡 관할 법원\n분쟁은 갑의 본점 소재지 법원에서만 다루도록 되어 있습니다. [U12] 을이 다른 지역에 있다면 분쟁 대응에 시간과 비용이 더 들 수 있습니다. 표준계약서 예시는 협의를 우선하고, 조정 또는 관할 법원의 판결로 해결하는 방식을 제시합니다. [C10]\n\n## 이렇게 해보세요\n아래 내용은 협의할 때 넣어 볼 수 있는 문구 예시입니다. 실제 문구는 별첨 기획서와 함께 맞추는 것이 좋습니다.\n\n- **대금 지급:** “계약금액은 선급금·중도금·잔금으로 나누어 지급하고, 잔금은 검수 완료 후 ○일 이내 지급한다.” [C2]\n- **과업 변경:** “과업 변경·추가는 서면으로 요청하며, 추가 비용 또는 일정 조정이 필요한 경우 갑과 을은 이를 협의해 변경계약을 체결한다.” [C1]\n- **검수:** “검수 기준은 별첨 과업내용서에 따른다. 갑은 결과물 인도 후 14일 이내 서면으로 검수 결과를 통지하며, 기간 내 통지가 없으면 합격한 것으로 본다.” [C3]\n- **지체상금:** 하루 지체상금 비율과 총액 한도를 정하고, 갑의 책임이나 정당한 사유로 인한 지연은 지체일수에서 제외하도록 요청하세요. [C4]\n- **하자보수:** “무상 하자보수 기간은 검수 완료일부터 1년으로 한다. 갑의 임의 변경, 운영환경 변경 등 을의 책임이 아닌 원인으로 발생한 결함은 제외하며, 기간 이후 유지보수는 별도 계약으로 정한다.” [C5]\n- **지식재산권:** “을의 기존 소스코드·라이브러리·노하우에 관한 권리는 을에게 귀속한다. 갑은 산출물 이용에 필요한 범위에서 해당 기술을 사용할 수 있다.” 새로 만든 산출물의 권리를 갑에게 전부 이전한다면 그 대상과 대가도 구체적으로 정하세요. [C6][L3]\n- **해지 정산:** “갑의 사정으로 계약을 해지하는 경우, 갑은 해지 시점까지 수행한 과업의 대가와 해지로 인해 을이 입은 손해를 지급한다.” [C8]\n- **비밀유지·경업금지:** 경업금지는 삭제를 우선 협의하고, 비밀유지는 비밀정보의 범위와 예외, 적용 기간을 구체적으로 정하세요. [U10][C7]\n- **손해배상:** 간접손해·영업이익 손실의 포함 여부와 배상 총액 한도를 협의해 계약서에 명시하세요. [U11][C9]\n\n표준계약서는 비교 기준이며, 이 계약에 자동으로 적용되는 것은 아닙니다. [C1][C2] 별첨 기획서의 세부 내용은 확인되지 않았으므로, 서명 전 과업 범위와 검수 기준이 서로 일치하는지도 함께 확인하세요. [U4][U5]", "cited_ids": ["U2", "U4", "U5", "U7", "U8", "U9", "U10", "U11", "C2", "C1", "C3", "U6", "C4", "C5", "C6", "L3", "C8", "L1", "C7", "C9", "U12", "C10"], "stats": {"elapsed_ms": 52250, "llm_calls": 7, "tool_calls": 6, "sources": 25, "cited": 22}}
+{"type": "done", "t": 52250, "elapsed_ms": 52250}

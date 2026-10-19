@@ -1,0 +1,1267 @@
+{"type": "run_start", "t": 0, "ts": "2026-10-18T21:26:49.669+09:00", "question": "", "trigger": {"type": "schedule", "label": "⏰ 정기 일정", "detail": "매월 1일 09:00 정기 점검: 표준근로계약서의 수습기간·위약금 관련 조항이 현행 법령(근로기준법, 최저임금법)과 맞는지 확인해 보고합니다."}, "model": "gpt-6-luna", "law_api": true, "attachment": null, "pricing": {"model": "gpt-6-luna", "rates": {"input": 0.1, "cached_input": 0.01, "cache_write": 0.125, "output": 0.5}, "web_search_per_1k_calls": 10.0, "usd_krw": 1400, "source": "https://developers.openai.com/api/docs/pricing", "checked_at": "2026-10-18"}}
+{"type": "stage", "t": 0, "ts": "2026-10-18T21:26:49.673+09:00", "stage": "goal", "status": "start"}
+{"type": "context", "t": 0, "ts": "2026-10-18T21:26:49.673+09:00", "items": [{"label": "트리거", "detail": "⏰ 정기 일정: 매월 1일 09:00 정기 점검: 표준근로계약서의 수습기간·위약금 관련 조항이 현행 법령(근로기준법, 최저임금법)과 맞는지 확인해 보고합니다."}, {"label": "이전 대화", "detail": "0개 메시지"}, {"label": "참고 문서 목록 (llms.txt)", "detail": "표준근로계약서, 주택임대차 표준계약서, 소프트웨어 개발 용역 표준계약서, 비밀유지계약서"}]}
+{"type": "llm_call", "t": 7703, "ts": "2026-10-18T21:26:57.378+09:00", "call_no": 1, "stage": "goal", "purpose": "목표 정의", "model": "gpt-6-luna", "usage": {"input": 1684, "cache_read": 1185, "cache_write": 496, "output": 556, "reasoning": 55, "uncached_input": 3, "total": 2240}, "web_search_calls": 0, "cost_usd": 0.00035214999999999997, "elapsed_ms": 7547, "total_usage": {"input": 1684, "cache_read": 1185, "cache_write": 496, "output": 556, "reasoning": 55, "uncached_input": 3, "total": 2240}, "total_cost_usd": 0.00035214999999999997}
+{"type": "reasoning", "t": 7703, "ts": "2026-10-18T21:26:57.378+09:00", "stage": "goal", "text": "**Researching labor contracts**\n\nI need to output JSON in Korean based on a periodic review of standard labor contracts, but there's no attachment this time. I should look into the candidate document for the standard labor ID and identify a likely path for that. It seems I need to check contracts and labor standard documentation for references. I'll also explore current laws, comparing probation and penalty clauses to report my findings and any necessary actions."}
+{"type": "goal", "t": 7703, "ts": "2026-10-18T21:26:57.378+09:00", "data": {"trigger_summary": "매월 1일 09:00 정기 점검 일정에 따라 표준근로계약서의 수습기간·위약금 조항을 현행 법령과 대조하는 작업이 시작되었습니다.", "question_type": "monitoring", "summary": "표준근로계약서의 수습기간 및 위약금 관련 조항이 현행 근로기준법과 최저임금법에 부합하는지 정기적으로 확인해 보고합니다.", "goal": "표준근로계약서의 수습기간·위약금 조항을 현행 근로기준법 및 최저임금법과 대조해 적합성과 보완 필요성을 보고한다.", "completion_criteria": ["표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다."], "issues": ["수습기간의 설정 및 수습 중 임금의 법적 요건", "근로계약 불이행에 대한 위약금 또는 손해배상액 예정의 허용 여부"], "use_attachment": false, "attachment_reason": "", "candidate_docs": [], "route": "research", "thought": "정기 점검이므로 표준근로계약서의 해당 조항과 현행 법령을 함께 확인해 조항별 적합성을 판단해야 합니다. 첨부 계약서는 없으므로 라이브러리의 표준근로계약서를 기준으로 삼고, 확인 근거와 보완 사항을 보고하도록 완료 조건을 정했습니다."}, "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "unmet", "note": ""}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "unmet", "note": ""}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "unmet", "note": ""}]}
+{"type": "route", "t": 7703, "ts": "2026-10-18T21:26:57.378+09:00", "path": "research", "label": "작업이 필요함 → 계획 수립"}
+{"type": "stage", "t": 7703, "ts": "2026-10-18T21:26:57.378+09:00", "stage": "goal", "status": "end"}
+{"type": "stage", "t": 7703, "ts": "2026-10-18T21:26:57.379+09:00", "stage": "plan", "status": "start"}
+{"type": "llm_call", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "call_no": 2, "stage": "plan", "purpose": "계획 수립", "model": "gpt-6-luna", "usage": {"input": 1631, "cache_read": 0, "cache_write": 1628, "output": 487, "reasoning": 166, "uncached_input": 3, "total": 2118}, "web_search_calls": 0, "cost_usd": 0.00044730000000000003, "elapsed_ms": 6905, "total_usage": {"input": 3315, "cache_read": 1185, "cache_write": 2124, "output": 1043, "reasoning": 221, "uncached_input": 6, "total": 4358}, "total_cost_usd": 0.0007994499999999999}
+{"type": "plan", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "strategy": "먼저 참고 문서 목록에서 표준근로계약서의 수습기간·위약금 조항을 확인하고, 관련 법령의 현행 조문 원문과 대조합니다. 계약서 조항별 위험과 보완 필요성을 판단할 수 있도록 필요한 법령 및 해석 자료도 확인합니다.", "steps": [{"no": 1, "goal": "표준근로계약서의 목차를 확인해 수습기간 및 위약금 관련 조항을 특정한다.", "tool": "read_reference_outline", "criteria": [], "status": "pending", "added_by": "plan"}, {"no": 2, "goal": "표준근로계약서에서 수습기간·임금 및 위약금 관련 조항의 원문을 확인한다.", "tool": "read_reference_sections", "criteria": [1, 2, 3], "status": "pending", "added_by": "plan"}, {"no": 3, "goal": "근로기준법상 위약예정 금지와 근로조건 명시 등 관련 현행 조문 원문을 확인한다.", "tool": "get_law_article", "criteria": [2, 3], "status": "pending", "added_by": "plan"}, {"no": 4, "goal": "최저임금법과 관련 시행령의 수습근로자 최저임금 적용 요건 및 예외 조문 원문을 확인한다.", "tool": "get_law_article", "criteria": [1, 3], "status": "pending", "added_by": "plan"}, {"no": 5, "goal": "수습기간·임금 및 위약금 조항의 법령상 적용 요건과 실무상 유의점을 확인할 필요가 있으면 정부 기관 해석이나 최신 안내를 검색한다.", "tool": "web_search", "criteria": [1, 2, 3], "status": "pending", "added_by": "plan"}]}
+{"type": "stage", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "stage": "plan", "status": "end"}
+{"type": "stage", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "stage": "execute", "status": "start"}
+{"type": "plan_update", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "step_no": 1, "status": "in_progress"}
+{"type": "loop", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "n": 1}
+{"type": "step_start", "t": 14608, "ts": "2026-10-18T21:27:04.275+09:00", "no": 1, "goal": "표준근로계약서의 목차를 확인해 수습기간 및 위약금 관련 조항을 특정한다.", "tool": "read_reference_outline", "criteria": []}
+{"type": "llm_call", "t": 16233, "ts": "2026-10-18T21:27:05.909+09:00", "call_no": 3, "stage": "execute", "purpose": "단계 1: 행동 결정", "model": "gpt-6-luna", "usage": {"input": 2099, "cache_read": 0, "cache_write": 2096, "output": 50, "reasoning": 0, "uncached_input": 3, "total": 2149}, "web_search_calls": 0, "cost_usd": 0.0002873, "elapsed_ms": 1625, "total_usage": {"input": 5414, "cache_read": 1185, "cache_write": 4220, "output": 1093, "reasoning": 221, "uncached_input": 9, "total": 6507}, "total_cost_usd": 0.00108675}
+{"type": "tool_call", "t": 16233, "ts": "2026-10-18T21:27:05.910+09:00", "id": "call_9TTYakUJO2eNM0ja8smFaGSD", "tool": "read_reference_outline", "label": "📚 참고 문서 목차 보기", "args": {"doc_id": "labor_standard"}, "reason": "표준근로계약서의 목차에서 수습기간과 위약금 조항의 위치를 특정하겠습니다.", "step": 1}
+{"type": "tool_result", "t": 16233, "ts": "2026-10-18T21:27:05.910+09:00", "id": "call_9TTYakUJO2eNM0ja8smFaGSD", "tool": "read_reference_outline", "ok": true, "summary": "'표준근로계약서' 목차 15개 항목 확인", "source_ids": [], "preview": "- 제1조(계약 당사자)\n- 제2조(근로계약기간)\n- 제3조(근무장소 및 업무내용)\n- 제4조(소정근로시간 및 휴게)\n- 제5조(근무일 및 휴일)\n- 제6조(임금)\n- 제7조(수습기간)\n- 제8조(연장·야간·휴일근로)\n- 제9조(연차유급휴가)\n- 제10조(사회보험 적용)\n- 제11조(근로계약서 교부)\n- 제12조(계약의 해지)\n- 제13조(위약 예정의 금지)\n- 제14조(비밀유지)\n- 제15조(기타)", "elapsed_ms": 0}
+{"type": "check_start", "t": 16233, "ts": "2026-10-18T21:27:05.911+09:00", "step": 1}
+{"type": "llm_call", "t": 55155, "ts": "2026-10-18T21:27:44.832+09:00", "call_no": 4, "stage": "execute", "purpose": "단계 1: 점검", "model": "gpt-6-luna", "usage": {"input": 2096, "cache_read": 0, "cache_write": 2093, "output": 455, "reasoning": 96, "uncached_input": 3, "total": 2551}, "web_search_calls": 0, "cost_usd": 0.000489425, "elapsed_ms": 38921, "total_usage": {"input": 7510, "cache_read": 1185, "cache_write": 6313, "output": 1548, "reasoning": 317, "uncached_input": 12, "total": 9058}, "total_cost_usd": 0.001576175}
+{"type": "check", "t": 55155, "ts": "2026-10-18T21:27:44.832+09:00", "step": 1, "observation": "목차에서 수습기간은 제7조, 임금은 제6조, 위약 예정의 금지는 제13조, 계약 해지는 제12조에 있음을 확인했습니다[U1]. 아직 조항 원문이나 관련 법령은 확인하지 않았습니다[U1].", "step_done": true, "decision": "continue", "reason": "목차에서 검토할 조항을 특정해 이번 단계의 목표는 달성했습니다. 다음 단계에서 제6조·제7조·제13조의 원문을 확인해야 법령과 실질적으로 대조할 수 있습니다.", "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "partial", "note": "수습기간 조항이 제7조이고 관련 임금 조항이 제6조임을 특정했지만, 원문과 현행 법령을 대조하지 않았습니다[U1]."}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "partial", "note": "위약 예정의 금지 조항이 제13조임을 특정했지만, 그 원문과 관련 법령에 따른 위험 판단은 아직 없습니다[U1]."}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "unmet", "note": "조항별 검토 근거나 수정·운영상 유의사항을 뒷받침할 자료를 아직 확인하지 않았습니다[U1]."}], "source_ids": ["U1"]}
+{"type": "plan_update", "t": 55155, "ts": "2026-10-18T21:27:44.832+09:00", "step_no": 1, "status": "done"}
+{"type": "plan_update", "t": 55155, "ts": "2026-10-18T21:27:44.833+09:00", "step_no": 2, "status": "in_progress"}
+{"type": "loop", "t": 55155, "ts": "2026-10-18T21:27:44.833+09:00", "n": 2}
+{"type": "step_start", "t": 55155, "ts": "2026-10-18T21:27:44.833+09:00", "no": 2, "goal": "표준근로계약서에서 수습기간·임금 및 위약금 관련 조항의 원문을 확인한다.", "tool": "read_reference_sections", "criteria": [1, 2, 3]}
+{"type": "llm_call", "t": 56875, "ts": "2026-10-18T21:27:46.546+09:00", "call_no": 5, "stage": "execute", "purpose": "단계 2: 행동 결정", "model": "gpt-6-luna", "usage": {"input": 2475, "cache_read": 1061, "cache_write": 1411, "output": 80, "reasoning": 0, "uncached_input": 3, "total": 2555}, "web_search_calls": 0, "cost_usd": 0.000227285, "elapsed_ms": 1719, "total_usage": {"input": 9985, "cache_read": 2246, "cache_write": 7724, "output": 1628, "reasoning": 317, "uncached_input": 15, "total": 11613}, "total_cost_usd": 0.00180346}
+{"type": "tool_call", "t": 56875, "ts": "2026-10-18T21:27:46.547+09:00", "id": "call_h6FMImUeNMtv7PGhtzqn0anR", "tool": "read_reference_sections", "label": "📄 참고 문서 조항 읽기", "args": {"doc_id": "labor_standard", "sections": ["제6조", "제7조", "제12조", "제13조"]}, "reason": "표준근로계약서의 임금·수습·해지 및 위약금 조항 원문을 확인해 다음 법령 대조의 기준을 마련합니다.", "step": 2}
+{"type": "tool_result", "t": 56875, "ts": "2026-10-18T21:27:46.547+09:00", "id": "call_h6FMImUeNMtv7PGhtzqn0anR", "tool": "read_reference_sections", "ok": true, "summary": "'표준근로계약서' 제6조(임금), 제7조(수습기간), 제12조(계약의 해지), 제13조(위약 예정의 금지) 읽음", "source_ids": ["C1", "C2", "C3", "C4"], "preview": "[C1] ## 제6조(임금)\n① 월(일, 시간)급: ________원\n② 상여금 및 기타 수당은 별도로 정한 바에 따른다.\n③ 임금지급일은 매월 __일로 하며, 휴일인 경우 전일에 지급한다.\n④ 임금은 을에게 직접, 그 전액을 지급한다. 법령 또는 단체협약에 특별한 규정이 있는 경우를 제외하고는 갑이 임의로 공제할 수 없다.\n⑤ 임금은 최저임금법에 따른 최저임금 이상이어야 한다.\n\n[C2] ## 제7조(수습기간)\n① 근로개시일로부터 3개월 이내의 범위에서 수습기간을 둘 수 있다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 경우, 수습기간 3개월 이내에 한하여 최저임금의 100분의 90 이상을 지급할 수 있다.\n③ 제2항에도 불구하고 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 경우에는 수습기간 중에도 최저임금 전액을 지급한다.\n④ 수습기간이 끝난 후 정당한 이유 없이 본채용을 거부할 수 없다.\n\n[C3] ## 제12조(계약의 해지)\n① 갑은 정당한 이유 없이 을을 해고할 수 없다.\n② 갑이 을을 해고하려면 적어도 30일 전에 예고하여야 하고, 30일 전에 예고하지 아니하였을 때에는 30일분 이상의 통상임금을 지급하여야 한다.\n③ 해고는 해고사유와 해고시기를 서면으로 통지하여야 효력이 있다.\n\n[C4] ## 제13조(위약 예정의 금지)\n갑은 근로계약 불이행에 대한 위약금 또는 손해배상액을 예정하는 계약을 체결하지 못한다. 교육비 반환, 조기 퇴사 시 배상 등 명칭과 관계없이 근로자의 퇴직의 자유를 부당하게 제한하는 약정은 효력이 없을 수 있다.", "elapsed_ms": 0}
+{"type": "check_start", "t": 56875, "ts": "2026-10-18T21:27:46.547+09:00", "step": 2}
+{"type": "llm_call", "t": 61328, "ts": "2026-10-18T21:27:50.994+09:00", "call_no": 6, "stage": "execute", "purpose": "단계 2: 점검", "model": "gpt-6-luna", "usage": {"input": 2645, "cache_read": 0, "cache_write": 2642, "output": 393, "reasoning": 52, "uncached_input": 3, "total": 3038}, "web_search_calls": 0, "cost_usd": 0.0005270499999999999, "elapsed_ms": 4453, "total_usage": {"input": 12630, "cache_read": 2246, "cache_write": 10366, "output": 2021, "reasoning": 369, "uncached_input": 18, "total": 14651}, "total_cost_usd": 0.00233051}
+{"type": "reasoning", "t": 61328, "ts": "2026-10-18T21:27:50.994+09:00", "stage": "execute", "text": "**Checking output criteria**\n\nI need to check the output for JSON and ensure it meets the necessary criteria and statuses. So, I can see that step one is done. Now, I’ll continue with the planned law lookup. I've noted the observation IDs. It looks like criterion one is only partial since the laws aren't present yet, and criterion two is also partial. Criterion three might show support from contract text, but lacks a solid legal basis. So, I’ll decide to continue."}
+{"type": "check", "t": 61328, "ts": "2026-10-18T21:27:50.994+09:00", "step": 2, "observation": "표준근로계약서 제6조는 임금을 최저임금 이상으로 정하고, 제7조는 수습기간과 수습 중 최저임금 적용 요건을 규정합니다[C1][C2]. 제13조는 위약금·손해배상액의 예정 금지를 정하고, 계약 해지 관련 제12조도 확인했습니다[C3][C4].", "step_done": true, "decision": "continue", "reason": "계약서 조항 원문은 확보했으므로 다음 단계에서 위약예정 금지와 근로조건 명시에 관한 현행 법령 조문을 확인해야 합니다.", "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "partial", "note": "제6조·제7조 원문과 수습 관련 요건은 확인했으나, 적용되는 현행 법령 원문과의 대조가 남아 있습니다[C1][C2]."}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "partial", "note": "제13조의 위약금·손해배상액 예정 금지 문구는 확인했으나, 근로기준법 등 관련 법령에 따른 위험 판단은 아직입니다[C4]."}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "partial", "note": "제6조·제7조·제12조·제13조 원문은 확보했지만, 법령 근거와 조항별 수정·운영상 유의사항은 아직 확인하지 않았습니다[C1][C2][C3][C4]."}], "source_ids": ["C1", "C2", "C3", "C4"]}
+{"type": "plan_update", "t": 61328, "ts": "2026-10-18T21:27:50.994+09:00", "step_no": 2, "status": "done"}
+{"type": "plan_update", "t": 61328, "ts": "2026-10-18T21:27:50.995+09:00", "step_no": 3, "status": "in_progress"}
+{"type": "loop", "t": 61328, "ts": "2026-10-18T21:27:50.995+09:00", "n": 3}
+{"type": "step_start", "t": 61328, "ts": "2026-10-18T21:27:50.995+09:00", "no": 3, "goal": "근로기준법상 위약예정 금지와 근로조건 명시 등 관련 현행 조문 원문을 확인한다.", "tool": "get_law_article", "criteria": [2, 3]}
+{"type": "llm_call", "t": 64375, "ts": "2026-10-18T21:27:54.048+09:00", "call_no": 7, "stage": "execute", "purpose": "단계 3: 행동 결정", "model": "gpt-6-luna", "usage": {"input": 3081, "cache_read": 1061, "cache_write": 2017, "output": 219, "reasoning": 0, "uncached_input": 3, "total": 3300}, "web_search_calls": 0, "cost_usd": 0.000372535, "elapsed_ms": 3046, "total_usage": {"input": 15711, "cache_read": 3307, "cache_write": 12383, "output": 2240, "reasoning": 369, "uncached_input": 21, "total": 17951}, "total_cost_usd": 0.0027030450000000003}
+{"type": "tool_call", "t": 64375, "ts": "2026-10-18T21:27:54.049+09:00", "id": "call_pC1MJi5TCD7Ba4kR20vVq9wd", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "근로기준법", "article": "제20조"}, "reason": "위약금 예정 금지 조항의 현행 법률 문언을 확인합니다.", "step": 3}
+{"type": "tool_call", "t": 64375, "ts": "2026-10-18T21:27:54.049+09:00", "id": "call_1W6ufgKAKX04Lqy060WBamjJ", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "근로기준법", "article": "제17조"}, "reason": "근로조건을 서면으로 명시해야 하는 범위와 교부 의무를 확인합니다.", "step": 3}
+{"type": "tool_call", "t": 64375, "ts": "2026-10-18T21:27:54.049+09:00", "id": "call_VVLotVckqypYYy5GaCIAKH3Y", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "근로기준법", "article": "제23조"}, "reason": "해고의 정당한 이유와 예고 관련 규정을 확인해 계약서 조항과 대조합니다.", "step": 3}
+{"type": "tool_call", "t": 64375, "ts": "2026-10-18T21:27:54.049+09:00", "id": "call_2aURorV9u1ipVdGhZJkXSOc2", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "근로기준법", "article": "제26조"}, "reason": "해고예고 및 예외 규정의 현행 문언을 확인합니다.", "step": 3}
+{"type": "tool_result", "t": 66171, "ts": "2026-10-18T21:27:55.843+09:00", "id": "call_pC1MJi5TCD7Ba4kR20vVq9wd", "tool": "get_law_article", "ok": true, "summary": "근로기준법 제20조(위약 예정의 금지) 원문 확인", "source_ids": ["L1"], "preview": "[L1] 근로기준법 제20조(위약 예정의 금지) (시행 20261008)\n제20조(위약 예정의 금지) 사용자는 근로계약 불이행에 대한 위약금 또는 손해배상액을 예정하는 계약을 체결하지 못한다.", "elapsed_ms": 1796}
+{"type": "tool_result", "t": 66171, "ts": "2026-10-18T21:27:55.846+09:00", "id": "call_1W6ufgKAKX04Lqy060WBamjJ", "tool": "get_law_article", "ok": true, "summary": "근로기준법 제17조(근로조건의 명시) 원문 확인", "source_ids": ["L2"], "preview": "[L2] 근로기준법 제17조(근로조건의 명시) (시행 20261008)\n제17조(근로조건의 명시)\n① 사용자는 근로계약을 체결할 때에 근로자에게 다음 각 호의 사항을 명시하여야 한다. 근로계약 체결 후 다음 각 호의 사항을 변경하는 경우에도 또한 같다. <개정 2010.5.25>\n1. 임금\n2. 소정근로시간\n3. 제55조에 따른 휴일\n4. 제60조에 따른 연차 유급휴가\n5. 그 밖에 대통령령으로 정하는 근로조건\n② 사용자는 제1항제1호와 관련한 임금의 구성항목ㆍ계산방법ㆍ지급방법 및 제2호부터 제4호까지의 사항이 명시된 서면(「전자문서 및 전자거래 기본법」 제2조제1호에 따른 전자문서를 포함한다)을 근로자에게 교부하여야 한다. 다만, 본문에 따른 사항이 단체협약 또는 취업규칙의 변경 등 대통령령으로 정하는 사유로 인하여 변경되는 경우에는 근로자의 요구가 있으면 그 근로자에게 교부하여야 한다. <신설 2010.5.25, 2021.1.5>", "elapsed_ms": 1592}
+{"type": "tool_result", "t": 66515, "ts": "2026-10-18T21:27:56.192+09:00", "id": "call_VVLotVckqypYYy5GaCIAKH3Y", "tool": "get_law_article", "ok": true, "summary": "근로기준법 제23조(해고 등의 제한) 원문 확인", "source_ids": ["L3"], "preview": "[L3] 근로기준법 제23조(해고 등의 제한) (시행 20261008)\n제23조(해고 등의 제한)\n① 사용자는 근로자에게 정당한 이유 없이 해고, 휴직, 정직, 전직, 감봉, 그 밖의 징벌(懲罰)(이하 \"부당해고등\"이라 한다)을 하지 못한다.\n② 사용자는 근로자가 업무상 부상 또는 질병의 요양을 위하여 휴업한 기간과 그 후 30일 동안 또는 산전(産前)ㆍ산후(産後)의 여성이 이 법에 따라 휴업한 기간과 그 후 30일 동안은 해고하지 못한다. 다만, 사용자가 제84조에 따라 일시보상을 하였을 경우 또는 사업을 계속할 수 없게 된 경우에는 그러하지 아니하다.", "elapsed_ms": 1765}
+{"type": "tool_result", "t": 66687, "ts": "2026-10-18T21:27:56.362+09:00", "id": "call_2aURorV9u1ipVdGhZJkXSOc2", "tool": "get_law_article", "ok": true, "summary": "근로기준법 제26조(해고의 예고) 원문 확인", "source_ids": ["L4"], "preview": "[L4] 근로기준법 제26조(해고의 예고) (시행 20261008)\n제26조(해고의 예고) 사용자는 근로자를 해고(경영상 이유에 의한 해고를 포함한다)하려면 적어도 30일 전에 예고를 하여야 하고, 30일 전에 예고를 하지 아니하였을 때에는 30일분 이상의 통상임금을 지급하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다. <개정 2010.6.4, 2019.1.15>\n1. 근로자가 계속 근로한 기간이 3개월 미만인 경우\n2. 천재ㆍ사변, 그 밖의 부득이한 사유로 사업을 계속하는 것이 불가능한 경우\n3. 근로자가 고의로 사업에 막대한 지장을 초래하거나 재산상 손해를 끼친 경우로서 고용노동부령으로 정하는 사유에 해당하는 경우", "elapsed_ms": 1781}
+{"type": "check_start", "t": 66687, "ts": "2026-10-18T21:27:56.364+09:00", "step": 3}
+{"type": "llm_call", "t": 72375, "ts": "2026-10-18T21:28:02.042+09:00", "call_no": 8, "stage": "execute", "purpose": "단계 3: 점검", "model": "gpt-6-luna", "usage": {"input": 3220, "cache_read": 0, "cache_write": 3217, "output": 522, "reasoning": 99, "uncached_input": 3, "total": 3742}, "web_search_calls": 0, "cost_usd": 0.0006634249999999999, "elapsed_ms": 5687, "total_usage": {"input": 18931, "cache_read": 3307, "cache_write": 15600, "output": 2762, "reasoning": 468, "uncached_input": 24, "total": 21693}, "total_cost_usd": 0.0033664700000000003}
+{"type": "check", "t": 72375, "ts": "2026-10-18T21:28:02.042+09:00", "step": 3, "observation": "근로기준법 제20조는 근로계약 불이행에 대한 위약금 또는 손해배상액을 미리 정하는 계약을 금지하며, 제17조는 임금 등 근로조건의 명시·서면 교부를 규정합니다[L1][L2]. 부당해고 제한과 해고예고 관련 조문도 확인했지만[L3][L4], 최저임금법상 수습근로자 적용 요건은 아직 확인이 필요합니다.", "step_done": true, "decision": "continue", "reason": "위약금 금지와 근로조건 명시 등 근로기준법 조문 확인은 완료했습니다. 수습기간 중 최저임금 적용 요건을 확인해야 수습 조항의 적합성을 판단할 수 있습니다.", "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "partial", "note": "표준근로계약서 제6조·제7조와 근로기준법 제17조는 확인했으나, 최저임금법상 수습근로자 요건과 대조가 남아 있습니다[C1][C2][L2]."}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "met", "note": "제13조의 위약금·손해배상액 예정 금지 문구는 근로기준법 제20조의 금지와 부합하며, 계약 불이행에 대한 사전 약정 위험을 판단할 법적 근거를 확보했습니다[C4][L1]."}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "partial", "note": "제12조·제13조와 근로기준법 제20조·제23조·제26조를 확인했지만, 수습임금의 법령 근거와 조항별 실무 유의사항 확인이 남아 있습니다[C3][C4][L1][L3][L4]."}], "source_ids": ["L1", "L2", "L3", "L4"]}
+{"type": "plan_update", "t": 72375, "ts": "2026-10-18T21:28:02.042+09:00", "step_no": 3, "status": "done"}
+{"type": "plan_update", "t": 72375, "ts": "2026-10-18T21:28:02.043+09:00", "step_no": 4, "status": "in_progress"}
+{"type": "loop", "t": 72375, "ts": "2026-10-18T21:28:02.043+09:00", "n": 4}
+{"type": "step_start", "t": 72375, "ts": "2026-10-18T21:28:02.043+09:00", "no": 4, "goal": "최저임금법과 관련 시행령의 수습근로자 최저임금 적용 요건 및 예외 조문 원문을 확인한다.", "tool": "get_law_article", "criteria": [1, 3]}
+{"type": "llm_call", "t": 74358, "ts": "2026-10-18T21:28:04.026+09:00", "call_no": 9, "stage": "execute", "purpose": "단계 4: 행동 결정", "model": "gpt-6-luna", "usage": {"input": 4159, "cache_read": 1061, "cache_write": 3095, "output": 121, "reasoning": 0, "uncached_input": 3, "total": 4280}, "web_search_calls": 0, "cost_usd": 0.000458285, "elapsed_ms": 1983, "total_usage": {"input": 23090, "cache_read": 4368, "cache_write": 18695, "output": 2883, "reasoning": 468, "uncached_input": 27, "total": 25973}, "total_cost_usd": 0.0038247550000000004}
+{"type": "tool_call", "t": 74358, "ts": "2026-10-18T21:28:04.027+09:00", "id": "call_4F5wkoXZ37IRmOaQAfPSGubg", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "최저임금법", "article": "제5조"}, "reason": "수습기간 중 최저임금 감액이 가능한 요건과 적용 기간을 확인합니다.", "step": 4}
+{"type": "tool_call", "t": 74358, "ts": "2026-10-18T21:28:04.027+09:00", "id": "call_Z6dZjffl8L96pOCshUZ8y2M6", "tool": "get_law_article", "label": "📜 법조문 원문 확인", "args": {"law_name": "최저임금법 시행령", "article": "제3조"}, "reason": "수습근로자 최저임금 감액의 적용 제외 사유를 확인합니다.", "step": 4}
+{"type": "tool_result", "t": 75467, "ts": "2026-10-18T21:28:05.139+09:00", "id": "call_4F5wkoXZ37IRmOaQAfPSGubg", "tool": "get_law_article", "ok": true, "summary": "최저임금법 제5조(최저임금액) 원문 확인", "source_ids": ["L5"], "preview": "[L5] 최저임금법 제5조(최저임금액) (시행 20200526)\n제5조(최저임금액)\n① 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)은 시간ㆍ일(日)ㆍ주(週) 또는 월(月)을 단위로 하여 정한다. 이 경우 일ㆍ주 또는 월을 단위로 하여 최저임금액을 정할 때에는 시간급(時間給)으로도 표시하여야 한다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대하여는 대통령령으로 정하는 바에 따라 제1항에 따른 최저임금액과 다른 금액으로 최저임금액을 정할 수 있다. 다만, 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 근로자는 제외한다. <개정 2017.9.19, 2020.5.26>\n③ 임금이 통상적으로 도급제나 그 밖에 이와 비슷한 형태로 정하여져 있는 경우로서 제1항에 따라 최저임금액을 정하는 것이 적당하지 아니하다고 인정되면 대통령령으로 정하는 바에 따라 최저임금액을 따로 정할 수 있다.", "elapsed_ms": 1108}
+{"type": "tool_result", "t": 76046, "ts": "2026-10-18T21:28:05.714+09:00", "id": "call_Z6dZjffl8L96pOCshUZ8y2M6", "tool": "get_law_article", "ok": true, "summary": "최저임금법 시행령 제3조(수습 중에 있는 근로자에 대한 최저임금액) 원문 확인", "source_ids": ["L6"], "preview": "[L6] 최저임금법 시행령 제3조(수습 중에 있는 근로자에 대한 최저임금액) (시행 20190101)\n제3조(수습 중에 있는 근로자에 대한 최저임금액) 「최저임금법」(이하 \"법\"이라 한다) 제5조제2항 본문에 따라 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대해서는 같은 조 제1항 후단에 따른 시간급 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)에서 100분의 10을 뺀 금액을 그 근로자의 시간급 최저임금액으로 한다.", "elapsed_ms": 1530}
+{"type": "check_start", "t": 76046, "ts": "2026-10-18T21:28:05.715+09:00", "step": 4}
+{"type": "llm_call", "t": 82625, "ts": "2026-10-18T21:28:12.296+09:00", "call_no": 10, "stage": "execute", "purpose": "단계 4: 점검", "model": "gpt-6-luna", "usage": {"input": 3102, "cache_read": 0, "cache_write": 3099, "output": 529, "reasoning": 117, "uncached_input": 3, "total": 3631}, "web_search_calls": 0, "cost_usd": 0.000652175, "elapsed_ms": 6578, "total_usage": {"input": 26192, "cache_read": 4368, "cache_write": 21794, "output": 3412, "reasoning": 585, "uncached_input": 30, "total": 29604}, "total_cost_usd": 0.0044769300000000005}
+{"type": "reasoning", "t": 82625, "ts": "2026-10-18T21:28:12.296+09:00", "stage": "execute", "text": "**Verifying legal criteria**\n\nI'm checking the output JSON to see if we've met our criteria. It looks like criteria 1 might be partially met since I found text contract clauses, but there are still outdated law citations from 2020 and 2019. I need to perform a web search to confirm the current legal situation. Criteria 1 seems a bit lacking due to those old citations, but the minimum wage law might still be current. I'll proceed with step 5 to continue this process."}
+{"type": "check", "t": 82625, "ts": "2026-10-18T21:28:12.296+09:00", "step": 4, "observation": "최저임금법 제5조제2항은 감액 적용을 1년 이상 근로계약을 체결한 수습근로자의 수습 시작일부터 3개월 이내로 한정하고, 단순노무직종 근로자는 제외합니다[L5]. 최저임금법 시행령 제3조는 요건을 충족하는 경우 시간급 최저임금의 10%를 감액할 수 있도록 규정합니다[L6].", "step_done": true, "decision": "continue", "reason": "수습근로자의 최저임금 감액은 계약기간, 수습 기간, 직종에 따라 예외가 있으므로 계약서 문구와 함께 최신 정부 안내를 확인해야 합니다. 계획된 검색 단계를 진행해 실무 유의사항까지 확인하겠습니다.", "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "partial", "note": "계약서 제7조와 최저임금법 제5조제2항·시행령 제3조의 적용 요건을 대조할 근거는 확보했지만, 최신 안내 및 계약서 문구에 대한 구체적 적합성 확인이 남아 있습니다[C2][L5][L6]."}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "met", "note": "제13조의 위약금·손해배상액 예정 금지 문구는 근로기준법 제20조의 금지와 부합합니다[C4][L1]."}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "partial", "note": "수습임금의 법적 근거와 위약금 관련 조항은 확인했으나, 최신 정부 안내와 조항별 실무상 유의사항 확인이 남아 있습니다[C1][C2][C3][C4][L1][L3][L4][L5][L6]."}], "source_ids": ["L5", "L6"]}
+{"type": "plan_update", "t": 82625, "ts": "2026-10-18T21:28:12.296+09:00", "step_no": 4, "status": "done"}
+{"type": "plan_update", "t": 82625, "ts": "2026-10-18T21:28:12.297+09:00", "step_no": 5, "status": "in_progress"}
+{"type": "loop", "t": 82625, "ts": "2026-10-18T21:28:12.297+09:00", "n": 5}
+{"type": "step_start", "t": 82625, "ts": "2026-10-18T21:28:12.297+09:00", "no": 5, "goal": "수습기간·임금 및 위약금 조항의 법령상 적용 요건과 실무상 유의점을 확인할 필요가 있으면 정부 기관 해석이나 최신 안내를 검색한다.", "tool": "web_search", "criteria": [1, 2, 3]}
+{"type": "llm_call", "t": 84453, "ts": "2026-10-18T21:28:14.123+09:00", "call_no": 11, "stage": "execute", "purpose": "단계 5: 행동 결정", "model": "gpt-6-luna", "usage": {"input": 4151, "cache_read": 1061, "cache_write": 3087, "output": 84, "reasoning": 0, "uncached_input": 3, "total": 4235}, "web_search_calls": 0, "cost_usd": 0.000438785, "elapsed_ms": 1828, "total_usage": {"input": 30343, "cache_read": 5429, "cache_write": 24881, "output": 3496, "reasoning": 585, "uncached_input": 33, "total": 33839}, "total_cost_usd": 0.004915715}
+{"type": "tool_call", "t": 84453, "ts": "2026-10-18T21:28:14.124+09:00", "id": "call_b2rp6vW5cxeMOiKy0OZ63DMX", "tool": "web_search", "label": "🌐 웹 검색", "args": {"query": "site:moel.go.kr 수습기간 최저임금 90% 1년 이상 단순노무 위약금 근로기준법 제20조"}, "reason": "수습 최저임금 감액 요건과 위약금 조항에 대한 고용노동부의 최신 안내를 확인합니다.", "step": 5}
+{"type": "llm_call", "t": 91515, "ts": "2026-10-18T21:28:21.184+09:00", "call_no": 12, "stage": "research", "purpose": "웹검색 내부 호출", "model": "gpt-6-luna", "usage": {"input": 12779, "cache_read": 0, "cache_write": 4458, "output": 476, "reasoning": 108, "uncached_input": 8321, "total": 13255}, "web_search_calls": 1, "cost_usd": 0.01162735, "elapsed_ms": 7062, "total_usage": {"input": 43122, "cache_read": 5429, "cache_write": 29339, "output": 3972, "reasoning": 693, "uncached_input": 8354, "total": 47094}, "total_cost_usd": 0.016543065}
+{"type": "tool_result", "t": 91515, "ts": "2026-10-18T21:28:21.184+09:00", "id": "call_b2rp6vW5cxeMOiKy0OZ63DMX", "tool": "web_search", "ok": true, "summary": "웹 자료 2건 (검색어: site:moel.go.kr 수습기간 최저임금 90% 1년 이상 단순노무 위약금 근로기준법 제20조, site:law.go.kr 최저임금법 제5조 수습 90% 단순노무 종사자, site:law.go.kr 근로기준법 제20조 위약금 예정 금지)", "source_ids": ["W1", "W2"], "preview": "실제 검색어: site:moel.go.kr 수습기간 최저임금 90% 1년 이상 단순노무 위약금 근로기준법 제20조, site:law.go.kr 최저임금법 제5조 수습 90% 단순노무 종사자, site:law.go.kr 근로기준법 제20조 위약금 예정 금지\n\n요약:\n- **수습기간 최저임금 감액:** 1년 이상 근로계약을 맺은 수습근로자는 수습을 시작한 날부터 **3개월 이내** 최저임금의 90%까지 받을 수 있습니다. 계약기간이 1년 미만이거나, 수습기간이 3개월을 넘으면 이 감액 예외를 적용할 수 없습니다. ([1350.moel.go.kr](https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai))\n- **단순노무직 예외:** 한국표준직업분류상 대분류 9인 단순노무 종사자는 계약기간이나 수습 여부와 관계없이 최저임금 전액을 받아야 합니다. 직종 해당 여부는 실제 업무와 한국표준직업분류를 기준으로 확인해야 합니다. ([1350.moel.go.kr](https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai))\n- **위약금·손해배상 예정:** 근로기준법 제20조는 근로계약을 지키지 않았을 때를 대비해 위약금이나 손해배상액을 미리 정하는 계약을 금지합니다. 따라서 “수습 중 퇴사하면 얼마를 물어낸다”처럼 미리 정한 금액을 청구하는 조항은 위법 소지가 큽니다. 다만 실제로 발생한 손해에 대한 배상 책임은 구체적 사실관계에 따라 별도로 판단될 수 있고, 손해액을 임금에서 임의로 공제할 수는 없습니다. ([1350.moel.go.kr](https://1350.moel.go.kr/rtmview.do?id=1000274320&utm_source=openai))\n\n출처:\n[W1] :: 고용노동부 모바일페이지 고객센터 :: - https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai\n[W2] :: 고용노동부 모바일페이지 고객센터 :: - https://1350.moel.go.kr/rtmview.do?id=1000274320&utm_source=openai", "elapsed_ms": 7062}
+{"type": "check_start", "t": 91515, "ts": "2026-10-18T21:28:21.184+09:00", "step": 5}
+{"type": "llm_call", "t": 101092, "ts": "2026-10-18T21:28:30.763+09:00", "call_no": 13, "stage": "execute", "purpose": "단계 5: 점검", "model": "gpt-6-luna", "usage": {"input": 3274, "cache_read": 0, "cache_write": 3271, "output": 708, "reasoning": 164, "uncached_input": 3, "total": 3982}, "web_search_calls": 0, "cost_usd": 0.0007631749999999999, "elapsed_ms": 9577, "total_usage": {"input": 46396, "cache_read": 5429, "cache_write": 32610, "output": 4680, "reasoning": 857, "uncached_input": 8357, "total": 51076}, "total_cost_usd": 0.01730624}
+{"type": "check", "t": 101092, "ts": "2026-10-18T21:28:30.763+09:00", "step": 5, "observation": "고용노동부 안내에 따르면 최저임금 90% 감액은 1년 이상 근로계약을 맺은 수습근로자의 수습 시작일부터 3개월 이내에만 가능하며, 한국표준직업분류 대분류 9 단순노무직은 제외됩니다[W1]. 근로기준법 제20조는 위약금·손해배상액의 사전 약정을 금지하고, 실제 손해배상 여부와 임금에서의 임의 공제는 별도로 판단해야 한다는 안내를 확인했습니다[W2].", "step_done": true, "decision": "revise", "reason": "정부 안내로 법정 적용 요건은 확인했지만, 계약서 제7조의 실제 문구와 요건이 일치하는지 판단할 근거가 메모에 충분하지 않습니다. 조항 원문을 다시 확인해 최종 적합성과 보완사항을 판단하겠습니다.", "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "partial", "note": "최저임금법 제5조제2항·시행령 제3조의 적용 요건과 정부 안내는 확인했지만[L5][L6][W1], 표준근로계약서 제7조의 구체적 문구와 대조한 적합성 판단은 작업 메모에 충분히 남아 있지 않습니다[C2]."}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "met", "note": "표준근로계약서 제13조의 위약금·손해배상액 예정 금지 문구는 근로기준법 제20조에 부합하며[C4][L1], 정부 안내도 사전 약정 금지와 실제 손해배상·임금 공제의 구분을 뒷받침합니다[W2]."}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "partial", "note": "수습 감액 요건과 위약금 관련 유의사항은 확인했지만[W1][W2], 제7조 원문과의 구체적 대조 및 조항별 실무상 보완사항을 뒷받침할 자료가 더 필요합니다[C2]."}], "source_ids": ["W1", "W2"]}
+{"type": "plan_update", "t": 101092, "ts": "2026-10-18T21:28:30.763+09:00", "step_no": 5, "status": "done"}
+{"type": "plan_revised", "t": 101092, "ts": "2026-10-18T21:28:30.763+09:00", "by": "check", "reason": "정부 안내로 법정 적용 요건은 확인했지만, 계약서 제7조의 실제 문구와 요건이 일치하는지 판단할 근거가 메모에 충분하지 않습니다. 조항 원문을 다시 확인해 최종 적합성과 보완사항을 판단하겠습니다.", "dropped": [], "added": [{"no": 6, "goal": "표준근로계약서 제6조·제7조·제13조의 구체적 원문과 수습 임금·위약금 관련 문구를 다시 확인한다.", "tool": "read_reference_sections", "criteria": [1, 2, 3], "status": "pending", "added_by": "check"}], "steps": [{"no": 1, "goal": "표준근로계약서의 목차를 확인해 수습기간 및 위약금 관련 조항을 특정한다.", "tool": "read_reference_outline", "criteria": [], "status": "done", "added_by": "plan"}, {"no": 2, "goal": "표준근로계약서에서 수습기간·임금 및 위약금 관련 조항의 원문을 확인한다.", "tool": "read_reference_sections", "criteria": [1, 2, 3], "status": "done", "added_by": "plan"}, {"no": 3, "goal": "근로기준법상 위약예정 금지와 근로조건 명시 등 관련 현행 조문 원문을 확인한다.", "tool": "get_law_article", "criteria": [2, 3], "status": "done", "added_by": "plan"}, {"no": 4, "goal": "최저임금법과 관련 시행령의 수습근로자 최저임금 적용 요건 및 예외 조문 원문을 확인한다.", "tool": "get_law_article", "criteria": [1, 3], "status": "done", "added_by": "plan"}, {"no": 5, "goal": "수습기간·임금 및 위약금 조항의 법령상 적용 요건과 실무상 유의점을 확인할 필요가 있으면 정부 기관 해석이나 최신 안내를 검색한다.", "tool": "web_search", "criteria": [1, 2, 3], "status": "done", "added_by": "plan"}, {"no": 6, "goal": "표준근로계약서 제6조·제7조·제13조의 구체적 원문과 수습 임금·위약금 관련 문구를 다시 확인한다.", "tool": "read_reference_sections", "criteria": [1, 2, 3], "status": "pending", "added_by": "check"}]}
+{"type": "plan_update", "t": 101092, "ts": "2026-10-18T21:28:30.764+09:00", "step_no": 6, "status": "in_progress"}
+{"type": "loop", "t": 101092, "ts": "2026-10-18T21:28:30.764+09:00", "n": 6}
+{"type": "step_start", "t": 101092, "ts": "2026-10-18T21:28:30.764+09:00", "no": 6, "goal": "표준근로계약서 제6조·제7조·제13조의 구체적 원문과 수습 임금·위약금 관련 문구를 다시 확인한다.", "tool": "read_reference_sections", "criteria": [1, 2, 3]}
+{"type": "llm_call", "t": 102875, "ts": "2026-10-18T21:28:32.551+09:00", "call_no": 14, "stage": "execute", "purpose": "단계 6: 행동 결정", "model": "gpt-6-luna", "usage": {"input": 4734, "cache_read": 1061, "cache_write": 3670, "output": 78, "reasoning": 0, "uncached_input": 3, "total": 4812}, "web_search_calls": 0, "cost_usd": 0.00050866, "elapsed_ms": 1782, "total_usage": {"input": 51130, "cache_read": 6490, "cache_write": 36280, "output": 4758, "reasoning": 857, "uncached_input": 8360, "total": 55888}, "total_cost_usd": 0.0178149}
+{"type": "tool_call", "t": 102875, "ts": "2026-10-18T21:28:32.553+09:00", "id": "call_5wNLYPpuwPQNcNvBN4OXXJ6R", "tool": "read_reference_sections", "label": "📄 참고 문서 조항 읽기", "args": {"doc_id": "labor_standard", "sections": ["제6조", "제7조", "제13조"]}, "reason": "표준근로계약서 제6조·제7조·제13조의 정확한 문구를 확인해 법령상 요건과 대조할 자료를 확보합니다.", "step": 6}
+{"type": "tool_result", "t": 102875, "ts": "2026-10-18T21:28:32.553+09:00", "id": "call_5wNLYPpuwPQNcNvBN4OXXJ6R", "tool": "read_reference_sections", "ok": true, "summary": "'표준근로계약서' 제6조(임금), 제7조(수습기간), 제13조(위약 예정의 금지) 읽음", "source_ids": ["C1", "C2", "C4"], "preview": "[C1] ## 제6조(임금)\n① 월(일, 시간)급: ________원\n② 상여금 및 기타 수당은 별도로 정한 바에 따른다.\n③ 임금지급일은 매월 __일로 하며, 휴일인 경우 전일에 지급한다.\n④ 임금은 을에게 직접, 그 전액을 지급한다. 법령 또는 단체협약에 특별한 규정이 있는 경우를 제외하고는 갑이 임의로 공제할 수 없다.\n⑤ 임금은 최저임금법에 따른 최저임금 이상이어야 한다.\n\n[C2] ## 제7조(수습기간)\n① 근로개시일로부터 3개월 이내의 범위에서 수습기간을 둘 수 있다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 경우, 수습기간 3개월 이내에 한하여 최저임금의 100분의 90 이상을 지급할 수 있다.\n③ 제2항에도 불구하고 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 경우에는 수습기간 중에도 최저임금 전액을 지급한다.\n④ 수습기간이 끝난 후 정당한 이유 없이 본채용을 거부할 수 없다.\n\n[C4] ## 제13조(위약 예정의 금지)\n갑은 근로계약 불이행에 대한 위약금 또는 손해배상액을 예정하는 계약을 체결하지 못한다. 교육비 반환, 조기 퇴사 시 배상 등 명칭과 관계없이 근로자의 퇴직의 자유를 부당하게 제한하는 약정은 효력이 없을 수 있다.", "elapsed_ms": 0}
+{"type": "check_start", "t": 102875, "ts": "2026-10-18T21:28:32.554+09:00", "step": 6}
+{"type": "llm_call", "t": 113203, "ts": "2026-10-18T21:28:42.882+09:00", "call_no": 15, "stage": "execute", "purpose": "단계 6: 점검", "model": "gpt-6-luna", "usage": {"input": 3333, "cache_read": 0, "cache_write": 3330, "output": 806, "reasoning": 217, "uncached_input": 3, "total": 4139}, "web_search_calls": 0, "cost_usd": 0.0008195499999999999, "elapsed_ms": 10312, "total_usage": {"input": 54463, "cache_read": 6490, "cache_write": 39610, "output": 5564, "reasoning": 1074, "uncached_input": 8363, "total": 60027}, "total_cost_usd": 0.01863445}
+{"type": "check", "t": 113203, "ts": "2026-10-18T21:28:42.882+09:00", "step": 6, "observation": "표준근로계약서 제7조는 수습기간을 근로개시일부터 3개월 이내로 두고, 1년 이상 계약·수습 3개월 이내·단순노무직종 제외 요건을 충족할 때 최저임금의 90% 이상 지급을 허용합니다[C2][L5][L6]. 이는 고용노동부 안내와 부합하며, 제6조의 최저임금 이상 지급 원칙과 함께 적용하면 요건 밖에서는 최저임금 전액을 지급해야 합니다[C1][W1]. 제13조의 위약금·손해배상액 예정 금지는 근로기준법 제20조와 부합하고, 실제 손해배상과 임금의 임의 공제는 별도로 유의해야 합니다[C4][L1][W2].", "step_done": true, "decision": "finish", "reason": "제7조와 제13조의 구체적 문구를 관련 법령 및 정부 안내와 대조할 자료가 확보되어 모든 완료 조건을 충족했습니다. 추가 자료 확인 없이 조항별 판단과 실무상 유의사항을 보고할 수 있습니다.", "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "met", "note": "제7조 원문을 최저임금법 제5조제2항 및 시행령 제3조와 대조해 1년 이상 계약, 수습 시작일부터 3개월 이내, 단순노무직종 제외 요건의 일치를 확인했습니다[C2][L5][L6]."}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "met", "note": "제13조의 위약금·손해배상액 예정 금지 문구는 근로기준법 제20조에 부합하며 실제 손해배상 및 임금 공제는 구분해야 함을 확인했습니다[C4][L1][W2]."}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "met", "note": "조항 원문과 법령·정부 안내를 바탕으로 수습 감액의 적용 요건, 요건 미충족 시 최저임금 전액 지급, 위약금 사전 약정 및 임금 임의 공제 관련 유의사항을 제시할 근거가 갖춰졌습니다[C1][C2][C4][L5][L6][W1][W2]."}], "source_ids": ["C2", "L5", "L6", "C1", "W1", "C4", "L1", "W2"]}
+{"type": "plan_update", "t": 113203, "ts": "2026-10-18T21:28:42.882+09:00", "step_no": 6, "status": "done"}
+{"type": "stage", "t": 113203, "ts": "2026-10-18T21:28:42.882+09:00", "stage": "execute", "status": "end"}
+{"type": "stage", "t": 113203, "ts": "2026-10-18T21:28:42.883+09:00", "stage": "write", "status": "start"}
+{"type": "token", "t": 113765, "ts": "2026-10-18T21:28:43.432+09:00", "text": "##"}
+{"type": "token", "t": 113765, "ts": "2026-10-18T21:28:43.432+09:00", "text": " 한"}
+{"type": "token", "t": 113765, "ts": "2026-10-18T21:28:43.433+09:00", "text": "눈"}
+{"type": "token", "t": 113780, "ts": "2026-10-18T21:28:43.455+09:00", "text": "에"}
+{"type": "token", "t": 113780, "ts": "2026-10-18T21:28:43.457+09:00", "text": " 보기"}
+{"type": "token", "t": 113780, "ts": "2026-10-18T21:28:43.458+09:00", "text": "\n"}
+{"type": "token", "t": 113796, "ts": "2026-10-18T21:28:43.475+09:00", "text": "표"}
+{"type": "token", "t": 113796, "ts": "2026-10-18T21:28:43.475+09:00", "text": "준"}
+{"type": "token", "t": 113796, "ts": "2026-10-18T21:28:43.476+09:00", "text": "근"}
+{"type": "token", "t": 113796, "ts": "2026-10-18T21:28:43.476+09:00", "text": "로"}
+{"type": "token", "t": 113828, "ts": "2026-10-18T21:28:43.502+09:00", "text": "계"}
+{"type": "token", "t": 113828, "ts": "2026-10-18T21:28:43.507+09:00", "text": "약"}
+{"type": "token", "t": 113828, "ts": "2026-10-18T21:28:43.508+09:00", "text": "서"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.559+09:00", "text": " 제"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.559+09:00", "text": "7"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.559+09:00", "text": "조"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.560+09:00", "text": "의"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.566+09:00", "text": " 수"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.569+09:00", "text": "습"}
+{"type": "token", "t": 113890, "ts": "2026-10-18T21:28:43.569+09:00", "text": "기간"}
+{"type": "token", "t": 113905, "ts": "2026-10-18T21:28:43.576+09:00", "text": " 및"}
+{"type": "token", "t": 113905, "ts": "2026-10-18T21:28:43.576+09:00", "text": " 수"}
+{"type": "token", "t": 113905, "ts": "2026-10-18T21:28:43.577+09:00", "text": "습"}
+{"type": "token", "t": 113905, "ts": "2026-10-18T21:28:43.586+09:00", "text": " 중"}
+{"type": "token", "t": 113937, "ts": "2026-10-18T21:28:43.603+09:00", "text": " 최"}
+{"type": "token", "t": 113937, "ts": "2026-10-18T21:28:43.603+09:00", "text": "저"}
+{"type": "token", "t": 113937, "ts": "2026-10-18T21:28:43.603+09:00", "text": "임"}
+{"type": "token", "t": 113937, "ts": "2026-10-18T21:28:43.616+09:00", "text": "금"}
+{"type": "token", "t": 113953, "ts": "2026-10-18T21:28:43.629+09:00", "text": " 감"}
+{"type": "token", "t": 113953, "ts": "2026-10-18T21:28:43.629+09:00", "text": "액"}
+{"type": "token", "t": 113967, "ts": "2026-10-18T21:28:43.649+09:00", "text": " 요"}
+{"type": "token", "t": 113983, "ts": "2026-10-18T21:28:43.662+09:00", "text": "건"}
+{"type": "token", "t": 113983, "ts": "2026-10-18T21:28:43.664+09:00", "text": "은"}
+{"type": "token", "t": 113983, "ts": "2026-10-18T21:28:43.665+09:00", "text": " 최"}
+{"type": "token", "t": 114000, "ts": "2026-10-18T21:28:43.677+09:00", "text": "저"}
+{"type": "token", "t": 114015, "ts": "2026-10-18T21:28:43.688+09:00", "text": "임"}
+{"type": "token", "t": 114015, "ts": "2026-10-18T21:28:43.692+09:00", "text": "금"}
+{"type": "token", "t": 114015, "ts": "2026-10-18T21:28:43.694+09:00", "text": "법"}
+{"type": "token", "t": 114015, "ts": "2026-10-18T21:28:43.696+09:00", "text": "과"}
+{"type": "token", "t": 114030, "ts": "2026-10-18T21:28:43.698+09:00", "text": " 시행"}
+{"type": "token", "t": 114030, "ts": "2026-10-18T21:28:43.701+09:00", "text": "령"}
+{"type": "token", "t": 114030, "ts": "2026-10-18T21:28:43.701+09:00", "text": "에"}
+{"type": "token", "t": 114046, "ts": "2026-10-18T21:28:43.727+09:00", "text": " 부"}
+{"type": "token", "t": 114062, "ts": "2026-10-18T21:28:43.739+09:00", "text": "합"}
+{"type": "token", "t": 114062, "ts": "2026-10-18T21:28:43.742+09:00", "text": "합니다"}
+{"type": "token", "t": 114078, "ts": "2026-10-18T21:28:43.745+09:00", "text": ".["}
+{"type": "token", "t": 114078, "ts": "2026-10-18T21:28:43.747+09:00", "text": "C"}
+{"type": "token", "t": 114078, "ts": "2026-10-18T21:28:43.749+09:00", "text": "2"}
+{"type": "token", "t": 114078, "ts": "2026-10-18T21:28:43.751+09:00", "text": "]["}
+{"type": "token", "t": 114078, "ts": "2026-10-18T21:28:43.751+09:00", "text": "L"}
+{"type": "token", "t": 114092, "ts": "2026-10-18T21:28:43.762+09:00", "text": "5"}
+{"type": "token", "t": 114092, "ts": "2026-10-18T21:28:43.762+09:00", "text": "]["}
+{"type": "token", "t": 114092, "ts": "2026-10-18T21:28:43.762+09:00", "text": "L"}
+{"type": "token", "t": 114092, "ts": "2026-10-18T21:28:43.766+09:00", "text": "6"}
+{"type": "token", "t": 114108, "ts": "2026-10-18T21:28:43.779+09:00", "text": "]"}
+{"type": "token", "t": 114108, "ts": "2026-10-18T21:28:43.783+09:00", "text": " 제"}
+{"type": "token", "t": 114108, "ts": "2026-10-18T21:28:43.783+09:00", "text": "13"}
+{"type": "token", "t": 114108, "ts": "2026-10-18T21:28:43.789+09:00", "text": "조"}
+{"type": "token", "t": 114125, "ts": "2026-10-18T21:28:43.804+09:00", "text": "의"}
+{"type": "token", "t": 114125, "ts": "2026-10-18T21:28:43.805+09:00", "text": " 위"}
+{"type": "token", "t": 114125, "ts": "2026-10-18T21:28:43.805+09:00", "text": "약"}
+{"type": "token", "t": 114155, "ts": "2026-10-18T21:28:43.835+09:00", "text": "금"}
+{"type": "token", "t": 114171, "ts": "2026-10-18T21:28:43.846+09:00", "text": "·"}
+{"type": "token", "t": 114171, "ts": "2026-10-18T21:28:43.852+09:00", "text": "손"}
+{"type": "token", "t": 114187, "ts": "2026-10-18T21:28:43.854+09:00", "text": "해"}
+{"type": "token", "t": 114187, "ts": "2026-10-18T21:28:43.857+09:00", "text": "배"}
+{"type": "token", "t": 114187, "ts": "2026-10-18T21:28:43.858+09:00", "text": "상"}
+{"type": "token", "t": 114187, "ts": "2026-10-18T21:28:43.858+09:00", "text": "액"}
+{"type": "token", "t": 114187, "ts": "2026-10-18T21:28:43.868+09:00", "text": " 사"}
+{"type": "token", "t": 114217, "ts": "2026-10-18T21:28:43.885+09:00", "text": "전"}
+{"type": "token", "t": 114217, "ts": "2026-10-18T21:28:43.886+09:00", "text": " 약"}
+{"type": "token", "t": 114217, "ts": "2026-10-18T21:28:43.894+09:00", "text": "정"}
+{"type": "token", "t": 114217, "ts": "2026-10-18T21:28:43.896+09:00", "text": " 금"}
+{"type": "token", "t": 114233, "ts": "2026-10-18T21:28:43.907+09:00", "text": "지도"}
+{"type": "token", "t": 114250, "ts": "2026-10-18T21:28:43.919+09:00", "text": " 근"}
+{"type": "token", "t": 114250, "ts": "2026-10-18T21:28:43.920+09:00", "text": "로"}
+{"type": "token", "t": 114250, "ts": "2026-10-18T21:28:43.921+09:00", "text": "기"}
+{"type": "token", "t": 114265, "ts": "2026-10-18T21:28:43.943+09:00", "text": "준"}
+{"type": "token", "t": 114280, "ts": "2026-10-18T21:28:43.950+09:00", "text": "법"}
+{"type": "token", "t": 114280, "ts": "2026-10-18T21:28:43.951+09:00", "text": " 제"}
+{"type": "token", "t": 114280, "ts": "2026-10-18T21:28:43.953+09:00", "text": "20"}
+{"type": "token", "t": 114280, "ts": "2026-10-18T21:28:43.953+09:00", "text": "조"}
+{"type": "token", "t": 114280, "ts": "2026-10-18T21:28:43.959+09:00", "text": "와"}
+{"type": "token", "t": 114296, "ts": "2026-10-18T21:28:43.972+09:00", "text": " 맞"}
+{"type": "token", "t": 114312, "ts": "2026-10-18T21:28:43.984+09:00", "text": "습니다"}
+{"type": "token", "t": 114312, "ts": "2026-10-18T21:28:43.985+09:00", "text": ".["}
+{"type": "token", "t": 114328, "ts": "2026-10-18T21:28:44.004+09:00", "text": "C"}
+{"type": "token", "t": 114342, "ts": "2026-10-18T21:28:44.013+09:00", "text": "4"}
+{"type": "token", "t": 114342, "ts": "2026-10-18T21:28:44.014+09:00", "text": "]["}
+{"type": "token", "t": 114342, "ts": "2026-10-18T21:28:44.014+09:00", "text": "L"}
+{"type": "token", "t": 114375, "ts": "2026-10-18T21:28:44.040+09:00", "text": "1"}
+{"type": "token", "t": 114375, "ts": "2026-10-18T21:28:44.046+09:00", "text": "]"}
+{"type": "token", "t": 114390, "ts": "2026-10-18T21:28:44.057+09:00", "text": " 다"}
+{"type": "token", "t": 114390, "ts": "2026-10-18T21:28:44.058+09:00", "text": "만"}
+{"type": "token", "t": 114390, "ts": "2026-10-18T21:28:44.061+09:00", "text": " 수"}
+{"type": "token", "t": 114405, "ts": "2026-10-18T21:28:44.078+09:00", "text": "습"}
+{"type": "token", "t": 114405, "ts": "2026-10-18T21:28:44.079+09:00", "text": " 중"}
+{"type": "token", "t": 114405, "ts": "2026-10-18T21:28:44.079+09:00", "text": " 임"}
+{"type": "token", "t": 114405, "ts": "2026-10-18T21:28:44.085+09:00", "text": "금"}
+{"type": "token", "t": 114421, "ts": "2026-10-18T21:28:44.100+09:00", "text": " 감"}
+{"type": "token", "t": 114421, "ts": "2026-10-18T21:28:44.102+09:00", "text": "액"}
+{"type": "token", "t": 114421, "ts": "2026-10-18T21:28:44.102+09:00", "text": "은"}
+{"type": "token", "t": 114437, "ts": "2026-10-18T21:28:44.110+09:00", "text": " 법"}
+{"type": "token", "t": 114453, "ts": "2026-10-18T21:28:44.125+09:00", "text": "정"}
+{"type": "token", "t": 114453, "ts": "2026-10-18T21:28:44.126+09:00", "text": " 요"}
+{"type": "token", "t": 114453, "ts": "2026-10-18T21:28:44.126+09:00", "text": "건"}
+{"type": "token", "t": 114453, "ts": "2026-10-18T21:28:44.129+09:00", "text": "을"}
+{"type": "token", "t": 114467, "ts": "2026-10-18T21:28:44.144+09:00", "text": " 모두"}
+{"type": "token", "t": 114467, "ts": "2026-10-18T21:28:44.145+09:00", "text": " 충"}
+{"type": "token", "t": 114467, "ts": "2026-10-18T21:28:44.146+09:00", "text": "족"}
+{"type": "token", "t": 114483, "ts": "2026-10-18T21:28:44.155+09:00", "text": "할"}
+{"type": "token", "t": 114500, "ts": "2026-10-18T21:28:44.166+09:00", "text": " 때"}
+{"type": "token", "t": 114500, "ts": "2026-10-18T21:28:44.167+09:00", "text": "만"}
+{"type": "token", "t": 114500, "ts": "2026-10-18T21:28:44.167+09:00", "text": " 적용"}
+{"type": "token", "t": 114500, "ts": "2026-10-18T21:28:44.176+09:00", "text": "하고"}
+{"type": "token", "t": 114515, "ts": "2026-10-18T21:28:44.192+09:00", "text": ","}
+{"type": "token", "t": 114515, "ts": "2026-10-18T21:28:44.192+09:00", "text": " 실제"}
+{"type": "token", "t": 114515, "ts": "2026-10-18T21:28:44.193+09:00", "text": " 손"}
+{"type": "token", "t": 114530, "ts": "2026-10-18T21:28:44.208+09:00", "text": "해"}
+{"type": "token", "t": 114578, "ts": "2026-10-18T21:28:44.249+09:00", "text": "배"}
+{"type": "token", "t": 114592, "ts": "2026-10-18T21:28:44.268+09:00", "text": "상"}
+{"type": "token", "t": 114592, "ts": "2026-10-18T21:28:44.270+09:00", "text": "과"}
+{"type": "token", "t": 114592, "ts": "2026-10-18T21:28:44.270+09:00", "text": " 임"}
+{"type": "token", "t": 114592, "ts": "2026-10-18T21:28:44.272+09:00", "text": "금"}
+{"type": "token", "t": 114592, "ts": "2026-10-18T21:28:44.272+09:00", "text": " 공"}
+{"type": "token", "t": 114608, "ts": "2026-10-18T21:28:44.282+09:00", "text": "제"}
+{"type": "token", "t": 114608, "ts": "2026-10-18T21:28:44.283+09:00", "text": "는"}
+{"type": "token", "t": 114608, "ts": "2026-10-18T21:28:44.284+09:00", "text": " 별"}
+{"type": "token", "t": 114608, "ts": "2026-10-18T21:28:44.287+09:00", "text": "도로"}
+{"type": "token", "t": 114640, "ts": "2026-10-18T21:28:44.316+09:00", "text": " 처리"}
+{"type": "token", "t": 114655, "ts": "2026-10-18T21:28:44.333+09:00", "text": "해야"}
+{"type": "token", "t": 114655, "ts": "2026-10-18T21:28:44.336+09:00", "text": " 합니다"}
+{"type": "token", "t": 114655, "ts": "2026-10-18T21:28:44.336+09:00", "text": ".["}
+{"type": "token", "t": 114655, "ts": "2026-10-18T21:28:44.336+09:00", "text": "C"}
+{"type": "token", "t": 114671, "ts": "2026-10-18T21:28:44.346+09:00", "text": "1"}
+{"type": "token", "t": 114671, "ts": "2026-10-18T21:28:44.347+09:00", "text": "]["}
+{"type": "token", "t": 114671, "ts": "2026-10-18T21:28:44.347+09:00", "text": "W"}
+{"type": "token", "t": 114687, "ts": "2026-10-18T21:28:44.355+09:00", "text": "1"}
+{"type": "token", "t": 114687, "ts": "2026-10-18T21:28:44.367+09:00", "text": "]["}
+{"type": "token", "t": 114687, "ts": "2026-10-18T21:28:44.368+09:00", "text": "W"}
+{"type": "token", "t": 114687, "ts": "2026-10-18T21:28:44.368+09:00", "text": "2"}
+{"type": "token", "t": 114703, "ts": "2026-10-18T21:28:44.380+09:00", "text": "]\n\n"}
+{"type": "token", "t": 114703, "ts": "2026-10-18T21:28:44.382+09:00", "text": "##"}
+{"type": "token", "t": 114717, "ts": "2026-10-18T21:28:44.389+09:00", "text": " 검"}
+{"type": "token", "t": 114717, "ts": "2026-10-18T21:28:44.391+09:00", "text": "토"}
+{"type": "token", "t": 114733, "ts": "2026-10-18T21:28:44.400+09:00", "text": " 결과"}
+{"type": "token", "t": 114733, "ts": "2026-10-18T21:28:44.403+09:00", "text": "\n\n"}
+{"type": "token", "t": 114733, "ts": "2026-10-18T21:28:44.405+09:00", "text": "###"}
+{"type": "token", "t": 114750, "ts": "2026-10-18T21:28:44.427+09:00", "text": " 🟢"}
+{"type": "token", "t": 114750, "ts": "2026-10-18T21:28:44.428+09:00", "text": " 수"}
+{"type": "token", "t": 114765, "ts": "2026-10-18T21:28:44.446+09:00", "text": "습"}
+{"type": "token", "t": 114780, "ts": "2026-10-18T21:28:44.460+09:00", "text": "기간"}
+{"type": "token", "t": 114780, "ts": "2026-10-18T21:28:44.460+09:00", "text": "과"}
+{"type": "token", "t": 114796, "ts": "2026-10-18T21:28:44.471+09:00", "text": " 수"}
+{"type": "token", "t": 114812, "ts": "2026-10-18T21:28:44.486+09:00", "text": "습"}
+{"type": "token", "t": 114812, "ts": "2026-10-18T21:28:44.486+09:00", "text": " 중"}
+{"type": "token", "t": 114812, "ts": "2026-10-18T21:28:44.486+09:00", "text": " 최"}
+{"type": "token", "t": 114812, "ts": "2026-10-18T21:28:44.491+09:00", "text": "저"}
+{"type": "token", "t": 114828, "ts": "2026-10-18T21:28:44.502+09:00", "text": "임"}
+{"type": "token", "t": 114828, "ts": "2026-10-18T21:28:44.507+09:00", "text": "금"}
+{"type": "token", "t": 114828, "ts": "2026-10-18T21:28:44.507+09:00", "text": " 감"}
+{"type": "token", "t": 114842, "ts": "2026-10-18T21:28:44.513+09:00", "text": "액"}
+{"type": "token", "t": 114858, "ts": "2026-10-18T21:28:44.525+09:00", "text": "\n"}
+{"type": "token", "t": 114858, "ts": "2026-10-18T21:28:44.529+09:00", "text": "제"}
+{"type": "token", "t": 114858, "ts": "2026-10-18T21:28:44.530+09:00", "text": "7"}
+{"type": "token", "t": 114858, "ts": "2026-10-18T21:28:44.539+09:00", "text": "조"}
+{"type": "token", "t": 114875, "ts": "2026-10-18T21:28:44.550+09:00", "text": "는"}
+{"type": "token", "t": 114875, "ts": "2026-10-18T21:28:44.553+09:00", "text": " 수"}
+{"type": "token", "t": 114875, "ts": "2026-10-18T21:28:44.555+09:00", "text": "습"}
+{"type": "token", "t": 114890, "ts": "2026-10-18T21:28:44.561+09:00", "text": "기간"}
+{"type": "token", "t": 114890, "ts": "2026-10-18T21:28:44.570+09:00", "text": "을"}
+{"type": "token", "t": 114905, "ts": "2026-10-18T21:28:44.574+09:00", "text": " 근"}
+{"type": "token", "t": 114905, "ts": "2026-10-18T21:28:44.574+09:00", "text": "로"}
+{"type": "token", "t": 114905, "ts": "2026-10-18T21:28:44.582+09:00", "text": "개"}
+{"type": "token", "t": 114921, "ts": "2026-10-18T21:28:44.595+09:00", "text": "시"}
+{"type": "token", "t": 114921, "ts": "2026-10-18T21:28:44.598+09:00", "text": "일부터"}
+{"type": "token", "t": 114921, "ts": "2026-10-18T21:28:44.599+09:00", "text": " "}
+{"type": "token", "t": 114937, "ts": "2026-10-18T21:28:44.603+09:00", "text": "3"}
+{"type": "token", "t": 114937, "ts": "2026-10-18T21:28:44.617+09:00", "text": "개월"}
+{"type": "token", "t": 114953, "ts": "2026-10-18T21:28:44.619+09:00", "text": " 이"}
+{"type": "token", "t": 114953, "ts": "2026-10-18T21:28:44.619+09:00", "text": "내"}
+{"type": "token", "t": 114953, "ts": "2026-10-18T21:28:44.625+09:00", "text": "로"}
+{"type": "token", "t": 114967, "ts": "2026-10-18T21:28:44.644+09:00", "text": " 두"}
+{"type": "token", "t": 114967, "ts": "2026-10-18T21:28:44.645+09:00", "text": "고"}
+{"type": "token", "t": 114967, "ts": "2026-10-18T21:28:44.645+09:00", "text": ","}
+{"type": "token", "t": 114983, "ts": "2026-10-18T21:28:44.652+09:00", "text": " "}
+{"type": "token", "t": 115000, "ts": "2026-10-18T21:28:44.666+09:00", "text": "1"}
+{"type": "token", "t": 115000, "ts": "2026-10-18T21:28:44.668+09:00", "text": "년"}
+{"type": "token", "t": 115000, "ts": "2026-10-18T21:28:44.668+09:00", "text": " 이상"}
+{"type": "token", "t": 115000, "ts": "2026-10-18T21:28:44.673+09:00", "text": " 근"}
+{"type": "token", "t": 115015, "ts": "2026-10-18T21:28:44.686+09:00", "text": "로"}
+{"type": "token", "t": 115015, "ts": "2026-10-18T21:28:44.691+09:00", "text": "계"}
+{"type": "token", "t": 115015, "ts": "2026-10-18T21:28:44.691+09:00", "text": "약"}
+{"type": "token", "t": 115015, "ts": "2026-10-18T21:28:44.696+09:00", "text": "을"}
+{"type": "token", "t": 115062, "ts": "2026-10-18T21:28:44.731+09:00", "text": " 맺"}
+{"type": "token", "t": 115062, "ts": "2026-10-18T21:28:44.734+09:00", "text": "은"}
+{"type": "token", "t": 115062, "ts": "2026-10-18T21:28:44.735+09:00", "text": " 수"}
+{"type": "token", "t": 115078, "ts": "2026-10-18T21:28:44.743+09:00", "text": "습"}
+{"type": "token", "t": 115078, "ts": "2026-10-18T21:28:44.758+09:00", "text": "근"}
+{"type": "token", "t": 115092, "ts": "2026-10-18T21:28:44.759+09:00", "text": "로"}
+{"type": "token", "t": 115092, "ts": "2026-10-18T21:28:44.759+09:00", "text": "자"}
+{"type": "token", "t": 115092, "ts": "2026-10-18T21:28:44.765+09:00", "text": "에게"}
+{"type": "token", "t": 115108, "ts": "2026-10-18T21:28:44.787+09:00", "text": " 수"}
+{"type": "token", "t": 115125, "ts": "2026-10-18T21:28:44.798+09:00", "text": "습"}
+{"type": "token", "t": 115125, "ts": "2026-10-18T21:28:44.803+09:00", "text": " 시작"}
+{"type": "token", "t": 115125, "ts": "2026-10-18T21:28:44.803+09:00", "text": "일부터"}
+{"type": "token", "t": 115140, "ts": "2026-10-18T21:28:44.809+09:00", "text": " "}
+{"type": "token", "t": 115155, "ts": "2026-10-18T21:28:44.823+09:00", "text": "3"}
+{"type": "token", "t": 115155, "ts": "2026-10-18T21:28:44.824+09:00", "text": "개월"}
+{"type": "token", "t": 115155, "ts": "2026-10-18T21:28:44.824+09:00", "text": " 이"}
+{"type": "token", "t": 115155, "ts": "2026-10-18T21:28:44.835+09:00", "text": "내"}
+{"type": "token", "t": 115171, "ts": "2026-10-18T21:28:44.848+09:00", "text": "에"}
+{"type": "token", "t": 115171, "ts": "2026-10-18T21:28:44.849+09:00", "text": " 최"}
+{"type": "token", "t": 115171, "ts": "2026-10-18T21:28:44.849+09:00", "text": "저"}
+{"type": "token", "t": 115187, "ts": "2026-10-18T21:28:44.855+09:00", "text": "임"}
+{"type": "token", "t": 115187, "ts": "2026-10-18T21:28:44.866+09:00", "text": "금"}
+{"type": "token", "t": 115203, "ts": "2026-10-18T21:28:44.871+09:00", "text": "의"}
+{"type": "token", "t": 115203, "ts": "2026-10-18T21:28:44.872+09:00", "text": " "}
+{"type": "token", "t": 115203, "ts": "2026-10-18T21:28:44.878+09:00", "text": "90"}
+{"type": "token", "t": 115217, "ts": "2026-10-18T21:28:44.892+09:00", "text": "%"}
+{"type": "token", "t": 115217, "ts": "2026-10-18T21:28:44.893+09:00", "text": " 이상"}
+{"type": "token", "t": 115217, "ts": "2026-10-18T21:28:44.893+09:00", "text": "을"}
+{"type": "token", "t": 115233, "ts": "2026-10-18T21:28:44.901+09:00", "text": " 지급"}
+{"type": "token", "t": 115233, "ts": "2026-10-18T21:28:44.913+09:00", "text": "할"}
+{"type": "token", "t": 115233, "ts": "2026-10-18T21:28:44.914+09:00", "text": " 수"}
+{"type": "token", "t": 115250, "ts": "2026-10-18T21:28:44.923+09:00", "text": " 있도록"}
+{"type": "token", "t": 115265, "ts": "2026-10-18T21:28:44.937+09:00", "text": " 정"}
+{"type": "token", "t": 115265, "ts": "2026-10-18T21:28:44.939+09:00", "text": "하고"}
+{"type": "token", "t": 115265, "ts": "2026-10-18T21:28:44.939+09:00", "text": " 있습니다"}
+{"type": "token", "t": 115280, "ts": "2026-10-18T21:28:44.948+09:00", "text": ".["}
+{"type": "token", "t": 115280, "ts": "2026-10-18T21:28:44.962+09:00", "text": "C"}
+{"type": "token", "t": 115280, "ts": "2026-10-18T21:28:44.962+09:00", "text": "2"}
+{"type": "token", "t": 115296, "ts": "2026-10-18T21:28:44.970+09:00", "text": "]"}
+{"type": "token", "t": 115312, "ts": "2026-10-18T21:28:44.985+09:00", "text": " 단"}
+{"type": "token", "t": 115312, "ts": "2026-10-18T21:28:44.987+09:00", "text": "순"}
+{"type": "token", "t": 115312, "ts": "2026-10-18T21:28:44.987+09:00", "text": "노"}
+{"type": "token", "t": 115328, "ts": "2026-10-18T21:28:44.994+09:00", "text": "무"}
+{"type": "token", "t": 115342, "ts": "2026-10-18T21:28:45.018+09:00", "text": "업"}
+{"type": "token", "t": 115358, "ts": "2026-10-18T21:28:45.032+09:00", "text": "무"}
+{"type": "token", "t": 115358, "ts": "2026-10-18T21:28:45.034+09:00", "text": "로"}
+{"type": "token", "t": 115358, "ts": "2026-10-18T21:28:45.035+09:00", "text": " 고"}
+{"type": "token", "t": 115375, "ts": "2026-10-18T21:28:45.042+09:00", "text": "용"}
+{"type": "token", "t": 115375, "ts": "2026-10-18T21:28:45.054+09:00", "text": "노"}
+{"type": "token", "t": 115390, "ts": "2026-10-18T21:28:45.057+09:00", "text": "동"}
+{"type": "token", "t": 115390, "ts": "2026-10-18T21:28:45.057+09:00", "text": "부"}
+{"type": "token", "t": 115390, "ts": "2026-10-18T21:28:45.064+09:00", "text": "장"}
+{"type": "token", "t": 115405, "ts": "2026-10-18T21:28:45.080+09:00", "text": "관"}
+{"type": "token", "t": 115405, "ts": "2026-10-18T21:28:45.081+09:00", "text": "이"}
+{"type": "token", "t": 115405, "ts": "2026-10-18T21:28:45.081+09:00", "text": " 정"}
+{"type": "token", "t": 115421, "ts": "2026-10-18T21:28:45.087+09:00", "text": "한"}
+{"type": "token", "t": 115421, "ts": "2026-10-18T21:28:45.102+09:00", "text": " 직"}
+{"type": "token", "t": 115437, "ts": "2026-10-18T21:28:45.104+09:00", "text": "종"}
+{"type": "token", "t": 115437, "ts": "2026-10-18T21:28:45.104+09:00", "text": "은"}
+{"type": "token", "t": 115437, "ts": "2026-10-18T21:28:45.110+09:00", "text": " 수"}
+{"type": "token", "t": 115453, "ts": "2026-10-18T21:28:45.128+09:00", "text": "습"}
+{"type": "token", "t": 115453, "ts": "2026-10-18T21:28:45.128+09:00", "text": " 중"}
+{"type": "token", "t": 115453, "ts": "2026-10-18T21:28:45.129+09:00", "text": "에도"}
+{"type": "token", "t": 115467, "ts": "2026-10-18T21:28:45.134+09:00", "text": " 최"}
+{"type": "token", "t": 115467, "ts": "2026-10-18T21:28:45.145+09:00", "text": "저"}
+{"type": "token", "t": 115467, "ts": "2026-10-18T21:28:45.149+09:00", "text": "임"}
+{"type": "token", "t": 115483, "ts": "2026-10-18T21:28:45.150+09:00", "text": "금"}
+{"type": "token", "t": 115483, "ts": "2026-10-18T21:28:45.155+09:00", "text": " 전"}
+{"type": "token", "t": 115500, "ts": "2026-10-18T21:28:45.171+09:00", "text": "액"}
+{"type": "token", "t": 115500, "ts": "2026-10-18T21:28:45.171+09:00", "text": "을"}
+{"type": "token", "t": 115500, "ts": "2026-10-18T21:28:45.172+09:00", "text": " 지급"}
+{"type": "token", "t": 115500, "ts": "2026-10-18T21:28:45.179+09:00", "text": "하도록"}
+{"type": "token", "t": 115530, "ts": "2026-10-18T21:28:45.203+09:00", "text": " 한"}
+{"type": "token", "t": 115546, "ts": "2026-10-18T21:28:45.226+09:00", "text": " 내용"}
+{"type": "token", "t": 115562, "ts": "2026-10-18T21:28:45.236+09:00", "text": "도"}
+{"type": "token", "t": 115578, "ts": "2026-10-18T21:28:45.251+09:00", "text": " 포함"}
+{"type": "token", "t": 115592, "ts": "2026-10-18T21:28:45.274+09:00", "text": "되어"}
+{"type": "token", "t": 115608, "ts": "2026-10-18T21:28:45.275+09:00", "text": " 있습니다"}
+{"type": "token", "t": 115608, "ts": "2026-10-18T21:28:45.275+09:00", "text": ".["}
+{"type": "token", "t": 115608, "ts": "2026-10-18T21:28:45.275+09:00", "text": "C"}
+{"type": "token", "t": 115608, "ts": "2026-10-18T21:28:45.283+09:00", "text": "2"}
+{"type": "token", "t": 115625, "ts": "2026-10-18T21:28:45.293+09:00", "text": "]\n\n"}
+{"type": "token", "t": 115640, "ts": "2026-10-18T21:28:45.306+09:00", "text": "최"}
+{"type": "token", "t": 115640, "ts": "2026-10-18T21:28:45.308+09:00", "text": "저"}
+{"type": "token", "t": 115640, "ts": "2026-10-18T21:28:45.308+09:00", "text": "임"}
+{"type": "token", "t": 115640, "ts": "2026-10-18T21:28:45.317+09:00", "text": "금"}
+{"type": "token", "t": 115655, "ts": "2026-10-18T21:28:45.329+09:00", "text": "법"}
+{"type": "token", "t": 115671, "ts": "2026-10-18T21:28:45.342+09:00", "text": "은"}
+{"type": "token", "t": 115687, "ts": "2026-10-18T21:28:45.365+09:00", "text": " "}
+{"type": "token", "t": 115703, "ts": "2026-10-18T21:28:45.376+09:00", "text": "1"}
+{"type": "token", "t": 115703, "ts": "2026-10-18T21:28:45.376+09:00", "text": "년"}
+{"type": "token", "t": 115717, "ts": "2026-10-18T21:28:45.387+09:00", "text": " 이상"}
+{"type": "token", "t": 115717, "ts": "2026-10-18T21:28:45.398+09:00", "text": " 계약"}
+{"type": "token", "t": 115733, "ts": "2026-10-18T21:28:45.408+09:00", "text": ","}
+{"type": "token", "t": 115750, "ts": "2026-10-18T21:28:45.424+09:00", "text": " 수"}
+{"type": "token", "t": 115750, "ts": "2026-10-18T21:28:45.424+09:00", "text": "습"}
+{"type": "token", "t": 115750, "ts": "2026-10-18T21:28:45.424+09:00", "text": " 시작"}
+{"type": "token", "t": 115765, "ts": "2026-10-18T21:28:45.433+09:00", "text": "일부터"}
+{"type": "token", "t": 115765, "ts": "2026-10-18T21:28:45.445+09:00", "text": " "}
+{"type": "token", "t": 115780, "ts": "2026-10-18T21:28:45.447+09:00", "text": "3"}
+{"type": "token", "t": 115780, "ts": "2026-10-18T21:28:45.448+09:00", "text": "개월"}
+{"type": "token", "t": 115780, "ts": "2026-10-18T21:28:45.455+09:00", "text": " 이"}
+{"type": "token", "t": 115796, "ts": "2026-10-18T21:28:45.465+09:00", "text": "내"}
+{"type": "token", "t": 115812, "ts": "2026-10-18T21:28:45.486+09:00", "text": "라는"}
+{"type": "token", "t": 115828, "ts": "2026-10-18T21:28:45.495+09:00", "text": " 요"}
+{"type": "token", "t": 115828, "ts": "2026-10-18T21:28:45.495+09:00", "text": "건"}
+{"type": "token", "t": 115828, "ts": "2026-10-18T21:28:45.495+09:00", "text": "을"}
+{"type": "token", "t": 115828, "ts": "2026-10-18T21:28:45.507+09:00", "text": " 정"}
+{"type": "token", "t": 115842, "ts": "2026-10-18T21:28:45.517+09:00", "text": "하고"}
+{"type": "token", "t": 115858, "ts": "2026-10-18T21:28:45.529+09:00", "text": " 단"}
+{"type": "token", "t": 115858, "ts": "2026-10-18T21:28:45.535+09:00", "text": "순"}
+{"type": "token", "t": 115858, "ts": "2026-10-18T21:28:45.539+09:00", "text": "노"}
+{"type": "token", "t": 115875, "ts": "2026-10-18T21:28:45.540+09:00", "text": "무"}
+{"type": "token", "t": 115875, "ts": "2026-10-18T21:28:45.549+09:00", "text": " 직"}
+{"type": "token", "t": 115890, "ts": "2026-10-18T21:28:45.557+09:00", "text": "종"}
+{"type": "token", "t": 115890, "ts": "2026-10-18T21:28:45.570+09:00", "text": "을"}
+{"type": "token", "t": 115921, "ts": "2026-10-18T21:28:45.593+09:00", "text": " 예"}
+{"type": "token", "t": 115937, "ts": "2026-10-18T21:28:45.604+09:00", "text": "외"}
+{"type": "token", "t": 115937, "ts": "2026-10-18T21:28:45.618+09:00", "text": "에서"}
+{"type": "token", "t": 115953, "ts": "2026-10-18T21:28:45.629+09:00", "text": " 제외"}
+{"type": "token", "t": 115967, "ts": "2026-10-18T21:28:45.638+09:00", "text": "하며"}
+{"type": "token", "t": 115983, "ts": "2026-10-18T21:28:45.652+09:00", "text": ","}
+{"type": "token", "t": 115983, "ts": "2026-10-18T21:28:45.655+09:00", "text": " 시행"}
+{"type": "token", "t": 115983, "ts": "2026-10-18T21:28:45.655+09:00", "text": "령"}
+{"type": "token", "t": 115983, "ts": "2026-10-18T21:28:45.660+09:00", "text": "은"}
+{"type": "token", "t": 116015, "ts": "2026-10-18T21:28:45.687+09:00", "text": " 해당"}
+{"type": "token", "t": 116030, "ts": "2026-10-18T21:28:45.698+09:00", "text": " 요"}
+{"type": "token", "t": 116030, "ts": "2026-10-18T21:28:45.701+09:00", "text": "건"}
+{"type": "token", "t": 116030, "ts": "2026-10-18T21:28:45.701+09:00", "text": "을"}
+{"type": "token", "t": 116030, "ts": "2026-10-18T21:28:45.708+09:00", "text": " 충"}
+{"type": "token", "t": 116046, "ts": "2026-10-18T21:28:45.720+09:00", "text": "족"}
+{"type": "token", "t": 116046, "ts": "2026-10-18T21:28:45.725+09:00", "text": "할"}
+{"type": "token", "t": 116046, "ts": "2026-10-18T21:28:45.725+09:00", "text": " 때"}
+{"type": "token", "t": 116062, "ts": "2026-10-18T21:28:45.729+09:00", "text": " 시간"}
+{"type": "token", "t": 116078, "ts": "2026-10-18T21:28:45.744+09:00", "text": "급"}
+{"type": "token", "t": 116078, "ts": "2026-10-18T21:28:45.744+09:00", "text": " 최"}
+{"type": "token", "t": 116078, "ts": "2026-10-18T21:28:45.745+09:00", "text": "저"}
+{"type": "token", "t": 116078, "ts": "2026-10-18T21:28:45.756+09:00", "text": "임"}
+{"type": "token", "t": 116092, "ts": "2026-10-18T21:28:45.774+09:00", "text": "금"}
+{"type": "token", "t": 116108, "ts": "2026-10-18T21:28:45.775+09:00", "text": "에서"}
+{"type": "token", "t": 116108, "ts": "2026-10-18T21:28:45.777+09:00", "text": " "}
+{"type": "token", "t": 116108, "ts": "2026-10-18T21:28:45.782+09:00", "text": "10"}
+{"type": "token", "t": 116108, "ts": "2026-10-18T21:28:45.783+09:00", "text": "%"}
+{"type": "token", "t": 116108, "ts": "2026-10-18T21:28:45.783+09:00", "text": "를"}
+{"type": "token", "t": 116125, "ts": "2026-10-18T21:28:45.800+09:00", "text": " 뺀"}
+{"type": "token", "t": 116125, "ts": "2026-10-18T21:28:45.802+09:00", "text": " 금"}
+{"type": "token", "t": 116140, "ts": "2026-10-18T21:28:45.809+09:00", "text": "액"}
+{"type": "token", "t": 116140, "ts": "2026-10-18T21:28:45.821+09:00", "text": "을"}
+{"type": "token", "t": 116155, "ts": "2026-10-18T21:28:45.835+09:00", "text": " 적용"}
+{"type": "token", "t": 116171, "ts": "2026-10-18T21:28:45.843+09:00", "text": "하도록"}
+{"type": "token", "t": 116187, "ts": "2026-10-18T21:28:45.856+09:00", "text": " 합니다"}
+{"type": "token", "t": 116187, "ts": "2026-10-18T21:28:45.859+09:00", "text": ".["}
+{"type": "token", "t": 116187, "ts": "2026-10-18T21:28:45.859+09:00", "text": "L"}
+{"type": "token", "t": 116203, "ts": "2026-10-18T21:28:45.883+09:00", "text": "5"}
+{"type": "token", "t": 116217, "ts": "2026-10-18T21:28:45.894+09:00", "text": "]["}
+{"type": "token", "t": 116217, "ts": "2026-10-18T21:28:45.897+09:00", "text": "L"}
+{"type": "token", "t": 116217, "ts": "2026-10-18T21:28:45.898+09:00", "text": "6"}
+{"type": "token", "t": 116233, "ts": "2026-10-18T21:28:45.904+09:00", "text": "]"}
+{"type": "token", "t": 116250, "ts": "2026-10-18T21:28:45.926+09:00", "text": " 따라서"}
+{"type": "token", "t": 116265, "ts": "2026-10-18T21:28:45.940+09:00", "text": " 제"}
+{"type": "token", "t": 116265, "ts": "2026-10-18T21:28:45.941+09:00", "text": "7"}
+{"type": "token", "t": 116265, "ts": "2026-10-18T21:28:45.942+09:00", "text": "조"}
+{"type": "token", "t": 116280, "ts": "2026-10-18T21:28:45.952+09:00", "text": "의"}
+{"type": "token", "t": 116312, "ts": "2026-10-18T21:28:45.987+09:00", "text": " 감"}
+{"type": "token", "t": 116328, "ts": "2026-10-18T21:28:45.998+09:00", "text": "액"}
+{"type": "token", "t": 116328, "ts": "2026-10-18T21:28:46.003+09:00", "text": " 요"}
+{"type": "token", "t": 116328, "ts": "2026-10-18T21:28:46.005+09:00", "text": "건"}
+{"type": "token", "t": 116328, "ts": "2026-10-18T21:28:46.005+09:00", "text": "은"}
+{"type": "token", "t": 116342, "ts": "2026-10-18T21:28:46.018+09:00", "text": " 법"}
+{"type": "token", "t": 116342, "ts": "2026-10-18T21:28:46.019+09:00", "text": "령"}
+{"type": "token", "t": 116342, "ts": "2026-10-18T21:28:46.019+09:00", "text": "과"}
+{"type": "token", "t": 116358, "ts": "2026-10-18T21:28:46.030+09:00", "text": " 일"}
+{"type": "token", "t": 116375, "ts": "2026-10-18T21:28:46.042+09:00", "text": "치"}
+{"type": "token", "t": 116375, "ts": "2026-10-18T21:28:46.043+09:00", "text": "합니다"}
+{"type": "token", "t": 116375, "ts": "2026-10-18T21:28:46.044+09:00", "text": ".["}
+{"type": "token", "t": 116375, "ts": "2026-10-18T21:28:46.048+09:00", "text": "C"}
+{"type": "token", "t": 116390, "ts": "2026-10-18T21:28:46.069+09:00", "text": "2"}
+{"type": "token", "t": 116390, "ts": "2026-10-18T21:28:46.069+09:00", "text": "]["}
+{"type": "token", "t": 116390, "ts": "2026-10-18T21:28:46.070+09:00", "text": "L"}
+{"type": "token", "t": 116405, "ts": "2026-10-18T21:28:46.078+09:00", "text": "5"}
+{"type": "token", "t": 116421, "ts": "2026-10-18T21:28:46.099+09:00", "text": "]["}
+{"type": "token", "t": 116421, "ts": "2026-10-18T21:28:46.099+09:00", "text": "L"}
+{"type": "token", "t": 116421, "ts": "2026-10-18T21:28:46.099+09:00", "text": "6"}
+{"type": "token", "t": 116421, "ts": "2026-10-18T21:28:46.099+09:00", "text": "]\n\n"}
+{"type": "token", "t": 116437, "ts": "2026-10-18T21:28:46.114+09:00", "text": "계"}
+{"type": "token", "t": 116437, "ts": "2026-10-18T21:28:46.114+09:00", "text": "약"}
+{"type": "token", "t": 116437, "ts": "2026-10-18T21:28:46.114+09:00", "text": "기간"}
+{"type": "token", "t": 116437, "ts": "2026-10-18T21:28:46.117+09:00", "text": "이"}
+{"type": "token", "t": 116453, "ts": "2026-10-18T21:28:46.132+09:00", "text": " "}
+{"type": "token", "t": 116453, "ts": "2026-10-18T21:28:46.133+09:00", "text": "1"}
+{"type": "token", "t": 116453, "ts": "2026-10-18T21:28:46.134+09:00", "text": "년"}
+{"type": "token", "t": 116453, "ts": "2026-10-18T21:28:46.134+09:00", "text": " 미"}
+{"type": "token", "t": 116467, "ts": "2026-10-18T21:28:46.148+09:00", "text": "만"}
+{"type": "token", "t": 116483, "ts": "2026-10-18T21:28:46.150+09:00", "text": "이"}
+{"type": "token", "t": 116483, "ts": "2026-10-18T21:28:46.150+09:00", "text": "거나"}
+{"type": "token", "t": 116483, "ts": "2026-10-18T21:28:46.159+09:00", "text": " 수"}
+{"type": "token", "t": 116500, "ts": "2026-10-18T21:28:46.171+09:00", "text": "습"}
+{"type": "token", "t": 116515, "ts": "2026-10-18T21:28:46.193+09:00", "text": " 시작"}
+{"type": "token", "t": 116530, "ts": "2026-10-18T21:28:46.207+09:00", "text": "일부터"}
+{"type": "token", "t": 116530, "ts": "2026-10-18T21:28:46.208+09:00", "text": " "}
+{"type": "token", "t": 116530, "ts": "2026-10-18T21:28:46.209+09:00", "text": "3"}
+{"type": "token", "t": 116530, "ts": "2026-10-18T21:28:46.212+09:00", "text": "개월"}
+{"type": "token", "t": 116546, "ts": "2026-10-18T21:28:46.223+09:00", "text": "이"}
+{"type": "token", "t": 116562, "ts": "2026-10-18T21:28:46.230+09:00", "text": " 지난"}
+{"type": "token", "t": 116578, "ts": "2026-10-18T21:28:46.244+09:00", "text": " 경우"}
+{"type": "token", "t": 116578, "ts": "2026-10-18T21:28:46.244+09:00", "text": ","}
+{"type": "token", "t": 116578, "ts": "2026-10-18T21:28:46.247+09:00", "text": " 또는"}
+{"type": "token", "t": 116592, "ts": "2026-10-18T21:28:46.262+09:00", "text": " 단"}
+{"type": "token", "t": 116592, "ts": "2026-10-18T21:28:46.263+09:00", "text": "순"}
+{"type": "token", "t": 116592, "ts": "2026-10-18T21:28:46.264+09:00", "text": "노"}
+{"type": "token", "t": 116592, "ts": "2026-10-18T21:28:46.269+09:00", "text": "무"}
+{"type": "token", "t": 116608, "ts": "2026-10-18T21:28:46.282+09:00", "text": " 직"}
+{"type": "token", "t": 116608, "ts": "2026-10-18T21:28:46.283+09:00", "text": "종"}
+{"type": "token", "t": 116625, "ts": "2026-10-18T21:28:46.294+09:00", "text": "인"}
+{"type": "token", "t": 116625, "ts": "2026-10-18T21:28:46.305+09:00", "text": " 경우"}
+{"type": "token", "t": 116640, "ts": "2026-10-18T21:28:46.306+09:00", "text": "에는"}
+{"type": "token", "t": 116640, "ts": "2026-10-18T21:28:46.321+09:00", "text": " 수"}
+{"type": "token", "t": 116655, "ts": "2026-10-18T21:28:46.330+09:00", "text": "습"}
+{"type": "token", "t": 116655, "ts": "2026-10-18T21:28:46.337+09:00", "text": "을"}
+{"type": "token", "t": 116687, "ts": "2026-10-18T21:28:46.353+09:00", "text": " 이유"}
+{"type": "token", "t": 116687, "ts": "2026-10-18T21:28:46.353+09:00", "text": "로"}
+{"type": "token", "t": 116687, "ts": "2026-10-18T21:28:46.354+09:00", "text": " 최"}
+{"type": "token", "t": 116687, "ts": "2026-10-18T21:28:46.360+09:00", "text": "저"}
+{"type": "token", "t": 116703, "ts": "2026-10-18T21:28:46.374+09:00", "text": "임"}
+{"type": "token", "t": 116703, "ts": "2026-10-18T21:28:46.374+09:00", "text": "금을"}
+{"type": "token", "t": 116703, "ts": "2026-10-18T21:28:46.375+09:00", "text": " 감"}
+{"type": "token", "t": 116703, "ts": "2026-10-18T21:28:46.380+09:00", "text": "액"}
+{"type": "token", "t": 116717, "ts": "2026-10-18T21:28:46.394+09:00", "text": "할"}
+{"type": "token", "t": 116717, "ts": "2026-10-18T21:28:46.395+09:00", "text": " 수"}
+{"type": "token", "t": 116717, "ts": "2026-10-18T21:28:46.396+09:00", "text": " 없습니다"}
+{"type": "token", "t": 116733, "ts": "2026-10-18T21:28:46.409+09:00", "text": ".["}
+{"type": "token", "t": 116750, "ts": "2026-10-18T21:28:46.429+09:00", "text": "L"}
+{"type": "token", "t": 116780, "ts": "2026-10-18T21:28:46.450+09:00", "text": "5"}
+{"type": "token", "t": 116780, "ts": "2026-10-18T21:28:46.452+09:00", "text": "]["}
+{"type": "token", "t": 116780, "ts": "2026-10-18T21:28:46.453+09:00", "text": "W"}
+{"type": "token", "t": 116796, "ts": "2026-10-18T21:28:46.464+09:00", "text": "1"}
+{"type": "token", "t": 116796, "ts": "2026-10-18T21:28:46.465+09:00", "text": "]"}
+{"type": "token", "t": 116796, "ts": "2026-10-18T21:28:46.466+09:00", "text": " 제"}
+{"type": "token", "t": 116796, "ts": "2026-10-18T21:28:46.477+09:00", "text": "6"}
+{"type": "token", "t": 116812, "ts": "2026-10-18T21:28:46.489+09:00", "text": "조"}
+{"type": "token", "t": 116828, "ts": "2026-10-18T21:28:46.494+09:00", "text": "도"}
+{"type": "token", "t": 116842, "ts": "2026-10-18T21:28:46.518+09:00", "text": " 임"}
+{"type": "token", "t": 116875, "ts": "2026-10-18T21:28:46.542+09:00", "text": "금"}
+{"type": "token", "t": 116890, "ts": "2026-10-18T21:28:46.556+09:00", "text": "이"}
+{"type": "token", "t": 116890, "ts": "2026-10-18T21:28:46.559+09:00", "text": " 최"}
+{"type": "token", "t": 116890, "ts": "2026-10-18T21:28:46.560+09:00", "text": "저"}
+{"type": "token", "t": 116890, "ts": "2026-10-18T21:28:46.567+09:00", "text": "임"}
+{"type": "token", "t": 116905, "ts": "2026-10-18T21:28:46.583+09:00", "text": "금"}
+{"type": "token", "t": 116905, "ts": "2026-10-18T21:28:46.583+09:00", "text": " 이상"}
+{"type": "token", "t": 116905, "ts": "2026-10-18T21:28:46.584+09:00", "text": "이어"}
+{"type": "token", "t": 116921, "ts": "2026-10-18T21:28:46.587+09:00", "text": "야"}
+{"type": "token", "t": 116921, "ts": "2026-10-18T21:28:46.598+09:00", "text": " 한다"}
+{"type": "token", "t": 116921, "ts": "2026-10-18T21:28:46.601+09:00", "text": "고"}
+{"type": "token", "t": 116921, "ts": "2026-10-18T21:28:46.601+09:00", "text": " 정"}
+{"type": "token", "t": 116937, "ts": "2026-10-18T21:28:46.612+09:00", "text": "하"}
+{"type": "token", "t": 116953, "ts": "2026-10-18T21:28:46.625+09:00", "text": "므로"}
+{"type": "token", "t": 116953, "ts": "2026-10-18T21:28:46.625+09:00", "text": ","}
+{"type": "token", "t": 116953, "ts": "2026-10-18T21:28:46.632+09:00", "text": " 감"}
+{"type": "token", "t": 116967, "ts": "2026-10-18T21:28:46.643+09:00", "text": "액"}
+{"type": "token", "t": 116983, "ts": "2026-10-18T21:28:46.656+09:00", "text": " 예"}
+{"type": "token", "t": 117000, "ts": "2026-10-18T21:28:46.667+09:00", "text": "외"}
+{"type": "token", "t": 117000, "ts": "2026-10-18T21:28:46.671+09:00", "text": "를"}
+{"type": "token", "t": 117000, "ts": "2026-10-18T21:28:46.672+09:00", "text": " 적용"}
+{"type": "token", "t": 117015, "ts": "2026-10-18T21:28:46.686+09:00", "text": "할"}
+{"type": "token", "t": 117015, "ts": "2026-10-18T21:28:46.693+09:00", "text": " 수"}
+{"type": "token", "t": 117030, "ts": "2026-10-18T21:28:46.706+09:00", "text": " 없는"}
+{"type": "token", "t": 117046, "ts": "2026-10-18T21:28:46.720+09:00", "text": " 경우"}
+{"type": "token", "t": 117046, "ts": "2026-10-18T21:28:46.722+09:00", "text": "에는"}
+{"type": "token", "t": 117046, "ts": "2026-10-18T21:28:46.722+09:00", "text": " 최"}
+{"type": "token", "t": 117062, "ts": "2026-10-18T21:28:46.736+09:00", "text": "저"}
+{"type": "token", "t": 117078, "ts": "2026-10-18T21:28:46.746+09:00", "text": "임"}
+{"type": "token", "t": 117078, "ts": "2026-10-18T21:28:46.747+09:00", "text": "금"}
+{"type": "token", "t": 117078, "ts": "2026-10-18T21:28:46.747+09:00", "text": " 전"}
+{"type": "token", "t": 117078, "ts": "2026-10-18T21:28:46.750+09:00", "text": "액"}
+{"type": "token", "t": 117092, "ts": "2026-10-18T21:28:46.773+09:00", "text": " 이상"}
+{"type": "token", "t": 117125, "ts": "2026-10-18T21:28:46.792+09:00", "text": "을"}
+{"type": "token", "t": 117125, "ts": "2026-10-18T21:28:46.792+09:00", "text": " 지급"}
+{"type": "token", "t": 117125, "ts": "2026-10-18T21:28:46.792+09:00", "text": "해야"}
+{"type": "token", "t": 117125, "ts": "2026-10-18T21:28:46.801+09:00", "text": " 합니다"}
+{"type": "token", "t": 117140, "ts": "2026-10-18T21:28:46.818+09:00", "text": ".["}
+{"type": "token", "t": 117140, "ts": "2026-10-18T21:28:46.818+09:00", "text": "C"}
+{"type": "token", "t": 117155, "ts": "2026-10-18T21:28:46.825+09:00", "text": "1"}
+{"type": "token", "t": 117155, "ts": "2026-10-18T21:28:46.825+09:00", "text": "]["}
+{"type": "token", "t": 117155, "ts": "2026-10-18T21:28:46.836+09:00", "text": "L"}
+{"type": "token", "t": 117155, "ts": "2026-10-18T21:28:46.836+09:00", "text": "5"}
+{"type": "token", "t": 117155, "ts": "2026-10-18T21:28:46.836+09:00", "text": "]["}
+{"type": "token", "t": 117171, "ts": "2026-10-18T21:28:46.843+09:00", "text": "W"}
+{"type": "token", "t": 117171, "ts": "2026-10-18T21:28:46.848+09:00", "text": "1"}
+{"type": "token", "t": 117171, "ts": "2026-10-18T21:28:46.848+09:00", "text": "]\n\n"}
+{"type": "token", "t": 117171, "ts": "2026-10-18T21:28:46.848+09:00", "text": "###"}
+{"type": "token", "t": 117203, "ts": "2026-10-18T21:28:46.872+09:00", "text": " 🟢"}
+{"type": "token", "t": 117217, "ts": "2026-10-18T21:28:46.889+09:00", "text": " 위"}
+{"type": "token", "t": 117250, "ts": "2026-10-18T21:28:46.930+09:00", "text": "약"}
+{"type": "token", "t": 117265, "ts": "2026-10-18T21:28:46.932+09:00", "text": "금"}
+{"type": "token", "t": 117265, "ts": "2026-10-18T21:28:46.932+09:00", "text": "·"}
+{"type": "token", "t": 117265, "ts": "2026-10-18T21:28:46.938+09:00", "text": "손"}
+{"type": "token", "t": 117280, "ts": "2026-10-18T21:28:46.955+09:00", "text": "해"}
+{"type": "token", "t": 117280, "ts": "2026-10-18T21:28:46.956+09:00", "text": "배"}
+{"type": "token", "t": 117280, "ts": "2026-10-18T21:28:46.956+09:00", "text": "상"}
+{"type": "token", "t": 117296, "ts": "2026-10-18T21:28:46.967+09:00", "text": "액"}
+{"type": "token", "t": 117296, "ts": "2026-10-18T21:28:46.978+09:00", "text": "의"}
+{"type": "token", "t": 117312, "ts": "2026-10-18T21:28:46.980+09:00", "text": " 사"}
+{"type": "token", "t": 117312, "ts": "2026-10-18T21:28:46.980+09:00", "text": "전"}
+{"type": "token", "t": 117312, "ts": "2026-10-18T21:28:46.989+09:00", "text": " 약"}
+{"type": "token", "t": 117328, "ts": "2026-10-18T21:28:46.998+09:00", "text": "정"}
+{"type": "token", "t": 117342, "ts": "2026-10-18T21:28:47.018+09:00", "text": " 금"}
+{"type": "token", "t": 117358, "ts": "2026-10-18T21:28:47.031+09:00", "text": "지"}
+{"type": "token", "t": 117358, "ts": "2026-10-18T21:28:47.034+09:00", "text": "\n"}
+{"type": "token", "t": 117358, "ts": "2026-10-18T21:28:47.034+09:00", "text": "제"}
+{"type": "token", "t": 117358, "ts": "2026-10-18T21:28:47.037+09:00", "text": "13"}
+{"type": "token", "t": 117375, "ts": "2026-10-18T21:28:47.049+09:00", "text": "조"}
+{"type": "token", "t": 117375, "ts": "2026-10-18T21:28:47.050+09:00", "text": "는"}
+{"type": "token", "t": 117375, "ts": "2026-10-18T21:28:47.050+09:00", "text": " 근"}
+{"type": "token", "t": 117390, "ts": "2026-10-18T21:28:47.058+09:00", "text": "로"}
+{"type": "token", "t": 117405, "ts": "2026-10-18T21:28:47.072+09:00", "text": "계"}
+{"type": "token", "t": 117405, "ts": "2026-10-18T21:28:47.072+09:00", "text": "약"}
+{"type": "token", "t": 117405, "ts": "2026-10-18T21:28:47.085+09:00", "text": "을"}
+{"type": "token", "t": 117437, "ts": "2026-10-18T21:28:47.107+09:00", "text": " 지"}
+{"type": "token", "t": 117453, "ts": "2026-10-18T21:28:47.121+09:00", "text": "키"}
+{"type": "token", "t": 117453, "ts": "2026-10-18T21:28:47.122+09:00", "text": "지"}
+{"type": "token", "t": 117453, "ts": "2026-10-18T21:28:47.132+09:00", "text": " 않았"}
+{"type": "token", "t": 117467, "ts": "2026-10-18T21:28:47.147+09:00", "text": "을"}
+{"type": "token", "t": 117467, "ts": "2026-10-18T21:28:47.148+09:00", "text": " 때"}
+{"type": "token", "t": 117467, "ts": "2026-10-18T21:28:47.148+09:00", "text": "의"}
+{"type": "token", "t": 117483, "ts": "2026-10-18T21:28:47.156+09:00", "text": " 위"}
+{"type": "token", "t": 117500, "ts": "2026-10-18T21:28:47.170+09:00", "text": "약"}
+{"type": "token", "t": 117500, "ts": "2026-10-18T21:28:47.171+09:00", "text": "금"}
+{"type": "token", "t": 117500, "ts": "2026-10-18T21:28:47.171+09:00", "text": "이나"}
+{"type": "token", "t": 117515, "ts": "2026-10-18T21:28:47.190+09:00", "text": " 손"}
+{"type": "token", "t": 117530, "ts": "2026-10-18T21:28:47.204+09:00", "text": "해"}
+{"type": "token", "t": 117530, "ts": "2026-10-18T21:28:47.205+09:00", "text": "배"}
+{"type": "token", "t": 117530, "ts": "2026-10-18T21:28:47.206+09:00", "text": "상"}
+{"type": "token", "t": 117530, "ts": "2026-10-18T21:28:47.206+09:00", "text": "액"}
+{"type": "token", "t": 117546, "ts": "2026-10-18T21:28:47.224+09:00", "text": "을"}
+{"type": "token", "t": 117546, "ts": "2026-10-18T21:28:47.224+09:00", "text": " 미"}
+{"type": "token", "t": 117546, "ts": "2026-10-18T21:28:47.224+09:00", "text": "리"}
+{"type": "token", "t": 117562, "ts": "2026-10-18T21:28:47.236+09:00", "text": " 정"}
+{"type": "token", "t": 117578, "ts": "2026-10-18T21:28:47.247+09:00", "text": "하는"}
+{"type": "token", "t": 117578, "ts": "2026-10-18T21:28:47.247+09:00", "text": " 계약"}
+{"type": "token", "t": 117578, "ts": "2026-10-18T21:28:47.247+09:00", "text": "을"}
+{"type": "token", "t": 117578, "ts": "2026-10-18T21:28:47.255+09:00", "text": " 금"}
+{"type": "token", "t": 117592, "ts": "2026-10-18T21:28:47.269+09:00", "text": "지"}
+{"type": "token", "t": 117608, "ts": "2026-10-18T21:28:47.284+09:00", "text": "하고"}
+{"type": "token", "t": 117625, "ts": "2026-10-18T21:28:47.301+09:00", "text": " 있습니다"}
+{"type": "token", "t": 117625, "ts": "2026-10-18T21:28:47.301+09:00", "text": ".["}
+{"type": "token", "t": 117625, "ts": "2026-10-18T21:28:47.301+09:00", "text": "C"}
+{"type": "token", "t": 117640, "ts": "2026-10-18T21:28:47.316+09:00", "text": "4"}
+{"type": "token", "t": 117655, "ts": "2026-10-18T21:28:47.330+09:00", "text": "]"}
+{"type": "token", "t": 117687, "ts": "2026-10-18T21:28:47.361+09:00", "text": " 이는"}
+{"type": "token", "t": 117703, "ts": "2026-10-18T21:28:47.370+09:00", "text": " 근"}
+{"type": "token", "t": 117703, "ts": "2026-10-18T21:28:47.370+09:00", "text": "로"}
+{"type": "token", "t": 117703, "ts": "2026-10-18T21:28:47.374+09:00", "text": "계"}
+{"type": "token", "t": 117717, "ts": "2026-10-18T21:28:47.387+09:00", "text": "약"}
+{"type": "token", "t": 117717, "ts": "2026-10-18T21:28:47.389+09:00", "text": " 불"}
+{"type": "token", "t": 117717, "ts": "2026-10-18T21:28:47.389+09:00", "text": "이"}
+{"type": "token", "t": 117717, "ts": "2026-10-18T21:28:47.399+09:00", "text": "행"}
+{"type": "token", "t": 117733, "ts": "2026-10-18T21:28:47.414+09:00", "text": "에"}
+{"type": "token", "t": 117733, "ts": "2026-10-18T21:28:47.415+09:00", "text": " 대한"}
+{"type": "token", "t": 117750, "ts": "2026-10-18T21:28:47.416+09:00", "text": " 위"}
+{"type": "token", "t": 117750, "ts": "2026-10-18T21:28:47.420+09:00", "text": "약"}
+{"type": "token", "t": 117765, "ts": "2026-10-18T21:28:47.431+09:00", "text": "금"}
+{"type": "token", "t": 117780, "ts": "2026-10-18T21:28:47.451+09:00", "text": " 또는"}
+{"type": "token", "t": 117796, "ts": "2026-10-18T21:28:47.465+09:00", "text": " 손"}
+{"type": "token", "t": 117796, "ts": "2026-10-18T21:28:47.467+09:00", "text": "해"}
+{"type": "token", "t": 117796, "ts": "2026-10-18T21:28:47.468+09:00", "text": "배"}
+{"type": "token", "t": 117796, "ts": "2026-10-18T21:28:47.471+09:00", "text": "상"}
+{"type": "token", "t": 117812, "ts": "2026-10-18T21:28:47.481+09:00", "text": "액"}
+{"type": "token", "t": 117828, "ts": "2026-10-18T21:28:47.500+09:00", "text": "의"}
+{"type": "token", "t": 117842, "ts": "2026-10-18T21:28:47.511+09:00", "text": " 사"}
+{"type": "token", "t": 117842, "ts": "2026-10-18T21:28:47.515+09:00", "text": "전"}
+{"type": "token", "t": 117842, "ts": "2026-10-18T21:28:47.516+09:00", "text": " 약"}
+{"type": "token", "t": 117842, "ts": "2026-10-18T21:28:47.518+09:00", "text": "정을"}
+{"type": "token", "t": 117858, "ts": "2026-10-18T21:28:47.531+09:00", "text": " 금"}
+{"type": "token", "t": 117858, "ts": "2026-10-18T21:28:47.532+09:00", "text": "지"}
+{"type": "token", "t": 117858, "ts": "2026-10-18T21:28:47.532+09:00", "text": "하는"}
+{"type": "token", "t": 117858, "ts": "2026-10-18T21:28:47.539+09:00", "text": " 근"}
+{"type": "token", "t": 117875, "ts": "2026-10-18T21:28:47.554+09:00", "text": "로"}
+{"type": "token", "t": 117890, "ts": "2026-10-18T21:28:47.557+09:00", "text": "기"}
+{"type": "token", "t": 117890, "ts": "2026-10-18T21:28:47.557+09:00", "text": "준"}
+{"type": "token", "t": 117890, "ts": "2026-10-18T21:28:47.563+09:00", "text": "법"}
+{"type": "token", "t": 117905, "ts": "2026-10-18T21:28:47.577+09:00", "text": " 제"}
+{"type": "token", "t": 117905, "ts": "2026-10-18T21:28:47.579+09:00", "text": "20"}
+{"type": "token", "t": 117905, "ts": "2026-10-18T21:28:47.579+09:00", "text": "조"}
+{"type": "token", "t": 117921, "ts": "2026-10-18T21:28:47.592+09:00", "text": "와"}
+{"type": "token", "t": 117937, "ts": "2026-10-18T21:28:47.607+09:00", "text": " 부"}
+{"type": "token", "t": 117937, "ts": "2026-10-18T21:28:47.608+09:00", "text": "합"}
+{"type": "token", "t": 117937, "ts": "2026-10-18T21:28:47.609+09:00", "text": "합니다"}
+{"type": "token", "t": 117937, "ts": "2026-10-18T21:28:47.612+09:00", "text": ".["}
+{"type": "token", "t": 117953, "ts": "2026-10-18T21:28:47.627+09:00", "text": "L"}
+{"type": "token", "t": 117953, "ts": "2026-10-18T21:28:47.629+09:00", "text": "1"}
+{"type": "token", "t": 117953, "ts": "2026-10-18T21:28:47.629+09:00", "text": "]\n\n"}
+{"type": "token", "t": 117967, "ts": "2026-10-18T21:28:47.636+09:00", "text": "예"}
+{"type": "token", "t": 117983, "ts": "2026-10-18T21:28:47.652+09:00", "text": "를"}
+{"type": "token", "t": 117983, "ts": "2026-10-18T21:28:47.652+09:00", "text": " 들어"}
+{"type": "token", "t": 117983, "ts": "2026-10-18T21:28:47.652+09:00", "text": " “"}
+{"type": "token", "t": 118000, "ts": "2026-10-18T21:28:47.672+09:00", "text": "수"}
+{"type": "token", "t": 118000, "ts": "2026-10-18T21:28:47.674+09:00", "text": "습"}
+{"type": "token", "t": 118000, "ts": "2026-10-18T21:28:47.674+09:00", "text": " 중"}
+{"type": "token", "t": 118015, "ts": "2026-10-18T21:28:47.683+09:00", "text": " 퇴"}
+{"type": "token", "t": 118030, "ts": "2026-10-18T21:28:47.697+09:00", "text": "사"}
+{"type": "token", "t": 118030, "ts": "2026-10-18T21:28:47.698+09:00", "text": "하면"}
+{"type": "token", "t": 118030, "ts": "2026-10-18T21:28:47.707+09:00", "text": " 일정"}
+{"type": "token", "t": 118046, "ts": "2026-10-18T21:28:47.720+09:00", "text": " 금"}
+{"type": "token", "t": 118046, "ts": "2026-10-18T21:28:47.722+09:00", "text": "액"}
+{"type": "token", "t": 118046, "ts": "2026-10-18T21:28:47.722+09:00", "text": "을"}
+{"type": "token", "t": 118062, "ts": "2026-10-18T21:28:47.733+09:00", "text": " 지급"}
+{"type": "token", "t": 118078, "ts": "2026-10-18T21:28:47.745+09:00", "text": "한다"}
+{"type": "token", "t": 118078, "ts": "2026-10-18T21:28:47.745+09:00", "text": "”"}
+{"type": "token", "t": 118078, "ts": "2026-10-18T21:28:47.756+09:00", "text": "처럼"}
+{"type": "token", "t": 118092, "ts": "2026-10-18T21:28:47.769+09:00", "text": " 미"}
+{"type": "token", "t": 118092, "ts": "2026-10-18T21:28:47.770+09:00", "text": "리"}
+{"type": "token", "t": 118092, "ts": "2026-10-18T21:28:47.771+09:00", "text": " 금"}
+{"type": "token", "t": 118108, "ts": "2026-10-18T21:28:47.780+09:00", "text": "액"}
+{"type": "token", "t": 118125, "ts": "2026-10-18T21:28:47.793+09:00", "text": "을"}
+{"type": "token", "t": 118125, "ts": "2026-10-18T21:28:47.794+09:00", "text": " 정"}
+{"type": "token", "t": 118140, "ts": "2026-10-18T21:28:47.807+09:00", "text": "한"}
+{"type": "token", "t": 118140, "ts": "2026-10-18T21:28:47.820+09:00", "text": " 약"}
+{"type": "token", "t": 118155, "ts": "2026-10-18T21:28:47.823+09:00", "text": "정"}
+{"type": "token", "t": 118155, "ts": "2026-10-18T21:28:47.824+09:00", "text": "은"}
+{"type": "token", "t": 118155, "ts": "2026-10-18T21:28:47.827+09:00", "text": " 허"}
+{"type": "token", "t": 118171, "ts": "2026-10-18T21:28:47.838+09:00", "text": "용"}
+{"type": "token", "t": 118171, "ts": "2026-10-18T21:28:47.851+09:00", "text": "되"}
+{"type": "token", "t": 118187, "ts": "2026-10-18T21:28:47.861+09:00", "text": "기"}
+{"type": "token", "t": 118187, "ts": "2026-10-18T21:28:47.863+09:00", "text": " 어렵"}
+{"type": "token", "t": 118203, "ts": "2026-10-18T21:28:47.880+09:00", "text": "습니다"}
+{"type": "token", "t": 118217, "ts": "2026-10-18T21:28:47.892+09:00", "text": ".["}
+{"type": "token", "t": 118233, "ts": "2026-10-18T21:28:47.910+09:00", "text": "L"}
+{"type": "token", "t": 118250, "ts": "2026-10-18T21:28:47.919+09:00", "text": "1"}
+{"type": "token", "t": 118250, "ts": "2026-10-18T21:28:47.921+09:00", "text": "]["}
+{"type": "token", "t": 118250, "ts": "2026-10-18T21:28:47.925+09:00", "text": "W"}
+{"type": "token", "t": 118250, "ts": "2026-10-18T21:28:47.926+09:00", "text": "2"}
+{"type": "token", "t": 118265, "ts": "2026-10-18T21:28:47.936+09:00", "text": "]"}
+{"type": "token", "t": 118280, "ts": "2026-10-18T21:28:47.959+09:00", "text": " 다"}
+{"type": "token", "t": 118296, "ts": "2026-10-18T21:28:47.974+09:00", "text": "만"}
+{"type": "token", "t": 118296, "ts": "2026-10-18T21:28:47.975+09:00", "text": " 실제"}
+{"type": "token", "t": 118312, "ts": "2026-10-18T21:28:47.980+09:00", "text": "로"}
+{"type": "token", "t": 118312, "ts": "2026-10-18T21:28:47.980+09:00", "text": " 발생"}
+{"type": "token", "t": 118312, "ts": "2026-10-18T21:28:47.989+09:00", "text": "한"}
+{"type": "token", "t": 118312, "ts": "2026-10-18T21:28:47.990+09:00", "text": " 손"}
+{"type": "token", "t": 118312, "ts": "2026-10-18T21:28:47.990+09:00", "text": "해"}
+{"type": "token", "t": 118328, "ts": "2026-10-18T21:28:47.996+09:00", "text": "에"}
+{"type": "token", "t": 118328, "ts": "2026-10-18T21:28:48.009+09:00", "text": " 대한"}
+{"type": "token", "t": 118342, "ts": "2026-10-18T21:28:48.015+09:00", "text": " 배"}
+{"type": "token", "t": 118342, "ts": "2026-10-18T21:28:48.015+09:00", "text": "상"}
+{"type": "token", "t": 118342, "ts": "2026-10-18T21:28:48.019+09:00", "text": " 책임"}
+{"type": "token", "t": 118358, "ts": "2026-10-18T21:28:48.031+09:00", "text": "은"}
+{"type": "token", "t": 118375, "ts": "2026-10-18T21:28:48.044+09:00", "text": " 사"}
+{"type": "token", "t": 118390, "ts": "2026-10-18T21:28:48.057+09:00", "text": "전"}
+{"type": "token", "t": 118390, "ts": "2026-10-18T21:28:48.058+09:00", "text": " 약"}
+{"type": "token", "t": 118390, "ts": "2026-10-18T21:28:48.058+09:00", "text": "정"}
+{"type": "token", "t": 118390, "ts": "2026-10-18T21:28:48.067+09:00", "text": "과"}
+{"type": "token", "t": 118405, "ts": "2026-10-18T21:28:48.080+09:00", "text": " 구"}
+{"type": "token", "t": 118421, "ts": "2026-10-18T21:28:48.092+09:00", "text": "별"}
+{"type": "token", "t": 118437, "ts": "2026-10-18T21:28:48.116+09:00", "text": "하여"}
+{"type": "token", "t": 118467, "ts": "2026-10-18T21:28:48.140+09:00", "text": " 구"}
+{"type": "token", "t": 118483, "ts": "2026-10-18T21:28:48.152+09:00", "text": "체"}
+{"type": "token", "t": 118483, "ts": "2026-10-18T21:28:48.154+09:00", "text": "적인"}
+{"type": "token", "t": 118500, "ts": "2026-10-18T21:28:48.166+09:00", "text": " 사"}
+{"type": "token", "t": 118500, "ts": "2026-10-18T21:28:48.180+09:00", "text": "정"}
+{"type": "token", "t": 118515, "ts": "2026-10-18T21:28:48.182+09:00", "text": "에"}
+{"type": "token", "t": 118515, "ts": "2026-10-18T21:28:48.183+09:00", "text": " 따라"}
+{"type": "token", "t": 118515, "ts": "2026-10-18T21:28:48.188+09:00", "text": " 판단"}
+{"type": "token", "t": 118530, "ts": "2026-10-18T21:28:48.199+09:00", "text": "할"}
+{"type": "token", "t": 118530, "ts": "2026-10-18T21:28:48.202+09:00", "text": " 수"}
+{"type": "token", "t": 118546, "ts": "2026-10-18T21:28:48.212+09:00", "text": " 있고"}
+{"type": "token", "t": 118546, "ts": "2026-10-18T21:28:48.224+09:00", "text": ","}
+{"type": "token", "t": 118562, "ts": "2026-10-18T21:28:48.238+09:00", "text": " 그"}
+{"type": "token", "t": 118578, "ts": "2026-10-18T21:28:48.249+09:00", "text": " 손"}
+{"type": "token", "t": 118578, "ts": "2026-10-18T21:28:48.250+09:00", "text": "해"}
+{"type": "token", "t": 118578, "ts": "2026-10-18T21:28:48.251+09:00", "text": "액"}
+{"type": "token", "t": 118592, "ts": "2026-10-18T21:28:48.260+09:00", "text": "을"}
+{"type": "token", "t": 118608, "ts": "2026-10-18T21:28:48.276+09:00", "text": " 임"}
+{"type": "token", "t": 118608, "ts": "2026-10-18T21:28:48.276+09:00", "text": "금"}
+{"type": "token", "t": 118608, "ts": "2026-10-18T21:28:48.277+09:00", "text": "에서"}
+{"type": "token", "t": 118608, "ts": "2026-10-18T21:28:48.283+09:00", "text": " 임"}
+{"type": "token", "t": 118625, "ts": "2026-10-18T21:28:48.299+09:00", "text": "의"}
+{"type": "token", "t": 118625, "ts": "2026-10-18T21:28:48.299+09:00", "text": "로"}
+{"type": "token", "t": 118625, "ts": "2026-10-18T21:28:48.301+09:00", "text": " 공"}
+{"type": "token", "t": 118640, "ts": "2026-10-18T21:28:48.307+09:00", "text": "제"}
+{"type": "token", "t": 118655, "ts": "2026-10-18T21:28:48.333+09:00", "text": "해서"}
+{"type": "token", "t": 118671, "ts": "2026-10-18T21:28:48.345+09:00", "text": "는"}
+{"type": "token", "t": 118671, "ts": "2026-10-18T21:28:48.347+09:00", "text": " 안"}
+{"type": "token", "t": 118671, "ts": "2026-10-18T21:28:48.348+09:00", "text": " 됩니다"}
+{"type": "token", "t": 118687, "ts": "2026-10-18T21:28:48.356+09:00", "text": ".["}
+{"type": "token", "t": 118703, "ts": "2026-10-18T21:28:48.376+09:00", "text": "W"}
+{"type": "token", "t": 118717, "ts": "2026-10-18T21:28:48.388+09:00", "text": "2"}
+{"type": "token", "t": 118717, "ts": "2026-10-18T21:28:48.393+09:00", "text": "]["}
+{"type": "token", "t": 118717, "ts": "2026-10-18T21:28:48.393+09:00", "text": "C"}
+{"type": "token", "t": 118733, "ts": "2026-10-18T21:28:48.403+09:00", "text": "1"}
+{"type": "token", "t": 118733, "ts": "2026-10-18T21:28:48.405+09:00", "text": "]\n\n"}
+{"type": "token", "t": 118733, "ts": "2026-10-18T21:28:48.405+09:00", "text": "###"}
+{"type": "token", "t": 118750, "ts": "2026-10-18T21:28:48.425+09:00", "text": " 🟡"}
+{"type": "token", "t": 118750, "ts": "2026-10-18T21:28:48.425+09:00", "text": " 수"}
+{"type": "token", "t": 118765, "ts": "2026-10-18T21:28:48.432+09:00", "text": "습"}
+{"type": "token", "t": 118780, "ts": "2026-10-18T21:28:48.458+09:00", "text": " 종료"}
+{"type": "token", "t": 118796, "ts": "2026-10-18T21:28:48.474+09:00", "text": " 후"}
+{"type": "token", "t": 118796, "ts": "2026-10-18T21:28:48.475+09:00", "text": " 본"}
+{"type": "token", "t": 118796, "ts": "2026-10-18T21:28:48.475+09:00", "text": "채"}
+{"type": "token", "t": 118796, "ts": "2026-10-18T21:28:48.475+09:00", "text": "용"}
+{"type": "token", "t": 118812, "ts": "2026-10-18T21:28:48.483+09:00", "text": " 거"}
+{"type": "token", "t": 118812, "ts": "2026-10-18T21:28:48.483+09:00", "text": "부"}
+{"type": "token", "t": 118842, "ts": "2026-10-18T21:28:48.516+09:00", "text": " 및"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.528+09:00", "text": " 해"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.529+09:00", "text": "고"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.532+09:00", "text": " 절"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.537+09:00", "text": "차"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.537+09:00", "text": "\n"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.537+09:00", "text": "제"}
+{"type": "token", "t": 118858, "ts": "2026-10-18T21:28:48.540+09:00", "text": "7"}
+{"type": "token", "t": 118875, "ts": "2026-10-18T21:28:48.554+09:00", "text": "조"}
+{"type": "token", "t": 118875, "ts": "2026-10-18T21:28:48.555+09:00", "text": "는"}
+{"type": "token", "t": 118875, "ts": "2026-10-18T21:28:48.555+09:00", "text": " 수"}
+{"type": "token", "t": 118890, "ts": "2026-10-18T21:28:48.562+09:00", "text": "습"}
+{"type": "token", "t": 118905, "ts": "2026-10-18T21:28:48.572+09:00", "text": "기간"}
+{"type": "token", "t": 118905, "ts": "2026-10-18T21:28:48.585+09:00", "text": " 종료"}
+{"type": "token", "t": 118921, "ts": "2026-10-18T21:28:48.598+09:00", "text": " 후"}
+{"type": "token", "t": 118921, "ts": "2026-10-18T21:28:48.600+09:00", "text": " 정"}
+{"type": "token", "t": 118921, "ts": "2026-10-18T21:28:48.600+09:00", "text": "당"}
+{"type": "token", "t": 118937, "ts": "2026-10-18T21:28:48.607+09:00", "text": "한"}
+{"type": "token", "t": 118953, "ts": "2026-10-18T21:28:48.622+09:00", "text": " 이유"}
+{"type": "token", "t": 118953, "ts": "2026-10-18T21:28:48.623+09:00", "text": " 없이"}
+{"type": "token", "t": 118953, "ts": "2026-10-18T21:28:48.623+09:00", "text": " 본"}
+{"type": "token", "t": 118953, "ts": "2026-10-18T21:28:48.632+09:00", "text": "채"}
+{"type": "token", "t": 118967, "ts": "2026-10-18T21:28:48.646+09:00", "text": "용"}
+{"type": "token", "t": 118967, "ts": "2026-10-18T21:28:48.648+09:00", "text": "을"}
+{"type": "token", "t": 118967, "ts": "2026-10-18T21:28:48.648+09:00", "text": " 거"}
+{"type": "token", "t": 118983, "ts": "2026-10-18T21:28:48.655+09:00", "text": "부"}
+{"type": "token", "t": 119000, "ts": "2026-10-18T21:28:48.678+09:00", "text": "할"}
+{"type": "token", "t": 119015, "ts": "2026-10-18T21:28:48.694+09:00", "text": " 수"}
+{"type": "token", "t": 119015, "ts": "2026-10-18T21:28:48.694+09:00", "text": " 없"}
+{"type": "token", "t": 119015, "ts": "2026-10-18T21:28:48.694+09:00", "text": "다고"}
+{"type": "token", "t": 119046, "ts": "2026-10-18T21:28:48.717+09:00", "text": " 정"}
+{"type": "token", "t": 119062, "ts": "2026-10-18T21:28:48.731+09:00", "text": "하고"}
+{"type": "token", "t": 119062, "ts": "2026-10-18T21:28:48.731+09:00", "text": " 있습니다"}
+{"type": "token", "t": 119062, "ts": "2026-10-18T21:28:48.733+09:00", "text": ".["}
+{"type": "token", "t": 119062, "ts": "2026-10-18T21:28:48.733+09:00", "text": "C"}
+{"type": "token", "t": 119062, "ts": "2026-10-18T21:28:48.737+09:00", "text": "2"}
+{"type": "token", "t": 119062, "ts": "2026-10-18T21:28:48.737+09:00", "text": "]"}
+{"type": "token", "t": 119092, "ts": "2026-10-18T21:28:48.760+09:00", "text": " 제"}
+{"type": "token", "t": 119092, "ts": "2026-10-18T21:28:48.772+09:00", "text": "12"}
+{"type": "token", "t": 119108, "ts": "2026-10-18T21:28:48.775+09:00", "text": "조"}
+{"type": "token", "t": 119108, "ts": "2026-10-18T21:28:48.775+09:00", "text": "도"}
+{"type": "token", "t": 119108, "ts": "2026-10-18T21:28:48.782+09:00", "text": " 정"}
+{"type": "token", "t": 119108, "ts": "2026-10-18T21:28:48.784+09:00", "text": "당"}
+{"type": "token", "t": 119108, "ts": "2026-10-18T21:28:48.784+09:00", "text": "한"}
+{"type": "token", "t": 119125, "ts": "2026-10-18T21:28:48.793+09:00", "text": " 이유"}
+{"type": "token", "t": 119155, "ts": "2026-10-18T21:28:48.830+09:00", "text": " 없는"}
+{"type": "token", "t": 119171, "ts": "2026-10-18T21:28:48.843+09:00", "text": " 해"}
+{"type": "token", "t": 119171, "ts": "2026-10-18T21:28:48.845+09:00", "text": "고"}
+{"type": "token", "t": 119171, "ts": "2026-10-18T21:28:48.845+09:00", "text": "를"}
+{"type": "token", "t": 119187, "ts": "2026-10-18T21:28:48.854+09:00", "text": " 금"}
+{"type": "token", "t": 119203, "ts": "2026-10-18T21:28:48.869+09:00", "text": "지"}
+{"type": "token", "t": 119203, "ts": "2026-10-18T21:28:48.879+09:00", "text": "하고"}
+{"type": "token", "t": 119203, "ts": "2026-10-18T21:28:48.879+09:00", "text": " 해"}
+{"type": "token", "t": 119203, "ts": "2026-10-18T21:28:48.880+09:00", "text": "고"}
+{"type": "token", "t": 119217, "ts": "2026-10-18T21:28:48.885+09:00", "text": "사"}
+{"type": "token", "t": 119217, "ts": "2026-10-18T21:28:48.899+09:00", "text": "유"}
+{"type": "token", "t": 119217, "ts": "2026-10-18T21:28:48.899+09:00", "text": "와"}
+{"type": "token", "t": 119233, "ts": "2026-10-18T21:28:48.913+09:00", "text": " 해"}
+{"type": "token", "t": 119250, "ts": "2026-10-18T21:28:48.926+09:00", "text": "고"}
+{"type": "token", "t": 119250, "ts": "2026-10-18T21:28:48.927+09:00", "text": "시"}
+{"type": "token", "t": 119250, "ts": "2026-10-18T21:28:48.928+09:00", "text": "기를"}
+{"type": "token", "t": 119265, "ts": "2026-10-18T21:28:48.942+09:00", "text": " 서"}
+{"type": "token", "t": 119280, "ts": "2026-10-18T21:28:48.955+09:00", "text": "면"}
+{"type": "token", "t": 119280, "ts": "2026-10-18T21:28:48.957+09:00", "text": "으로"}
+{"type": "token", "t": 119280, "ts": "2026-10-18T21:28:48.958+09:00", "text": " 통"}
+{"type": "token", "t": 119280, "ts": "2026-10-18T21:28:48.958+09:00", "text": "지"}
+{"type": "token", "t": 119296, "ts": "2026-10-18T21:28:48.966+09:00", "text": "하도록"}
+{"type": "token", "t": 119312, "ts": "2026-10-18T21:28:48.979+09:00", "text": " 정"}
+{"type": "token", "t": 119312, "ts": "2026-10-18T21:28:48.990+09:00", "text": "하고"}
+{"type": "token", "t": 119328, "ts": "2026-10-18T21:28:49.006+09:00", "text": " 있어"}
+{"type": "token", "t": 119342, "ts": "2026-10-18T21:28:49.018+09:00", "text": ","}
+{"type": "token", "t": 119342, "ts": "2026-10-18T21:28:49.020+09:00", "text": " 수"}
+{"type": "token", "t": 119342, "ts": "2026-10-18T21:28:49.022+09:00", "text": "습"}
+{"type": "token", "t": 119342, "ts": "2026-10-18T21:28:49.024+09:00", "text": " 종료"}
+{"type": "token", "t": 119358, "ts": "2026-10-18T21:28:49.035+09:00", "text": " 후"}
+{"type": "token", "t": 119375, "ts": "2026-10-18T21:28:49.047+09:00", "text": "의"}
+{"type": "token", "t": 119405, "ts": "2026-10-18T21:28:49.076+09:00", "text": " 인"}
+{"type": "token", "t": 119421, "ts": "2026-10-18T21:28:49.088+09:00", "text": "사"}
+{"type": "token", "t": 119421, "ts": "2026-10-18T21:28:49.092+09:00", "text": " 결정"}
+{"type": "token", "t": 119437, "ts": "2026-10-18T21:28:49.105+09:00", "text": "도"}
+{"type": "token", "t": 119437, "ts": "2026-10-18T21:28:49.106+09:00", "text": " 정"}
+{"type": "token", "t": 119437, "ts": "2026-10-18T21:28:49.107+09:00", "text": "당"}
+{"type": "token", "t": 119437, "ts": "2026-10-18T21:28:49.116+09:00", "text": "한"}
+{"type": "token", "t": 119453, "ts": "2026-10-18T21:28:49.130+09:00", "text": " 이유"}
+{"type": "token", "t": 119453, "ts": "2026-10-18T21:28:49.130+09:00", "text": "와"}
+{"type": "token", "t": 119467, "ts": "2026-10-18T21:28:49.139+09:00", "text": " 관련"}
+{"type": "token", "t": 119483, "ts": "2026-10-18T21:28:49.151+09:00", "text": " 절"}
+{"type": "token", "t": 119483, "ts": "2026-10-18T21:28:49.156+09:00", "text": "차"}
+{"type": "token", "t": 119483, "ts": "2026-10-18T21:28:49.156+09:00", "text": "를"}
+{"type": "token", "t": 119483, "ts": "2026-10-18T21:28:49.161+09:00", "text": " 고려"}
+{"type": "token", "t": 119530, "ts": "2026-10-18T21:28:49.208+09:00", "text": "해"}
+{"type": "token", "t": 119546, "ts": "2026-10-18T21:28:49.222+09:00", "text": " 운영"}
+{"type": "token", "t": 119546, "ts": "2026-10-18T21:28:49.223+09:00", "text": "할"}
+{"type": "token", "t": 119546, "ts": "2026-10-18T21:28:49.223+09:00", "text": " 필요"}
+{"type": "token", "t": 119546, "ts": "2026-10-18T21:28:49.224+09:00", "text": "가"}
+{"type": "token", "t": 119562, "ts": "2026-10-18T21:28:49.229+09:00", "text": " 있습니다"}
+{"type": "token", "t": 119562, "ts": "2026-10-18T21:28:49.231+09:00", "text": ".["}
+{"type": "token", "t": 119562, "ts": "2026-10-18T21:28:49.234+09:00", "text": "C"}
+{"type": "token", "t": 119562, "ts": "2026-10-18T21:28:49.234+09:00", "text": "3"}
+{"type": "token", "t": 119578, "ts": "2026-10-18T21:28:49.249+09:00", "text": "]["}
+{"type": "token", "t": 119578, "ts": "2026-10-18T21:28:49.249+09:00", "text": "L"}
+{"type": "token", "t": 119578, "ts": "2026-10-18T21:28:49.250+09:00", "text": "3"}
+{"type": "token", "t": 119578, "ts": "2026-10-18T21:28:49.252+09:00", "text": "]\n\n"}
+{"type": "token", "t": 119592, "ts": "2026-10-18T21:28:49.265+09:00", "text": "다"}
+{"type": "token", "t": 119592, "ts": "2026-10-18T21:28:49.268+09:00", "text": "만"}
+{"type": "token", "t": 119592, "ts": "2026-10-18T21:28:49.268+09:00", "text": " 제"}
+{"type": "token", "t": 119608, "ts": "2026-10-18T21:28:49.276+09:00", "text": "12"}
+{"type": "token", "t": 119608, "ts": "2026-10-18T21:28:49.290+09:00", "text": "조"}
+{"type": "token", "t": 119608, "ts": "2026-10-18T21:28:49.290+09:00", "text": "의"}
+{"type": "token", "t": 119655, "ts": "2026-10-18T21:28:49.324+09:00", "text": " "}
+{"type": "token", "t": 119671, "ts": "2026-10-18T21:28:49.338+09:00", "text": "30"}
+{"type": "token", "t": 119671, "ts": "2026-10-18T21:28:49.340+09:00", "text": "일"}
+{"type": "token", "t": 119671, "ts": "2026-10-18T21:28:49.346+09:00", "text": " 전"}
+{"type": "token", "t": 119671, "ts": "2026-10-18T21:28:49.346+09:00", "text": " 해"}
+{"type": "token", "t": 119687, "ts": "2026-10-18T21:28:49.360+09:00", "text": "고"}
+{"type": "token", "t": 119687, "ts": "2026-10-18T21:28:49.361+09:00", "text": "예"}
+{"type": "token", "t": 119687, "ts": "2026-10-18T21:28:49.362+09:00", "text": "고"}
+{"type": "token", "t": 119703, "ts": "2026-10-18T21:28:49.374+09:00", "text": " 문"}
+{"type": "token", "t": 119717, "ts": "2026-10-18T21:28:49.384+09:00", "text": "구"}
+{"type": "token", "t": 119717, "ts": "2026-10-18T21:28:49.386+09:00", "text": "에는"}
+{"type": "token", "t": 119717, "ts": "2026-10-18T21:28:49.394+09:00", "text": " 법"}
+{"type": "token", "t": 119750, "ts": "2026-10-18T21:28:49.417+09:00", "text": "정"}
+{"type": "token", "t": 119765, "ts": "2026-10-18T21:28:49.440+09:00", "text": " 예"}
+{"type": "token", "t": 119780, "ts": "2026-10-18T21:28:49.452+09:00", "text": "외"}
+{"type": "token", "t": 119780, "ts": "2026-10-18T21:28:49.454+09:00", "text": "가"}
+{"type": "token", "t": 119796, "ts": "2026-10-18T21:28:49.466+09:00", "text": " 반"}
+{"type": "token", "t": 119812, "ts": "2026-10-18T21:28:49.479+09:00", "text": "영"}
+{"type": "token", "t": 119812, "ts": "2026-10-18T21:28:49.480+09:00", "text": "되어"}
+{"type": "token", "t": 119812, "ts": "2026-10-18T21:28:49.480+09:00", "text": " 있"}
+{"type": "token", "t": 119812, "ts": "2026-10-18T21:28:49.485+09:00", "text": "지"}
+{"type": "token", "t": 119828, "ts": "2026-10-18T21:28:49.500+09:00", "text": " 않습니다"}
+{"type": "token", "t": 119828, "ts": "2026-10-18T21:28:49.500+09:00", "text": ".["}
+{"type": "token", "t": 119828, "ts": "2026-10-18T21:28:49.508+09:00", "text": "C"}
+{"type": "token", "t": 119842, "ts": "2026-10-18T21:28:49.522+09:00", "text": "3"}
+{"type": "token", "t": 119842, "ts": "2026-10-18T21:28:49.524+09:00", "text": "]["}
+{"type": "token", "t": 119842, "ts": "2026-10-18T21:28:49.524+09:00", "text": "L"}
+{"type": "token", "t": 119858, "ts": "2026-10-18T21:28:49.532+09:00", "text": "4"}
+{"type": "token", "t": 119875, "ts": "2026-10-18T21:28:49.548+09:00", "text": "]"}
+{"type": "token", "t": 119875, "ts": "2026-10-18T21:28:49.549+09:00", "text": " 근"}
+{"type": "token", "t": 119875, "ts": "2026-10-18T21:28:49.549+09:00", "text": "로"}
+{"type": "token", "t": 119890, "ts": "2026-10-18T21:28:49.556+09:00", "text": "자가"}
+{"type": "token", "t": 119890, "ts": "2026-10-18T21:28:49.568+09:00", "text": " 계속"}
+{"type": "token", "t": 119890, "ts": "2026-10-18T21:28:49.570+09:00", "text": " 근"}
+{"type": "token", "t": 119890, "ts": "2026-10-18T21:28:49.570+09:00", "text": "로"}
+{"type": "token", "t": 119905, "ts": "2026-10-18T21:28:49.582+09:00", "text": "한"}
+{"type": "token", "t": 119921, "ts": "2026-10-18T21:28:49.598+09:00", "text": " 기간"}
+{"type": "token", "t": 119921, "ts": "2026-10-18T21:28:49.599+09:00", "text": "이"}
+{"type": "token", "t": 119921, "ts": "2026-10-18T21:28:49.599+09:00", "text": " "}
+{"type": "token", "t": 119921, "ts": "2026-10-18T21:28:49.602+09:00", "text": "3"}
+{"type": "token", "t": 119937, "ts": "2026-10-18T21:28:49.615+09:00", "text": "개월"}
+{"type": "token", "t": 119937, "ts": "2026-10-18T21:28:49.616+09:00", "text": " 미"}
+{"type": "token", "t": 119937, "ts": "2026-10-18T21:28:49.617+09:00", "text": "만"}
+{"type": "token", "t": 119953, "ts": "2026-10-18T21:28:49.625+09:00", "text": "인"}
+{"type": "token", "t": 119967, "ts": "2026-10-18T21:28:49.642+09:00", "text": " 경우"}
+{"type": "token", "t": 119967, "ts": "2026-10-18T21:28:49.642+09:00", "text": " 등"}
+{"type": "token", "t": 119967, "ts": "2026-10-18T21:28:49.642+09:00", "text": "에는"}
+{"type": "token", "t": 119967, "ts": "2026-10-18T21:28:49.648+09:00", "text": " 해"}
+{"type": "token", "t": 119983, "ts": "2026-10-18T21:28:49.661+09:00", "text": "고"}
+{"type": "token", "t": 119983, "ts": "2026-10-18T21:28:49.664+09:00", "text": "예"}
+{"type": "token", "t": 119983, "ts": "2026-10-18T21:28:49.664+09:00", "text": "고"}
+{"type": "token", "t": 120000, "ts": "2026-10-18T21:28:49.671+09:00", "text": " 의"}
+{"type": "token", "t": 120015, "ts": "2026-10-18T21:28:49.682+09:00", "text": "무"}
+{"type": "token", "t": 120015, "ts": "2026-10-18T21:28:49.696+09:00", "text": "의"}
+{"type": "token", "t": 120030, "ts": "2026-10-18T21:28:49.709+09:00", "text": " 예"}
+{"type": "token", "t": 120030, "ts": "2026-10-18T21:28:49.711+09:00", "text": "외"}
+{"type": "token", "t": 120030, "ts": "2026-10-18T21:28:49.711+09:00", "text": "가"}
+{"type": "token", "t": 120046, "ts": "2026-10-18T21:28:49.720+09:00", "text": " 있으"}
+{"type": "token", "t": 120062, "ts": "2026-10-18T21:28:49.737+09:00", "text": "므로"}
+{"type": "token", "t": 120062, "ts": "2026-10-18T21:28:49.738+09:00", "text": ","}
+{"type": "token", "t": 120062, "ts": "2026-10-18T21:28:49.738+09:00", "text": " 계약"}
+{"type": "token", "t": 120062, "ts": "2026-10-18T21:28:49.740+09:00", "text": "서"}
+{"type": "token", "t": 120078, "ts": "2026-10-18T21:28:49.752+09:00", "text": " 문"}
+{"type": "token", "t": 120078, "ts": "2026-10-18T21:28:49.756+09:00", "text": "구"}
+{"type": "token", "t": 120078, "ts": "2026-10-18T21:28:49.756+09:00", "text": "만"}
+{"type": "token", "t": 120092, "ts": "2026-10-18T21:28:49.766+09:00", "text": "으로"}
+{"type": "token", "t": 120108, "ts": "2026-10-18T21:28:49.778+09:00", "text": " 모든"}
+{"type": "token", "t": 120108, "ts": "2026-10-18T21:28:49.787+09:00", "text": " 경우"}
+{"type": "token", "t": 120108, "ts": "2026-10-18T21:28:49.788+09:00", "text": "에"}
+{"type": "token", "t": 120108, "ts": "2026-10-18T21:28:49.788+09:00", "text": " 예"}
+{"type": "token", "t": 120140, "ts": "2026-10-18T21:28:49.814+09:00", "text": "고"}
+{"type": "token", "t": 120155, "ts": "2026-10-18T21:28:49.834+09:00", "text": " 의"}
+{"type": "token", "t": 120171, "ts": "2026-10-18T21:28:49.847+09:00", "text": "무"}
+{"type": "token", "t": 120171, "ts": "2026-10-18T21:28:49.849+09:00", "text": "가"}
+{"type": "token", "t": 120171, "ts": "2026-10-18T21:28:49.849+09:00", "text": " 있다고"}
+{"type": "token", "t": 120187, "ts": "2026-10-18T21:28:49.858+09:00", "text": " 오"}
+{"type": "token", "t": 120203, "ts": "2026-10-18T21:28:49.874+09:00", "text": "해"}
+{"type": "token", "t": 120203, "ts": "2026-10-18T21:28:49.874+09:00", "text": "하지"}
+{"type": "token", "t": 120203, "ts": "2026-10-18T21:28:49.874+09:00", "text": " 않"}
+{"type": "token", "t": 120217, "ts": "2026-10-18T21:28:49.893+09:00", "text": "도록"}
+{"type": "token", "t": 120233, "ts": "2026-10-18T21:28:49.904+09:00", "text": " 유"}
+{"type": "token", "t": 120250, "ts": "2026-10-18T21:28:49.917+09:00", "text": "의"}
+{"type": "token", "t": 120250, "ts": "2026-10-18T21:28:49.918+09:00", "text": "해야"}
+{"type": "token", "t": 120250, "ts": "2026-10-18T21:28:49.919+09:00", "text": " 합니다"}
+{"type": "token", "t": 120250, "ts": "2026-10-18T21:28:49.929+09:00", "text": ".["}
+{"type": "token", "t": 120265, "ts": "2026-10-18T21:28:49.944+09:00", "text": "L"}
+{"type": "token", "t": 120265, "ts": "2026-10-18T21:28:49.946+09:00", "text": "4"}
+{"type": "token", "t": 120265, "ts": "2026-10-18T21:28:49.946+09:00", "text": "]\n\n"}
+{"type": "token", "t": 120280, "ts": "2026-10-18T21:28:49.952+09:00", "text": "##"}
+{"type": "token", "t": 120296, "ts": "2026-10-18T21:28:49.976+09:00", "text": " 이렇게"}
+{"type": "token", "t": 120296, "ts": "2026-10-18T21:28:49.976+09:00", "text": " 해"}
+{"type": "token", "t": 120296, "ts": "2026-10-18T21:28:49.977+09:00", "text": "보"}
+{"type": "token", "t": 120296, "ts": "2026-10-18T21:28:49.977+09:00", "text": "세요"}
+{"type": "token", "t": 120328, "ts": "2026-10-18T21:28:50.006+09:00", "text": "\n"}
+{"type": "token", "t": 120328, "ts": "2026-10-18T21:28:50.006+09:00", "text": "-"}
+{"type": "token", "t": 120342, "ts": "2026-10-18T21:28:50.021+09:00", "text": " 수"}
+{"type": "token", "t": 120358, "ts": "2026-10-18T21:28:50.035+09:00", "text": "습"}
+{"type": "token", "t": 120358, "ts": "2026-10-18T21:28:50.035+09:00", "text": " 중"}
+{"type": "token", "t": 120375, "ts": "2026-10-18T21:28:50.052+09:00", "text": " 최"}
+{"type": "token", "t": 120390, "ts": "2026-10-18T21:28:50.057+09:00", "text": "저"}
+{"type": "token", "t": 120390, "ts": "2026-10-18T21:28:50.058+09:00", "text": "임"}
+{"type": "token", "t": 120390, "ts": "2026-10-18T21:28:50.067+09:00", "text": "금을"}
+{"type": "token", "t": 120405, "ts": "2026-10-18T21:28:50.079+09:00", "text": " 감"}
+{"type": "token", "t": 120405, "ts": "2026-10-18T21:28:50.081+09:00", "text": "액"}
+{"type": "token", "t": 120405, "ts": "2026-10-18T21:28:50.082+09:00", "text": "하려"}
+{"type": "token", "t": 120421, "ts": "2026-10-18T21:28:50.089+09:00", "text": "면"}
+{"type": "token", "t": 120421, "ts": "2026-10-18T21:28:50.100+09:00", "text": " 계약"}
+{"type": "token", "t": 120437, "ts": "2026-10-18T21:28:50.115+09:00", "text": "기간"}
+{"type": "token", "t": 120453, "ts": "2026-10-18T21:28:50.128+09:00", "text": "이"}
+{"type": "token", "t": 120453, "ts": "2026-10-18T21:28:50.129+09:00", "text": " "}
+{"type": "token", "t": 120453, "ts": "2026-10-18T21:28:50.130+09:00", "text": "1"}
+{"type": "token", "t": 120467, "ts": "2026-10-18T21:28:50.136+09:00", "text": "년"}
+{"type": "token", "t": 120483, "ts": "2026-10-18T21:28:50.150+09:00", "text": " 이상"}
+{"type": "token", "t": 120483, "ts": "2026-10-18T21:28:50.151+09:00", "text": "인지"}
+{"type": "token", "t": 120483, "ts": "2026-10-18T21:28:50.151+09:00", "text": ","}
+{"type": "token", "t": 120483, "ts": "2026-10-18T21:28:50.160+09:00", "text": " 감"}
+{"type": "token", "t": 120500, "ts": "2026-10-18T21:28:50.171+09:00", "text": "액"}
+{"type": "token", "t": 120515, "ts": "2026-10-18T21:28:50.184+09:00", "text": " 기간"}
+{"type": "token", "t": 120515, "ts": "2026-10-18T21:28:50.196+09:00", "text": "이"}
+{"type": "token", "t": 120530, "ts": "2026-10-18T21:28:50.197+09:00", "text": " 수"}
+{"type": "token", "t": 120530, "ts": "2026-10-18T21:28:50.198+09:00", "text": "습"}
+{"type": "token", "t": 120530, "ts": "2026-10-18T21:28:50.205+09:00", "text": " 시작"}
+{"type": "token", "t": 120546, "ts": "2026-10-18T21:28:50.217+09:00", "text": "일부터"}
+{"type": "token", "t": 120546, "ts": "2026-10-18T21:28:50.219+09:00", "text": " "}
+{"type": "token", "t": 120546, "ts": "2026-10-18T21:28:50.219+09:00", "text": "3"}
+{"type": "token", "t": 120562, "ts": "2026-10-18T21:28:50.230+09:00", "text": "개월"}
+{"type": "token", "t": 120562, "ts": "2026-10-18T21:28:50.241+09:00", "text": " 이"}
+{"type": "token", "t": 120578, "ts": "2026-10-18T21:28:50.245+09:00", "text": "내"}
+{"type": "token", "t": 120578, "ts": "2026-10-18T21:28:50.245+09:00", "text": "인지"}
+{"type": "token", "t": 120578, "ts": "2026-10-18T21:28:50.253+09:00", "text": ","}
+{"type": "token", "t": 120608, "ts": "2026-10-18T21:28:50.278+09:00", "text": " 해당"}
+{"type": "token", "t": 120625, "ts": "2026-10-18T21:28:50.300+09:00", "text": " 업무"}
+{"type": "token", "t": 120640, "ts": "2026-10-18T21:28:50.314+09:00", "text": "가"}
+{"type": "token", "t": 120640, "ts": "2026-10-18T21:28:50.316+09:00", "text": " 단"}
+{"type": "token", "t": 120640, "ts": "2026-10-18T21:28:50.316+09:00", "text": "순"}
+{"type": "token", "t": 120655, "ts": "2026-10-18T21:28:50.323+09:00", "text": "노"}
+{"type": "token", "t": 120655, "ts": "2026-10-18T21:28:50.336+09:00", "text": "무"}
+{"type": "token", "t": 120671, "ts": "2026-10-18T21:28:50.352+09:00", "text": " 직"}
+{"type": "token", "t": 120687, "ts": "2026-10-18T21:28:50.359+09:00", "text": "종"}
+{"type": "token", "t": 120687, "ts": "2026-10-18T21:28:50.359+09:00", "text": "인지"}
+{"type": "token", "t": 120703, "ts": "2026-10-18T21:28:50.369+09:00", "text": " 먼저"}
+{"type": "token", "t": 120703, "ts": "2026-10-18T21:28:50.384+09:00", "text": " 확인"}
+{"type": "token", "t": 120717, "ts": "2026-10-18T21:28:50.386+09:00", "text": "하세요"}
+{"type": "token", "t": 120717, "ts": "2026-10-18T21:28:50.386+09:00", "text": ".["}
+{"type": "token", "t": 120717, "ts": "2026-10-18T21:28:50.391+09:00", "text": "L"}
+{"type": "token", "t": 120733, "ts": "2026-10-18T21:28:50.403+09:00", "text": "5"}
+{"type": "token", "t": 120733, "ts": "2026-10-18T21:28:50.404+09:00", "text": "]["}
+{"type": "token", "t": 120733, "ts": "2026-10-18T21:28:50.404+09:00", "text": "L"}
+{"type": "token", "t": 120733, "ts": "2026-10-18T21:28:50.414+09:00", "text": "6"}
+{"type": "token", "t": 120750, "ts": "2026-10-18T21:28:50.426+09:00", "text": "]["}
+{"type": "token", "t": 120750, "ts": "2026-10-18T21:28:50.429+09:00", "text": "W"}
+{"type": "token", "t": 120750, "ts": "2026-10-18T21:28:50.429+09:00", "text": "1"}
+{"type": "token", "t": 120765, "ts": "2026-10-18T21:28:50.439+09:00", "text": "]\n"}
+{"type": "token", "t": 120765, "ts": "2026-10-18T21:28:50.440+09:00", "text": "-"}
+{"type": "token", "t": 120796, "ts": "2026-10-18T21:28:50.465+09:00", "text": " 감"}
+{"type": "token", "t": 120796, "ts": "2026-10-18T21:28:50.475+09:00", "text": "액"}
+{"type": "token", "t": 120812, "ts": "2026-10-18T21:28:50.484+09:00", "text": " 요"}
+{"type": "token", "t": 120828, "ts": "2026-10-18T21:28:50.497+09:00", "text": "건"}
+{"type": "token", "t": 120828, "ts": "2026-10-18T21:28:50.497+09:00", "text": "이"}
+{"type": "token", "t": 120828, "ts": "2026-10-18T21:28:50.507+09:00", "text": " 하나"}
+{"type": "token", "t": 120842, "ts": "2026-10-18T21:28:50.519+09:00", "text": "라도"}
+{"type": "token", "t": 120858, "ts": "2026-10-18T21:28:50.530+09:00", "text": " 맞"}
+{"type": "token", "t": 120858, "ts": "2026-10-18T21:28:50.539+09:00", "text": "지"}
+{"type": "token", "t": 120890, "ts": "2026-10-18T21:28:50.570+09:00", "text": " 않"}
+{"type": "token", "t": 120905, "ts": "2026-10-18T21:28:50.585+09:00", "text": "으면"}
+{"type": "token", "t": 120905, "ts": "2026-10-18T21:28:50.586+09:00", "text": " 최"}
+{"type": "token", "t": 120905, "ts": "2026-10-18T21:28:50.586+09:00", "text": "저"}
+{"type": "token", "t": 120921, "ts": "2026-10-18T21:28:50.593+09:00", "text": "임"}
+{"type": "token", "t": 120937, "ts": "2026-10-18T21:28:50.618+09:00", "text": "금"}
+{"type": "token", "t": 120953, "ts": "2026-10-18T21:28:50.629+09:00", "text": " 전"}
+{"type": "token", "t": 120953, "ts": "2026-10-18T21:28:50.631+09:00", "text": "액"}
+{"type": "token", "t": 120967, "ts": "2026-10-18T21:28:50.640+09:00", "text": " 이상"}
+{"type": "token", "t": 120983, "ts": "2026-10-18T21:28:50.655+09:00", "text": "을"}
+{"type": "token", "t": 120983, "ts": "2026-10-18T21:28:50.655+09:00", "text": " 지급"}
+{"type": "token", "t": 121000, "ts": "2026-10-18T21:28:50.669+09:00", "text": "하도록"}
+{"type": "token", "t": 121015, "ts": "2026-10-18T21:28:50.690+09:00", "text": " 급"}
+{"type": "token", "t": 121030, "ts": "2026-10-18T21:28:50.702+09:00", "text": "여"}
+{"type": "token", "t": 121046, "ts": "2026-10-18T21:28:50.715+09:00", "text": " 산"}
+{"type": "token", "t": 121062, "ts": "2026-10-18T21:28:50.728+09:00", "text": "정"}
+{"type": "token", "t": 121062, "ts": "2026-10-18T21:28:50.729+09:00", "text": "과"}
+{"type": "token", "t": 121062, "ts": "2026-10-18T21:28:50.729+09:00", "text": " 근"}
+{"type": "token", "t": 121062, "ts": "2026-10-18T21:28:50.739+09:00", "text": "태"}
+{"type": "token", "t": 121078, "ts": "2026-10-18T21:28:50.749+09:00", "text": "·"}
+{"type": "token", "t": 121092, "ts": "2026-10-18T21:28:50.762+09:00", "text": "급"}
+{"type": "token", "t": 121092, "ts": "2026-10-18T21:28:50.774+09:00", "text": "여"}
+{"type": "token", "t": 121108, "ts": "2026-10-18T21:28:50.785+09:00", "text": " 시스템"}
+{"type": "token", "t": 121125, "ts": "2026-10-18T21:28:50.796+09:00", "text": "을"}
+{"type": "token", "t": 121140, "ts": "2026-10-18T21:28:50.809+09:00", "text": " 점"}
+{"type": "token", "t": 121140, "ts": "2026-10-18T21:28:50.821+09:00", "text": "검"}
+{"type": "token", "t": 121155, "ts": "2026-10-18T21:28:50.824+09:00", "text": "하세요"}
+{"type": "token", "t": 121155, "ts": "2026-10-18T21:28:50.824+09:00", "text": ".["}
+{"type": "token", "t": 121155, "ts": "2026-10-18T21:28:50.831+09:00", "text": "C"}
+{"type": "token", "t": 121171, "ts": "2026-10-18T21:28:50.847+09:00", "text": "1"}
+{"type": "token", "t": 121171, "ts": "2026-10-18T21:28:50.848+09:00", "text": "]["}
+{"type": "token", "t": 121171, "ts": "2026-10-18T21:28:50.848+09:00", "text": "L"}
+{"type": "token", "t": 121187, "ts": "2026-10-18T21:28:50.854+09:00", "text": "5"}
+{"type": "token", "t": 121187, "ts": "2026-10-18T21:28:50.867+09:00", "text": "]["}
+{"type": "token", "t": 121203, "ts": "2026-10-18T21:28:50.871+09:00", "text": "W"}
+{"type": "token", "t": 121203, "ts": "2026-10-18T21:28:50.871+09:00", "text": "1"}
+{"type": "token", "t": 121203, "ts": "2026-10-18T21:28:50.880+09:00", "text": "]\n"}
+{"type": "token", "t": 121203, "ts": "2026-10-18T21:28:50.882+09:00", "text": "-"}
+{"type": "token", "t": 121217, "ts": "2026-10-18T21:28:50.891+09:00", "text": " 위"}
+{"type": "token", "t": 121217, "ts": "2026-10-18T21:28:50.893+09:00", "text": "약"}
+{"type": "token", "t": 121233, "ts": "2026-10-18T21:28:50.901+09:00", "text": "금"}
+{"type": "token", "t": 121250, "ts": "2026-10-18T21:28:50.924+09:00", "text": ","}
+{"type": "token", "t": 121280, "ts": "2026-10-18T21:28:50.950+09:00", "text": " 조"}
+{"type": "token", "t": 121280, "ts": "2026-10-18T21:28:50.950+09:00", "text": "기"}
+{"type": "token", "t": 121296, "ts": "2026-10-18T21:28:50.969+09:00", "text": " 퇴"}
+{"type": "token", "t": 121312, "ts": "2026-10-18T21:28:50.983+09:00", "text": "사"}
+{"type": "token", "t": 121328, "ts": "2026-10-18T21:28:50.996+09:00", "text": " 배"}
+{"type": "token", "t": 121342, "ts": "2026-10-18T21:28:51.010+09:00", "text": "상"}
+{"type": "token", "t": 121342, "ts": "2026-10-18T21:28:51.011+09:00", "text": "금"}
+{"type": "token", "t": 121342, "ts": "2026-10-18T21:28:51.011+09:00", "text": " 등"}
+{"type": "token", "t": 121342, "ts": "2026-10-18T21:28:51.019+09:00", "text": " 근"}
+{"type": "token", "t": 121358, "ts": "2026-10-18T21:28:51.031+09:00", "text": "로"}
+{"type": "token", "t": 121358, "ts": "2026-10-18T21:28:51.033+09:00", "text": "계"}
+{"type": "token", "t": 121358, "ts": "2026-10-18T21:28:51.033+09:00", "text": "약"}
+{"type": "token", "t": 121375, "ts": "2026-10-18T21:28:51.045+09:00", "text": " 불"}
+{"type": "token", "t": 121390, "ts": "2026-10-18T21:28:51.059+09:00", "text": "이"}
+{"type": "token", "t": 121390, "ts": "2026-10-18T21:28:51.061+09:00", "text": "행"}
+{"type": "token", "t": 121390, "ts": "2026-10-18T21:28:51.061+09:00", "text": "을"}
+{"type": "token", "t": 121390, "ts": "2026-10-18T21:28:51.063+09:00", "text": " 이유"}
+{"type": "token", "t": 121405, "ts": "2026-10-18T21:28:51.079+09:00", "text": "로"}
+{"type": "token", "t": 121405, "ts": "2026-10-18T21:28:51.080+09:00", "text": " 금"}
+{"type": "token", "t": 121405, "ts": "2026-10-18T21:28:51.080+09:00", "text": "액"}
+{"type": "token", "t": 121421, "ts": "2026-10-18T21:28:51.090+09:00", "text": "을"}
+{"type": "token", "t": 121437, "ts": "2026-10-18T21:28:51.113+09:00", "text": " 미"}
+{"type": "token", "t": 121453, "ts": "2026-10-18T21:28:51.123+09:00", "text": "리"}
+{"type": "token", "t": 121453, "ts": "2026-10-18T21:28:51.124+09:00", "text": " 정"}
+{"type": "token", "t": 121467, "ts": "2026-10-18T21:28:51.144+09:00", "text": "하는"}
+{"type": "token", "t": 121483, "ts": "2026-10-18T21:28:51.160+09:00", "text": " 문"}
+{"type": "token", "t": 121500, "ts": "2026-10-18T21:28:51.171+09:00", "text": "구"}
+{"type": "token", "t": 121500, "ts": "2026-10-18T21:28:51.171+09:00", "text": "는"}
+{"type": "token", "t": 121515, "ts": "2026-10-18T21:28:51.190+09:00", "text": " 두"}
+{"type": "token", "t": 121530, "ts": "2026-10-18T21:28:51.203+09:00", "text": "지"}
+{"type": "token", "t": 121530, "ts": "2026-10-18T21:28:51.206+09:00", "text": " 마"}
+{"type": "token", "t": 121530, "ts": "2026-10-18T21:28:51.207+09:00", "text": "세요"}
+{"type": "token", "t": 121546, "ts": "2026-10-18T21:28:51.219+09:00", "text": ".["}
+{"type": "token", "t": 121562, "ts": "2026-10-18T21:28:51.230+09:00", "text": "C"}
+{"type": "token", "t": 121562, "ts": "2026-10-18T21:28:51.239+09:00", "text": "4"}
+{"type": "token", "t": 121562, "ts": "2026-10-18T21:28:51.241+09:00", "text": "]["}
+{"type": "token", "t": 121562, "ts": "2026-10-18T21:28:51.241+09:00", "text": "L"}
+{"type": "token", "t": 121578, "ts": "2026-10-18T21:28:51.252+09:00", "text": "1"}
+{"type": "token", "t": 121592, "ts": "2026-10-18T21:28:51.263+09:00", "text": "]["}
+{"type": "token", "t": 121592, "ts": "2026-10-18T21:28:51.264+09:00", "text": "W"}
+{"type": "token", "t": 121592, "ts": "2026-10-18T21:28:51.265+09:00", "text": "2"}
+{"type": "token", "t": 121625, "ts": "2026-10-18T21:28:51.300+09:00", "text": "]"}
+{"type": "token", "t": 121640, "ts": "2026-10-18T21:28:51.310+09:00", "text": " 실제"}
+{"type": "token", "t": 121640, "ts": "2026-10-18T21:28:51.314+09:00", "text": " 손"}
+{"type": "token", "t": 121640, "ts": "2026-10-18T21:28:51.321+09:00", "text": "해"}
+{"type": "token", "t": 121640, "ts": "2026-10-18T21:28:51.321+09:00", "text": "가"}
+{"type": "token", "t": 121655, "ts": "2026-10-18T21:28:51.324+09:00", "text": " 발생"}
+{"type": "token", "t": 121655, "ts": "2026-10-18T21:28:51.326+09:00", "text": "했다고"}
+{"type": "token", "t": 121655, "ts": "2026-10-18T21:28:51.326+09:00", "text": " 판단"}
+{"type": "token", "t": 121655, "ts": "2026-10-18T21:28:51.327+09:00", "text": "되는"}
+{"type": "token", "t": 121655, "ts": "2026-10-18T21:28:51.334+09:00", "text": " 경우"}
+{"type": "token", "t": 121655, "ts": "2026-10-18T21:28:51.334+09:00", "text": "에도"}
+{"type": "token", "t": 121671, "ts": "2026-10-18T21:28:51.345+09:00", "text": " 임"}
+{"type": "token", "t": 121687, "ts": "2026-10-18T21:28:51.362+09:00", "text": "금"}
+{"type": "token", "t": 121687, "ts": "2026-10-18T21:28:51.362+09:00", "text": "에서"}
+{"type": "token", "t": 121687, "ts": "2026-10-18T21:28:51.365+09:00", "text": " 일"}
+{"type": "token", "t": 121703, "ts": "2026-10-18T21:28:51.379+09:00", "text": "방"}
+{"type": "token", "t": 121703, "ts": "2026-10-18T21:28:51.380+09:00", "text": "적으로"}
+{"type": "token", "t": 121703, "ts": "2026-10-18T21:28:51.380+09:00", "text": " 공"}
+{"type": "token", "t": 121717, "ts": "2026-10-18T21:28:51.389+09:00", "text": "제"}
+{"type": "token", "t": 121733, "ts": "2026-10-18T21:28:51.401+09:00", "text": "하지"}
+{"type": "token", "t": 121733, "ts": "2026-10-18T21:28:51.403+09:00", "text": " 말"}
+{"type": "token", "t": 121733, "ts": "2026-10-18T21:28:51.403+09:00", "text": "고"}
+{"type": "token", "t": 121733, "ts": "2026-10-18T21:28:51.412+09:00", "text": " 별"}
+{"type": "token", "t": 121765, "ts": "2026-10-18T21:28:51.436+09:00", "text": "도로"}
+{"type": "token", "t": 121796, "ts": "2026-10-18T21:28:51.462+09:00", "text": " 검"}
+{"type": "token", "t": 121796, "ts": "2026-10-18T21:28:51.476+09:00", "text": "토"}
+{"type": "token", "t": 121812, "ts": "2026-10-18T21:28:51.478+09:00", "text": "하세요"}
+{"type": "token", "t": 121812, "ts": "2026-10-18T21:28:51.478+09:00", "text": ".["}
+{"type": "token", "t": 121812, "ts": "2026-10-18T21:28:51.482+09:00", "text": "C"}
+{"type": "token", "t": 121828, "ts": "2026-10-18T21:28:51.495+09:00", "text": "1"}
+{"type": "token", "t": 121828, "ts": "2026-10-18T21:28:51.497+09:00", "text": "]["}
+{"type": "token", "t": 121828, "ts": "2026-10-18T21:28:51.497+09:00", "text": "W"}
+{"type": "token", "t": 121828, "ts": "2026-10-18T21:28:51.508+09:00", "text": "2"}
+{"type": "token", "t": 121858, "ts": "2026-10-18T21:28:51.525+09:00", "text": "]\n"}
+{"type": "token", "t": 121858, "ts": "2026-10-18T21:28:51.526+09:00", "text": "-"}
+{"type": "token", "t": 121858, "ts": "2026-10-18T21:28:51.526+09:00", "text": " 해"}
+{"type": "token", "t": 121858, "ts": "2026-10-18T21:28:51.529+09:00", "text": "고"}
+{"type": "token", "t": 121875, "ts": "2026-10-18T21:28:51.542+09:00", "text": "예"}
+{"type": "token", "t": 121875, "ts": "2026-10-18T21:28:51.543+09:00", "text": "고"}
+{"type": "token", "t": 121875, "ts": "2026-10-18T21:28:51.543+09:00", "text": " 문"}
+{"type": "token", "t": 121875, "ts": "2026-10-18T21:28:51.554+09:00", "text": "구"}
+{"type": "token", "t": 121905, "ts": "2026-10-18T21:28:51.579+09:00", "text": "는"}
+{"type": "token", "t": 121937, "ts": "2026-10-18T21:28:51.607+09:00", "text": " 법"}
+{"type": "token", "t": 121953, "ts": "2026-10-18T21:28:51.621+09:00", "text": "정"}
+{"type": "token", "t": 121953, "ts": "2026-10-18T21:28:51.622+09:00", "text": " 예"}
+{"type": "token", "t": 121953, "ts": "2026-10-18T21:28:51.622+09:00", "text": "외"}
+{"type": "token", "t": 121953, "ts": "2026-10-18T21:28:51.629+09:00", "text": "와"}
+{"type": "token", "t": 121967, "ts": "2026-10-18T21:28:51.649+09:00", "text": " 구"}
+{"type": "token", "t": 121983, "ts": "2026-10-18T21:28:51.659+09:00", "text": "분"}
+{"type": "token", "t": 122000, "ts": "2026-10-18T21:28:51.670+09:00", "text": "되"}
+{"type": "token", "t": 122015, "ts": "2026-10-18T21:28:51.684+09:00", "text": "도록"}
+{"type": "token", "t": 122015, "ts": "2026-10-18T21:28:51.686+09:00", "text": " 다음"}
+{"type": "token", "t": 122015, "ts": "2026-10-18T21:28:51.686+09:00", "text": "과"}
+{"type": "token", "t": 122015, "ts": "2026-10-18T21:28:51.696+09:00", "text": " 같이"}
+{"type": "token", "t": 122046, "ts": "2026-10-18T21:28:51.725+09:00", "text": " 다"}
+{"type": "token", "t": 122078, "ts": "2026-10-18T21:28:51.744+09:00", "text": "듬"}
+{"type": "token", "t": 122078, "ts": "2026-10-18T21:28:51.744+09:00", "text": "는"}
+{"type": "token", "t": 122078, "ts": "2026-10-18T21:28:51.745+09:00", "text": " 방"}
+{"type": "token", "t": 122078, "ts": "2026-10-18T21:28:51.753+09:00", "text": "안을"}
+{"type": "token", "t": 122078, "ts": "2026-10-18T21:28:51.757+09:00", "text": " 고려"}
+{"type": "token", "t": 122078, "ts": "2026-10-18T21:28:51.757+09:00", "text": "할"}
+{"type": "token", "t": 122092, "ts": "2026-10-18T21:28:51.766+09:00", "text": " 수"}
+{"type": "token", "t": 122108, "ts": "2026-10-18T21:28:51.778+09:00", "text": " 있습니다"}
+{"type": "token", "t": 122125, "ts": "2026-10-18T21:28:51.790+09:00", "text": ":"}
+{"type": "token", "t": 122125, "ts": "2026-10-18T21:28:51.790+09:00", "text": " “"}
+{"type": "token", "t": 122140, "ts": "2026-10-18T21:28:51.814+09:00", "text": "회"}
+{"type": "token", "t": 122155, "ts": "2026-10-18T21:28:51.824+09:00", "text": "사가"}
+{"type": "token", "t": 122155, "ts": "2026-10-18T21:28:51.836+09:00", "text": " 근"}
+{"type": "token", "t": 122171, "ts": "2026-10-18T21:28:51.849+09:00", "text": "로"}
+{"type": "token", "t": 122171, "ts": "2026-10-18T21:28:51.850+09:00", "text": "자를"}
+{"type": "token", "t": 122171, "ts": "2026-10-18T21:28:51.850+09:00", "text": " 해"}
+{"type": "token", "t": 122187, "ts": "2026-10-18T21:28:51.857+09:00", "text": "고"}
+{"type": "token", "t": 122217, "ts": "2026-10-18T21:28:51.884+09:00", "text": "하는"}
+{"type": "token", "t": 122217, "ts": "2026-10-18T21:28:51.899+09:00", "text": " 경우"}
+{"type": "token", "t": 122217, "ts": "2026-10-18T21:28:51.899+09:00", "text": " 법"}
+{"type": "token", "t": 122233, "ts": "2026-10-18T21:28:51.904+09:00", "text": "령"}
+{"type": "token", "t": 122250, "ts": "2026-10-18T21:28:51.929+09:00", "text": "에"}
+{"type": "token", "t": 122265, "ts": "2026-10-18T21:28:51.940+09:00", "text": " 따라"}
+{"type": "token", "t": 122280, "ts": "2026-10-18T21:28:51.950+09:00", "text": " 해"}
+{"type": "token", "t": 122296, "ts": "2026-10-18T21:28:51.965+09:00", "text": "고"}
+{"type": "token", "t": 122296, "ts": "2026-10-18T21:28:51.966+09:00", "text": "예"}
+{"type": "token", "t": 122296, "ts": "2026-10-18T21:28:51.966+09:00", "text": "고"}
+{"type": "token", "t": 122296, "ts": "2026-10-18T21:28:51.977+09:00", "text": "를"}
+{"type": "token", "t": 122312, "ts": "2026-10-18T21:28:51.990+09:00", "text": " 하"}
+{"type": "token", "t": 122312, "ts": "2026-10-18T21:28:51.990+09:00", "text": "거나"}
+{"type": "token", "t": 122328, "ts": "2026-10-18T21:28:51.999+09:00", "text": " 해"}
+{"type": "token", "t": 122328, "ts": "2026-10-18T21:28:52.008+09:00", "text": "고"}
+{"type": "token", "t": 122342, "ts": "2026-10-18T21:28:52.010+09:00", "text": "예"}
+{"type": "token", "t": 122342, "ts": "2026-10-18T21:28:52.014+09:00", "text": "고"}
+{"type": "token", "t": 122342, "ts": "2026-10-18T21:28:52.022+09:00", "text": "수"}
+{"type": "token", "t": 122358, "ts": "2026-10-18T21:28:52.037+09:00", "text": "당"}
+{"type": "token", "t": 122358, "ts": "2026-10-18T21:28:52.037+09:00", "text": "을"}
+{"type": "token", "t": 122358, "ts": "2026-10-18T21:28:52.037+09:00", "text": " 지급"}
+{"type": "token", "t": 122375, "ts": "2026-10-18T21:28:52.047+09:00", "text": "한다"}
+{"type": "token", "t": 122390, "ts": "2026-10-18T21:28:52.060+09:00", "text": "."}
+{"type": "token", "t": 122390, "ts": "2026-10-18T21:28:52.062+09:00", "text": " 다"}
+{"type": "token", "t": 122390, "ts": "2026-10-18T21:28:52.064+09:00", "text": "만"}
+{"type": "token", "t": 122390, "ts": "2026-10-18T21:28:52.067+09:00", "text": ","}
+{"type": "token", "t": 122405, "ts": "2026-10-18T21:28:52.081+09:00", "text": " 법"}
+{"type": "token", "t": 122405, "ts": "2026-10-18T21:28:52.081+09:00", "text": "령"}
+{"type": "token", "t": 122421, "ts": "2026-10-18T21:28:52.091+09:00", "text": "상"}
+{"type": "token", "t": 122437, "ts": "2026-10-18T21:28:52.105+09:00", "text": " 예"}
+{"type": "token", "t": 122437, "ts": "2026-10-18T21:28:52.105+09:00", "text": "외"}
+{"type": "token", "t": 122437, "ts": "2026-10-18T21:28:52.114+09:00", "text": "에"}
+{"type": "token", "t": 122453, "ts": "2026-10-18T21:28:52.130+09:00", "text": " 해당"}
+{"type": "token", "t": 122453, "ts": "2026-10-18T21:28:52.131+09:00", "text": "하는"}
+{"type": "token", "t": 122453, "ts": "2026-10-18T21:28:52.131+09:00", "text": " 경우"}
+{"type": "token", "t": 122467, "ts": "2026-10-18T21:28:52.138+09:00", "text": "는"}
+{"type": "token", "t": 122483, "ts": "2026-10-18T21:28:52.160+09:00", "text": " 제외"}
+{"type": "token", "t": 122500, "ts": "2026-10-18T21:28:52.174+09:00", "text": "한다"}
+{"type": "token", "t": 122500, "ts": "2026-10-18T21:28:52.176+09:00", "text": ".”"}
+{"type": "token", "t": 122500, "ts": "2026-10-18T21:28:52.176+09:00", "text": "["}
+{"type": "token", "t": 122515, "ts": "2026-10-18T21:28:52.187+09:00", "text": "C"}
+{"type": "token", "t": 122530, "ts": "2026-10-18T21:28:52.199+09:00", "text": "3"}
+{"type": "token", "t": 122530, "ts": "2026-10-18T21:28:52.204+09:00", "text": "]["}
+{"type": "token", "t": 122530, "ts": "2026-10-18T21:28:52.204+09:00", "text": "L"}
+{"type": "token", "t": 122546, "ts": "2026-10-18T21:28:52.218+09:00", "text": "4"}
+{"type": "token", "t": 122546, "ts": "2026-10-18T21:28:52.219+09:00", "text": "]"}
+{"type": "llm_call", "t": 122717, "ts": "2026-10-18T21:28:52.394+09:00", "call_no": 16, "stage": "write", "purpose": "답변 작성", "model": "gpt-6-luna", "usage": {"input": 3777, "cache_read": 0, "cache_write": 3774, "output": 1184, "reasoning": 0, "uncached_input": 3, "total": 4961}, "web_search_calls": 0, "cost_usd": 0.00106405, "elapsed_ms": 9514, "total_usage": {"input": 58240, "cache_read": 6490, "cache_write": 43384, "output": 6748, "reasoning": 1074, "uncached_input": 8366, "total": 64988}, "total_cost_usd": 0.0196985}
+{"type": "stage", "t": 122717, "ts": "2026-10-18T21:28:52.394+09:00", "stage": "write", "status": "end"}
+{"type": "stage", "t": 122717, "ts": "2026-10-18T21:28:52.395+09:00", "stage": "verify", "status": "start"}
+{"type": "verify", "t": 122717, "ts": "2026-10-18T21:28:52.395+09:00", "ok": true, "cited": ["C2", "L5", "L6", "C4", "L1", "C1", "W1", "W2", "C3", "L3", "L4"], "unknown": [], "unused": ["L2"], "problems": []}
+{"type": "stage", "t": 122717, "ts": "2026-10-18T21:28:52.395+09:00", "stage": "verify", "status": "end"}
+{"type": "stage", "t": 122717, "ts": "2026-10-18T21:28:52.395+09:00", "stage": "evaluate", "status": "start"}
+{"type": "llm_call", "t": 128342, "ts": "2026-10-18T21:28:58.012+09:00", "call_no": 17, "stage": "evaluate", "purpose": "목표 달성 판단", "model": "gpt-6-luna", "usage": {"input": 2920, "cache_read": 0, "cache_write": 2917, "output": 497, "reasoning": 151, "uncached_input": 3, "total": 3417}, "web_search_calls": 0, "cost_usd": 0.0006134249999999999, "elapsed_ms": 5625, "total_usage": {"input": 61160, "cache_read": 6490, "cache_write": 46301, "output": 7245, "reasoning": 1225, "uncached_input": 8369, "total": 68405}, "total_cost_usd": 0.020311925}
+{"type": "evaluate", "t": 128342, "ts": "2026-10-18T21:28:58.012+09:00", "goal_met": true, "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "met", "note": "제7조의 수습기간 및 감액 요건을 최저임금법 제5조제2항과 시행령 제3조의 계약기간·감액기간·단순노무 직종 예외와 대조해 적합성을 판단했습니다.[C2][L5][L6]"}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "met", "note": "제13조의 위약금·손해배상액 사전 약정 금지 문구를 근로기준법 제20조와 대조하고, 실제 손해배상과 임금 공제를 구분해 유의사항을 제시했습니다.[C4][L1][W2]"}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "met", "note": "조항별 법령 근거와 함께 수습 감액 요건, 요건 미충족 시 최저임금 지급, 위약금 약정 및 임금 공제 관련 운영상 유의사항을 보고했습니다.[C1][C2][C4][L5][L6][W1][W2]"}], "missing": [], "feedback": "목표와 완료 조건을 충족했습니다. 수습 및 위약금 관련 핵심 요건과 운영상 주의사항이 근거와 함께 제시되어 있습니다.", "retry": false, "attempt": 1}
+{"type": "stage", "t": 128342, "ts": "2026-10-18T21:28:58.012+09:00", "stage": "evaluate", "status": "end"}
+{"type": "sources", "t": 128342, "ts": "2026-10-18T21:28:58.012+09:00", "items": [{"id": "C1", "kind": "standard", "title": "표준근로계약서 제6조(임금)", "excerpt": "## 제6조(임금)\n① 월(일, 시간)급: ________원\n② 상여금 및 기타 수당은 별도로 정한 바에 따른다.\n③ 임금지급일은 매월 __일로 하며, 휴일인 경우 전일에 지급한다.\n④ 임금은 을에게 직접, 그 전액을 지급한다. 법령 또는 단체협약에 특별한 규정이 있는 경우를 제외하고는 갑이 임의로 공제할 수 없다.\n⑤ 임금은 최저임금법에 따른 최저임금 이상이어야 한다.", "url": null, "locator": "contracts/labor_standard.md#제6조", "kind_label": "표준계약서", "cited": true}, {"id": "C2", "kind": "standard", "title": "표준근로계약서 제7조(수습기간)", "excerpt": "## 제7조(수습기간)\n① 근로개시일로부터 3개월 이내의 범위에서 수습기간을 둘 수 있다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 경우, 수습기간 3개월 이내에 한하여 최저임금의 100분의 90 이상을 지급할 수 있다.\n③ 제2항에도 불구하고 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 경우에는 수습기간 중에도 최저임금 전액을 지급한다.\n④ 수습기간이 끝난 후 정당한 이유 없이 본채용을 거부할 수 없다.", "url": null, "locator": "contracts/labor_standard.md#제7조", "kind_label": "표준계약서", "cited": true}, {"id": "C3", "kind": "standard", "title": "표준근로계약서 제12조(계약의 해지)", "excerpt": "## 제12조(계약의 해지)\n① 갑은 정당한 이유 없이 을을 해고할 수 없다.\n② 갑이 을을 해고하려면 적어도 30일 전에 예고하여야 하고, 30일 전에 예고하지 아니하였을 때에는 30일분 이상의 통상임금을 지급하여야 한다.\n③ 해고는 해고사유와 해고시기를 서면으로 통지하여야 효력이 있다.", "url": null, "locator": "contracts/labor_standard.md#제12조", "kind_label": "표준계약서", "cited": true}, {"id": "C4", "kind": "standard", "title": "표준근로계약서 제13조(위약 예정의 금지)", "excerpt": "## 제13조(위약 예정의 금지)\n갑은 근로계약 불이행에 대한 위약금 또는 손해배상액을 예정하는 계약을 체결하지 못한다. 교육비 반환, 조기 퇴사 시 배상 등 명칭과 관계없이 근로자의 퇴직의 자유를 부당하게 제한하는 약정은 효력이 없을 수 있다.", "url": null, "locator": "contracts/labor_standard.md#제13조", "kind_label": "표준계약서", "cited": true}, {"id": "L1", "kind": "law", "title": "근로기준법 제20조(위약 예정의 금지)", "excerpt": "제20조(위약 예정의 금지) 사용자는 근로계약 불이행에 대한 위약금 또는 손해배상액을 예정하는 계약을 체결하지 못한다.", "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95/%EC%A0%9C20%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "L2", "kind": "law", "title": "근로기준법 제17조(근로조건의 명시)", "excerpt": "제17조(근로조건의 명시)\n① 사용자는 근로계약을 체결할 때에 근로자에게 다음 각 호의 사항을 명시하여야 한다. 근로계약 체결 후 다음 각 호의 사항을 변경하는 경우에도 또한 같다. <개정 2010.5.25>\n1. 임금\n2. 소정근로시간\n3. 제55조에 따른 휴일\n4. 제60조에 따른 연차 유급휴가\n5. 그 밖에 대통령령으로 정하는 근로조건\n② 사용자는 제1항제1호와 관련한 임금의 구성항목ㆍ계산방법ㆍ지급방법 및 제2호부터 제4호까지의 사항이 명시된 서면(「전자문서 및 전자거래 기본법」 제2조제1호에 따른 전자문서를 포함한다)을 근로자에게 교부하여야 한다. 다만, 본문에 따른 사항이 단체협약 또는 취업규칙의 변경 등 대통령령으로 정하는 사유로 인하여 변경되는 경우에는 근로자의 요구가 있으면 그 근로자에게 교부하여야 한다. <신설 2010.5.25, 2021.1.5>", "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95/%EC%A0%9C17%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": false}, {"id": "L3", "kind": "law", "title": "근로기준법 제23조(해고 등의 제한)", "excerpt": "제23조(해고 등의 제한)\n① 사용자는 근로자에게 정당한 이유 없이 해고, 휴직, 정직, 전직, 감봉, 그 밖의 징벌(懲罰)(이하 \"부당해고등\"이라 한다)을 하지 못한다.\n② 사용자는 근로자가 업무상 부상 또는 질병의 요양을 위하여 휴업한 기간과 그 후 30일 동안 또는 산전(産前)ㆍ산후(産後)의 여성이 이 법에 따라 휴업한 기간과 그 후 30일 동안은 해고하지 못한다. 다만, 사용자가 제84조에 따라 일시보상을 하였을 경우 또는 사업을 계속할 수 없게 된 경우에는 그러하지 아니하다.", "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95/%EC%A0%9C23%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "L4", "kind": "law", "title": "근로기준법 제26조(해고의 예고)", "excerpt": "제26조(해고의 예고) 사용자는 근로자를 해고(경영상 이유에 의한 해고를 포함한다)하려면 적어도 30일 전에 예고를 하여야 하고, 30일 전에 예고를 하지 아니하였을 때에는 30일분 이상의 통상임금을 지급하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다. <개정 2010.6.4, 2019.1.15>\n1. 근로자가 계속 근로한 기간이 3개월 미만인 경우\n2. 천재ㆍ사변, 그 밖의 부득이한 사유로 사업을 계속하는 것이 불가능한 경우\n3. 근로자가 고의로 사업에 막대한 지장을 초래하거나 재산상 손해를 끼친 경우로서 고용노동부령으로 정하는 사유에 해당하는 경우", "url": "https://www.law.go.kr/법령/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95/%EC%A0%9C26%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "L5", "kind": "law", "title": "최저임금법 제5조(최저임금액)", "excerpt": "제5조(최저임금액)\n① 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)은 시간ㆍ일(日)ㆍ주(週) 또는 월(月)을 단위로 하여 정한다. 이 경우 일ㆍ주 또는 월을 단위로 하여 최저임금액을 정할 때에는 시간급(時間給)으로도 표시하여야 한다.\n② 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대하여는 대통령령으로 정하는 바에 따라 제1항에 따른 최저임금액과 다른 금액으로 최저임금액을 정할 수 있다. 다만, 단순노무업무로 고용노동부장관이 정하여 고시한 직종에 종사하는 근로자는 제외한다. <개정 2017.9.19, 2020.5.26>\n③ 임금이 통상적으로 도급제나 그 밖에 이와 비슷한 형태로 정하여져 있는 경우로서 제1항에 따라 최저임금액을 정하는 것이 적당하지 아니하다고 인정되면 대통령령으로 정하는 바에 따라 최저임금액을 따로 정할 수 있다.", "url": "https://www.law.go.kr/법령/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88%EB%B2%95/%EC%A0%9C5%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "L6", "kind": "law", "title": "최저임금법 시행령 제3조(수습 중에 있는 근로자에 대한 최저임금액)", "excerpt": "제3조(수습 중에 있는 근로자에 대한 최저임금액) 「최저임금법」(이하 \"법\"이라 한다) 제5조제2항 본문에 따라 1년 이상의 기간을 정하여 근로계약을 체결하고 수습 중에 있는 근로자로서 수습을 시작한 날부터 3개월 이내인 사람에 대해서는 같은 조 제1항 후단에 따른 시간급 최저임금액(최저임금으로 정한 금액을 말한다. 이하 같다)에서 100분의 10을 뺀 금액을 그 근로자의 시간급 최저임금액으로 한다.", "url": "https://www.law.go.kr/법령/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9/%EC%A0%9C3%EC%A1%B0", "locator": null, "kind_label": "법령", "cited": true}, {"id": "W1", "kind": "web", "title": ":: 고용노동부 모바일페이지 고객센터 ::", "excerpt": "- **수습기간 최저임금 감액:** 1년 이상 근로계약을 맺은 수습근로자는 수습을 시작한 날부터 **3개월 이내** 최저임금의 90%까지 받을 수 있습니다. 계약기간이 1년 미만이거나, 수습기간이 3개월을 넘으면 이 감액 예외를 적용할 수 없습니다.", "url": "https://1350.moel.go.kr/rtmview.do?id=1000320800&utm_source=openai", "locator": null, "kind_label": "웹 자료", "cited": true}, {"id": "W2", "kind": "web", "title": ":: 고용노동부 모바일페이지 고객센터 ::", "excerpt": "- **위약금·손해배상 예정:** 근로기준법 제20조는 근로계약을 지키지 않았을 때를 대비해 위약금이나 손해배상액을 미리 정하는 계약을 금지합니다. 따라서 “수습 중 퇴사하면 얼마를 물어낸다”처럼 미리 정한 금액을 청구하는 조항은 위법 소지가 큽니다. 다만 실제로 발생한 손해에 대한 배상 책임은 구체적 사실관계에 따라 별도로 판단될 수 있고, 손해액을 임금에서 임의로 공제할 수는 없습니다.", "url": "https://1350.moel.go.kr/rtmview.do?id=1000274320&utm_source=openai", "locator": null, "kind_label": "웹 자료", "cited": true}]}
+{"type": "final", "t": 128342, "ts": "2026-10-18T21:28:58.012+09:00", "answer_md": "## 한눈에 보기\n표준근로계약서 제7조의 수습기간 및 수습 중 최저임금 감액 요건은 최저임금법과 시행령에 부합합니다.[C2][L5][L6] 제13조의 위약금·손해배상액 사전 약정 금지도 근로기준법 제20조와 맞습니다.[C4][L1] 다만 수습 중 임금 감액은 법정 요건을 모두 충족할 때만 적용하고, 실제 손해배상과 임금 공제는 별도로 처리해야 합니다.[C1][W1][W2]\n\n## 검토 결과\n\n### 🟢 수습기간과 수습 중 최저임금 감액\n제7조는 수습기간을 근로개시일부터 3개월 이내로 두고, 1년 이상 근로계약을 맺은 수습근로자에게 수습 시작일부터 3개월 이내에 최저임금의 90% 이상을 지급할 수 있도록 정하고 있습니다.[C2] 단순노무업무로 고용노동부장관이 정한 직종은 수습 중에도 최저임금 전액을 지급하도록 한 내용도 포함되어 있습니다.[C2]\n\n최저임금법은 1년 이상 계약, 수습 시작일부터 3개월 이내라는 요건을 정하고 단순노무 직종을 예외에서 제외하며, 시행령은 해당 요건을 충족할 때 시간급 최저임금에서 10%를 뺀 금액을 적용하도록 합니다.[L5][L6] 따라서 제7조의 감액 요건은 법령과 일치합니다.[C2][L5][L6]\n\n계약기간이 1년 미만이거나 수습 시작일부터 3개월이 지난 경우, 또는 단순노무 직종인 경우에는 수습을 이유로 최저임금을 감액할 수 없습니다.[L5][W1] 제6조도 임금이 최저임금 이상이어야 한다고 정하므로, 감액 예외를 적용할 수 없는 경우에는 최저임금 전액 이상을 지급해야 합니다.[C1][L5][W1]\n\n### 🟢 위약금·손해배상액의 사전 약정 금지\n제13조는 근로계약을 지키지 않았을 때의 위약금이나 손해배상액을 미리 정하는 계약을 금지하고 있습니다.[C4] 이는 근로계약 불이행에 대한 위약금 또는 손해배상액의 사전 약정을 금지하는 근로기준법 제20조와 부합합니다.[L1]\n\n예를 들어 “수습 중 퇴사하면 일정 금액을 지급한다”처럼 미리 금액을 정한 약정은 허용되기 어렵습니다.[L1][W2] 다만 실제로 발생한 손해에 대한 배상 책임은 사전 약정과 구별하여 구체적인 사정에 따라 판단할 수 있고, 그 손해액을 임금에서 임의로 공제해서는 안 됩니다.[W2][C1]\n\n### 🟡 수습 종료 후 본채용 거부 및 해고 절차\n제7조는 수습기간 종료 후 정당한 이유 없이 본채용을 거부할 수 없다고 정하고 있습니다.[C2] 제12조도 정당한 이유 없는 해고를 금지하고 해고사유와 해고시기를 서면으로 통지하도록 정하고 있어, 수습 종료 후의 인사 결정도 정당한 이유와 관련 절차를 고려해 운영할 필요가 있습니다.[C3][L3]\n\n다만 제12조의 30일 전 해고예고 문구에는 법정 예외가 반영되어 있지 않습니다.[C3][L4] 근로자가 계속 근로한 기간이 3개월 미만인 경우 등에는 해고예고 의무의 예외가 있으므로, 계약서 문구만으로 모든 경우에 예고 의무가 있다고 오해하지 않도록 유의해야 합니다.[L4]\n\n## 이렇게 해보세요\n- 수습 중 최저임금을 감액하려면 계약기간이 1년 이상인지, 감액 기간이 수습 시작일부터 3개월 이내인지, 해당 업무가 단순노무 직종인지 먼저 확인하세요.[L5][L6][W1]\n- 감액 요건이 하나라도 맞지 않으면 최저임금 전액 이상을 지급하도록 급여 산정과 근태·급여 시스템을 점검하세요.[C1][L5][W1]\n- 위약금, 조기 퇴사 배상금 등 근로계약 불이행을 이유로 금액을 미리 정하는 문구는 두지 마세요.[C4][L1][W2] 실제 손해가 발생했다고 판단되는 경우에도 임금에서 일방적으로 공제하지 말고 별도로 검토하세요.[C1][W2]\n- 해고예고 문구는 법정 예외와 구분되도록 다음과 같이 다듬는 방안을 고려할 수 있습니다: “회사가 근로자를 해고하는 경우 법령에 따라 해고예고를 하거나 해고예고수당을 지급한다. 다만, 법령상 예외에 해당하는 경우는 제외한다.”[C3][L4]", "cited_ids": ["C2", "L5", "L6", "C4", "L1", "C1", "W1", "W2", "C3", "L3", "L4"], "goal_met": true, "criteria": [{"id": 1, "text": "표준근로계약서의 수습기간 관련 조항을 확인하고, 적용되는 근로기준법·최저임금법의 현행 조문과 대조해 적합성을 판단했다.", "status": "met", "note": "제7조의 수습기간 및 감액 요건을 최저임금법 제5조제2항과 시행령 제3조의 계약기간·감액기간·단순노무 직종 예외와 대조해 적합성을 판단했습니다.[C2][L5][L6]"}, {"id": 2, "text": "위약금 관련 조항을 확인하고, 근로기준법상 위약예정 금지 규정 등 관련 법령에 비추어 위험 여부를 판단했다.", "status": "met", "note": "제13조의 위약금·손해배상액 사전 약정 금지 문구를 근로기준법 제20조와 대조하고, 실제 손해배상과 임금 공제를 구분해 유의사항을 제시했습니다.[C4][L1][W2]"}, {"id": 3, "text": "조항별 검토 근거와 함께 수정 또는 운영상 유의가 필요한 사항을 보고했다.", "status": "met", "note": "조항별 법령 근거와 함께 수습 감액 요건, 요건 미충족 시 최저임금 지급, 위약금 약정 및 임금 공제 관련 운영상 유의사항을 보고했습니다.[C1][C2][C4][L5][L6][W1][W2]"}], "stats": {"elapsed_ms": 128342, "llm_calls": 17, "agent_loops": 6, "tool_calls": 10, "web_search_calls": 1, "sources": 12, "usage": {"input": 61160, "cache_read": 6490, "cache_write": 46301, "output": 7245, "reasoning": 1225, "uncached_input": 8369, "total": 68405}, "cost_usd": 0.020311925, "cited": 11}}
+{"type": "done", "t": 128342, "ts": "2026-10-18T21:28:58.013+09:00", "elapsed_ms": 128342}
